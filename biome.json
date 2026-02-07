@@ -1,0 +1,62 @@
+{
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "a11y": {
+                "noAutofocus": "off",
+                "useButtonType": "off"
+            },
+            "complexity": {
+                "noForEach": "off"
+            },
+            "correctness": {
+                "useExhaustiveDependencies": "off",
+                "noUnusedVariables": "warn",
+                "noUnusedImports": "warn"
+            },
+            "style": {
+                "noNegationElse": "warn",
+                "useFragmentSyntax": "error"
+            },
+            "performance": {
+                "noDelete": "off"
+            },
+            "suspicious": {
+                "noArrayIndexKey": "off",
+                "noConsoleLog": "warn",
+                "noEmptyBlockStatements": "error",
+                "useAwait": "error"
+            }
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "enabled": true,
+            "semicolons": "asNeeded",
+            "quoteStyle": "double",
+            "indentStyle": "tab",
+            "lineWidth": 160,
+            "lineEnding": "lf",
+            "bracketSpacing": true,
+            "jsxQuoteStyle": "double",
+            "arrowParentheses": "asNeeded",
+            "indentWidth": 4
+        }
+    },
+    "json": {
+        "formatter": {
+            "enabled": false
+        }
+    },
+    "files": {
+        "ignore": [
+            "node_modules/**/*",
+            "lib/contracts/typechain-types/**/*",
+            ".next/**/*"
+        ]
+    }
+}
