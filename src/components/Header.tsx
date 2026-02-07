@@ -1,33 +1,32 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useEffect, useState } from "react"
-import { Menu, Github } from "lucide-react"
-import { usePathname } from "next/navigation"
+import { Github, Menu } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import {
 	NavigationMenu,
 	NavigationMenuItem,
 	NavigationMenuLink,
 	NavigationMenuList,
 	navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { cn } from "@/lib/utils"
-import React from "react"
-import Image from "next/image"
+} from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
-	const currentPath = usePathname()
-	const [isSheetOpen, setIsSheetOpen] = useState(false)
+	const currentPath = usePathname();
+	const [isSheetOpen, setIsSheetOpen] = useState(false);
 
 	const navigationItems = [
 		{ href: "/episodes", label: "Episode Ratings" },
 		{ href: "/weekly-rankings", label: "Weekly Rankings" },
 		// { href: "/onepiece", label: "One Piece" },
 		{ href: "/about", label: "About" },
-	]
+	];
 
-	const handleNavLinkClick = () => setIsSheetOpen(false)
+	const handleNavLinkClick = () => setIsSheetOpen(false);
 
 	return (
 		<header className="bg-white/90 w-full shadow-md">
@@ -37,8 +36,15 @@ const Header = () => {
 						{/* Logo */}
 						<div className="flex items-center">
 							<Link href="/" className="flex items-center space-x-2">
-								<Image src="/logo.png" alt="Anime stats" width={32} height={32} />
-								<span className="text-xl font-bold text-gray-900">Anime stats</span>
+								<Image
+									src="/logo.png"
+									alt="Anime stats"
+									width={32}
+									height={32}
+								/>
+								<span className="text-xl font-bold text-gray-900">
+									Anime stats
+								</span>
 							</Link>
 						</div>
 
@@ -49,10 +55,13 @@ const Header = () => {
 									{navigationItems.map((item) => (
 										<NavigationMenuItem key={item.href}>
 											<Link href={item.href} legacyBehavior passHref>
-												<NavigationMenuLink className={cn(
-													navigationMenuTriggerStyle(),
-													currentPath === item.href && "bg-accent text-accent-foreground"
-												)}>
+												<NavigationMenuLink
+													className={cn(
+														navigationMenuTriggerStyle(),
+														currentPath === item.href &&
+														"bg-accent text-accent-foreground",
+													)}
+												>
 													{item.label}
 												</NavigationMenuLink>
 											</Link>
@@ -66,15 +75,15 @@ const Header = () => {
 					{/* Right side - GitHub icon and mobile menu */}
 					<div className="flex items-center space-x-4">
 						{/* GitHub Icon */}
-						{/* <a
-							href="https://github.com"
+						<a
+							href="https://github.com/hashpeace/animestats"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="p-2 rounded-md hover:bg-gray-100 transition-colors"
 							aria-label="GitHub"
 						>
 							<Github className="h-5 w-5 text-gray-600" />
-						</a> */}
+						</a>
 
 						{/* Mobile Menu */}
 						<div className="md:hidden">
@@ -98,7 +107,7 @@ const Header = () => {
 													"block px-4 py-3 text-sm font-medium transition-colors hover:bg-gray-50 rounded-md",
 													currentPath === item.href
 														? "bg-accent text-accent-foreground"
-														: "text-gray-700"
+														: "text-gray-700",
 												)}
 											>
 												{item.label}
@@ -112,18 +121,18 @@ const Header = () => {
 				</div>
 			</div>
 		</header>
-	)
-}
+	);
+};
 
 const ListItem = React.forwardRef<
 	React.ElementRef<"a">,
 	React.ComponentPropsWithoutRef<"a"> & {
-		title: string
-		href: string
-		currentPath: string
+		title: string;
+		href: string;
+		currentPath: string;
 	}
 >(({ className, title, children, href, currentPath, ...props }, ref) => {
-	const isActive = currentPath === href
+	const isActive = currentPath === href;
 
 	return (
 		<NavigationMenuLink asChild>
@@ -133,7 +142,7 @@ const ListItem = React.forwardRef<
 				className={cn(
 					"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
 					isActive && "bg-accent text-accent-foreground",
-					className
+					className,
 				)}
 				{...props}
 			>
@@ -143,8 +152,8 @@ const ListItem = React.forwardRef<
 				</p>
 			</Link>
 		</NavigationMenuLink>
-	)
-})
-ListItem.displayName = "ListItem"
+	);
+});
+ListItem.displayName = "ListItem";
 
-export default Header 
+export default Header;
