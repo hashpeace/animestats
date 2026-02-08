@@ -724,14 +724,16 @@ export default function WeeklyRatings() {
 		const seasonEpisodes = anime.episodeData?.filter(
 			(episode) => isEpisodeInCurrentSeason(episode) && episode.score !== null,
 		);
-		// console.log(seasonEpisodes && seasonEpisodes.length > 0
-		// 	? seasonEpisodes.reduce((sum, episode) => sum + (episode.score || 0), 0) / seasonEpisodes.length
-		// 	: 0)
-		// console.log(anime.episodeData?.reduce((sum, ep) => sum + (ep.score || 0), 0) / (anime.episodeData?.length || 1) || 0)
 		return seasonEpisodes && seasonEpisodes.length > 0
 			? seasonEpisodes.reduce((sum, episode) => sum + (episode.score || 0), 0) /
 			seasonEpisodes.length
 			: 0;
+	};
+
+	const getAnimeSeasonEpisodesNb = (anime: AnimeItem) => {
+		return anime.episodeData?.filter(
+			(episode) => isEpisodeInCurrentSeason(episode) && episode.score !== null,
+		).length || 0;
 	};
 
 	const sortAnimeList = (sortBy: string) => {
@@ -935,9 +937,6 @@ export default function WeeklyRatings() {
 		sortedAnimeList.reduce((sum, anime) => sum + (anime.score || 0), 0) /
 		sortedAnimeList.length
 	).toFixed(2);
-	// const seasonAverageEpisodesScore = (
-	// 	sortedAnimeList.reduce((sum, anime) => sum + (getAverageSeasonScore(anime) || 0) * 2, 0) / sortedAnimeList.length
-	// ).toFixed(2)
 	const seasonAverageEpisodesScore = (
 		sortedAnimeList.reduce(
 			(sum, anime) => sum + (getAverageSeasonScore(anime) || 0),
@@ -1197,9 +1196,6 @@ export default function WeeklyRatings() {
 							.findIndex((a) => a.mal_id === anime.mal_id) + 1;
 
 					const averageSeasonScore = getAverageSeasonScore(anime);
-					// console.log(anime.title)
-					// console.log(averageSeasonScore)
-					// console.log("--------")
 
 					const seasonRanking =
 						[...sortedAnimeList]
@@ -1441,7 +1437,7 @@ export default function WeeklyRatings() {
 															{averageSeasonScore.toFixed(2)}/5
 														</div>
 														<span className="text-sm text-gray-600">
-															Average episodes score for season
+															Average episodes score for season<br />({getAnimeSeasonEpisodesNb(anime)} episodes)
 														</span>
 														<span className="text-sm font-semibold text-blue-600">
 															#{seasonRanking}
