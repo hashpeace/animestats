@@ -1,10 +1,18 @@
 "use client";
 
-import { Github, Menu } from "lucide-react";
+import { Github, Menu, Settings } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import posthog from "posthog-js";
+import React, { useState } from "react";
+import {
+	Dialog,
+	DialogContent,
+	DialogHeader,
+	DialogTitle,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
 import {
 	NavigationMenu,
 	NavigationMenuItem,
@@ -12,12 +20,24 @@ import {
 	NavigationMenuList,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useContainerContext } from "@/contexts/ContainerContext";
+import { useFetchingMethodContext } from "@/contexts/FetchingMethodContext";
 import { cn } from "@/lib/utils";
 
 const Header = () => {
 	const currentPath = usePathname();
 	const [isSheetOpen, setIsSheetOpen] = useState(false);
+	const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+	const { useContainer, setUseContainer } = useContainerContext();
+	const { fetchingMethod, setFetchingMethod } = useFetchingMethodContext();
 
 	const navigationItems = [
 		{ href: "/episodes", label: "Episode Ratings" },
@@ -72,14 +92,23 @@ const Header = () => {
 						</div>
 					</div>
 
-					{/* Right side - GitHub icon and mobile menu */}
+					{/* Right side - Settings, GitHub icon and mobile menu */}
 					<div className="flex items-center space-x-4">
+						{/* Settings Icon */}
+						<button
+							onClick={() => setIsSettingsOpen(true)}
+							className="p-2 rounded-md hover:bg-gray-100 transition-colors max-md:hidden"
+							aria-label="Settings"
+						>
+							<Settings className="h-5 w-5 text-gray-600" />
+						</button>
+
 						{/* GitHub Icon */}
 						<a
 							href="https://github.com/hashpeace/animestats"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="p-2 rounded-md hover:bg-gray-100 transition-colors"
+							className="p-2 rounded-md hover:bg-gray-100 transition-colors max-md:hidden"
 							aria-label="GitHub"
 						>
 							<Github className="h-5 w-5 text-gray-600" />
@@ -113,6 +142,25 @@ const Header = () => {
 												{item.label}
 											</Link>
 										))}
+										{/* Settings Icon */}
+										<button
+											onClick={() => setIsSettingsOpen(true)}
+											className="px-4 py-3 rounded-md hover:bg-gray-100 transition-colors"
+											aria-label="Settings"
+										>
+											<Settings className="h-5 w-5 text-gray-600" />
+										</button>
+
+										{/* GitHub Icon */}
+										<a
+											href="https://github.com/hashpeace/animestats"
+											target="_blank"
+											rel="noopener noreferrer"
+											className="px-4 block py-3 rounded-md hover:bg-gray-100 transition-colors"
+											aria-label="GitHub"
+										>
+											<Github className="h-5 w-5 text-gray-600" />
+										</a>
 									</div>
 								</SheetContent>
 							</Sheet>
@@ -120,6 +168,59 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
+
+			{/* Settings Modal */}
+			<Dialog open={isSettingsOpen} onOpenChange={setIsSettingsOpen}>
+				<DialogContent>
+					<DialogHeader>
+						<DialogTitle>Settings</DialogTitle>
+					</DialogHeader>
+					<div className="flex flex-col gap-4 mt-4">
+						<div className="flex flex-col">
+							<Label htmlFor="container-select">Page width</Label>
+							<Select
+								value={useContainer ? "true" : "false"}
+								onValueChange={(value) => {
+									setUseContainer(value === "true");
+									posthog.capture("option_panel_event", {
+										option: "use_container",
+										value: value,
+									});
+								}}
+							>
+								<SelectTrigger className="w-full focus:ring-offset-1 focus:ring-2 bg-white">
+									<SelectValue placeholder="Select container option" />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem value="true">Normal</SelectItem>
+									<SelectItem value="false">Full</SelectItem>
+								</SelectContent>
+							</Select>
+						</div>
+						<div className="flex flex-col">
+							<Label htmlFor="fetching-method-select">Fetching method</Label>
+							<Select
+								value={fetchingMethod}
+								onValueChange={(value) => {
+									setFetchingMethod(value as "jikanOnly" | "cheerioParser");
+									posthog.capture("option_panel_event", {
+										option: "fetching_method",
+										value: value,
+									});
+								}}
+							>
+								<SelectTrigger className="w-full focus:ring-offset-1 focus:ring-2 bg-white">
+									<SelectValue placeholder="Select fetcher mode" />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem value="jikanOnly">Simple</SelectItem>
+									<SelectItem value="cheerioParser">Detailed</SelectItem>
+								</SelectContent>
+							</Select>
+						</div>
+					</div>
+				</DialogContent>
+			</Dialog>
 		</header>
 	);
 };

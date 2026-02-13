@@ -1,11 +1,19 @@
-"use client"
-import Link from "next/link"
-import { LineChart, Calendar, Flag, Chrome, ArrowRight, Hourglass } from "lucide-react"
+"use client";
+import {
+  ArrowRight,
+  Calendar,
+  Chrome,
+  Flag,
+  Hourglass,
+  LineChart,
+} from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
     title: "Episode Ratings",
-    description: "Search any anime and visualize episode ratings with interactive charts. Compare episodes, identify peaks and valleys, and discover rating trends throughout a series.",
+    description:
+      "Search any anime and visualize episode ratings with interactive charts. Compare episodes, identify peaks and valleys, and discover rating trends throughout a series.",
     href: "/episodes",
     icon: LineChart,
     color: "from-blue-500 to-indigo-600",
@@ -14,7 +22,8 @@ const features = [
   },
   {
     title: "Weekly Rankings",
-    description: "Track how anime episodes perform each week during a season. See which shows are trending, compare episode scores, and follow your favorites' weekly progress.",
+    description:
+      "Track how anime episodes perform each week during a season. See which shows are trending, compare episode scores, and follow your favorites' weekly progress.",
     href: "/weekly-rankings",
     icon: Calendar,
     color: "from-green-500 to-emerald-600",
@@ -49,7 +58,7 @@ const features = [
   //   bgColor: "bg-purple-50",
   //   iconColor: "text-purple-600",
   // },
-]
+];
 
 export default function Home() {
   return (
@@ -63,14 +72,16 @@ export default function Home() {
           </span>
         </h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-          Dive deep into anime episode ratings from MyAnimeList. Track trends, discover top-rated episodes, and analyze your favorite series like never before.
+          Dive deep into anime episode ratings from MyAnimeList. Track trends,
+          discover top-rated episodes, and analyze your favorite series like
+          never before.
         </p>
       </div>
 
       {/* Features Grid */}
       <div className="grid md:grid-cols-2 gap-6">
         {features.map((feature) => {
-          const Icon = feature.icon
+          const Icon = feature.icon;
           return (
             <Link
               key={feature.href}
@@ -78,7 +89,9 @@ export default function Home() {
               className={`group relative bg-white rounded-2xl border border-gray-200 p-6 shadow-sm transition-all duration-300 ${feature.disabled ? "opacity-50 cursor-not-allowed" : "hover:shadow-lg hover:border-gray-300 hover:-translate-y-1"}`}
             >
               <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-xl ${feature.bgColor} group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`p-3 rounded-xl ${feature.bgColor} group-hover:scale-110 transition-transform duration-300`}
+                >
                   <Icon className={`h-6 w-6 ${feature.iconColor}`} />
                 </div>
                 <div className="flex-1">
@@ -92,26 +105,13 @@ export default function Home() {
                 </div>
               </div>
               {/* Gradient accent on hover */}
-              <div className={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r ${feature.color} rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              <div
+                className={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r ${feature.color} rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+              />
             </Link>
-          )
+          );
         })}
       </div>
-
-      {/* CTA Section */}
-      <div className="mt-16 text-center">
-        <p className="text-gray-500 text-sm">
-          Data sourced from{" "}
-          <a
-            href="https://myanimelist.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            MyAnimeList
-          </a>
-        </p>
-      </div>
     </div>
-  )
+  );
 }

@@ -37,6 +37,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn, isProduction } from "@/lib/utils";
 import type {
+	AnimeInfo,
 	ChartOptions,
 	EpisodeInfos,
 	RatingsDisplayProps,
@@ -59,15 +60,17 @@ const getRatingTier = (
 			: Math.round(outOf10 * 100) / 100; // Round to 2 decimals (e.g., 9.256 → 9.26)
 
 	// Compare using the rounded /10 value
-	if (roundedValue >= 9.3)
+	if (roundedValue >= 9.7)
+		return { label: "Masterpiece", color: "#008a92", textColor: "#ffffff" };
+	if (roundedValue >= 9)
 		return { label: "Awesome", color: "#166534", textColor: "#ffffff" };
-	if (roundedValue >= 8.5)
+	if (roundedValue >= 8)
 		return { label: "Great", color: "#22c55e", textColor: "#4e4444" };
 	if (roundedValue >= 7.5)
-		return { label: "Good", color: "#eab308", textColor: "#4e4444" };
-	if (roundedValue >= 6.5)
-		return { label: "Regular", color: "#f97316", textColor: "#4e4444" };
-	if (roundedValue >= 5.0)
+		return { label: "Good", color: "#F4D03F", textColor: "#4e4444" };
+	if (roundedValue >= 6)
+		return { label: "Regular", color: "#F39C13", textColor: "#4e4444" };
+	if (roundedValue >= 4)
 		return { label: "Bad", color: "#ef4444", textColor: "#ffffff" };
 	return { label: "Garbage", color: "#a855f7", textColor: "#ffffff" };
 };
@@ -83,12 +86,13 @@ const formatRating = (
 };
 
 const ratingTierLegend = [
-	{ label: "Awesome", color: "#166534" },
-	{ label: "Great", color: "#22c55e" },
-	{ label: "Good", color: "#eab308" },
-	{ label: "Regular", color: "#f97316" },
-	{ label: "Bad", color: "#ef4444" },
-	{ label: "Garbage", color: "#a855f7" },
+	{ label: "Masterpiece", color: "#008a92", threshold: 9.7 },
+	{ label: "Awesome", color: "#166534", threshold: 9 },
+	{ label: "Great", color: "#22c55e", threshold: 8 },
+	{ label: "Good", color: "#F4D03F", threshold: 7.5 },
+	{ label: "Regular", color: "#F39C13", threshold: 6 },
+	{ label: "Bad", color: "#ef4444", threshold: 4 },
+	{ label: "Garbage", color: "#a855f7", threshold: 0 },
 ];
 
 export const chartConfig = {
@@ -112,9 +116,11 @@ export default function RatingsDisplay({
 	entryType = "anime",
 	fetchingMethod,
 	episodeCount,
+	dataSource,
 	isOnePieceOnly,
 }: RatingsDisplayProps) {
 	const isLongAnime = results.length > 80;
+	const entryTitle = animeInfo?.titles.find((title) => title.type === "Default")?.title ?? animeInfo?.title ?? "";
 	const nbOfTicks =
 		results.length > 1000
 			? 50
@@ -138,7 +144,7 @@ export default function RatingsDisplay({
 		filterFillerAndRecap: "show",
 		filterBelowScore: { score: "", type: "highlight" },
 		showTrendLine: false,
-		ratingDisplayFormat: "2decimal",
+		ratingDisplayFormat: dataSource === "mal" ? "2decimal" : "1decimal",
 	});
 
 	const sortedResults = useMemo(() => {
@@ -262,7 +268,7 @@ export default function RatingsDisplay({
 		}));
 	}, [sortedResults, options.ratingDisplayFormat]);
 
-	// Calculate moving average for trend line
+	// Calculate moving average for trendline
 	const trendLineData = useMemo(() => {
 		if (!options.showTrendLine || options.sortBy !== "episodeNb")
 			return chartData;
@@ -433,7 +439,7 @@ export default function RatingsDisplay({
 			: `${currentUrl}?animeId=${animeInfo.mal_id}`;
 
 		const shareData = {
-			text: `Check out the episode ratings for ${animeInfo.titles.find((title) => title.type === "Default")?.title}`,
+			text: `Check out the episode ratings for ${entryTitle}`,
 			url: shareUrl,
 		};
 
@@ -477,6 +483,44 @@ export default function RatingsDisplay({
 		}
 	};
 
+	const entryStats =
+		!animeInfo
+			? []
+			: (dataSource as string) === "imdb"
+				? [
+					{ label: "Episodes", value: animeInfo.episodes },
+					{ label: "Aired", value: animeInfo.aired?.string || animeInfo.year || "-" },
+					{
+						label: "Score",
+						value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
+					},
+				]
+				: [
+					{ label: "Type", value: animeInfo.type },
+					{
+						label: entryType === "anime" ? "Episodes" : "Chapters",
+						value:
+							entryType === "anime"
+								? animeInfo.episodes
+								: animeInfo.chapters || "-",
+					},
+					{ label: "Status", value: animeInfo.status },
+					{
+						label: "Aired",
+						value:
+							entryType === "anime"
+								? animeInfo.aired?.string || "-"
+								: animeInfo.published?.string || "-",
+					},
+					{
+						label: "Score",
+						value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
+					},
+					{ label: "Rank", value: `#${animeInfo.rank}` },
+					{ label: "Popularity", value: `#${animeInfo.popularity}` },
+					{ label: "Members", value: animeInfo.members.toLocaleString("en-US") },
+				];
+
 	return (
 		<>
 			{animeInfo && (
@@ -486,8 +530,7 @@ export default function RatingsDisplay({
 							<Image
 								src={animeInfo.images.webp?.image_url}
 								alt={
-									animeInfo.titles.find((title) => title.type === "Default")
-										?.title || "Entry cover"
+									entryTitle || "Entry cover"
 								}
 								width={100}
 								height={150}
@@ -503,10 +546,7 @@ export default function RatingsDisplay({
 										rel="noopener noreferrer"
 										className="hover:underline"
 									>
-										{
-											animeInfo.titles.find((title) => title.type === "Default")
-												?.title
-										}
+										{entryTitle}
 									</a>
 								</h2>
 								{entryType === "anime" && (
@@ -519,35 +559,8 @@ export default function RatingsDisplay({
 									</button>
 								)}
 							</div>
-							<div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-								{[
-									{ label: "Type", value: animeInfo.type },
-									{
-										label: entryType === "anime" ? "Episodes" : "Chapters",
-										value:
-											entryType === "anime"
-												? animeInfo.episodes
-												: animeInfo.chapters || "-",
-									},
-									{ label: "Status", value: animeInfo.status },
-									{
-										label: "Aired",
-										value:
-											entryType === "anime"
-												? animeInfo.aired?.string
-												: animeInfo.published?.string || "-",
-									},
-									{
-										label: "Score",
-										value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
-									},
-									{ label: "Rank", value: `#${animeInfo.rank}` },
-									{ label: "Popularity", value: `#${animeInfo.popularity}` },
-									{
-										label: "Members",
-										value: animeInfo.members.toLocaleString("en-US"),
-									},
-								].map(({ label, value }) => (
+							<div className={cn("grid gap-2 text-sm", dataSource === "mal" ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1")}>
+								{entryStats.map(({ label, value }) => (
 									<p key={label}>
 										<span className="font-semibold">{label}:</span> {value}
 									</p>
@@ -563,21 +576,36 @@ export default function RatingsDisplay({
 				hasZeroValues={hasZeroValues("all")}
 				hasRecapOrFiller={hasRecapOrFiller()}
 				entryType={entryType}
+				dataSource={dataSource}
 			/>
 			{options.viewMode === "wrapped" ? (
 				<div>
 					{/* Legend */}
-					<div className="flex flex-wrap gap-4 mb-6">
-						{ratingTierLegend.map((tier) => (
-							<div key={tier.label} className="flex items-center gap-2">
-								<div
-									className="w-3 h-3 rounded-full"
-									style={{ backgroundColor: tier.color }}
-								/>
-								<span className="text-sm text-gray-600">{tier.label}</span>
-							</div>
-						))}
-					</div>
+					<TooltipProvider>
+						<div className="flex flex-wrap gap-4 mb-6">
+							{ratingTierLegend.map((tier) => {
+								const thresholdText = tier.label === "Garbage"
+									? "< 4.0"
+									: `≥ ${tier.threshold.toFixed(1)}`;
+								return (
+									<Tooltip key={tier.label}>
+										<TooltipTrigger asChild>
+											<div className="flex items-center gap-2">
+												<div
+													className="w-3 h-3 rounded-full"
+													style={{ backgroundColor: tier.color }}
+												/>
+												<span className="text-sm text-gray-600">{tier.label}</span>
+											</div>
+										</TooltipTrigger>
+										<TooltipContent>
+											<p>Score: {thresholdText}</p>
+										</TooltipContent>
+									</Tooltip>
+								);
+							})}
+						</div>
+					</TooltipProvider>
 
 					{/* Cards Grid */}
 					<TooltipProvider delayDuration={100}>
@@ -947,7 +975,7 @@ export default function RatingsDisplay({
 								<TableHead className="max-w-[60px]">Forum URL</TableHead>
 								{(fetchingMethod === "cheerioParser" ||
 									(isOnePieceOnly && entryType === "manga")) && (
-										<TableHead className="min-w-[200px]">Rating</TableHead>
+										<TableHead className="min-w-[200px]">Ratings distribution</TableHead>
 									)}
 							</TableRow>
 						</TableHeader>
@@ -1062,7 +1090,7 @@ export default function RatingsDisplay({
 					{[
 						{
 							type: options.visibleRatingInfo.ratingAllStars,
-							label: "Average ratings",
+							label: `Average ${entryType === "anime" ? "episodes" : "chapters"} ratings`,
 							value: avgRatingAllStars,
 							key: "ratingAllStars",
 						},

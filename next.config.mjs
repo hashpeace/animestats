@@ -3,14 +3,20 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: 'https',
-				hostname: 'cdn.myanimelist.net',
-				port: '',
-				pathname: '/images/**',
+				protocol: "https",
+				hostname: "cdn.myanimelist.net",
+				port: "",
+				pathname: "/images/**",
+			},
+			{
+				protocol: "https",
+				hostname: "m.media-amazon.com",
+				port: "",
+				pathname: "/images/**",
 			},
 		],
 	},
-	reactStrictMode: false
+	reactStrictMode: false,
 };
 
 export default nextConfig;
