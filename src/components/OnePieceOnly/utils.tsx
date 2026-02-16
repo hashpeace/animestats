@@ -18218,3 +18218,74 @@ export const onePieceEpisodes = [
 		forum_url: "https://myanimelist.net/forum/?topicid=2213193"
 	}
 ]
+
+
+
+const LAST_STATIC_EPISODE = 1128;
+
+export const fetchLatestOnePieceEpisodes = async (): Promise<EpisodeInfos[]> => {
+	const staticEpisodes = onePieceEpisodes as EpisodeInfos[];
+
+	try {
+		const startPage = Math.ceil(LAST_STATIC_EPISODE / 100);
+		let currentPage = startPage;
+		let lastVisiblePage = startPage;
+		let newEpisodes: EpisodeInfos[] = [];
+
+		do {
+			const response = await fetch(
+				`https://api.jikan.moe/v4/anime/21/episodes?page=${currentPage}`,
+			);
+			if (!response.ok) break;
+
+			const data = await response.json();
+			lastVisiblePage = data.pagination.last_visible_page;
+
+			const mapped = data.data
+				.filter(
+					(ep: { mal_id: number; score: number | null }) =>
+						ep.mal_id > LAST_STATIC_EPISODE && ep.score !== null,
+				)
+				.map(
+					(ep: {
+						mal_id: number;
+						url: string;
+						title: string;
+						title_japanese: string;
+						title_romanji: string;
+						aired: string;
+						score: number;
+						filler: boolean;
+						recap: boolean;
+						forum_url: string;
+					}) => ({
+						...ep,
+						episodeNb: ep.mal_id,
+						ratingFiveStars: Number.parseFloat(
+							(ep.score * 20).toFixed(2),
+						),
+						forumTopicUrl: ep.forum_url
+							? `${ep.forum_url}&pollresults=1`
+							: "",
+						ratingAllStars: Number.parseFloat(
+							(ep.score * 20).toFixed(2),
+						),
+						nbOfVotes: 0,
+					}),
+				);
+
+			newEpisodes = newEpisodes.concat(mapped);
+			currentPage++;
+
+			// Respect Jikan rate limit (3 req/s)
+			if (currentPage <= lastVisiblePage) {
+				await new Promise((r) => setTimeout(r, 350));
+			}
+		} while (currentPage <= lastVisiblePage);
+
+		return [...staticEpisodes, ...newEpisodes];
+	} catch (err) {
+		console.warn("Failed to fetch latest One Piece episodes:", err);
+		return staticEpisodes;
+	}
+};

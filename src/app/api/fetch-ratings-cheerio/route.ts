@@ -28,6 +28,7 @@ export async function GET(request: Request) {
 		const animeId = searchParams.get("animeId")
 		const episodeCount = searchParams.get("episodeCount")
 		const type = searchParams.get("type") || "anime"
+		const startAfter = searchParams.get("startAfter") ? Number.parseInt(searchParams.get("startAfter")!) : null
 		const forumUrl = `https://myanimelist.net/forum/?${type}id=${animeId}&topic=episode`
 		console.log("Fetching initial pages:", forumUrl)
 
@@ -74,9 +75,14 @@ export async function GET(request: Request) {
 
 		console.log(`Found ${pollLinks.length} poll links`)
 
+		// If startAfter is provided, skip episodes/chapters we already have statically
+		const filteredPollLinks = startAfter
+			? pollLinks.filter(link => link.episodeNb > startAfter)
+			: pollLinks
+
 		// Calculate average fetch time for a sample of episodes
-		for (let i = 0; i < Math.min(sampleSize, pollLinks.length); i++) {
-			const { forumTopicUrl } = pollLinks[i]
+		for (let i = 0; i < Math.min(sampleSize, filteredPollLinks.length); i++) {
+			const { forumTopicUrl } = filteredPollLinks[i]
 			const startTime = performance.now()
 			await axios.get(forumTopicUrl, fetchParams)
 			const endTime = performance.now()
@@ -84,7 +90,7 @@ export async function GET(request: Request) {
 		}
 
 		// Limit the number of episodes if episodeCount is provided
-		const limitedPollLinks = episodeCount ? pollLinks.slice(0, Number.parseInt(episodeCount)) : pollLinks
+		const limitedPollLinks = episodeCount ? filteredPollLinks.slice(0, Number.parseInt(episodeCount)) : filteredPollLinks
 
 		const averageFetchTime = fetchTimes.reduce((a, b) => a + b, 0) / fetchTimes.length
 		const estimatedTotalTime = (averageFetchTime * limitedPollLinks.length) / 1000 // in seconds

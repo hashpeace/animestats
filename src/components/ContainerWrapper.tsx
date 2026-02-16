@@ -1,27 +1,23 @@
-"use client"
+"use client";
 
-import { useContainerContext } from "@/contexts/ContainerContext"
-import { usePathname } from "next/navigation"
-import { ReactNode } from "react"
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+import { useContainerContext } from "@/contexts/ContainerContext";
 
 interface ContainerWrapperProps {
-	children: ReactNode
+	children: ReactNode;
 }
 
 export default function ContainerWrapper({ children }: ContainerWrapperProps) {
-	const { useContainer } = useContainerContext()
-	const pathname = usePathname()
-	const authorizedPathnames = ["/episodes", "/onepiece"]
-	const isAuthorizedPathname = authorizedPathnames.includes(pathname)
+	const { useContainer } = useContainerContext();
+	const pathname = usePathname();
+	const authorizedPathnames = ["/episodes", "/onepiece"];
+	const isAuthorizedPathname = authorizedPathnames.includes(pathname);
 
 	return (
-		<div className={`${!isAuthorizedPathname || useContainer ? "container" : "w-full"} mx-auto`}>
-			{/* <div className="md:bg-white/90 md:backdrop-blur-sm md:shadow-xl md:rounded-xl overflow-hidden"> */}
-			<div className="md:bg-white/90 md:backdrop-blur-sm md:shadow-xl md:rounded-xl">
-				<div className="px-2 sm:px-6 py-8 md:px-8 lg:px-12 min-h-[calc(100vh-105px)]">
-					{children}
-				</div>
-			</div>
-		</div>
-	)
-} 
+		<main className={`${!isAuthorizedPathname || useContainer ? "container xl:px-0" : "w-full"} mx-auto px-3 md:px-4 pt-4 pb-16`}>
+			{/* <main className={`${useContainer ? "container xl:px-0" : "w-full"} mx-auto px-3 md:px-4 pt-4 pb-16`}> */}
+			{children}
+		</main>
+	);
+}

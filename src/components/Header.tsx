@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Menu, Settings } from "lucide-react";
+import { Github, Menu, Settings, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,28 +13,14 @@ import {
 	DialogTitle,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import {
-	NavigationMenu,
-	NavigationMenuItem,
-	NavigationMenuLink,
-	NavigationMenuList,
-	navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "@/components/ui/select";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Switch } from "@/components/ui/switch";
 import { useContainerContext } from "@/contexts/ContainerContext";
 import { useFetchingMethodContext } from "@/contexts/FetchingMethodContext";
 import { cn } from "@/lib/utils";
 
 const Header = () => {
 	const currentPath = usePathname();
-	const [isSheetOpen, setIsSheetOpen] = useState(false);
+	const [isMobileOpen, setIsMobileOpen] = useState(false);
 	const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 	const { useContainer, setUseContainer } = useContainerContext();
 	const { fetchingMethod, setFetchingMethod } = useFetchingMethodContext();
@@ -42,132 +28,122 @@ const Header = () => {
 	const navigationItems = [
 		{ href: "/episodes", label: "Episode Ratings" },
 		{ href: "/weekly-rankings", label: "Weekly Rankings" },
-		// { href: "/onepiece", label: "One Piece" },
 		{ href: "/about", label: "About" },
 	];
 
-	const handleNavLinkClick = () => setIsSheetOpen(false);
-
 	return (
-		<header className="bg-white/90 w-full shadow-md">
-			<div className="container mx-auto max-md:px-4 py-4">
-				<div className="flex items-center justify-between">
-					<div className="flex items-center gap-6">
-						{/* Logo */}
-						<div className="flex items-center">
-							<Link href="/" className="flex items-center space-x-2">
+		<>
+			<header
+				className="sticky top-0 z-50 w-full bg-white border-b border-gray-200"
+			>
+				<div className="container mx-auto px-3 md:px-4 xl:px-0">
+					<div className="flex items-center justify-between h-14">
+						<div className="flex items-center gap-16">
+							{/* Left: Logo */}
+							<Link
+								href="/"
+								className="flex items-center gap-2.5 "
+							>
 								<Image
 									src="/logo.png"
 									alt="Anime stats"
-									width={32}
-									height={32}
+									width={28}
+									height={28}
 								/>
-								<span className="text-xl font-bold text-gray-900">
-									Anime stats
+								<span className="text-[15px] font-extrabold text-gray-900 tracking-tight">
+									Anime Stats
 								</span>
 							</Link>
+
+							{/* Center: Desktop nav */}
+							<nav className="hidden md:flex items-center gap-6">
+								{navigationItems.map((item) => {
+									const isActive = currentPath === item.href;
+									return (
+										<Link
+											key={item.href}
+											href={item.href}
+											className={cn(
+												"text-[13px] font-medium transition-colors duration-150",
+												isActive
+													? "text-gray-900"
+													: "text-gray-400 hover:text-gray-700",
+											)}
+										>
+											{item.label}
+										</Link>
+									);
+								})}
+							</nav>
 						</div>
 
-						{/* Desktop Navigation */}
-						<div className="hidden md:block">
-							<NavigationMenu>
-								<NavigationMenuList>
-									{navigationItems.map((item) => (
-										<NavigationMenuItem key={item.href}>
-											<Link href={item.href} legacyBehavior passHref>
-												<NavigationMenuLink
-													className={cn(
-														navigationMenuTriggerStyle(),
-														currentPath === item.href &&
-														"bg-accent text-accent-foreground",
-													)}
-												>
-													{item.label}
-												</NavigationMenuLink>
-											</Link>
-										</NavigationMenuItem>
-									))}
-								</NavigationMenuList>
-							</NavigationMenu>
-						</div>
-					</div>
+						{/* Right: actions */}
+						<div className="flex items-center gap-1">
+							<button
+								onClick={() => setIsSettingsOpen(true)}
+								className="hidden md:flex items-center justify-center w-8 h-8 rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+								aria-label="Settings"
+							>
+								<Settings className="w-[18px] h-[18px]" />
+							</button>
 
-					{/* Right side - Settings, GitHub icon and mobile menu */}
-					<div className="flex items-center space-x-4">
-						{/* Settings Icon */}
-						<button
-							onClick={() => setIsSettingsOpen(true)}
-							className="p-2 rounded-md hover:bg-gray-100 transition-colors max-md:hidden"
-							aria-label="Settings"
-						>
-							<Settings className="h-5 w-5 text-gray-600" />
-						</button>
-
-						{/* GitHub Icon */}
-						<a
-							href="https://github.com/hashpeace/animestats"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="p-2 rounded-md hover:bg-gray-100 transition-colors max-md:hidden"
-							aria-label="GitHub"
-						>
-							<Github className="h-5 w-5 text-gray-600" />
-						</a>
-
-						{/* Mobile Menu */}
-						<div className="md:hidden">
-							<Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-								<SheetTrigger asChild>
-									<button
-										className="p-2 rounded-md bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-colors"
-										aria-label="Toggle menu"
-									>
-										<Menu className="h-5 w-5 text-gray-600" />
-									</button>
-								</SheetTrigger>
-								<SheetContent side="left" className="w-80 px-2">
-									<div className="mt-6">
-										{navigationItems.map((item) => (
-											<Link
-												key={item.href}
-												href={item.href}
-												onClick={handleNavLinkClick}
-												className={cn(
-													"block px-4 py-3 text-sm font-medium transition-colors hover:bg-gray-50 rounded-md",
-													currentPath === item.href
-														? "bg-accent text-accent-foreground"
-														: "text-gray-700",
-												)}
-											>
-												{item.label}
-											</Link>
-										))}
-										{/* Settings Icon */}
-										<button
-											onClick={() => setIsSettingsOpen(true)}
-											className="px-4 py-3 rounded-md hover:bg-gray-100 transition-colors"
-											aria-label="Settings"
-										>
-											<Settings className="h-5 w-5 text-gray-600" />
-										</button>
-
-										{/* GitHub Icon */}
-										<a
-											href="https://github.com/hashpeace/animestats"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="px-4 block py-3 rounded-md hover:bg-gray-100 transition-colors"
-											aria-label="GitHub"
-										>
-											<Github className="h-5 w-5 text-gray-600" />
-										</a>
-									</div>
-								</SheetContent>
-							</Sheet>
+							{/* Mobile toggle */}
+							<button
+								onClick={() => setIsMobileOpen(!isMobileOpen)}
+								className="md:hidden flex items-center justify-center w-9 h-9 rounded-full text-gray-500 hover:bg-gray-100 transition-colors"
+								aria-label="Toggle menu"
+							>
+								{isMobileOpen ? (
+									<X className="w-5 h-5" />
+								) : (
+									<Menu className="w-5 h-5" />
+								)}
+							</button>
 						</div>
 					</div>
 				</div>
-			</div>
+
+				{/* Mobile nav dropdown */}
+				<div
+					className={cn(
+						"md:hidden overflow-hidden transition-all duration-300 ease-in-out",
+						isMobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0",
+					)}
+				>
+					<div className="px-4 pb-4 pt-1 space-y-1 bg-white/90 backdrop-blur-xl border-t border-gray-100">
+						{navigationItems.map((item) => {
+							const isActive = currentPath === item.href;
+							return (
+								<Link
+									key={item.href}
+									href={item.href}
+									onClick={() => setIsMobileOpen(false)}
+									className={cn(
+										"block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
+										isActive
+											? "bg-gray-100 text-gray-900"
+											: "text-gray-500 hover:bg-gray-50 hover:text-gray-900",
+									)}
+								>
+									{item.label}
+								</Link>
+							);
+						})}
+						<div className="flex items-center gap-2 pt-2 border-t border-gray-100 mt-2">
+							<button
+								onClick={() => {
+									setIsSettingsOpen(true);
+									setIsMobileOpen(false);
+								}}
+								className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+							>
+								<Settings className="w-4 h-4" />
+								Settings
+							</button>
+						</div>
+					</div>
+				</div>
+			</header>
 
 			{/* Settings Modal */}
 			<Dialog open={isSettingsOpen} onOpenChange={setIsSettingsOpen}>
@@ -175,86 +151,47 @@ const Header = () => {
 					<DialogHeader>
 						<DialogTitle>Settings</DialogTitle>
 					</DialogHeader>
-					<div className="flex flex-col gap-4 mt-4">
-						<div className="flex flex-col">
-							<Label htmlFor="container-select">Page width</Label>
-							<Select
-								value={useContainer ? "true" : "false"}
-								onValueChange={(value) => {
-									setUseContainer(value === "true");
-									posthog.capture("option_panel_event", {
-										option: "use_container",
-										value: value,
-									});
-								}}
-							>
-								<SelectTrigger className="w-full focus:ring-offset-1 focus:ring-2 bg-white">
-									<SelectValue placeholder="Select container option" />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value="true">Normal</SelectItem>
-									<SelectItem value="false">Full</SelectItem>
-								</SelectContent>
-							</Select>
+					<div className="flex flex-col gap-8 mt-4">
+						<div className="flex flex-col gap-1">
+							<Label>Page width</Label>
+							<div className="flex items-center gap-3">
+								<span className={cn("text-sm", useContainer ? "font-semibold text-gray-900" : "text-gray-500")}>Normal</span>
+								<Switch
+									checked={!useContainer}
+									onCheckedChange={(checked) => {
+										setUseContainer(!checked);
+										posthog.capture("option_panel_event", {
+											option: "use_container",
+											value: !checked ? "true" : "false",
+										});
+									}}
+								/>
+								<span className={cn("text-sm", !useContainer ? "font-semibold text-gray-900" : "text-gray-500")}>Full</span>
+							</div>
 						</div>
-						<div className="flex flex-col">
-							<Label htmlFor="fetching-method-select">Fetching method</Label>
-							<Select
-								value={fetchingMethod}
-								onValueChange={(value) => {
-									setFetchingMethod(value as "jikanOnly" | "cheerioParser");
-									posthog.capture("option_panel_event", {
-										option: "fetching_method",
-										value: value,
-									});
-								}}
-							>
-								<SelectTrigger className="w-full focus:ring-offset-1 focus:ring-2 bg-white">
-									<SelectValue placeholder="Select fetcher mode" />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value="jikanOnly">Simple</SelectItem>
-									<SelectItem value="cheerioParser">Detailed</SelectItem>
-								</SelectContent>
-							</Select>
+						<div className="flex flex-col gap-1">
+							<Label>Fetching method</Label>
+							<div className="flex items-center gap-3">
+								<span className={cn("text-sm", fetchingMethod === "jikanOnly" ? "font-semibold text-gray-900" : "text-gray-500")}>Simple</span>
+								<Switch
+									checked={fetchingMethod === "cheerioParser"}
+									onCheckedChange={(checked) => {
+										const value = checked ? "cheerioParser" : "jikanOnly";
+										setFetchingMethod(value);
+										posthog.capture("option_panel_event", {
+											option: "fetching_method",
+											value: value,
+										});
+									}}
+								/>
+								<span className={cn("text-sm", fetchingMethod === "cheerioParser" ? "font-semibold text-gray-900" : "text-gray-500")}>Detailed</span>
+							</div>
 						</div>
 					</div>
 				</DialogContent>
 			</Dialog>
-		</header>
+		</>
 	);
 };
-
-const ListItem = React.forwardRef<
-	React.ElementRef<"a">,
-	React.ComponentPropsWithoutRef<"a"> & {
-		title: string;
-		href: string;
-		currentPath: string;
-	}
->(({ className, title, children, href, currentPath, ...props }, ref) => {
-	const isActive = currentPath === href;
-
-	return (
-		<NavigationMenuLink asChild>
-			<Link
-				ref={ref}
-				href={href}
-				className={cn(
-					"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-					isActive && "bg-accent text-accent-foreground",
-					className,
-				)}
-				{...props}
-			>
-				<div className="text-sm font-semibold leading-none">{title}</div>
-				<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-					{children}
-				</p>
-			</Link>
-		</NavigationMenuLink>
-	);
-});
-ListItem.displayName = "ListItem";
 
 export default Header;

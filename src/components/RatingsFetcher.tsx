@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation"; // Import the useSearchParams hook and useRouter
 import posthog from "posthog-js";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { onePieceEpisodes } from "@/components/OnePieceOnly/utils";
-import { onePieceChapters } from "@/components/OnePieceOnly/utils2";
+import { fetchLatestOnePieceEpisodes, onePieceEpisodes } from "@/components/OnePieceOnly/utils";
+import { fetchLatestOnePieceChapters, onePieceChapters } from "@/components/OnePieceOnly/utils2";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import SuggestedAnimeCards from "@/components/SuggestedAnimeCards";
 import {
@@ -22,9 +22,9 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { useFetchingMethodContext } from "@/contexts/FetchingMethodContext";
 import { fetchRatings } from "@/lib/fetchRatings";
 import { isProduction } from "@/lib/utils";
-import { useFetchingMethodContext } from "@/contexts/FetchingMethodContext";
 import type {
 	AnimeInfo,
 	EpisodeInfos,
@@ -71,7 +71,8 @@ export default function RatingsFetcher({
 		useState(true);
 	const [debouncedQuery, setDebouncedQuery] = useState(""); // State for debounced query
 
-	const cheerioParsingMethod = isProduction ? "axios" : "api-route";
+	// const cheerioParsingMethod = isProduction ? "axios" : "api-route";
+	const cheerioParsingMethod = "axios"
 	const inputRef = useRef(null); // Ref for the input element
 	const searchresultRef = useRef(null); // Ref for the input element
 	const initialInputValue = useRef(animeInput); // Store the initial input value
@@ -144,13 +145,20 @@ export default function RatingsFetcher({
 			const animeInfoData = await animeInfoResponse.json();
 			setAnimeInfo(animeInfoData.data);
 		};
+
 		if (isOnePieceOnly) {
 			if (entryType === "anime") {
-				setResults(onePieceEpisodes as EpisodeInfos[]);
 				setEntryType("anime");
+				setResults(onePieceEpisodes as EpisodeInfos[]);
+				fetchLatestOnePieceEpisodes().then((results) => {
+					setResults(results);
+				});
 			} else {
-				setResults(onePieceChapters);
 				setEntryType("manga");
+				setResults(onePieceChapters as EpisodeInfos[]);
+				fetchLatestOnePieceChapters().then((results) => {
+					setResults(results);
+				});
 			}
 			fetchOnePieceJikanData();
 		}
@@ -649,7 +657,7 @@ export default function RatingsFetcher({
 					const animeStatuses = ["Currently Airing", "Finished Airing"];
 					const mangaStatuses = ["Publishing", "Finished"];
 					const response = await fetch(
-						`https://api.jikan.moe/v4/${entryType}?q=${query}&limit=10`,
+						`https://api.jikan.moe/v4/${entryType}?q=${query}&limit=10&sfw`,
 					);
 					const data = await response.json();
 					setSearchResults(
@@ -981,7 +989,10 @@ export default function RatingsFetcher({
 					</SelectContent>
 				</Select>
 			)}
-			{results.length === 0 && !loading && dataSource === "mal" && <SuggestedAnimeCards />}
+			{results.length === 0 &&
+				!loading &&
+				dataSource === "mal" &&
+				!isOnePieceOnly && <SuggestedAnimeCards />}
 			{results.length > 0 && (
 				<RatingsDisplay
 					results={results as EpisodeInfos[]}

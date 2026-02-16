@@ -1154,25 +1154,7 @@ export default function WeeklyRatings() {
 							Next Week →
 						</button>
 					</div>
-					<div className="flex flex-col gap-2 mb-4 shadow-md p-2 md:p-3 rounded-lg w-fit">
-						<h3 className="text-base font-semibold">Season Average</h3>
-						{seasonAverageEpisodesScore !== null && (
-							<div className="flex items-center gap-2">
-								<div className="bg-yellow-300 text-black px-2 py-1 text-xs font-bold rounded-lg flex items-center">
-									<span className="mr-1">★</span>
-									{seasonAverageEpisodesScore}/5
-								</div>
-								<span className="text-sm text-gray-600">Episode Scores</span>
-							</div>
-						)}
-						<div className="flex items-center gap-2">
-							<div className="bg-green-300 text-black px-2 py-1 text-xs font-bold rounded-lg flex items-center">
-								<span className="mr-1">★</span>
-								{seasonAverageAnimesScore}/10
-							</div>
-							<span className="text-sm text-gray-600">Anime Scores</span>
-						</div>
-					</div>
+					<hr className="my-4" />
 					<p className="text-sm text-gray-600 mb-4">
 						{sortedAnimeList.length} animes found
 					</p>
@@ -1464,6 +1446,25 @@ export default function WeeklyRatings() {
 					);
 				})}
 			</div>
+			<div className="flex flex-col gap-2 shadow-md p-2 md:p-3 rounded-lg w-fit mt-8">
+				<h3 className="text-base font-semibold">Season Average</h3>
+				{seasonAverageEpisodesScore !== null && (
+					<div className="flex items-center gap-2">
+						<div className="bg-yellow-300 text-black px-2 py-1 text-xs font-bold rounded-lg flex items-center">
+							<span className="mr-1">★</span>
+							{seasonAverageEpisodesScore}/5
+						</div>
+						<span className="text-sm text-gray-600">Episode Scores</span>
+					</div>
+				)}
+				<div className="flex items-center gap-2">
+					<div className="bg-green-300 text-black px-2 py-1 text-xs font-bold rounded-lg flex items-center">
+						<span className="mr-1">★</span>
+						{seasonAverageAnimesScore}/10
+					</div>
+					<span className="text-sm text-gray-600">Anime Scores</span>
+				</div>
+			</div>
 			{/* Add the Weekly Score Chart */}
 			{sortedAnimeList.length > 0 && (
 				<WeeklyScoreChart
@@ -1476,7 +1477,7 @@ export default function WeeklyRatings() {
 			)}
 
 			{sortedAnimeList.length > 0 && (
-				<div className="mb-6">
+				<div className="my-6">
 					<h3 className="text-xl font-semibold mb-3">
 						Highest Scored Episodes This Season
 					</h3>

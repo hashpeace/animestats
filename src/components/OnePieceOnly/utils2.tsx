@@ -1,4 +1,4 @@
-import type { EpisodeInfos } from "@/types/All"
+import type { EpisodeInfos, ParserEpisodeInfos } from "@/types/All"
 
 // Using this to get chapter titles https://listfist.com/list-of-one-piece-manga-chapters
 
@@ -19559,3 +19559,50 @@ export const onePieceChapters = [
 		"score": 4.51
 	}
 ]
+
+const LAST_STATIC_CHAPTER = 1143;
+
+export const fetchLatestOnePieceChapters = async (): Promise<EpisodeInfos[]> => {
+	const staticChapters = onePieceChapters as EpisodeInfos[];
+
+	try {
+		const response = await fetch(
+			`/api/fetch-ratings-cheerio?animeId=13&type=manga&startAfter=${LAST_STATIC_CHAPTER}`,
+		);
+
+		if (!response.ok) {
+			console.warn("Failed to fetch latest One Piece chapters");
+			return staticChapters;
+		}
+
+		const reader = response.body?.getReader();
+		if (!reader) return staticChapters;
+
+		let newChapters: ParserEpisodeInfos[] = [];
+
+		while (true) {
+			const { done, value } = await reader.read();
+			if (done) break;
+
+			const chunk = new TextDecoder().decode(value);
+			try {
+				const data = JSON.parse(chunk);
+				if (data.episodesStats) {
+					newChapters = data.episodesStats.filter(
+						(ch: ParserEpisodeInfos) => ch.episodeNb > LAST_STATIC_CHAPTER,
+					);
+				}
+			} catch {
+				// Chunk might be partial JSON (estimatedTotalTime), skip
+			}
+		}
+
+		if (newChapters.length > 0) {
+			return [...staticChapters, ...(newChapters as EpisodeInfos[])];
+		}
+		return staticChapters;
+	} catch (err) {
+		console.warn("Failed to fetch latest One Piece chapters:", err);
+		return staticChapters;
+	}
+};

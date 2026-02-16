@@ -1,4 +1,4 @@
-import { ChevronDown, ExternalLink, LoaderCircle, Share2 } from "lucide-react";
+import { ChevronDown, ExternalLink, InfoIcon, LoaderCircle, Share2 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -72,6 +72,8 @@ const getRatingTier = (
 		return { label: "Regular", color: "#F39C13", textColor: "#4e4444" };
 	if (roundedValue >= 4)
 		return { label: "Bad", color: "#ef4444", textColor: "#ffffff" };
+	if (roundedValue === 0 || roundedValue === null)
+		return { label: "Unrated", color: "#6b7280", textColor: "#ffffff" };
 	return { label: "Garbage", color: "#a855f7", textColor: "#ffffff" };
 };
 
@@ -173,6 +175,10 @@ export default function RatingsDisplay({
 				let currentSaga = "";
 				let currentArc = "";
 				if (isOnePieceOnly) {
+					setOptions((prevOptions) => ({
+						...prevOptions,
+						viewMode: "wrapped",
+					}));
 					const sagas =
 						entryType === "manga"
 							? onePieceSagasChapters(results)
@@ -397,8 +403,7 @@ export default function RatingsDisplay({
 		}));
 	};
 
-	const hasRecapOrFiller = () =>
-		results.some((result) => result.recap || result.filler);
+	const hasRecapOrFiller = () => results.some((result) => result.recap || result.filler);
 
 	const hasZeroValues = (type: "ratingFiveStars" | "ratingAllStars" | "all") =>
 		results.some((r) =>
@@ -524,17 +529,18 @@ export default function RatingsDisplay({
 	return (
 		<>
 			{animeInfo && (
-				<div className="mb-4 p-2 sm:p-4 bg-gray-100 rounded-lg">
-					<div className="flex flex-col sm:flex-row items-start">
+				<div className="mb-4 p-2 sm:p-4 border border-gray-200 rounded-lg w-fit bg-gray-50/50">
+					{/* <div className="flex flex-col sm:flex-row items-start"> */}
+					<div className="flex flex-row items-start gap-4 max-md:mb-4">
 						{animeInfo.images?.webp?.image_url && (
 							<Image
 								src={animeInfo.images.webp?.image_url}
 								alt={
 									entryTitle || "Entry cover"
 								}
-								width={100}
-								height={150}
-								className="rounded-lg shadow-md mb-4 sm:mb-0 sm:mr-4"
+								width={130}
+								height={180}
+								className="rounded-lg shadow-md flex-none max-md:w-[100px] max-md:h-[140px]"
 							/>
 						)}
 						<div className="flex-grow w-full">
@@ -559,7 +565,7 @@ export default function RatingsDisplay({
 									</button>
 								)}
 							</div>
-							<div className={cn("grid gap-2 text-sm", dataSource === "mal" ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1")}>
+							<div className={cn("grid gap-2 text-sm max-md:hidden", dataSource === "mal" ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1")}>
 								{entryStats.map(({ label, value }) => (
 									<p key={label}>
 										<span className="font-semibold">{label}:</span> {value}
@@ -567,6 +573,13 @@ export default function RatingsDisplay({
 								))}
 							</div>
 						</div>
+					</div>
+					<div className={cn("grid gap-2 text-sm md:hidden", dataSource === "mal" ? "max-[400px]:grid-cols-1 grid-cols-2 max-[380px]:grid-rows-2" : "grid-cols-1")}>
+						{entryStats.map(({ label, value }) => (
+							<p key={label}>
+								<span className="font-semibold">{label}:</span> {value}
+							</p>
+						))}
 					</div>
 				</div>
 			)}
@@ -580,10 +593,15 @@ export default function RatingsDisplay({
 			/>
 			{options.viewMode === "wrapped" ? (
 				<div>
-					{/* Legend */}
+					{/* Legend - only show tiers present in results */}
 					<TooltipProvider>
 						<div className="flex flex-wrap gap-4 mb-6">
-							{ratingTierLegend.map((tier) => {
+							{ratingTierLegend.filter((tier) => {
+								return sortedResults.some((result) => {
+									const resultTier = getRatingTier(result.ratingAllStars, options.ratingDisplayFormat);
+									return resultTier.label === tier.label;
+								});
+							}).map((tier) => {
 								const thresholdText = tier.label === "Garbage"
 									? "< 4.0"
 									: `≥ ${tier.threshold.toFixed(1)}`;
@@ -1109,24 +1127,28 @@ export default function RatingsDisplay({
 									<dt className="text-sm font-medium text-gray-500">
 										{item.label}
 									</dt>
-									{hasZeroValues(
-										item.key as "ratingFiveStars" | "ratingAllStars" | "all",
-									) ? (
-										<p className="text-sm italic mt-1">
-											Can&apos;t calculate exact average, because some episodes
-											are not rated.
-											{item.value !== undefined &&
-												(item.isPercentage
-													? ` But for the available episodes, the average is ${Number(item.value).toFixed(1)}%`
-													: ` But for the available episodes, the average is ${formatRating(Number(item.value), options.ratingDisplayFormat)}/10`)}
-										</p>
-									) : (
+									<div className="flex items-center gap-2">
 										<dd className="mt-1 text-md font-semibold tracking-tight text-gray-900">
 											{item.isPercentage
 												? `${Number(item.value).toFixed(1)}%`
 												: `${formatRating(Number(item.value), options.ratingDisplayFormat)}/10`}
 										</dd>
-									)}
+										{hasZeroValues(item.key as "ratingFiveStars" | "ratingAllStars" | "all") && (
+											<div className="flex items-center mt-1">
+												<Tooltip>
+													<TooltipTrigger asChild>
+														<InfoIcon className="size-4 text-red-500" />
+													</TooltipTrigger>
+													<TooltipContent side="top">
+														<span>
+															Can&apos;t calculate exact average, because some episodes
+															are not rated. But for the available episodes, that is the average.
+														</span>
+													</TooltipContent>
+												</Tooltip>
+											</div>
+										)}
+									</div>
 								</div>
 							),
 					)}

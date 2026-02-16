@@ -75,7 +75,8 @@ export default function RatingsDisplayOptions({
 	};
 
 	return (
-		<div className="mb-4 p-2 sm:p-4 pt-3 rounded-md bg-gray-100">
+		// <div className="border-b border-gray-200 pb-4">
+		<div className="pb-6 pt-2">
 			<div className="flex gap-3 items-start flex-wrap">
 				<div className="flex flex-col">
 					<Label htmlFor="sort-select" className="mr-2">
