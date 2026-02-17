@@ -142,7 +142,6 @@ export default function RatingsDisplayOptions({
 
 				<Button
 					variant="outline"
-					size="sm"
 					onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
 					className="self-end"
 				>
@@ -232,8 +231,7 @@ export default function RatingsDisplayOptions({
 					)}
 					<div className="flex flex-col">
 						<Label htmlFor="score-filter">
-							Filter {entryType === "anime" ? "episodes" : "chapters"} below
-							rating
+							Filter {entryType === "anime" ? "episodes" : "chapters"} below rating
 						</Label>
 						<div className="flex gap-1">
 							<Select
@@ -267,7 +265,7 @@ export default function RatingsDisplayOptions({
 								min="0"
 								max="10"
 								step="0.1"
-								className="w-[61px] px-2 py-1 rounded border [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+								className="w-[61px] dark:bg-muted px-2 py-1 rounded border [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
 								value={
 									scoreInput ||
 									(options.filterBelowScore?.score

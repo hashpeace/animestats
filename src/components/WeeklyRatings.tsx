@@ -16,16 +16,25 @@ import {
 	DropdownMenuContent,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+	Select,
+	SelectContent,
+	SelectGroup,
+	SelectItem,
+	SelectLabel,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
 import {
 	Tooltip,
 	TooltipContent,
-	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
 import WeeklyScoreChart, {
 	getSeasonStartDate,
 } from "@/components/WeeklyRatings/WeeklyScoreChart";
-
 export interface AnimeItem {
 	mal_id: number;
 	url: string;
@@ -64,7 +73,6 @@ export interface CurrentSeason {
 	year: number;
 	season: string;
 }
-
 export const getEpisodeOfWeekNumber = (
 	episodeData: AnimeItem["episodeData"],
 	thisWeekEpisode: { mal_id: number } | null,
@@ -153,7 +161,7 @@ export default function WeeklyRatings() {
 	);
 	const [currentWeekIndex, setCurrentWeekIndex] = useState<number>(0);
 	const [weeks, setWeeks] = useState<string[]>([]);
-	const [sortBy, setSortBy] = useState<string>("members");
+	const [sortBy, setSortBy] = useState<string>("animeScore");
 	const [showAdditionalInfo, setShowAdditionalInfo] = useState<string[]>([
 		"minimal",
 	]);
@@ -666,10 +674,6 @@ export default function WeeklyRatings() {
 	// 	setCurrentSeason({ year: Number.parseInt(year), season: season.toLowerCase() })
 	// }
 
-	const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		setSortBy(event.target.value);
-	};
-
 	if (loading) {
 		return (
 			<div className="flex justify-center items-center h-screen">
@@ -731,9 +735,12 @@ export default function WeeklyRatings() {
 	};
 
 	const getAnimeSeasonEpisodesNb = (anime: AnimeItem) => {
-		return anime.episodeData?.filter(
-			(episode) => isEpisodeInCurrentSeason(episode) && episode.score !== null,
-		).length || 0;
+		return (
+			anime.episodeData?.filter(
+				(episode) =>
+					isEpisodeInCurrentSeason(episode) && episode.score !== null,
+			).length || 0
+		);
 	};
 
 	const sortAnimeList = (sortBy: string) => {
@@ -892,7 +899,7 @@ export default function WeeklyRatings() {
 				{episodes.map((episode, index) => (
 					<div
 						key={`${episode.mal_id}-${index}`}
-						className="bg-white shadow-md border border-gray-200 rounded-lg flex gap-2 relative"
+						className="bg-background shadow-md border border-border rounded-lg flex gap-2 relative"
 					>
 						<div className="absolute top-0 left-0 bg-gray-700 text-white px-2 py-1 text-xs font-bold rounded-tl-lg rounded-br-lg z-10">
 							#{index + 1}
@@ -948,45 +955,49 @@ export default function WeeklyRatings() {
 		<div className="">
 			<div className="flex items-center gap-2 lg:gap-4 mb-4 flex-wrap">
 				<div className="flex flex-col gap-1">
-					<label htmlFor="anime-type-select">Anime Type</label>
-					<select
-						id="anime-type-select"
-						className="px-2 py-[5px] border border-gray-300 rounded-md"
+					<Label htmlFor="anime-type-select">Anime Type</Label>
+					<Select
 						value={animeTypeFilter}
-						onChange={(e) =>
-							setAnimeTypeFilter(e.target.value as typeof animeTypeFilter)
+						onValueChange={(value) =>
+							setAnimeTypeFilter(value as typeof animeTypeFilter)
 						}
 					>
-						<option value="tv">TV Only</option>
-						<option value="tv_and_continuing">TV + Continuing</option>
-						<option value="tv_and_ona">TV + ONA</option>
-					</select>
+						<SelectTrigger id="anime-type-select" className="w-[180px]">
+							<SelectValue placeholder="Anime type" />
+						</SelectTrigger>
+						<SelectContent>
+							<SelectItem value="tv">TV Only</SelectItem>
+							<SelectItem value="tv_and_continuing">TV + Continuing</SelectItem>
+							<SelectItem value="tv_and_ona">TV + ONA</SelectItem>
+						</SelectContent>
+					</Select>
 				</div>
 				<div className="flex items-center gap-1">
-					{/* Dropdown for seasons */}
 					<div className="flex flex-col gap-1">
-						<label htmlFor="season-select">Season</label>
-						<select
-							id="season-select"
-							className="px-2 py-[5px] border border-gray-300 rounded-md"
+						<Label htmlFor="season-select">Season</Label>
+						<Select
 							value={currentSeason.season}
-							onChange={(e) =>
-								setCurrentSeason({ ...currentSeason, season: e.target.value })
+							onValueChange={(value) =>
+								setCurrentSeason({ ...currentSeason, season: value })
 							}
 						>
-							{getAvailableSeasonsForYear(currentSeason.year).map(
-								(season, index) => (
-									<option key={index} value={season}>
-										{season.charAt(0).toUpperCase() + season.slice(1)}
-									</option>
-								),
-							)}
-						</select>
+							<SelectTrigger id="season-select" className="w-[130px]">
+								<SelectValue placeholder="Season" />
+							</SelectTrigger>
+							<SelectContent>
+								{getAvailableSeasonsForYear(currentSeason.year).map(
+									(season, index) => (
+										<SelectItem key={index} value={season}>
+											{season.charAt(0).toUpperCase() + season.slice(1)}
+										</SelectItem>
+									),
+								)}
+							</SelectContent>
+						</Select>
 					</div>
-					{/* Input for year */}
 					<div className="flex flex-col gap-1">
-						<label htmlFor="year-input">Year</label>
-						<input
+						<Label htmlFor="year-input">Year</Label>
+						<Input
 							id="year-input"
 							type="number"
 							min={new Date().getFullYear() - NUMBER_OF_YEARS_BACK_ALLOWED + 1}
@@ -995,36 +1006,36 @@ export default function WeeklyRatings() {
 							onChange={(e) =>
 								setCurrentSeason({
 									...currentSeason,
-									year: Number(e.target.value),
+									year: Number(e.target.value) || currentSeason.year,
 								})
 							}
-							className="w-20 border border-gray-300 rounded-md px-2 py-1"
+							className="w-20"
 							placeholder="Year"
 						/>
 					</div>
 				</div>
 				<div className="flex items-center gap-3">
 					<div className="flex flex-col gap-1">
-						<label htmlFor="min-score">Min Score</label>
-						<input
+						<Label htmlFor="min-score">Min Score</Label>
+						<Input
 							id="min-score"
 							type="number"
 							value={minScore}
 							step={0.5}
-							onChange={(e) => setMinScore(Number(e.target.value))}
-							className="w-16 border border-gray-300 rounded-md px-2 py-1"
+							onChange={(e) => setMinScore(Number(e.target.value) || 0)}
+							className="w-20"
 							placeholder="Min Score"
 						/>
 					</div>
 					<div className="flex flex-col gap-1">
-						<label htmlFor="min-members">Minimum Members</label>
-						<input
+						<Label htmlFor="min-members">Minimum Members</Label>
+						<Input
 							id="min-members"
 							type="number"
 							step={5000}
 							value={minMembers}
-							onChange={(e) => setMinMembers(Number(e.target.value))}
-							className="w-28 border border-gray-300 rounded-md px-2 py-1"
+							onChange={(e) => setMinMembers(Number(e.target.value) || 0)}
+							className="w-28"
 							placeholder="Min Members"
 						/>
 					</div>
@@ -1044,51 +1055,57 @@ export default function WeeklyRatings() {
 					</div>
 				)} */}
 			</div>
-			{/* Button to fetch all anime */}
-			<button
+			<Button
 				onClick={fetchAllAnime}
 				disabled={fetchingAnime}
-				className={`mb-4 bg-blue-500 text-white px-4 py-2 rounded ${fetchingAnime ? "opacity-50 cursor-not-allowed" : ""}`}
+				size="lg"
+				variant="default"
+				className={`mb-4 ${fetchingAnime ? "opacity-50 cursor-not-allowed" : ""}`}
 			>
-				{fetchingAnime ? (
-					<div className="flex items-center">
-						Fetching
-						<LoaderCircle className="animate-spin size-5 ml-2" />
-					</div>
-				) : (
-					"Fetch"
+				Start
+				{fetchingAnime && (
+					<LoaderCircle className="animate-spin size-5 ml-2" />
 				)}
-			</button>
+			</Button>
 			{sortedAnimeList.length > 0 && (
 				<>
 					<div className="flex gap-2 flex-wrap mb-4 ">
 						{/* Dropdown for sorting */}
 						<div className="flex flex-col gap-1">
-							<label htmlFor="sort-select">Sort By</label>
-							<select
-								id="sort-select"
-								className="px-4 py-2 border border-gray-300 rounded-md"
+							<Label htmlFor="sort-select">Sort By</Label>
+							<Select
 								value={sortBy}
-								onChange={handleSortChange}
+								onValueChange={(value) => setSortBy(value)}
 							>
-								<option value="episodeScore">This week's Episode Score</option>
-								<option value="members">Members</option>
-								<option value="animeScore">Anime Score</option>
-								<option value="averageSeasonScore">
-									Average Episodes Score
-								</option>
-								<option value="title">Title (A-Z)</option>
-							</select>
+								<SelectTrigger id="sort-select" className="w-[220px]">
+									<SelectValue placeholder="Sort by" />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectGroup>
+										<SelectLabel>Episodes</SelectLabel>
+										<SelectItem value="episodeScore">
+											Current week's episode score
+										</SelectItem>
+										<SelectItem value="averageSeasonScore">
+											Season's avg episodes score
+										</SelectItem>
+									</SelectGroup>
+									<SelectGroup>
+										<SelectLabel>Anime</SelectLabel>
+										<SelectItem value="animeScore">Score</SelectItem>
+										<SelectItem value="members">Members</SelectItem>
+										<SelectItem value="title">Title (a-z)</SelectItem>
+									</SelectGroup>
+								</SelectContent>
+							</Select>
 						</div>
 						<div className="flex flex-col gap-1">
-							<label htmlFor="info-select" className=" text-gray-700">
-								Display Info
-							</label>
+							<Label htmlFor="info-select">Display Info</Label>
 							<DropdownMenu>
 								<DropdownMenuTrigger asChild>
 									<Button
 										variant="outline"
-										className="w-[200px] justify-start capitalize"
+										className="w-[150px] justify-start capitalize"
 									>
 										{showAdditionalInfo[0] || "Select option"}
 									</Button>
@@ -1135,11 +1152,11 @@ export default function WeeklyRatings() {
 						<button
 							onClick={handleNextWeek}
 							disabled={currentWeekIndex === weeks.length - 1}
-							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md shadow-sm hover:bg-muted focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
 						>
-							← Previous Week
+							← <span className="max-sm:hidden">Prev Week</span>
 						</button>
-						<span className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md">
+						<span className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md">
 							Week{" "}
 							{getCurrentSeasonFromWeek(weeks[currentWeekIndex]).weekOfSeason}{" "}
 							of {getCurrentSeasonFromWeek(weeks[currentWeekIndex]).season}{" "}
@@ -1149,9 +1166,9 @@ export default function WeeklyRatings() {
 						<button
 							onClick={handlePreviousWeek}
 							disabled={currentWeekIndex === 0}
-							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md shadow-sm hover:bg-muted focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
 						>
-							Next Week →
+							<span className="max-sm:hidden">Next Week</span> →
 						</button>
 					</div>
 					<hr className="my-4" />
@@ -1236,10 +1253,10 @@ export default function WeeklyRatings() {
 					return (
 						<div
 							key={anime.mal_id}
-							className="bg-white shadow-md rounded-lg flex flex-col relative"
+							className="bg-background border border-border rounded-lg flex flex-col relative"
 						>
 							{thisWeekEpisode && (
-								<div className="absolute top-0 left-0 bg-gray-700 text-white px-2 py-1 text-xs font-bold rounded-tl-lg rounded-br-lg z-10">
+								<div className="absolute top-0 left-0 bg-foreground text-background px-2 py-1 text-xs font-bold rounded-tl-lg rounded-br-lg z-10">
 									<span className="mr-1">EP</span>
 									{epOfWeekNb}
 								</div>
@@ -1249,7 +1266,7 @@ export default function WeeklyRatings() {
 									<Image
 										src={anime.image_url}
 										alt={anime.title}
-										className="rounded-lg shadow-md object-cover"
+										className="rounded-lg object-cover"
 										fill={true}
 										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 									/>
@@ -1338,18 +1355,18 @@ export default function WeeklyRatings() {
 							</div>
 							{!showAdditionalInfo.includes("minimal") && (
 								<div
-									className={`mt-3 ${!thisWeekEpisode && showAdditionalInfo.includes("episode") ? "" : "p-2"} bg-gray-100 rounded-b-md text-sm`}
+									className={`mt-3 ${!thisWeekEpisode && showAdditionalInfo.includes("episode") ? "" : "p-2"} bg-background rounded-b-md text-sm`}
 								>
 									{thisWeekEpisode &&
 										(showAdditionalInfo.includes("episode") ||
 											showAdditionalInfo.includes("full")) && (
 											<div>
 												{showAdditionalInfo.includes("full") && (
-													<h5 className="font-semibold mb-1 text-gray-700">
+													<h5 className="font-semibold mb-1 text-foreground">
 														Episode Info
 													</h5>
 												)}
-												<ul className="space-y-1 text-gray-600 list-disc list-inside">
+												<ul className="space-y-1 text-foreground list-disc list-inside">
 													<li>
 														<span className="font-medium">Title:</span>{" "}
 														{thisWeekEpisode.forum_url ? (
@@ -1380,10 +1397,10 @@ export default function WeeklyRatings() {
 											{thisWeekEpisode && (
 												<div className="border-t border-gray-300 my-2" />
 											)}
-											<h5 className="font-semibold mb-1 text-gray-700">
+											<h5 className="font-semibold mb-1 text-foreground">
 												Anime Info
 											</h5>
-											<ul className="list-disc list-inside text-gray-600">
+											<ul className="list-disc list-inside text-foreground">
 												<li>
 													<span className="font-medium">Episodes:</span>{" "}
 													{anime.episodes || "N/A"}
@@ -1407,7 +1424,7 @@ export default function WeeklyRatings() {
 													<div className="border-t border-gray-300 my-2" />
 												)}
 												{showAdditionalInfo.includes("full") && (
-													<h5 className="font-semibold mb-1 text-gray-700">
+													<h5 className="font-semibold mb-1 text-foreground">
 														Scoring
 													</h5>
 												)}
@@ -1418,8 +1435,9 @@ export default function WeeklyRatings() {
 															{/* {(averageSeasonScore * 2).toFixed(2)}/10 */}
 															{averageSeasonScore.toFixed(2)}/5
 														</div>
-														<span className="text-sm text-gray-600">
-															Average episodes score for season<br />({getAnimeSeasonEpisodesNb(anime)} episodes)
+														<span className="text-sm text-foreground">
+															Average episodes score for season
+															<br />({getAnimeSeasonEpisodesNb(anime)} episodes)
 														</span>
 														<span className="text-sm font-semibold text-blue-600">
 															#{seasonRanking}
@@ -1431,7 +1449,7 @@ export default function WeeklyRatings() {
 														<span className="mr-1">★</span>
 														{anime.score?.toFixed(2) || "N/A"}/10
 													</div>
-													<span className="text-sm text-gray-600">
+													<span className="text-sm text-foreground">
 														Anime Score
 													</span>
 													<span className="text-sm font-semibold text-blue-600">
@@ -1446,25 +1464,29 @@ export default function WeeklyRatings() {
 					);
 				})}
 			</div>
-			<div className="flex flex-col gap-2 shadow-md p-2 md:p-3 rounded-lg w-fit mt-8">
-				<h3 className="text-base font-semibold">Season Average</h3>
-				{seasonAverageEpisodesScore !== null && (
-					<div className="flex items-center gap-2">
-						<div className="bg-yellow-300 text-black px-2 py-1 text-xs font-bold rounded-lg flex items-center">
-							<span className="mr-1">★</span>
-							{seasonAverageEpisodesScore}/5
+			{sortedAnimeList.length > 0 && (
+				<div className="flex flex-col gap-2 border border-border rounded-lg p-2 md:p-3 w-fit mt-8">
+					<h3 className="text-base font-semibold">Season Average</h3>
+					{seasonAverageEpisodesScore !== null && (
+						<div className="flex items-center gap-2">
+							<div className="bg-yellow-300 text-black px-2 py-1 text-xs font-bold rounded-lg flex items-center">
+								<span className="mr-1">★</span>
+								{seasonAverageEpisodesScore}/5
+							</div>
+							<span className="text-sm text-muted-foreground">
+								Episode Scores
+							</span>
 						</div>
-						<span className="text-sm text-gray-600">Episode Scores</span>
+					)}
+					<div className="flex items-center gap-2">
+						<div className="bg-green-300 text-black px-2 py-1 text-xs font-bold rounded-lg flex items-center">
+							<span className="mr-1">★</span>
+							{seasonAverageAnimesScore}/10
+						</div>
+						<span className="text-sm text-muted-foreground">Anime Scores</span>
 					</div>
-				)}
-				<div className="flex items-center gap-2">
-					<div className="bg-green-300 text-black px-2 py-1 text-xs font-bold rounded-lg flex items-center">
-						<span className="mr-1">★</span>
-						{seasonAverageAnimesScore}/10
-					</div>
-					<span className="text-sm text-gray-600">Anime Scores</span>
 				</div>
-			</div>
+			)}
 			{/* Add the Weekly Score Chart */}
 			{sortedAnimeList.length > 0 && (
 				<WeeklyScoreChart
@@ -1481,10 +1503,10 @@ export default function WeeklyRatings() {
 					<h3 className="text-xl font-semibold mb-3">
 						Highest Scored Episodes This Season
 					</h3>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-						{renderTopEpisodes(3)}
+					<div className="grid max-[500px]:grid-cols-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+						{renderTopEpisodes(4)}
 					</div>
-					<Button onClick={() => setShowMoreDialog(true)} className="mt-4">
+					<Button onClick={() => setShowMoreDialog(true)} className="mt-4" variant="outline">
 						View More
 					</Button>
 					<Dialog open={showMoreDialog} onOpenChange={setShowMoreDialog}>

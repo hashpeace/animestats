@@ -7,6 +7,7 @@ import {
 	Line,
 	LineChart,
 	ReferenceLine,
+	ResponsiveContainer,
 	XAxis,
 	YAxis,
 } from "recharts";
@@ -359,37 +360,37 @@ export default function RatingsDisplay({
 					: "-";
 
 			return (
-				<div className="border border-slate-200 p-2 rounded-md bg-white text-sm">
-					<p className="label">
-						{`${entryType === "anime" ? "Episode" : "Chapter"}: ${label}`}
+				<ul className="border border-slate-200 dark:border-gray-700 p-2 rounded-md bg-background text-sm max-w-[300px]">
+					<li className="label">
+						• {`${entryType === "anime" ? "Episode" : "Chapter"}: ${label}`}
 						{payload[0].payload.filler && " (filler)"}
 						{payload[0].payload.recap && " (recap)"}
-					</p>
+					</li>
 					{fetchingMethod === "cheerioParser" &&
 						payload[0].payload.nbOfVotes && (
-							<p className="label">{`# of votes: ${payload[0].payload.nbOfVotes.toLocaleString("en-US")}`}</p>
+							<li className="label">• {`# of votes: ${payload[0].payload.nbOfVotes.toLocaleString("en-US")}`}</li>
 						)}
 					{ratingValue && options.visibleRatingInfo.ratingAllStars && (
-						<p className="label">{`Rating: ${formatValue(ratingValue)}/10`}</p>
+						<li className="label">• {`Rating: ${formatValue(ratingValue)}/10`}</li>
 					)}
 					{fetchingMethod === "cheerioParser" &&
 						options.visibleRatingInfo.ratingFiveStars &&
 						fiveStarsValue && (
-							<p className="label">{`5☆ rating: ${fiveStarsValue.toFixed(1)}%`}</p>
+							<li className="label">• {`5☆ rating: ${fiveStarsValue.toFixed(1)}%`}</li>
 						)}
 					{payload[0].payload.title && (
-						<p className="label">{`Title: ${payload[0].payload.title}`}</p>
+						<li className="label">• {`Title: ${payload[0].payload.title}`}</li>
 					)}
 					{payload[0].payload.aired && (
-						<p className="label">{`Aired: ${new Date(payload[0].payload.aired).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`}</p>
+						<li className="label">• {`Aired: ${new Date(payload[0].payload.aired).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`}</li>
 					)}
 					{payload[0].payload.currentSaga && (
-						<p className="label">{`Saga: ${payload[0].payload.currentSaga}`}</p>
+						<li className="label">• {`Saga: ${payload[0].payload.currentSaga}`}</li>
 					)}
 					{payload[0].payload.currentArc && (
-						<p className="label">{`Arc: ${payload[0].payload.currentArc}`}</p>
+						<li className="label">• {`Arc: ${payload[0].payload.currentArc}`}</li>
 					)}
-				</div>
+				</ul>
 			);
 		}
 
@@ -529,7 +530,7 @@ export default function RatingsDisplay({
 	return (
 		<>
 			{animeInfo && (
-				<div className="mb-4 p-2 sm:p-4 border border-gray-200 rounded-lg w-fit bg-gray-50/50">
+				<div className="mb-4 p-2 sm:p-4 border border-gray-200 rounded-lg w-fit bg-gray-50/50 dark:bg-gray-900/50 dark:border-gray-700">
 					{/* <div className="flex flex-col sm:flex-row items-start"> */}
 					<div className="flex flex-row items-start gap-4 max-md:mb-4">
 						{animeInfo.images?.webp?.image_url && (
@@ -700,229 +701,230 @@ export default function RatingsDisplay({
 					</TooltipProvider>
 				</div>
 			) : options.viewMode === "graph" ? (
-				<ChartContainer config={chartConfig}>
-					<LineChart
-						accessibilityLayer
-						data={trendLineData}
-						margin={{ top: 20, left: 12, right: 12, bottom: 20 }}
-					>
-						<CartesianGrid vertical={false} />
-						<XAxis
-							dataKey="episodeNb"
-							tickLine={false}
-							axisLine={false}
-							tickMargin={8}
-							domain={[0, results[results.length - 1].episodeNb]}
-							ticks={
-								isLongAnime && !episodeCount
-									? [
-										1,
-										...Array.from(
-											{
-												length: Math.ceil(
-													results[results.length - 1].episodeNb / nbOfTicks,
-												),
-											},
-											(_, i) =>
-												Math.min(
-													(i + 1) * nbOfTicks,
-													results[results.length - 1].episodeNb,
-												),
-										),
-									]
-									: undefined
-							}
-							label={{
-								value: entryType === "anime" ? "Episode" : "Chapter",
-								position: "bottom",
-								offset: 10,
-							}}
-						/>
-						<YAxis
-							yAxisId="left"
-							tickLine={false}
-							axisLine={false}
-							tickMargin={8}
-							tickFormatter={(value) =>
-								options.yAxisDomain === "full"
-									? value.toFixed(0)
-									: options.ratingDisplayFormat === "1decimal"
-										? value.toFixed(1)
-										: value.toFixed(2)
-							}
-							label={{
-								value: "Rating (/10)",
-								angle: -90,
-								position: "insideLeft",
-								offset: 0,
-							}}
-							domain={
-								options.yAxisDomain === "full"
-									? [0, 10]
-									: ["dataMin-0.05", "dataMax+0.05"]
-							}
-						/>
-						{options.visibleRatingInfo.ratingFiveStars && (
-							<YAxis
-								yAxisId="right"
-								orientation="right"
+				<ChartContainer config={chartConfig} className="max-sm:h-[300px] max-md:h-[400px] min-h-[300px] md:min-h-[400px] max-md:!aspect-auto">
+					<ResponsiveContainer width="100%" height="100%">
+						<LineChart
+							accessibilityLayer
+							data={trendLineData}
+							margin={{ top: 20, left: 12, right: 12, bottom: 20 }}
+						>
+							<CartesianGrid vertical={false} />
+							<XAxis
+								dataKey="episodeNb"
 								tickLine={false}
 								axisLine={false}
 								tickMargin={8}
-								tickFormatter={(value) => `${value.toFixed(0)}%`}
+								domain={[0, results[results.length - 1].episodeNb]}
+								ticks={
+									isLongAnime && !episodeCount
+										? [
+											1,
+											...Array.from(
+												{
+													length: Math.ceil(
+														results[results.length - 1].episodeNb / nbOfTicks,
+													),
+												},
+												(_, i) =>
+													Math.min(
+														(i + 1) * nbOfTicks,
+														results[results.length - 1].episodeNb,
+													),
+											),
+										]
+										: undefined
+								}
 								label={{
-									value: "5☆ Rating (%)",
-									angle: 90,
-									position: "insideRight",
+									value: entryType === "anime" ? "Episode" : "Chapter",
+									position: "bottom",
+									offset: 10,
+								}}
+							/>
+							<YAxis
+								yAxisId="left"
+								tickLine={false}
+								axisLine={false}
+								tickMargin={8}
+								tickFormatter={(value) =>
+									options.yAxisDomain === "full"
+										? value.toFixed(0)
+										: options.ratingDisplayFormat === "1decimal"
+											? value.toFixed(1)
+											: value.toFixed(2)
+								}
+								label={{
+									value: "Rating (/10)",
+									angle: -90,
+									position: "insideLeft",
 									offset: 0,
 								}}
 								domain={
 									options.yAxisDomain === "full"
-										? [0, 100]
+										? [0, 10]
 										: ["dataMin-0.05", "dataMax+0.05"]
 								}
 							/>
-						)}
-						<ChartTooltip content={<CustomTooltip active payload label />} />
-						{!hasZeroValues("ratingFiveStars") &&
-							options.visibleRatingInfo.ratingFiveStars && (
-								<ReferenceLine
+							{options.visibleRatingInfo.ratingFiveStars && (
+								<YAxis
 									yAxisId="right"
-									y={Number(avgRatingFiveStars)}
-									stroke="var(--color-ratingFiveStars)"
-									strokeDasharray="3 3"
-								/>
-							)}
-						{!hasZeroValues("ratingAllStars") &&
-							options.visibleRatingInfo.ratingAllStars && (
-								<ReferenceLine
-									yAxisId="left"
-									y={Number(avgRatingAllStars) / 10}
-									stroke="var(--color-ratingAllStars)"
-									strokeDasharray="3 3"
-								/>
-							)}
-						{options.filterBelowScore.type === "highlight" &&
-							options.filterBelowScore.score && (
-								<ReferenceLine
-									yAxisId="left"
-									y={Number(options.filterBelowScore.score) / 10}
-									stroke="#fb923c"
-									strokeDasharray="3 3"
-									label={`Below ${formatRating(Number(options.filterBelowScore.score), options.ratingDisplayFormat)}/10`}
-								/>
-							)}
-						{/* {!hasZeroValues("ratingFiveStars") && options.visibleRatingInfo.ratingFiveStars && <ReferenceLine y={avgRatingFiveStars} stroke="var(--color-ratingFiveStars)" strokeDasharray="3 3" label={`Average: ${avgRatingFiveStars}%`} />}
-						{!hasZeroValues("ratingAllStarsRounded") && options.visibleRatingInfo.ratingAllStars && <ReferenceLine y={avgRatingAllStars} stroke="var(--color-ratingAllStars)" strokeDasharray="3 3" label={`Average: ${avgRatingAllStars}%`} />} */}
-						{options.showTrendLine && options.sortBy === "episodeNb" && (
-							<Line
-								yAxisId="left"
-								dataKey="trendValue"
-								type="monotone"
-								stroke="rgba(200, 200, 200, 0.9)"
-								strokeWidth={3}
-								dot={false}
-								activeDot={false}
-								connectNulls
-							/>
-						)}
-						{options.visibleRatingInfo.ratingAllStars && (
-							<Line
-								yAxisId="left"
-								dataKey="ratingAllStarsChart"
-								type={options.lineStyle}
-								stroke="var(--color-ratingAllStars)"
-								strokeWidth={2}
-								dot={(props) => {
-									const isFillerOrRecap =
-										props.payload.filler || props.payload.recap;
-									const filterThreshold =
-										Number(options.filterBelowScore.score) / 10;
-									const isBelowScoreAndHighlighted =
-										props.payload.ratingAllStarsChart !== undefined &&
-										props.payload.ratingAllStarsChart < filterThreshold &&
-										options.filterBelowScore.type === "highlight";
-									const isHighlightedFiller =
-										isFillerOrRecap &&
-										options.filterFillerAndRecap === "highlight";
-
-									return (
-										<circle
-											key={`dot-${props.payload.episodeNb}`}
-											cx={props.cx}
-											cy={props.cy}
-											r={4}
-											fill={
-												isHighlightedFiller
-													? "#ef4444"
-													: isBelowScoreAndHighlighted
-														? "#fb923c"
-														: "hsl(var(--chart-3))"
-											}
-										/>
-									);
-								}}
-								// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-								activeDot={(props: any) => {
-									const isFillerOrRecap =
-										props.payload.filler || props.payload.recap;
-									const filterThreshold =
-										Number(options.filterBelowScore.score) / 10;
-									const isBelowScoreAndHighlighted =
-										props.payload.ratingAllStarsChart !== undefined &&
-										props.payload.ratingAllStarsChart < filterThreshold &&
-										options.filterBelowScore.type === "highlight";
-									return (
-										<circle
-											key={`active-dot-${props.payload.episodeNb}`}
-											cx={props.cx}
-											cy={props.cy}
-											r={6}
-											fill={
-												isFillerOrRecap &&
-													options.filterFillerAndRecap === "highlight"
-													? "#ef4444"
-													: isBelowScoreAndHighlighted
-														? "#fb923c"
-														: "hsl(var(--chart-3))"
-											}
-										/>
-									);
-								}}
-							>
-								<LabelList
-									position="top"
-									offset={12}
-									className="fill-foreground"
-									fontSize={12}
-									formatter={(value: number) =>
-										options.ratingDisplayFormat === "1decimal"
-											? value.toFixed(1)
-											: value.toFixed(2)
+									orientation="right"
+									tickLine={false}
+									axisLine={false}
+									tickMargin={8}
+									tickFormatter={(value) => `${value.toFixed(0)}%`}
+									label={{
+										value: "5☆ Rating (%)",
+										angle: 90,
+										position: "insideRight",
+										offset: 0,
+									}}
+									domain={
+										options.yAxisDomain === "full"
+											? [0, 100]
+											: ["dataMin-0.05", "dataMax+0.05"]
 									}
 								/>
-							</Line>
-						)}
-						{options.visibleRatingInfo.ratingFiveStars && (
-							<Line
-								yAxisId="right"
-								dataKey="ratingFiveStarsChart"
-								type={options.lineStyle}
-								stroke="var(--color-ratingFiveStars)"
-								strokeWidth={2}
-								dot={{ fill: "var(--color-ratingFiveStars)" }}
-								activeDot={{ r: 6 }}
-							>
-								<LabelList
-									position="top"
-									offset={12}
-									className="fill-foreground"
-									fontSize={12}
-									formatter={(value: number) => `${value.toFixed(1)}%`}
+							)}
+							<ChartTooltip content={<CustomTooltip active payload label />} />
+							{!hasZeroValues("ratingFiveStars") &&
+								options.visibleRatingInfo.ratingFiveStars && (
+									<ReferenceLine
+										yAxisId="right"
+										y={Number(avgRatingFiveStars)}
+										stroke="var(--color-ratingFiveStars)"
+										strokeDasharray="3 3"
+									/>
+								)}
+							{!hasZeroValues("ratingAllStars") &&
+								options.visibleRatingInfo.ratingAllStars && (
+									<ReferenceLine
+										yAxisId="left"
+										y={Number(avgRatingAllStars) / 10}
+										stroke="var(--color-ratingAllStars)"
+										strokeDasharray="3 3"
+									/>
+								)}
+							{options.filterBelowScore.type === "highlight" &&
+								options.filterBelowScore.score && (
+									<ReferenceLine
+										yAxisId="left"
+										y={Number(options.filterBelowScore.score) / 10}
+										stroke="#fb923c"
+										strokeDasharray="3 3"
+										label={`Below ${formatRating(Number(options.filterBelowScore.score), options.ratingDisplayFormat)}/10`}
+									/>
+								)}
+							{/* {!hasZeroValues("ratingFiveStars") && options.visibleRatingInfo.ratingFiveStars && <ReferenceLine y={avgRatingFiveStars} stroke="var(--color-ratingFiveStars)" strokeDasharray="3 3" label={`Average: ${avgRatingFiveStars}%`} />}
+						{!hasZeroValues("ratingAllStarsRounded") && options.visibleRatingInfo.ratingAllStars && <ReferenceLine y={avgRatingAllStars} stroke="var(--color-ratingAllStars)" strokeDasharray="3 3" label={`Average: ${avgRatingAllStars}%`} />} */}
+							{options.showTrendLine && options.sortBy === "episodeNb" && (
+								<Line
+									yAxisId="left"
+									dataKey="trendValue"
+									type="monotone"
+									stroke="rgba(200, 200, 200, 0.9)"
+									strokeWidth={3}
+									dot={false}
+									activeDot={false}
+									connectNulls
 								/>
-							</Line>
-						)}
-						{/* {options.visibleRatingInfo.ratingAllStarsRounded && (
+							)}
+							{options.visibleRatingInfo.ratingAllStars && (
+								<Line
+									yAxisId="left"
+									dataKey="ratingAllStarsChart"
+									type={options.lineStyle}
+									stroke="var(--color-ratingAllStars)"
+									strokeWidth={2}
+									dot={(props) => {
+										const isFillerOrRecap =
+											props.payload.filler || props.payload.recap;
+										const filterThreshold =
+											Number(options.filterBelowScore.score) / 10;
+										const isBelowScoreAndHighlighted =
+											props.payload.ratingAllStarsChart !== undefined &&
+											props.payload.ratingAllStarsChart < filterThreshold &&
+											options.filterBelowScore.type === "highlight";
+										const isHighlightedFiller =
+											isFillerOrRecap &&
+											options.filterFillerAndRecap === "highlight";
+
+										return (
+											<circle
+												key={`dot-${props.payload.episodeNb}`}
+												cx={props.cx}
+												cy={props.cy}
+												r={4}
+												fill={
+													isHighlightedFiller
+														? "#ef4444"
+														: isBelowScoreAndHighlighted
+															? "#fb923c"
+															: "hsl(var(--chart-3))"
+												}
+											/>
+										);
+									}}
+									// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+									activeDot={(props: any) => {
+										const isFillerOrRecap =
+											props.payload.filler || props.payload.recap;
+										const filterThreshold =
+											Number(options.filterBelowScore.score) / 10;
+										const isBelowScoreAndHighlighted =
+											props.payload.ratingAllStarsChart !== undefined &&
+											props.payload.ratingAllStarsChart < filterThreshold &&
+											options.filterBelowScore.type === "highlight";
+										return (
+											<circle
+												key={`active-dot-${props.payload.episodeNb}`}
+												cx={props.cx}
+												cy={props.cy}
+												r={6}
+												fill={
+													isFillerOrRecap &&
+														options.filterFillerAndRecap === "highlight"
+														? "#ef4444"
+														: isBelowScoreAndHighlighted
+															? "#fb923c"
+															: "hsl(var(--chart-3))"
+												}
+											/>
+										);
+									}}
+								>
+									<LabelList
+										position="top"
+										offset={12}
+										className="fill-foreground"
+										fontSize={12}
+										formatter={(value: number) =>
+											options.ratingDisplayFormat === "1decimal"
+												? value.toFixed(1)
+												: value.toFixed(2)
+										}
+									/>
+								</Line>
+							)}
+							{options.visibleRatingInfo.ratingFiveStars && (
+								<Line
+									yAxisId="right"
+									dataKey="ratingFiveStarsChart"
+									type={options.lineStyle}
+									stroke="var(--color-ratingFiveStars)"
+									strokeWidth={2}
+									dot={{ fill: "var(--color-ratingFiveStars)" }}
+									activeDot={{ r: 6 }}
+								>
+									<LabelList
+										position="top"
+										offset={12}
+										className="fill-foreground"
+										fontSize={12}
+										formatter={(value: number) => `${value.toFixed(1)}%`}
+									/>
+								</Line>
+							)}
+							{/* {options.visibleRatingInfo.ratingAllStarsRounded && (
 							<Line
 								dataKey="ratingAllStarsRounded"
 								type="monotone"
@@ -939,7 +941,8 @@ export default function RatingsDisplay({
 								/>
 							</Line>
 						)} */}
-					</LineChart>
+						</LineChart>
+					</ResponsiveContainer>
 				</ChartContainer>
 			) : (
 				<>
@@ -1103,7 +1106,7 @@ export default function RatingsDisplay({
 					</Table>
 				</>
 			)}
-			<div className="max-2xl:mt-7">
+			<div className="mt-7">
 				<dl className="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-3 max-w-[600px]">
 					{[
 						{
@@ -1123,12 +1126,12 @@ export default function RatingsDisplay({
 					].map(
 						(item) =>
 							item.type && (
-								<div key={item.key} className="rounded-lg bg-white p-3 shadow">
-									<dt className="text-sm font-medium text-gray-500">
+								<div key={item.key} className="rounded-lg bg-background dark:border dark:border-gray-800 p-3 shadow">
+									<dt className="text-sm font-medium text-muted-foreground">
 										{item.label}
 									</dt>
 									<div className="flex items-center gap-2">
-										<dd className="mt-1 text-md font-semibold tracking-tight text-gray-900">
+										<dd className="mt-1 text-md font-semibold tracking-tight text-foreground">
 											{item.isPercentage
 												? `${Number(item.value).toFixed(1)}%`
 												: `${formatRating(Number(item.value), options.ratingDisplayFormat)}/10`}

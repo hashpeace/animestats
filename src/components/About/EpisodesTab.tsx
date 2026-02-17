@@ -199,7 +199,7 @@ export default function EpisodesTab() {
 							</ul>
 						</div>
 					</div>
-					<div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+					<div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-600/10 border border-yellow-200 dark:border-yellow-700 rounded-lg">
 						<p className="text-sm text-yellow-800">
 							<strong>Performance Note:</strong> Detailed mode directly scrapes
 							MyAnimeList pages for comprehensive data. While this provides
@@ -272,9 +272,9 @@ export default function EpisodesTab() {
 					<div className="space-y-4">
 						<div>
 							<h4 className="font-semibold mb-2">Anime Information Display</h4>
-							<div className="bg-gray-50 p-4 rounded-lg text-sm">
+							<div className="bg-muted p-4 rounded-lg text-sm">
 								<p className="mb-2">Each anime analysis shows:</p>
-								<ul className="list-disc list-inside space-y-1 text-gray-600">
+								<ul className="list-disc list-inside space-y-1 text-muted-foreground">
 									<li>
 										<strong>Basic Info:</strong> Title, type, episodes count,
 										status
@@ -295,12 +295,10 @@ export default function EpisodesTab() {
 						</div>
 						<div>
 							<h4 className="font-semibold mb-2">Rating Scale Conversion</h4>
-							<div className="bg-blue-50 p-4 rounded-lg text-sm border border-blue-200 mb-4">
-								<p className="text-blue-800 mb-2">
+							<div className="bg-muted p-4 rounded-lg text-sm mb-4">
+								<p className="mb-2 text-muted-foreground">
 									<strong>1-10 Scale:</strong> We convert MyAnimeList's original
-									1-5 stars to a 1-10 scale.
-								</p>
-								<p className="text-blue-700">
+									1-5 stars to a 1-10 scale.<br />
 									You can choose to display the ratings with 1 decimal or 2
 									decimals (e.g. 8.5 or 8.54)
 								</p>
@@ -308,8 +306,8 @@ export default function EpisodesTab() {
 						</div>
 						<div>
 							<h4 className="font-semibold mb-2">Graph Interpretation</h4>
-							<div className="bg-gray-50 p-4 rounded-lg text-sm">
-								<ul className="list-disc list-inside space-y-1 text-gray-600">
+							<div className="bg-muted p-4 rounded-lg text-sm">
+								<ul className="list-disc list-inside space-y-1 text-muted-foreground">
 									<li>
 										<strong>X-Axis:</strong> Episode number progression
 									</li>

@@ -1,9 +1,28 @@
-import { type AnimeItem, type CurrentSeason, getEpisodeOfWeekNumber } from "@/components/WeeklyRatings"
-import { type ChartConfig, ChartContainer } from "@/components/ui/chart"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import type React from "react"
-import { useMemo, useState } from "react"
-import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts"
+import type React from "react";
+import { useMemo, useState } from "react";
+import {
+	CartesianGrid,
+	Legend,
+	Line,
+	LineChart,
+	ResponsiveContainer,
+	Tooltip,
+	XAxis,
+	YAxis,
+} from "recharts";
+import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
+import {
+	type AnimeItem,
+	type CurrentSeason,
+	getEpisodeOfWeekNumber,
+} from "@/components/WeeklyRatings";
 
 // Helper function to get the start month of a season
 // export const getSeasonStartMonth = (season: string): number => {
@@ -23,10 +42,10 @@ import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "r
 
 // Helper function to get the week number within the season
 const getWeekNumber = (date: Date, seasonStart: Date): number => {
-	const diffTime = date.getTime() - seasonStart.getTime() // Calculate the difference in time
-	const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) // Convert to days
-	return Math.floor(diffDays / 7) + 1 // Calculate week number (1-based)
-}
+	const diffTime = date.getTime() - seasonStart.getTime(); // Calculate the difference in time
+	const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Convert to days
+	return Math.floor(diffDays / 7) + 1; // Calculate week number (1-based)
+};
 // const getWeekNumber = (date: Date, seasonStart: Date): number => {
 // 	const diffTime = Math.abs(date.getTime() - seasonStart.getTime())
 // 	const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
@@ -53,36 +72,44 @@ function addDaysToDate(date: Date, days: number): Date {
 export const getSeasonStartDate = (
 	currentSeason: CurrentSeason,
 	weeks: string[],
-	firstWeekFall2024: string
+	firstWeekFall2024: string,
 ): { startDate: Date; endDate: Date } | null => {
-	const DAYS_IN_SEASON_MINUS_ONE = 90
-	const WEEKS_IN_SEASON = 13
-	const SEASONS = ["winter", "spring", "summer", "fall"] as const
+	const DAYS_IN_SEASON_MINUS_ONE = 90;
+	const WEEKS_IN_SEASON = 13;
+	const SEASONS = ["winter", "spring", "summer", "fall"] as const;
 
 	// Find index of Fall 2024 reference week
-	const firstWeekIndex = weeks.findIndex(week => week === firstWeekFall2024)
-	const seasonIndex = SEASONS.indexOf(currentSeason.season.toLowerCase() as typeof SEASONS[number])
+	const firstWeekIndex = weeks.findIndex((week) => week === firstWeekFall2024);
+	const seasonIndex = SEASONS.indexOf(
+		currentSeason.season.toLowerCase() as (typeof SEASONS)[number],
+	);
 
-	if (seasonIndex === -1) return null
+	if (seasonIndex === -1) return null;
 
-	const seasonOffset = (currentSeason.year - 2024) * 4 + seasonIndex - SEASONS.indexOf("fall")
-	const weekIndex = firstWeekIndex - seasonOffset * WEEKS_IN_SEASON
+	const seasonOffset =
+		(currentSeason.year - 2024) * 4 + seasonIndex - SEASONS.indexOf("fall");
+	const weekIndex = firstWeekIndex - seasonOffset * WEEKS_IN_SEASON;
 
-	if (weekIndex < 0 || weekIndex >= weeks.length) return null
+	if (weekIndex < 0 || weekIndex >= weeks.length) return null;
 
-	const [startDate] = weeks[weekIndex].split(" - ")
+	const [startDate] = weeks[weekIndex].split(" - ");
 
-	const seasonStartDate = new Date(startDate)
+	const seasonStartDate = new Date(startDate);
 
 	return {
 		startDate: seasonStartDate,
-		endDate: addDaysToDate(seasonStartDate, DAYS_IN_SEASON_MINUS_ONE)
-	}
-}
+		endDate: addDaysToDate(seasonStartDate, DAYS_IN_SEASON_MINUS_ONE),
+	};
+};
 
 // New function to prepare data for the weekly score chart
-const prepareWeeklyScoreData = (animeList: AnimeItem[], currentSeason: CurrentSeason, currentWeekIndex: number, weeks: string[], firstWeekFall2024: string) => {
-
+const prepareWeeklyScoreData = (
+	animeList: AnimeItem[],
+	currentSeason: CurrentSeason,
+	currentWeekIndex: number,
+	weeks: string[],
+	firstWeekFall2024: string,
+) => {
 	// const getFirstWeekIndex = (): number => {
 	// 	const firstWeekFall2024 = "9/27/2024 - 10/3/2024" // First week of Fall 2024
 	// 	return weeks.findIndex(week => week === firstWeekFall2024)
@@ -126,8 +153,12 @@ const prepareWeeklyScoreData = (animeList: AnimeItem[], currentSeason: CurrentSe
 	// const firstWeekIndex = weeks.findIndex(week => week === FIRST_WEEK_FALL_2024)
 
 	// Calculate season start date
-	const seasonStartDate = getSeasonStartDate(currentSeason, weeks, firstWeekFall2024)?.startDate || new Date()
-	const seasonEndDate = getSeasonStartDate(currentSeason, weeks, firstWeekFall2024)?.endDate || new Date()
+	const seasonStartDate =
+		getSeasonStartDate(currentSeason, weeks, firstWeekFall2024)?.startDate ||
+		new Date();
+	const seasonEndDate =
+		getSeasonStartDate(currentSeason, weeks, firstWeekFall2024)?.endDate ||
+		new Date();
 
 	// console.log("seasonStartDate", seasonStartDate)
 	// console.log("seasonEndDate", seasonEndDate)
@@ -135,213 +166,258 @@ const prepareWeeklyScoreData = (animeList: AnimeItem[], currentSeason: CurrentSe
 	// const seasonStartDate = getSeasonStartDate(currentSeason, weeks) || new Date()
 	// const seasonEndDate = new Date(seasonStartDate.getTime() + (DAYS_IN_SEASON * 24 * 60 * 60 * 1000))
 
-	return animeList.map(anime => {
-		const weeklyScores: { [week: string]: number | null } = {}
-		const episodesNumbers: (number | null)[] = Array(13).fill(null) // Initialize an array to hold episode numbers for 13 weeks
+	return animeList.map((anime) => {
+		const weeklyScores: { [week: string]: number | null } = {};
+		const episodesNumbers: (number | null)[] = Array(13).fill(null); // Initialize an array to hold episode numbers for 13 weeks
 
-		anime.episodeData?.forEach(episode => {
-			const airedDate = new Date(episode.aired)
+		anime.episodeData?.forEach((episode) => {
+			const airedDate = new Date(episode.aired);
 			if (airedDate >= seasonStartDate && airedDate <= seasonEndDate) {
-				const weekNumber = getWeekNumber(airedDate, seasonStartDate)
-				weeklyScores[`Week ${weekNumber}`] = episode.score || null
+				const weekNumber = getWeekNumber(airedDate, seasonStartDate);
+				weeklyScores[`Week ${weekNumber}`] = episode.score || null;
 				// episodesNumbers[weekNumber - 1] = episode.mal_id // Store episode ID at the correct week index (0-based)
-				episodesNumbers[weekNumber - 1] = getEpisodeOfWeekNumber(anime.episodeData || [], episode || null) as number
+				episodesNumbers[weekNumber - 1] = getEpisodeOfWeekNumber(
+					anime.episodeData || [],
+					episode || null,
+				) as number;
 			}
-		})
+		});
 
 		return {
 			title: anime.title,
 			scores: weeklyScores,
 			episodesNumbers: episodesNumbers,
-		}
-	})
-}
+		};
+	});
+};
 
 const WeeklyScoreChart: React.FC<{
-	animeList: AnimeItem[]
-	currentSeason: CurrentSeason
-	currentWeekIndex: number
-	weeksFromParent: string[]
-	firstWeekFall2024: string
-}> = ({ animeList, currentSeason, currentWeekIndex, weeksFromParent, firstWeekFall2024 }) => {
-	const data = prepareWeeklyScoreData(
-		animeList,
-		currentSeason,
-		currentWeekIndex,
-		weeksFromParent,
-		firstWeekFall2024
-	)
-	const [activeAnime, setActiveAnime] = useState<string | null>(null)
-	const [selectedAnime, setSelectedAnime] = useState<string>("all")
-	const [connectNulls, setConnectNulls] = useState<boolean>(false)
-	const weeks = Array.from({ length: 13 }, (_, i) => `Week ${i + 1}`)
-	const chartData = weeks.map(week => {
-		const weekData: { [key: string]: number | string | null } = { week }
-		data.forEach(anime => {
-			weekData[anime.title] = anime.scores[week] ?? null
-		})
-		return weekData
-	})
+	animeList: AnimeItem[];
+	currentSeason: CurrentSeason;
+	currentWeekIndex: number;
+	weeksFromParent: string[];
+	firstWeekFall2024: string;
+}> = ({
+	animeList,
+	currentSeason,
+	currentWeekIndex,
+	weeksFromParent,
+	firstWeekFall2024,
+}) => {
+		const data = prepareWeeklyScoreData(
+			animeList,
+			currentSeason,
+			currentWeekIndex,
+			weeksFromParent,
+			firstWeekFall2024,
+		);
+		const [activeAnime, setActiveAnime] = useState<string | null>(null);
+		const [selectedAnime, setSelectedAnime] = useState<string>("all");
+		const [connectNulls, setConnectNulls] = useState<boolean>(false);
+		const weeks = Array.from({ length: 13 }, (_, i) => `Week ${i + 1}`);
+		const chartData = weeks.map((week) => {
+			const weekData: { [key: string]: number | string | null } = { week };
+			data.forEach((anime) => {
+				weekData[anime.title] = anime.scores[week] ?? null;
+			});
+			return weekData;
+		});
 
-	interface TooltipPayload {
-		dataKey: string;
-		name: string;
-		value: number | null;
-		payload: {
-			week: string;
-			[key: string]: number | string | null;
-		};
-		color: string;
-	}
-
-	const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: TooltipPayload[] }) => {
-		if (active && payload && payload.length) {
-			const week = payload[0].payload.week
-			const weekNumber = Number.parseInt(week.split(" ")[1])
-
-			return (
-				<div className="bg-white border border-gray-300 p-2 rounded shadow">
-					<p className="font-bold mb-2">{week}</p>
-					{payload.map((entry, index) => {
-						if (entry.value !== null) {
-							const anime = data.find(a => a.title === entry.name)
-							// console.log(anime?.episodesNumbers)
-							const episodeNumber = anime?.episodesNumbers?.[weekNumber - 1]
-							return (
-								<p key={index} className="text-sm">
-									<span style={{ color: entry.color }}>{entry.name}</span>: {entry.value}
-									{episodeNumber && <span className="text-gray-500 ml-1">(Episode {episodeNumber})</span>}
-								</p>
-							)
-						}
-						return null
-					})}
-				</div>
-			)
+		interface TooltipPayload {
+			dataKey: string;
+			name: string;
+			value: number | null;
+			payload: {
+				week: string;
+				[key: string]: number | string | null;
+			};
+			color: string;
 		}
-		return null
-	}
 
-	// const getEpisodeOfWeek = (anime: AnimeItem, weekIndex: number) => {
-	// 	const currentWeek = weeks[weekIndex]
-	// 	const [startDate, endDate] = currentWeek.split(" - ").map(date => {
-	// 		const [month, day, year] = date.split("/")
-	// 		const dateObj = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)))
-	// 		dateObj.setUTCHours(0, 0, 0, 0)
-	// 		return dateObj
-	// 	})
-	// 	return anime?.episodeData?.find(ep => {
-	// 		if (!ep.aired) return false
-	// 		const airedDate = new Date(ep.aired)
-	// 		airedDate.setUTCHours(0, 0, 0, 0)
-	// 		return airedDate >= startDate && airedDate <= endDate
-	// 	})
-	// }
+		const CustomTooltip = ({
+			active,
+			payload,
+		}: {
+			active?: boolean;
+			payload?: TooltipPayload[];
+		}) => {
+			if (active && payload && payload.length) {
+				const week = payload[0].payload.week;
+				const weekNumber = Number.parseInt(week.split(" ")[1]);
 
-	// // Prepare data for the LineChart
-	// const chartData = weeks.map((week, index) => {
-	// 	const weekData: { [key: string]: number | string } = { week }
-	// 	data.forEach(anime => {
-	// 		// Use currentWeekIndex to filter scores for the current week
-	// 		const episode = getEpisodeOfWeek(anime, currentWeekIndex, weeks) // Get the episode for the current week
-	// 		weekData[anime.title] = episode ? episode.score : null // Use episode score if available
-	// 	})
-	// 	return weekData
-	// })
-
-	// const chartData2 = weeks.map(week => {
-	// 	const weekData: { [key: string]: number | string } = { week }
-	// 	data.forEach((anime, index) => {
-	// 		const weekStartDate = new Date(currentSeason.year, getSeasonStartMonth(currentSeason.season), 1);
-	// 		weekStartDate.setDate(weekStartDate.getDate() + (index * 7)); // Calculate the start date of the week
-	// 		const formattedDate = `${(weekStartDate.getMonth() + 1).toString().padStart(2, '0')}/${weekStartDate.getDate().toString().padStart(2, '0')}/${weekStartDate.getFullYear()}`; // Format as month/day/year
-	// 		weekData[anime.title] = anime.scores[week] ?? null; // Keep the week label as is
-	// 		weekData[`${anime.title} Date`] = formattedDate; // Add formatted date for each anime
-	// 	})
-	// 	return weekData
-	// })
-
-	const chartConfig: ChartConfig = useMemo(() => {
-		const config: ChartConfig = {
-			week: {
-				label: "Week",
-				color: "hsl(var(--chart-1))",
-			},
-		}
-		data.forEach((anime, index) => {
-			config[anime.title] = {
-				label: anime.title,
-				color: fixedColors[index % fixedColors.length],
-			}
-		})
-		return config
-	}, [data])
-
-	const handleMouseEnter = (o: { dataKey: string | number }) => {
-		setActiveAnime(o.dataKey as string)
-	}
-
-	const handleMouseLeave = () => {
-		setActiveAnime(null)
-	}
-
-	const handleSelectChange = (value: string) => {
-		setSelectedAnime(value)
-	}
-
-	return (
-		<div className="mt-10 space-y-4 border-t border-gray-200 pt-6">
-			<div className="flex flex-row gap-4 items-center">
-				<Select onValueChange={handleSelectChange} defaultValue="all">
-					<SelectTrigger className="w-[140px]">
-						<SelectValue placeholder="Select anime" />
-					</SelectTrigger>
-					<SelectContent>
-						<SelectItem value="all">All Anime</SelectItem>
-						{data.map(anime => (
-							<SelectItem key={anime.title} value={anime.title}>
-								{anime.title}
-							</SelectItem>
-						))}
-					</SelectContent>
-				</Select>
-				<Select onValueChange={value => setConnectNulls(value === "true")} defaultValue="false">
-					<SelectTrigger className="w-[140px]">
-						<SelectValue placeholder="Connect Nulls" />
-					</SelectTrigger>
-					<SelectContent>
-						<SelectItem value="true">Connect Nulls</SelectItem>
-						<SelectItem value="false">Do Not Connect Nulls</SelectItem>
-					</SelectContent>
-				</Select>
-			</div>
-			<ChartContainer config={chartConfig}>
-				<LineChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-					<CartesianGrid strokeDasharray="3 3" />
-					<XAxis dataKey="week" />
-					<YAxis domain={["dataMin", "dataMax"]} />
-					<Tooltip content={<CustomTooltip />} />
-					{data.map((anime, index) => (
-						<Line
-							key={anime.title}
-							type="monotone"
-							dataKey={anime.title}
-							stroke={fixedColors[index % fixedColors.length]}
-							strokeWidth={
-								selectedAnime === "all" ? (activeAnime ? (activeAnime === anime.title ? 4 : 0.5) : 2) : selectedAnime === anime.title ? 4 : 0
+				return (
+					<div className="bg-background border border-border p-2 rounded shadow">
+						<p className="font-bold mb-2">{week}</p>
+						{payload.map((entry, index) => {
+							if (entry.value !== null) {
+								const anime = data.find((a) => a.title === entry.name);
+								// console.log(anime?.episodesNumbers)
+								const episodeNumber = anime?.episodesNumbers?.[weekNumber - 1];
+								return (
+									<p key={index} className="text-sm">
+										<span style={{ color: entry.color }}>{entry.name}</span>:{" "}
+										{entry.value}
+										{episodeNumber && (
+											<span className="text-muted-foreground ml-1">
+												(Episode {episodeNumber})
+											</span>
+										)}
+									</p>
+								);
 							}
-							dot={selectedAnime === "all" || selectedAnime === anime.title ? { fill: fixedColors[index % fixedColors.length], r: 2 } : false}
-							// dot={false}
-							activeDot={{ r: 4 }}
-							connectNulls={connectNulls}
-						// hide={selectedAnime !== "all" && selectedAnime !== anime.title}
-						/>
-					))}
-					<Legend onMouseEnter={o => handleMouseEnter(o as { dataKey: string | number })} onMouseLeave={handleMouseLeave} />
-				</LineChart>
-			</ChartContainer>
-		</div>
-	)
-}
+							return null;
+						})}
+					</div>
+				);
+			}
+			return null;
+		};
 
-export default WeeklyScoreChart
+		// const getEpisodeOfWeek = (anime: AnimeItem, weekIndex: number) => {
+		// 	const currentWeek = weeks[weekIndex]
+		// 	const [startDate, endDate] = currentWeek.split(" - ").map(date => {
+		// 		const [month, day, year] = date.split("/")
+		// 		const dateObj = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)))
+		// 		dateObj.setUTCHours(0, 0, 0, 0)
+		// 		return dateObj
+		// 	})
+		// 	return anime?.episodeData?.find(ep => {
+		// 		if (!ep.aired) return false
+		// 		const airedDate = new Date(ep.aired)
+		// 		airedDate.setUTCHours(0, 0, 0, 0)
+		// 		return airedDate >= startDate && airedDate <= endDate
+		// 	})
+		// }
+
+		// // Prepare data for the LineChart
+		// const chartData = weeks.map((week, index) => {
+		// 	const weekData: { [key: string]: number | string } = { week }
+		// 	data.forEach(anime => {
+		// 		// Use currentWeekIndex to filter scores for the current week
+		// 		const episode = getEpisodeOfWeek(anime, currentWeekIndex, weeks) // Get the episode for the current week
+		// 		weekData[anime.title] = episode ? episode.score : null // Use episode score if available
+		// 	})
+		// 	return weekData
+		// })
+
+		// const chartData2 = weeks.map(week => {
+		// 	const weekData: { [key: string]: number | string } = { week }
+		// 	data.forEach((anime, index) => {
+		// 		const weekStartDate = new Date(currentSeason.year, getSeasonStartMonth(currentSeason.season), 1);
+		// 		weekStartDate.setDate(weekStartDate.getDate() + (index * 7)); // Calculate the start date of the week
+		// 		const formattedDate = `${(weekStartDate.getMonth() + 1).toString().padStart(2, '0')}/${weekStartDate.getDate().toString().padStart(2, '0')}/${weekStartDate.getFullYear()}`; // Format as month/day/year
+		// 		weekData[anime.title] = anime.scores[week] ?? null; // Keep the week label as is
+		// 		weekData[`${anime.title} Date`] = formattedDate; // Add formatted date for each anime
+		// 	})
+		// 	return weekData
+		// })
+
+		const chartConfig: ChartConfig = useMemo(() => {
+			const config: ChartConfig = {
+				week: {
+					label: "Week",
+					color: "hsl(var(--chart-1))",
+				},
+			};
+			data.forEach((anime, index) => {
+				config[anime.title] = {
+					label: anime.title,
+					color: fixedColors[index % fixedColors.length],
+				};
+			});
+			return config;
+		}, [data]);
+
+		const handleMouseEnter = (o: { dataKey: string | number }) => {
+			setActiveAnime(o.dataKey as string);
+		};
+
+		const handleMouseLeave = () => {
+			setActiveAnime(null);
+		};
+
+		const handleSelectChange = (value: string) => {
+			setSelectedAnime(value);
+		};
+
+		return (
+			<div className="mt-10 space-y-4 border-t border-gray-200 pt-6">
+				<div className="flex flex-row gap-4 items-center">
+					<Select onValueChange={handleSelectChange} defaultValue="all">
+						<SelectTrigger className="w-[140px]">
+							<SelectValue placeholder="Select anime" />
+						</SelectTrigger>
+						<SelectContent>
+							<SelectItem value="all">All Anime</SelectItem>
+							{data.map((anime) => (
+								<SelectItem key={anime.title} value={anime.title}>
+									{anime.title}
+								</SelectItem>
+							))}
+						</SelectContent>
+					</Select>
+					<Select
+						onValueChange={(value) => setConnectNulls(value === "true")}
+						defaultValue="false"
+					>
+						<SelectTrigger>
+							<SelectValue placeholder="Connect Nulls" />
+						</SelectTrigger>
+						<SelectContent>
+							<SelectItem value="true">Connect Nulls</SelectItem>
+							<SelectItem value="false">Do Not Connect Nulls</SelectItem>
+						</SelectContent>
+					</Select>
+				</div>
+				<ChartContainer config={chartConfig} className="max-md:h-[400px] md:min-h-[400px] max-md:!aspect-auto">
+					<ResponsiveContainer width="100%" height="100%">
+						<LineChart
+							data={chartData}
+							margin={{ top: 20, left: 12, right: 12, bottom: 20 }}
+						>
+							<CartesianGrid strokeDasharray="3 3" />
+							<XAxis dataKey="week" />
+							<YAxis label={{ value: "Score (/10)", angle: -90, position: "insideLeft", offset: 0 }} domain={["dataMin", "dataMax"]} />
+							<Tooltip content={<CustomTooltip />} />
+							{data.map((anime, index) => (
+								<Line
+									key={anime.title}
+									type="monotone"
+									dataKey={anime.title}
+									stroke={fixedColors[index % fixedColors.length]}
+									strokeWidth={
+										selectedAnime === "all"
+											? activeAnime
+												? activeAnime === anime.title
+													? 4
+													: 0.5
+												: 2
+											: selectedAnime === anime.title
+												? 4
+												: 0
+									}
+									dot={
+										selectedAnime === "all" || selectedAnime === anime.title
+											? { fill: fixedColors[index % fixedColors.length], r: 2 }
+											: false
+									}
+									// dot={false}
+									activeDot={{ r: 4 }}
+									connectNulls={connectNulls}
+								// hide={selectedAnime !== "all" && selectedAnime !== anime.title}
+								/>
+							))}
+							<Legend
+								onMouseEnter={(o) =>
+									handleMouseEnter(o as { dataKey: string | number })
+								}
+								onMouseLeave={handleMouseLeave}
+							/>
+						</LineChart>
+					</ResponsiveContainer>
+				</ChartContainer>
+			</div>
+		);
+	};
+
+export default WeeklyScoreChart;

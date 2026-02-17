@@ -741,7 +741,7 @@ export default function RatingsFetcher({
 								setSearchResults([]);
 							}}
 						>
-							<SelectTrigger className="w-[140px] h-10 focus:ring-offset-1 focus:ring-2 bg-white">
+							<SelectTrigger size="lg">
 								<SelectValue placeholder="Source" />
 							</SelectTrigger>
 							<SelectContent>
@@ -758,7 +758,7 @@ export default function RatingsFetcher({
 									setAnimeInputForApi("");
 								}}
 							>
-								<SelectTrigger className="w-[100px] h-10 focus:ring-offset-1 focus:ring-2 bg-white">
+								<SelectTrigger size="lg">
 									<SelectValue placeholder="Type" />
 								</SelectTrigger>
 								<SelectContent>
@@ -772,7 +772,7 @@ export default function RatingsFetcher({
 								type="text"
 								id="animeInput"
 								value={animeInput}
-								className="block w-full px-4 py-2 pr-10 text-gray-900 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+								className="block w-full px-4 py-[7px] pr-10 text-gray-900 bg-white dark:bg-muted dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-1 focus:ring-foreground focus:border-foreground"
 								onChange={(e) => {
 									setAnimeInput(e.target.value);
 									setShouldFetchSearchResults(true);
@@ -855,7 +855,7 @@ export default function RatingsFetcher({
 							</button>
 							{searchresults.length > 0 && (
 								<ul
-									className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 top-full left-0"
+									className="absolute z-10 w-full bg-background border border-gray-300 dark:border-gray-700 rounded-md mt-1 top-full left-0"
 									ref={searchresultRef}
 								>
 									{/* <ul className="absolute z-50 w-full bg-white border border-gray-300 rounded-md mt-1 shadow-lg max-h-60 overflow-y-auto" ref={searchresultRef}></ul> */}
@@ -863,7 +863,7 @@ export default function RatingsFetcher({
 										// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 										<li
 											key={index}
-											className={`px-2 py-1 hover:bg-gray-200 cursor-pointer flex items-center gap-2 ${index === 0 ? "active" : ""}`}
+											className={`px-2 py-1 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer flex items-center gap-2 ${index === 0 ? "active" : ""}`}
 											onClick={() => {
 												setAnimeInput(searchresult.title);
 												setAnimeInputForApi(searchresult.url);

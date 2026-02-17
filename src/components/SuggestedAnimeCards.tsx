@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Switch } from "@/components/ui/switch";
+import { cn } from "@/lib/utils";
 import type { AnimeInfo } from "@/types/All";
 
 type FilterType = "airing" | "bypopularity";
@@ -46,31 +48,26 @@ export default function SuggestedAnimeCards() {
 					{/* {filter === "airing" ? "Top Airing Anime" : "Most Popular Anime"} */}
 					Suggestions
 				</h2>
-				<div className="flex items-center gap-2">
+				<div className="flex items-center gap-3">
 					<span
-						className={`text-sm ${filter === "airing" ? "font-semibold text-blue-600 dark:text-blue-400" : "text-gray-500"}`}
+						className={cn(
+							"text-sm",
+							filter === "airing" ? "font-semibold text-foreground" : "text-gray-500",
+						)}
 					>
 						Top Airing
 					</span>
-					<button
-						type="button"
-						role="switch"
-						aria-checked={filter === "bypopularity"}
-						onClick={() =>
-							setFilter(filter === "airing" ? "bypopularity" : "airing")
+					<Switch
+						checked={filter === "bypopularity"}
+						onCheckedChange={(checked) =>
+							setFilter(checked ? "bypopularity" : "airing")
 						}
-						className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${filter === "bypopularity"
-							? "bg-blue-600"
-							: "bg-gray-200 dark:bg-gray-600"
-							}`}
-					>
-						<span
-							className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${filter === "bypopularity" ? "translate-x-5" : "translate-x-0"
-								}`}
-						/>
-					</button>
+					/>
 					<span
-						className={`text-sm ${filter === "bypopularity" ? "font-semibold text-blue-600 dark:text-blue-400" : "text-gray-500"}`}
+						className={cn(
+							"text-sm",
+							filter === "bypopularity" ? "font-semibold text-foreground" : "text-gray-500",
+						)}
 					>
 						Popular
 					</span>
