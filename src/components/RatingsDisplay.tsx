@@ -420,8 +420,7 @@ export default function RatingsDisplay({
 		}));
 	};
 
-	const hasRecapOrFiller = () =>
-		results.some((result) => result.recap || result.filler);
+	const hasRecapOrFiller = () => results.some((result) => result.recap || result.filler);
 
 	const hasZeroValues = (type: "ratingFiveStars" | "ratingAllStars" | "all") =>
 		results.some((r) =>
@@ -1024,8 +1023,10 @@ export default function RatingsDisplay({
 								)}
 								<TableHead>Title</TableHead>
 								<TableHead>Aired</TableHead>
-								{isOnePieceOnly && !isProduction && <TableHead>Saga</TableHead>}
-								{isOnePieceOnly && !isProduction && <TableHead>Arc</TableHead>}
+								{isOnePieceOnly && <TableHead>Saga</TableHead>}
+								{isOnePieceOnly && <TableHead>Arc</TableHead>}
+								{/* {isOnePieceOnly && !isProduction && <TableHead>Saga</TableHead>}
+								{isOnePieceOnly && !isProduction && <TableHead>Arc</TableHead>} */}
 								<TableHead className="max-w-[60px]">Forum URL</TableHead>
 								{(fetchingMethod === "cheerioParser" ||
 									(isOnePieceOnly && entryType === "manga")) && (
@@ -1196,6 +1197,8 @@ export default function RatingsDisplay({
 						isOnePieceOnly={isOnePieceOnly}
 						entryType={entryType}
 						options={options}
+						setOptions={setOptions}
+						hasRecapOrFiller={hasRecapOrFiller()}
 					/>
 				)}
 			</div>
