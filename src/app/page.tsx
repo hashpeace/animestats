@@ -9,14 +9,14 @@ export default function Home() {
   return (
     <div>
       {/* ── Hero ── */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden mt-10 md:mt-24">
         <div className="absolute inset-0 pointer-events-none" />
         <div className="absolute inset-0">
           <HeroCanvas />
         </div>
 
-        <div className="relative mx-auto pt-14 md:pt-24 pointer-events-none">
-          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <div className="relative mx-auto pointer-events-none">
+          <div className="text-center max-w-2xl mx-auto mb-4 md:mb-16 max-md:pb-4">
             {/* <div className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-blue-600 bg-blue-100/60 backdrop-blur-xs px-3 py-1.5 rounded-full mb-6 border border-blue-200/40">
               <Play className="w-3 h-3 fill-blue-600" />
               Explore anime data like never before

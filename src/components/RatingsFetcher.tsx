@@ -1,11 +1,18 @@
 "use client";
-import { LoaderCircle, Search } from "lucide-react";
+import { LoaderCircle, Search, Settings } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation"; // Import the useSearchParams hook and useRouter
 import posthog from "posthog-js";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { fetchLatestOnePieceEpisodes, LAST_STATIC_OP_EPISODE, onePieceEpisodes } from "@/components/OnePieceOnly/utils";
-import { fetchLatestOnePieceChapters, onePieceChapters } from "@/components/OnePieceOnly/utils2";
+import {
+	fetchLatestOnePieceEpisodes,
+	LAST_STATIC_OP_EPISODE,
+	onePieceEpisodes,
+} from "@/components/OnePieceOnly/utils";
+import {
+	fetchLatestOnePieceChapters,
+	onePieceChapters,
+} from "@/components/OnePieceOnly/utils2";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import SuggestedAnimeCards from "@/components/SuggestedAnimeCards";
 import {
@@ -14,6 +21,7 @@ import {
 	DialogHeader,
 	DialogTitle,
 } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import {
 	Select,
@@ -69,10 +77,11 @@ export default function RatingsFetcher({
 	} | null>(null);
 	const [shouldFetchSearchResults, setShouldFetchSearchResults] =
 		useState(true);
-	const [debouncedQuery, setDebouncedQuery] = useState(""); // State for debounced query
+	const [debouncedQuery, setDebouncedQuery] = useState("");
+	const [showSearchFilters, setShowSearchFilters] = useState(false);
 
-	// const cheerioParsingMethod = isProduction ? "axios" : "api-route";
-	const cheerioParsingMethod = "axios"
+	const cheerioParsingMethod = isProduction ? "axios" : "api-route";
+	// const cheerioParsingMethod = "axios";
 	const inputRef = useRef(null); // Ref for the input element
 	const searchresultRef = useRef(null); // Ref for the input element
 	const initialInputValue = useRef(animeInput); // Store the initial input value
@@ -731,43 +740,29 @@ export default function RatingsFetcher({
 					className="flex flex-col max-w-[700px] mx-auto mb-6 overflow-visible"
 				>
 					<div
-						className="relative flex max-sm:flex-col gap-2 overflow-visible"
+						className="relative flex gap-2 overflow-visible"
 						ref={inputRef}
 					>
-						<Select
-							value={dataSource}
-							onValueChange={(value: "mal" | "imdb") => {
-								setDataSource(value);
-								setAnimeInput("");
-								setAnimeInputForApi("");
-								setSearchResults([]);
-							}}
-						>
-							<SelectTrigger size="lg">
-								<SelectValue placeholder="Source" />
-							</SelectTrigger>
-							<SelectContent>
-								<SelectItem value="mal">MyAnimeList</SelectItem>
-								<SelectItem value="imdb">IMDb</SelectItem>
-							</SelectContent>
-						</Select>
-						{dataSource === "mal" && fetchingMethod === "cheerioParser" && (
-							<Select
-								value={entryType}
-								onValueChange={(value: RatingsDisplayProps["entryType"]) => {
-									setEntryType(value);
-									setAnimeInput("");
-									setAnimeInputForApi("");
-								}}
-							>
-								<SelectTrigger size="lg">
-									<SelectValue placeholder="Type" />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value="anime">Anime</SelectItem>
-									<SelectItem value="manga">Manga</SelectItem>
-								</SelectContent>
-							</Select>
+						{showSearchFilters && (
+							<div className="max-md:hidden">
+								<Select
+									value={dataSource}
+									onValueChange={(value: "mal" | "imdb") => {
+										setDataSource(value);
+										setAnimeInput("");
+										setAnimeInputForApi("");
+										setSearchResults([]);
+									}}
+								>
+									<SelectTrigger size="lg">
+										<SelectValue placeholder="Source" />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="mal">MyAnimeList</SelectItem>
+										<SelectItem value="imdb">IMDb</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
 						)}
 						<div className="grow relative overflow-visible">
 							<input
@@ -909,22 +904,122 @@ export default function RatingsFetcher({
 								</ul>
 							)}
 						</div>
+						<button
+							type="button"
+							onClick={() => setShowSearchFilters((prev) => !prev)}
+							className="flex items-center justify-center size-10 rounded-md border border-gray-200 dark:border-gray-700 text-gray-400 hover:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300 transition-colors"
+							aria-label="Toggle search filters"
+						>
+							<Settings className="size-5" />
+						</button>
 					</div>
-					{/* {fetchingMethod === "cheerioParser" && !isProduction && (
-						<div className="flex items-start flex-col justify-start mt-2">
-							<label htmlFor="episodeCount" className="block text-sm font-medium text-gray-700 mb-1">
-								Number of {entryType === "anime" ? "episodes" : "chapters"} to fetch (optional):
-							</label>
-							<input
-								type="number"
-								id="episodeCount"
-								value={episodeCount}
-								onChange={e => setEpisodeCount(e.target.value ? Number.parseInt(e.target.value) : "")}
-								className="block w-full px-4 py-[5px] text-gray-900 bg-white border border-gray-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-								placeholder="Leave empty for all"
-							/>
+					{showSearchFilters && (
+						<div className="flex items-center gap-4 mt-2 flex-wrap p-2 rounded-md border border-gray-200 dark:border-gray-700">
+							{/* Source */}
+							<div className="flex flex-col gap-1 md:hidden">
+								<Label
+									className="text-sm font-medium mb-0"
+								>
+									Source
+								</Label>
+								<Select
+									value={dataSource}
+									onValueChange={(value: "mal" | "imdb") => {
+										setDataSource(value);
+										setAnimeInput("");
+										setAnimeInputForApi("");
+										setSearchResults([]);
+									}}
+								>
+									<SelectTrigger size="lg">
+										<SelectValue placeholder="Source" />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="mal">MyAnimeList</SelectItem>
+										<SelectItem value="imdb">IMDb</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
+							{/* Fetching method */}
+							{dataSource === "mal" && (
+								<div className="flex flex-col gap-1">
+									<Label
+										className="text-sm font-medium mb-0"
+									>
+										Fetching method
+									</Label>
+									<Select
+										value={fetchingMethod}
+										onValueChange={(value: "jikanOnly" | "cheerioParser") => {
+											setFetchingMethod(value);
+											posthog.capture("option_panel_event", {
+												option: "fetching_method",
+												value: value,
+											});
+										}}
+									>
+										<SelectTrigger size="lg">
+											<SelectValue placeholder="Method" />
+										</SelectTrigger>
+										<SelectContent>
+											<SelectItem value="jikanOnly">Simple</SelectItem>
+											<SelectItem value="cheerioParser">Detailed</SelectItem>
+										</SelectContent>
+									</Select>
+								</div>
+							)}
+							{/* Type */}
+							{dataSource === "mal" && fetchingMethod === "cheerioParser" && (
+								<div className="flex flex-col gap-1">
+									<Label
+										className="text-sm font-medium mb-0"
+									>
+										Type
+									</Label>
+									<Select
+										value={entryType}
+										onValueChange={(value: RatingsDisplayProps["entryType"]) => {
+											setEntryType(value);
+											setAnimeInput("");
+											setAnimeInputForApi("");
+										}}
+									>
+										<SelectTrigger size="lg">
+											<SelectValue placeholder="Type" />
+										</SelectTrigger>
+										<SelectContent>
+											<SelectItem value="anime">Anime</SelectItem>
+											<SelectItem value="manga">Manga</SelectItem>
+										</SelectContent>
+									</Select>
+								</div>
+							)}
+							{/* Number of episodes/chapters to fetch (optional) */}
+							{/* {fetchingMethod === "cheerioParser" && !isProduction && dataSource === "mal" && (
+								<div className="flex flex-col gap-1 min-w-[100px]">
+									<Label
+										htmlFor="episodeCount"
+										className="text-sm font-medium mb-0"
+									>
+										Number of {entryType === "anime" ? "episodes" : "chapters"}{" "}
+										to fetch (optional):
+									</Label>
+									<input
+										type="number"
+										id="episodeCount"
+										value={episodeCount}
+										onChange={(e) =>
+											setEpisodeCount(
+												e.target.value ? Number.parseInt(e.target.value) : "",
+											)
+										}
+										className="block w-full px-4 py-[5px] bg-white dark:bg-muted text-gray-900 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+										placeholder="Leave empty for all"
+									/>
+								</div>
+							)} */}
 						</div>
-					)} */}
+					)}
 					{error && <p className="mt-4 text-red-500">{error}</p>}
 					{error === "No episodes found for this anime" && (
 						// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
