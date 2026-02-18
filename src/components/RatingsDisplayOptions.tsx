@@ -28,6 +28,7 @@ import type {
 } from "@/types/All";
 
 export default function RatingsDisplayOptions({
+	resultsLength,
 	options,
 	setOptions,
 	hasZeroValues,
@@ -177,6 +178,33 @@ export default function RatingsDisplayOptions({
 									</SelectContent>
 								</Select>
 							</div>
+							{resultsLength > 20 && (
+								<div className="flex flex-col">
+									<Label htmlFor="horizontalZoom-select">View zoom</Label>
+									<Select
+										value={options.horizontalZoom ?? "automatic"}
+										onValueChange={(value: "fit" | "automatic" | "extended") => {
+											setOptions({
+												...options,
+												horizontalZoom: value,
+											});
+											posthog.capture("option_panel_event", {
+												option: "vertical_zoom",
+												value: value,
+											});
+										}}
+									>
+										<SelectTrigger className="w-[140px] focus:ring-offset-1 focus:ring-2 bg-white">
+											<SelectValue placeholder="View zoom" />
+										</SelectTrigger>
+										<SelectContent>
+											<SelectItem value="fit">Fit</SelectItem>
+											<SelectItem value="automatic">Automatic</SelectItem>
+											<SelectItem value="extended">Extended</SelectItem>
+										</SelectContent>
+									</Select>
+								</div>
+							)}
 							<div className="flex flex-col">
 								<Label htmlFor="lineStyle-select">Line style</Label>
 								<Select
@@ -277,7 +305,6 @@ export default function RatingsDisplayOptions({
 							/>
 							<Button
 								variant="outline"
-								size="sm"
 								onClick={() => handleScoreFilter(scoreInput)}
 							>
 								Apply

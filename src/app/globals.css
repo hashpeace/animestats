@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* @custom-variant data-vertical (&[data-orientation="vertical"]);
+@custom-variant data-horizontal (&[data-orientation="horizontal"]); */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

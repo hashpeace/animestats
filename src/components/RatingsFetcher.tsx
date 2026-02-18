@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation"; // Import the useSearchParams hook and useRouter
 import posthog from "posthog-js";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { fetchLatestOnePieceEpisodes, onePieceEpisodes } from "@/components/OnePieceOnly/utils";
+import { fetchLatestOnePieceEpisodes, LAST_STATIC_OP_EPISODE, onePieceEpisodes } from "@/components/OnePieceOnly/utils";
 import { fetchLatestOnePieceChapters, onePieceChapters } from "@/components/OnePieceOnly/utils2";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import SuggestedAnimeCards from "@/components/SuggestedAnimeCards";
@@ -150,9 +150,11 @@ export default function RatingsFetcher({
 			if (entryType === "anime") {
 				setEntryType("anime");
 				setResults(onePieceEpisodes as EpisodeInfos[]);
-				fetchLatestOnePieceEpisodes().then((results) => {
-					setResults(results);
-				});
+				if (onePieceEpisodes.length <= LAST_STATIC_OP_EPISODE) {
+					fetchLatestOnePieceEpisodes().then((newResults) => {
+						setResults(newResults);
+					});
+				}
 			} else {
 				setEntryType("manga");
 				setResults(onePieceChapters as EpisodeInfos[]);

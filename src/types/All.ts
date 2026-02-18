@@ -43,6 +43,7 @@ export interface ChartOptions {
 	hideZeroValues: boolean;
 	viewMode: "graph" | "table" | "wrapped";
 	yAxisDomain: "full" | "closed";
+	horizontalZoom?: "fit" | "automatic" | "extended";
 	lineStyle: "bump" | "linear" | "monotone" | "step";
 	filterFillerAndRecap: FilterType;
 	filterBelowScore: {
@@ -66,6 +67,7 @@ export interface RatingsDisplayProps {
 }
 
 export interface RatingsDisplayOptionsProps {
+	resultsLength: number;
 	options: ChartOptions;
 	setOptions: React.Dispatch<React.SetStateAction<ChartOptions>>;
 	hasZeroValues: boolean;

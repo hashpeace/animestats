@@ -1,4 +1,10 @@
-import { ChevronDown, ExternalLink, InfoIcon, LoaderCircle, Share2 } from "lucide-react";
+import {
+	ChevronDown,
+	ExternalLink,
+	InfoIcon,
+	LoaderCircle,
+	Share2,
+} from "lucide-react";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -7,7 +13,6 @@ import {
 	Line,
 	LineChart,
 	ReferenceLine,
-	ResponsiveContainer,
 	XAxis,
 	YAxis,
 } from "recharts";
@@ -22,6 +27,7 @@ import {
 	ChartContainer,
 	ChartTooltip,
 } from "@/components/ui/chart";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
 	Table,
 	TableBody,
@@ -83,7 +89,7 @@ const formatRating = (
 	rating: number | undefined,
 	format: "1decimal" | "2decimal",
 ): string => {
-	if (rating === undefined || rating === 0) return "-";
+	if (rating === undefined || rating === null || rating === 0) return "-";
 	const outOf10 = rating / 10;
 	return format === "1decimal" ? outOf10.toFixed(1) : outOf10.toFixed(2);
 };
@@ -123,15 +129,11 @@ export default function RatingsDisplay({
 	isOnePieceOnly,
 }: RatingsDisplayProps) {
 	const isLongAnime = results.length > 80;
-	const entryTitle = animeInfo?.titles.find((title) => title.type === "Default")?.title ?? animeInfo?.title ?? "";
-	const nbOfTicks =
-		results.length > 1000
-			? 50
-			: results.length >= 500
-				? 20
-				: results.length > 250
-					? 10
-					: 5;
+	const isMediumAnime = results.length > 24 && results.length <= 80;
+	const entryTitle =
+		animeInfo?.titles.find((title) => title.type === "Default")?.title ??
+		animeInfo?.title ??
+		"";
 
 	const [options, setOptions] = useState<ChartOptions>({
 		sortBy: "episodeNb",
@@ -141,14 +143,17 @@ export default function RatingsDisplay({
 			// ratingAllStarsRounded: false,
 		},
 		hideZeroValues: true,
-		viewMode: "graph",
+		viewMode: isOnePieceOnly ? "wrapped" : "graph",
 		yAxisDomain: "closed",
+		horizontalZoom: "automatic",
 		lineStyle: "monotone",
 		filterFillerAndRecap: "show",
 		filterBelowScore: { score: "", type: "highlight" },
 		showTrendLine: false,
 		ratingDisplayFormat: dataSource === "mal" ? "2decimal" : "1decimal",
 	});
+
+	const customNbOfTicks = options.horizontalZoom === "fit" ? Math.max(5, Math.ceil(results.length / 20 / 5) * 5) : 5;
 
 	const sortedResults = useMemo(() => {
 		let sorted = [...results].sort((a, b) =>
@@ -176,10 +181,6 @@ export default function RatingsDisplay({
 				let currentSaga = "";
 				let currentArc = "";
 				if (isOnePieceOnly) {
-					setOptions((prevOptions) => ({
-						...prevOptions,
-						viewMode: "wrapped",
-					}));
 					const sagas =
 						entryType === "manga"
 							? onePieceSagasChapters(results)
@@ -265,7 +266,7 @@ export default function RatingsDisplay({
 		return sortedResults.map((item) => ({
 			...item,
 			// Store rounded /10 values for chart display
-			ratingAllStarsChart: roundRating(
+			ratingAllStarsChart: item.ratingAllStars === null ? undefined : roundRating(
 				item.ratingAllStars,
 				options.ratingDisplayFormat,
 			),
@@ -276,7 +277,7 @@ export default function RatingsDisplay({
 	}, [sortedResults, options.ratingDisplayFormat]);
 
 	// Calculate moving average for trendline
-	const trendLineData = useMemo(() => {
+	const chartOrTrendlineData = useMemo(() => {
 		if (!options.showTrendLine || options.sortBy !== "episodeNb")
 			return chartData;
 
@@ -349,6 +350,7 @@ export default function RatingsDisplay({
 		payload: any;
 		label: string | boolean;
 	}) => {
+
 		if (active && payload && payload.length) {
 			const ratingValue = payload[0].payload.ratingAllStarsChart;
 			const fiveStarsValue = payload[0].payload.ratingFiveStarsChart;
@@ -368,27 +370,41 @@ export default function RatingsDisplay({
 					</li>
 					{fetchingMethod === "cheerioParser" &&
 						payload[0].payload.nbOfVotes && (
-							<li className="label">• {`# of votes: ${payload[0].payload.nbOfVotes.toLocaleString("en-US")}`}</li>
+							<li className="label">
+								•{" "}
+								{`# of votes: ${payload[0].payload.nbOfVotes.toLocaleString("en-US")}`}
+							</li>
 						)}
-					{ratingValue && options.visibleRatingInfo.ratingAllStars && (
-						<li className="label">• {`Rating: ${formatValue(ratingValue)}/10`}</li>
+					{ratingValue && options.visibleRatingInfo.ratingAllStars && ratingValue !== null && ratingValue !== 0 && (
+						<li className="label">
+							• {`Rating: ${formatValue(ratingValue)}/10`}
+						</li>
 					)}
 					{fetchingMethod === "cheerioParser" &&
 						options.visibleRatingInfo.ratingFiveStars &&
 						fiveStarsValue && (
-							<li className="label">• {`5☆ rating: ${fiveStarsValue.toFixed(1)}%`}</li>
+							<li className="label">
+								• {`5☆ rating: ${fiveStarsValue.toFixed(1)}%`}
+							</li>
 						)}
 					{payload[0].payload.title && (
 						<li className="label">• {`Title: ${payload[0].payload.title}`}</li>
 					)}
 					{payload[0].payload.aired && (
-						<li className="label">• {`Aired: ${new Date(payload[0].payload.aired).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`}</li>
+						<li className="label">
+							•{" "}
+							{`Aired: ${new Date(payload[0].payload.aired).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`}
+						</li>
 					)}
 					{payload[0].payload.currentSaga && (
-						<li className="label">• {`Saga: ${payload[0].payload.currentSaga}`}</li>
+						<li className="label">
+							• {`Saga: ${payload[0].payload.currentSaga}`}
+						</li>
 					)}
 					{payload[0].payload.currentArc && (
-						<li className="label">• {`Arc: ${payload[0].payload.currentArc}`}</li>
+						<li className="label">
+							• {`Arc: ${payload[0].payload.currentArc}`}
+						</li>
 					)}
 				</ul>
 			);
@@ -404,7 +420,8 @@ export default function RatingsDisplay({
 		}));
 	};
 
-	const hasRecapOrFiller = () => results.some((result) => result.recap || result.filler);
+	const hasRecapOrFiller = () =>
+		results.some((result) => result.recap || result.filler);
 
 	const hasZeroValues = (type: "ratingFiveStars" | "ratingAllStars" | "all") =>
 		results.some((r) =>
@@ -489,43 +506,48 @@ export default function RatingsDisplay({
 		}
 	};
 
-	const entryStats =
-		!animeInfo
-			? []
-			: (dataSource as string) === "imdb"
-				? [
-					{ label: "Episodes", value: animeInfo.episodes },
-					{ label: "Aired", value: animeInfo.aired?.string || animeInfo.year || "-" },
-					{
-						label: "Score",
-						value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
-					},
-				]
-				: [
-					{ label: "Type", value: animeInfo.type },
-					{
-						label: entryType === "anime" ? "Episodes" : "Chapters",
-						value:
-							entryType === "anime"
-								? animeInfo.episodes
-								: animeInfo.chapters || "-",
-					},
-					{ label: "Status", value: animeInfo.status },
-					{
-						label: "Aired",
-						value:
-							entryType === "anime"
-								? animeInfo.aired?.string || "-"
-								: animeInfo.published?.string || "-",
-					},
-					{
-						label: "Score",
-						value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
-					},
-					{ label: "Rank", value: `#${animeInfo.rank}` },
-					{ label: "Popularity", value: `#${animeInfo.popularity}` },
-					{ label: "Members", value: animeInfo.members.toLocaleString("en-US") },
-				];
+	const entryStats = !animeInfo
+		? []
+		: (dataSource as string) === "imdb"
+			? [
+				{ label: "Episodes", value: animeInfo.episodes },
+				{
+					label: "Aired",
+					value: animeInfo.aired?.string || animeInfo.year || "-",
+				},
+				{
+					label: "Score",
+					value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
+				},
+			]
+			: [
+				{ label: "Type", value: animeInfo.type },
+				{
+					label: entryType === "anime" ? "Episodes" : "Chapters",
+					value:
+						entryType === "anime"
+							? animeInfo.episodes
+							: animeInfo.chapters || "-",
+				},
+				{ label: "Status", value: animeInfo.status },
+				{
+					label: "Aired",
+					value:
+						entryType === "anime"
+							? animeInfo.aired?.string || "-"
+							: animeInfo.published?.string || "-",
+				},
+				{
+					label: "Score",
+					value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
+				},
+				{ label: "Rank", value: `#${animeInfo.rank}` },
+				{ label: "Popularity", value: `#${animeInfo.popularity}` },
+				{
+					label: "Members",
+					value: animeInfo.members.toLocaleString("en-US"),
+				},
+			];
 
 	return (
 		<>
@@ -585,6 +607,7 @@ export default function RatingsDisplay({
 				</div>
 			)}
 			<RatingsDisplayOptions
+				resultsLength={results.length}
 				options={options}
 				setOptions={setOptions}
 				hasZeroValues={hasZeroValues("all")}
@@ -614,7 +637,7 @@ export default function RatingsDisplay({
 													className="w-3 h-3 rounded-full"
 													style={{ backgroundColor: tier.color }}
 												/>
-												<span className="text-sm text-gray-600">{tier.label}</span>
+												<span className="text-sm text-foreground">{tier.label}</span>
 											</div>
 										</TooltipTrigger>
 										<TooltipContent>
@@ -701,11 +724,20 @@ export default function RatingsDisplay({
 					</TooltipProvider>
 				</div>
 			) : options.viewMode === "graph" ? (
-				<ChartContainer config={chartConfig} className="max-sm:h-[300px] max-md:h-[400px] min-h-[300px] md:min-h-[400px] max-md:!aspect-auto">
-					<ResponsiveContainer width="100%" height="100%">
+				<ScrollArea key={`chart-${options.horizontalZoom}`} className="rounded-md border py-4 w-full [&>div>div]:!block" type="always">
+					<ChartContainer config={chartConfig} className={cn("",
+						results.length > 20 && options.horizontalZoom !== "fit" ? "max-md:h-[300px] max-lg:h-[500px] max-lg:min-w-[var(--dynamic-width)]" : "",
+						results.length > 20 && results.length < 40 ? "w-full" : "", // for animes between 20 and 40 episodes, we want to make the chart full width
+						((options.horizontalZoom === "extended" && results.length > 20) || (options.horizontalZoom === "automatic" && isLongAnime)) ? "max-sm:h-[450px] max-md:h-[500px] h-[600px] 2xl:h-[700px]" : ""
+					)}
+						style={{
+							'--dynamic-width': `${results.length * 20}px`,
+							minWidth: (options.horizontalZoom === "extended" || (options.horizontalZoom === "automatic" && isLongAnime)) ? `${results.length * 20}px` : ""
+						} as React.CSSProperties}
+					>
 						<LineChart
 							accessibilityLayer
-							data={trendLineData}
+							data={chartOrTrendlineData}
 							margin={{ top: 20, left: 12, right: 12, bottom: 20 }}
 						>
 							<CartesianGrid vertical={false} />
@@ -722,12 +754,12 @@ export default function RatingsDisplay({
 											...Array.from(
 												{
 													length: Math.ceil(
-														results[results.length - 1].episodeNb / nbOfTicks,
+														results[results.length - 1].episodeNb / customNbOfTicks,
 													),
 												},
 												(_, i) =>
 													Math.min(
-														(i + 1) * nbOfTicks,
+														(i + 1) * customNbOfTicks,
 														results[results.length - 1].episodeNb,
 													),
 											),
@@ -942,8 +974,9 @@ export default function RatingsDisplay({
 							</Line>
 						)} */}
 						</LineChart>
-					</ResponsiveContainer>
-				</ChartContainer>
+					</ChartContainer>
+					<ScrollBar orientation="horizontal" />
+				</ScrollArea>
 			) : (
 				<>
 					<Table>
@@ -1066,8 +1099,8 @@ export default function RatingsDisplay({
 										</TableCell>
 										{isOnePieceOnly && !isProduction && (
 											<>
-												<TableCell>{result.currentSaga || "-"}</TableCell>
-												<TableCell>{result.currentArc || "-"}</TableCell>
+												<TableCell className="max-w-[100px]">{result.currentSaga || "-"}</TableCell>
+												<TableCell className="max-w-[100px]">{result.currentArc || "-"}</TableCell>
 											</>
 										)}
 										<TableCell>

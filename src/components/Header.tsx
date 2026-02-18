@@ -88,21 +88,6 @@ const Header = () => {
 							>
 								<Settings className="w-[18px] h-[18px]" />
 							</button>
-							<div className="flex items-center gap-3">
-								<span className={cn("text-sm", theme === "light" ? "font-semibold text-gray-900 dark:text-gray-100" : "text-gray-500 dark:text-gray-400")}>Light</span>
-								<Switch
-									checked={theme === "dark"}
-									onCheckedChange={(checked) => {
-										const value = checked ? "dark" : "light";
-										setTheme(value);
-										posthog.capture("option_panel_event", {
-											option: "theme",
-											value: value,
-										});
-									}}
-								/>
-								<span className={cn("text-sm", theme === "dark" ? "font-semibold text-gray-900 dark:text-gray-100" : "text-gray-500 dark:text-gray-400")}>Dark</span>
-							</div>
 
 							{/* Mobile toggle */}
 							<button
