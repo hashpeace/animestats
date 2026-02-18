@@ -1,5 +1,5 @@
 "use client";
-import { LoaderCircle, Search, Settings } from "lucide-react";
+import { InfoIcon, LoaderCircle, Search, Settings } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation"; // Import the useSearchParams hook and useRouter
 import posthog from "posthog-js";
@@ -15,6 +15,13 @@ import {
 } from "@/components/OnePieceOnly/utils2";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import SuggestedAnimeCards from "@/components/SuggestedAnimeCards";
+import {
+	Alert,
+	AlertAction,
+	AlertDescription,
+	AlertTitle,
+} from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 import {
 	Dialog,
 	DialogContent,
@@ -48,6 +55,7 @@ export default function RatingsFetcher({
 	const [results, setResults] = useState<ParserEpisodeInfos[] | EpisodeInfos[]>(
 		[],
 	);
+
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState("");
 	const [animeInput, setAnimeInput] = useState("");
@@ -107,6 +115,7 @@ export default function RatingsFetcher({
 	const animeIdFromQuery = searchParams.get("animeId");
 	const imdbIdFromQuery = searchParams.get("imdbId");
 	const sourceFromQuery = searchParams.get("source");
+	const isRedirected = searchParams.get("redirected") === "true";
 	const router = useRouter();
 
 	// Set the entry type from the URL
@@ -739,10 +748,7 @@ export default function RatingsFetcher({
 					}}
 					className="flex flex-col max-w-[700px] mx-auto mb-6 overflow-visible"
 				>
-					<div
-						className="relative flex gap-2 overflow-visible"
-						ref={inputRef}
-					>
+					<div className="relative flex gap-2 overflow-visible" ref={inputRef}>
 						{showSearchFilters && (
 							<div className="max-md:hidden">
 								<Select
@@ -917,11 +923,7 @@ export default function RatingsFetcher({
 						<div className="flex items-center gap-4 mt-2 flex-wrap p-2 rounded-md border border-gray-200 dark:border-gray-700">
 							{/* Source */}
 							<div className="flex flex-col gap-1 md:hidden">
-								<Label
-									className="text-sm font-medium mb-0"
-								>
-									Source
-								</Label>
+								<Label className="text-sm font-medium mb-0">Source</Label>
 								<Select
 									value={dataSource}
 									onValueChange={(value: "mal" | "imdb") => {
@@ -943,9 +945,7 @@ export default function RatingsFetcher({
 							{/* Fetching method */}
 							{dataSource === "mal" && (
 								<div className="flex flex-col gap-1">
-									<Label
-										className="text-sm font-medium mb-0"
-									>
+									<Label className="text-sm font-medium mb-0">
 										Fetching method
 									</Label>
 									<Select
@@ -971,14 +971,12 @@ export default function RatingsFetcher({
 							{/* Type */}
 							{dataSource === "mal" && fetchingMethod === "cheerioParser" && (
 								<div className="flex flex-col gap-1">
-									<Label
-										className="text-sm font-medium mb-0"
-									>
-										Type
-									</Label>
+									<Label className="text-sm font-medium mb-0">Type</Label>
 									<Select
 										value={entryType}
-										onValueChange={(value: RatingsDisplayProps["entryType"]) => {
+										onValueChange={(
+											value: RatingsDisplayProps["entryType"],
+										) => {
 											setEntryType(value);
 											setAnimeInput("");
 											setAnimeInputForApi("");
@@ -1069,6 +1067,15 @@ export default function RatingsFetcher({
 							</>
 						)}
 				</form>
+			)}
+			{isRedirected && isOnePieceOnly && (
+				<Alert className="w-fit my-3 items-center">
+					<InfoIcon className="size-5" />
+					<AlertTitle>You got redirected</AlertTitle>
+					<AlertDescription>
+						This is a dedicated page for One Piece. To go back browsing other anime, <a href="/episodes" className="text-blue-500 hover:underline">click here</a>.
+					</AlertDescription>
+				</Alert>
 			)}
 			{isOnePieceOnly && (
 				<Select

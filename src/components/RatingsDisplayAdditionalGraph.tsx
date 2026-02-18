@@ -8,6 +8,7 @@ import {
 	XAxis,
 	YAxis,
 } from "recharts";
+import AiringScheduleGrid from "@/components/AiringScheduleGrid";
 import { AllArcsStacked } from "@/components/OnePieceOnly/AllArcsStacked";
 import { SagaAndArcsRatings } from "@/components/OnePieceOnly/SagaAndArcsRatings";
 import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/utils";
@@ -440,8 +441,15 @@ export default function RatingsDisplayAdditionalGraph({
 							</Line>
 						</LineChart>
 					</ChartContainer>
+
+					{/* -- Airing schedule heatmap -- */}
+					<AiringScheduleGrid
+						results={filteredResults}
+						entryType={entryType}
+					/>
 				</div>
 			)}
 		</>
 	);
 }
+
