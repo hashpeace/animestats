@@ -246,7 +246,7 @@ const WeeklyScoreChart: React.FC<{
 				const weekNumber = Number.parseInt(week.split(" ")[1]);
 
 				return (
-					<div className="bg-background border border-border p-2 rounded shadow">
+					<div className="bg-background border border-border p-2 rounded shadow-sm">
 						<p className="font-bold mb-2">{week}</p>
 						{payload.map((entry, index) => {
 							if (entry.value !== null) {
@@ -369,7 +369,7 @@ const WeeklyScoreChart: React.FC<{
 						</SelectContent>
 					</Select>
 				</div>
-				<ChartContainer config={chartConfig} className="max-md:h-[400px] md:min-h-[400px] max-md:!aspect-auto">
+				<ChartContainer config={chartConfig} className="max-md:h-[400px] md:min-h-[400px] max-md:aspect-auto!">
 					<ResponsiveContainer width="100%" height="100%">
 						<LineChart
 							data={chartData}

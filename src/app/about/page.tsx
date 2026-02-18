@@ -43,7 +43,7 @@ function AboutPageContent() {
 					onClick={() => setActiveTab("episodes")}
 					className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors
 						${activeTab === "episodes"
-							? "bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 shadow-sm"
+							? "bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 shadow-xs"
 							: "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700"
 						}`}
 				>
@@ -53,7 +53,7 @@ function AboutPageContent() {
 					onClick={() => setActiveTab("weekly")}
 					className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors
 						${activeTab === "weekly"
-							? "bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 shadow-sm"
+							? "bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 shadow-xs"
 							: "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700"
 						}`}
 				>
@@ -62,7 +62,7 @@ function AboutPageContent() {
 				{/* <button
 					onClick={() => setActiveTab("onepiece")}
 					className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors ${activeTab === "onepiece"
-						? "bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 shadow-sm"
+						? "bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 shadow-xs"
 							: "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700"
 						}`}
 				>
@@ -71,7 +71,7 @@ function AboutPageContent() {
 				{/* <button
 					onClick={() => setActiveTab("extension")}
 					className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors ${activeTab === "extension"
-						? "bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 shadow-sm"
+						? "bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 shadow-xs"
 							: "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700"
 						}`}
 				>

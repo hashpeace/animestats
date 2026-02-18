@@ -106,7 +106,7 @@ export function TiltScreenshot({ src, alt }: { src: string; alt: string }) {
 			className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)] border border-gray-200/40"
 			style={style}
 		>
-			<div className="relative aspect-[16/11] bg-gray-100">
+			<div className="relative aspect-16/11 bg-gray-100">
 				<Image src={src} alt={alt} fill className="object-cover" />
 			</div>
 		</div>

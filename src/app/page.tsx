@@ -17,14 +17,14 @@ export default function Home() {
 
         <div className="relative mx-auto pt-14 md:pt-24 pointer-events-none">
           <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-            {/* <div className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-blue-600 bg-blue-100/60 backdrop-blur-sm px-3 py-1.5 rounded-full mb-6 border border-blue-200/40">
+            {/* <div className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-blue-600 bg-blue-100/60 backdrop-blur-xs px-3 py-1.5 rounded-full mb-6 border border-blue-200/40">
               <Play className="w-3 h-3 fill-blue-600" />
               Explore anime data like never before
             </div> */}
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 dark:text-gray-100 tracking-tight leading-[1.08]">
               Anime{" "}
-              <span className="relative z-10 bg-gradient-to-r from-blue-600 via-violet-500 to-blue-600 bg-clip-text text-transparent">
+              <span className="relative z-10 bg-linear-to-r from-blue-600 via-violet-500 to-blue-600 bg-clip-text text-transparent">
                 Stats
               </span>
             </h1>
@@ -46,7 +46,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/weekly-rankings"
-                className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 text-gray-700 text-sm font-bold px-6 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all shadow-sm"
+                className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 text-gray-700 text-sm font-bold px-6 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all shadow-xs"
               >
                 Weekly Rankings
               </Link>
@@ -95,7 +95,7 @@ export default function Home() {
                 { src: "/screenshots/episodes_death_note.png" },
                 { src: "/screenshots/episodes_fma.png" },
               ]}
-              className="aspect-[16/11]"
+              className="aspect-16/11"
               accentColor="#2563eb"
             />
           </div>
@@ -117,7 +117,7 @@ export default function Home() {
                 { src: "/screenshots/weekly_graph.png" },
               ]}
               accentColor="#059669"
-              className="aspect-[16/9]"
+              className="aspect-video"
             />
           </div>
 

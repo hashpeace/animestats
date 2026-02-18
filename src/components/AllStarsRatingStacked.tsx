@@ -21,7 +21,7 @@ export function AllStarsRatingStacked({ ratings }: { ratings: AllRatings[] }) {
 	]
 	return (
 		<ResponsiveContainer width="100%" height={30}>
-			<ChartContainer config={chartConfig} className="[&_.recharts-tooltip-wrapper]:z-[10]">
+			<ChartContainer config={chartConfig} className="[&_.recharts-tooltip-wrapper]:z-10">
 				<BarChart accessibilityLayer data={chartData} layout="vertical" barSize={20}>
 					<CartesianGrid horizontal={false} />
 					<YAxis dataKey="rating" type="category" tickLine={false} axisLine={false} hide />

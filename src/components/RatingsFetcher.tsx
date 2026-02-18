@@ -769,12 +769,12 @@ export default function RatingsFetcher({
 								</SelectContent>
 							</Select>
 						)}
-						<div className="flex-grow relative overflow-visible">
+						<div className="grow relative overflow-visible">
 							<input
 								type="text"
 								id="animeInput"
 								value={animeInput}
-								className="block w-full px-4 py-[7px] pr-10 text-gray-900 bg-white dark:bg-muted dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-none focus:ring-1 focus:ring-foreground focus:border-foreground"
+								className="block w-full px-4 py-[7px] pr-10 text-gray-900 bg-white dark:bg-muted dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-hidden focus:ring-1 focus:ring-foreground focus:border-foreground"
 								onChange={(e) => {
 									setAnimeInput(e.target.value);
 									setShouldFetchSearchResults(true);
@@ -920,7 +920,7 @@ export default function RatingsFetcher({
 								id="episodeCount"
 								value={episodeCount}
 								onChange={e => setEpisodeCount(e.target.value ? Number.parseInt(e.target.value) : "")}
-								className="block w-full px-4 py-[5px] text-gray-900 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+								className="block w-full px-4 py-[5px] text-gray-900 bg-white border border-gray-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 								placeholder="Leave empty for all"
 							/>
 						</div>
@@ -968,7 +968,7 @@ export default function RatingsFetcher({
 											? ((estimatedTime - timeLeft) / estimatedTime) * 100
 											: undefined
 									}
-									// className="w-full mt-2 [&>*]:bg-red-600"
+									// className="w-full mt-2 *:bg-red-600"
 									className="w-full mt-2"
 								/>
 							</>

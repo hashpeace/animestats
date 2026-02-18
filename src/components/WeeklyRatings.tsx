@@ -904,7 +904,7 @@ export default function WeeklyRatings() {
 						<div className="absolute top-0 left-0 bg-gray-700 text-white px-2 py-1 text-xs font-bold rounded-tl-lg rounded-br-lg z-10">
 							#{index + 1}
 						</div>
-						<div className="w-20 h-[130px] relative flex-shrink-0">
+						<div className="w-20 h-[130px] relative shrink-0">
 							<Image
 								src={episode.imageUrl || "/placeholder-anime.jpg"}
 								alt={episode.animeTitle}
@@ -920,7 +920,7 @@ export default function WeeklyRatings() {
 						<div className="flex-1 p-2 overflow-hidden">
 							<div className="mb-1">
 								<h4
-									className="text-[16px] [line-height:20px] font-semibold mb-2 line-clamp-2"
+									className="text-[16px] leading-[20px] font-semibold mb-2 line-clamp-2"
 									title={episode.animeTitle}
 								>
 									{episode.animeTitle}
@@ -1152,7 +1152,7 @@ export default function WeeklyRatings() {
 						<button
 							onClick={handleNextWeek}
 							disabled={currentWeekIndex === weeks.length - 1}
-							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md shadow-sm hover:bg-muted focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md shadow-xs hover:bg-muted focus:outline-hidden focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
 						>
 							← <span className="max-sm:hidden">Prev Week</span>
 						</button>
@@ -1166,7 +1166,7 @@ export default function WeeklyRatings() {
 						<button
 							onClick={handlePreviousWeek}
 							disabled={currentWeekIndex === 0}
-							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md shadow-sm hover:bg-muted focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md shadow-xs hover:bg-muted focus:outline-hidden focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
 						>
 							<span className="max-sm:hidden">Next Week</span> →
 						</button>
@@ -1273,7 +1273,7 @@ export default function WeeklyRatings() {
 								</div>
 								<div className="flex-1 p-2">
 									<div>
-										<h4 className="text-[17px] [line-height:22px] font-semibold mb-2 flex items-center gap-2">
+										<h4 className="text-[17px] leading-[22px] font-semibold mb-2 flex items-center gap-2">
 											<Link
 												href={anime.url}
 												className="hover:underline line-clamp-2"

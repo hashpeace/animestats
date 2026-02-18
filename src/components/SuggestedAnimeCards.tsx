@@ -82,7 +82,7 @@ export default function SuggestedAnimeCards() {
 							key={i}
 							className="overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
 						>
-							<div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-200 dark:bg-gray-700 animate-pulse">
+							<div className="relative aspect-3/4 w-full overflow-hidden bg-gray-200 dark:bg-gray-700 animate-pulse">
 								<div className="absolute right-2 top-2 h-6 w-10 rounded bg-gray-300 dark:bg-gray-600" />
 							</div>
 							<div className="p-3">
@@ -109,7 +109,7 @@ export default function SuggestedAnimeCards() {
 								href={`/episodes?animeId=${anime.mal_id}`}
 								className="group overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg dark:bg-gray-800"
 							>
-								<div className="relative aspect-[3/4] w-full overflow-hidden">
+								<div className="relative aspect-3/4 w-full overflow-hidden">
 									<Image
 										src={anime.images.webp.image_url}
 										alt={anime.title || ""}

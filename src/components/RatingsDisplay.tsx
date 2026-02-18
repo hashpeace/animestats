@@ -566,7 +566,7 @@ export default function RatingsDisplay({
 								className="rounded-lg shadow-md flex-none max-md:w-[100px] max-md:h-[140px]"
 							/>
 						)}
-						<div className="flex-grow w-full">
+						<div className="grow w-full">
 							<div className="flex items-center gap-2 mb-2">
 								<h2 className="text-xl font-bold">
 									<a
@@ -724,9 +724,9 @@ export default function RatingsDisplay({
 					</TooltipProvider>
 				</div>
 			) : options.viewMode === "graph" ? (
-				<ScrollArea key={`chart-${options.horizontalZoom}`} className="rounded-md border py-4 w-full [&>div>div]:!block" type="always">
+				<ScrollArea key={`chart-${options.horizontalZoom}`} className="rounded-md border py-4 w-full [&>div>div]:block!" >
 					<ChartContainer config={chartConfig} className={cn("",
-						results.length > 20 && options.horizontalZoom !== "fit" ? "max-md:h-[300px] max-lg:h-[500px] max-lg:min-w-[var(--dynamic-width)]" : "",
+						results.length > 20 && options.horizontalZoom !== "fit" ? "max-md:h-[300px] max-lg:h-[500px] max-lg:min-w-(--dynamic-width)" : "",
 						results.length > 20 && results.length < 40 ? "w-full" : "", // for animes between 20 and 40 episodes, we want to make the chart full width
 						((options.horizontalZoom === "extended" && results.length > 20) || (options.horizontalZoom === "automatic" && isLongAnime)) ? "max-sm:h-[450px] max-md:h-[500px] h-[600px] 2xl:h-[700px]" : ""
 					)}
@@ -1159,7 +1159,7 @@ export default function RatingsDisplay({
 					].map(
 						(item) =>
 							item.type && (
-								<div key={item.key} className="rounded-lg bg-background dark:border dark:border-gray-800 p-3 shadow">
+								<div key={item.key} className="rounded-lg bg-background dark:border dark:border-gray-800 p-3 shadow-sm">
 									<dt className="text-sm font-medium text-muted-foreground">
 										{item.label}
 									</dt>
