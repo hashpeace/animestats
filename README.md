@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Anime Stats
+
+Dive deep into anime episode ratings from MyAnimeList. Track trends, discover top-rated episodes, and analyze your favorite series like never before.
+
+## Features
+
+- **Episode Ratings** — Search, view per-episode ratings with interactive line charts and tables
+- **Multiple Data Sources** — MyAnimeList (via Jikan API + forum scraping) and IMDb
+- **Two Fetching Modes** — Simple (Jikan API only) or Detailed (scrapes MAL forum polls for 5-star breakdowns)
+- **Weekly Rankings** — Track currently airing anime, compare episode scores across a season
+<!-- - **One Piece Page** — Dedicated view with saga/arc breakdowns and static data for 1100+ episodes -->
+- **Display Options** — Graph, table, and wrapped views with customizable chart styles, Y-axis domains, trend lines, and filters (filler/recap episodes, score thresholds)
+- **Dark Mode** — Light/dark theme toggle with localStorage persistence
+- **Responsive** — Mobile-friendly UI
+
+## Tech Stack
+
+- **Framework** — [Next.js](https://nextjs.org/)
+- **Styling** — [Tailwind CSS](https://tailwindcss.com/) 4
+- **UI Components** — [Shadcn](https://ui.shadcn.com/)
+- **Charts** — [Recharts](https://recharts.org/)
+- **Tables** — [TanStack Table](https://tanstack.com/table)
+- **Data Fetching** — Axios, [Cheerio](https://cheerio.js.org/) (HTML scraping)
+- **Analytics** — [PostHog](https://posthog.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20+
+- yarn, npm, or pnpm
+
+### Install
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+### Production Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn build
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Lint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+yarn lint
+```
 
-## Deploy on Vercel
+## Data Sources & APIs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Source | Usage | Auth Required |
+|--------|-------|---------------|
+| [Jikan API](https://jikan.moe/) | Anime/manga info, episode data, ratings | No |
+| MyAnimeList (scraping) | Forum poll results for detailed rating breakdowns | No |
+| [IMDb API](https://imdbapi.dev/) | Alternative episode ratings | No |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT

@@ -17,16 +17,29 @@ export function ImgCarousel({
 	const next = useCallback(() => setIdx((i) => (i + 1) % len), [len]);
 	const prev = useCallback(() => setIdx((i) => (i - 1 + len) % len), [len]);
 
-	// Auto-advance
-	// useEffect(() => {
-	//   const t = setInterval(next, 7000);
-	//   return () => clearInterval(t);
-	// }, [next]);
+	const touchStart = useRef<number | null>(null);
+
+	function onTouchStart(e: React.TouchEvent) {
+		touchStart.current = e.touches[0].clientX;
+	}
+
+	function onTouchEnd(e: React.TouchEvent) {
+		if (touchStart.current === null) return;
+		const delta = e.changedTouches[0].clientX - touchStart.current;
+		if (Math.abs(delta) > 50) {
+			delta < 0 ? next() : prev();
+		}
+		touchStart.current = null;
+	}
 
 	return (
 		<div className="relative group">
 			<div className="rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-white">
-				<div className={`relative ${className} bg-gray-100 overflow-hidden`}>
+				<div
+					className={`relative ${className} bg-gray-100 overflow-hidden`}
+					onTouchStart={onTouchStart}
+					onTouchEnd={onTouchEnd}
+				>
 					{screenshots.map((s, i) => (
 						<div
 							key={s.src}

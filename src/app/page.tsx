@@ -85,10 +85,6 @@ export default function Home() {
           </div>
 
           <div className="md:col-span-3">
-            {/* <TiltScreenshot
-              src="/screenshots/episodes_death_note.png"
-              alt="Episode Ratings visualization"
-            /> */}
             <ImgCarousel
               key="episodes"
               screenshots={[
@@ -106,10 +102,6 @@ export default function Home() {
       <div className="relative py-16 md:py-24">
         <div className="grid md:grid-cols-5 gap-10 md:gap-14 items-center">
           <div className="md:col-span-3 order-2 md:order-1">
-            {/* <TiltScreenshot
-              src="/screenshots/episodes_fma.png"
-              alt="Weekly Rankings view"
-            /> */}
             <ImgCarousel
               key="weekly-rankings"
               screenshots={[
