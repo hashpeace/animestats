@@ -74,7 +74,7 @@ export const getSeasonStartDate = (
 	weeks: string[],
 	firstWeekFall2024: string,
 ): { startDate: Date; endDate: Date } | null => {
-	const DAYS_IN_SEASON_MINUS_ONE = 90;
+	const DAYS_IN_SEASON_MINUS_ONE_PLUS_ONE_WEEK = 97; // add a week to the 90 days in a season, so we can see episodes aired after the season "ends"
 	const WEEKS_IN_SEASON = 13;
 	const SEASONS = ["winter", "spring", "summer", "fall"] as const;
 
@@ -98,7 +98,7 @@ export const getSeasonStartDate = (
 
 	return {
 		startDate: seasonStartDate,
-		endDate: addDaysToDate(seasonStartDate, DAYS_IN_SEASON_MINUS_ONE),
+		endDate: addDaysToDate(seasonStartDate, DAYS_IN_SEASON_MINUS_ONE_PLUS_ONE_WEEK),
 	};
 };
 
@@ -168,11 +168,22 @@ const prepareWeeklyScoreData = (
 
 	return animeList.map((anime) => {
 		const weeklyScores: { [week: string]: number | null } = {};
-		const episodesNumbers: (number | null)[] = Array(13).fill(null); // Initialize an array to hold episode numbers for 13 weeks
+		const episodesNumbers: (number | null)[] = Array(14).fill(null); // Initialize an array to hold episode numbers for 13 weeks (+1 extra)
 
 		anime.episodeData?.forEach((episode) => {
+			if (anime.mal_id === 60564) {
+				// console.count("episode")
+			}
 			const airedDate = new Date(episode.aired);
+			if (anime.mal_id === 60564) {
+				console.log({ airedDate, seasonStartDate, seasonEndDate })
+				console.log(episode.mal_id, episode.aired)
+			}
 			if (airedDate >= seasonStartDate && airedDate <= seasonEndDate) {
+				if (anime.mal_id === 60564) {
+					console.log(episode.mal_id, episode.aired)
+					// console.count("episode2")
+				}
 				const weekNumber = getWeekNumber(airedDate, seasonStartDate);
 				weeklyScores[`Week ${weekNumber}`] = episode.score || null;
 				// episodesNumbers[weekNumber - 1] = episode.mal_id // Store episode ID at the correct week index (0-based)
@@ -214,7 +225,8 @@ const WeeklyScoreChart: React.FC<{
 		const [activeAnime, setActiveAnime] = useState<string | null>(null);
 		const [selectedAnime, setSelectedAnime] = useState<string>("all");
 		const [connectNulls, setConnectNulls] = useState<boolean>(false);
-		const weeks = Array.from({ length: 13 }, (_, i) => `Week ${i + 1}`);
+		// add a week to the 13 weeks in a season, so we can see episodes aired after the season "ends"
+		const weeks = Array.from({ length: 14 }, (_, i) => `Week ${i + 1}`);
 		const chartData = weeks.map((week) => {
 			const weekData: { [key: string]: number | string | null } = { week };
 			data.forEach((anime) => {
@@ -222,6 +234,8 @@ const WeeklyScoreChart: React.FC<{
 			});
 			return weekData;
 		});
+		console.log({ data })
+		console.log({ animeList })
 
 		interface TooltipPayload {
 			dataKey: string;

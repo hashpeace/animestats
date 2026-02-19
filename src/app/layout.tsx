@@ -14,8 +14,8 @@ import { TooltipProvider } from "@radix-ui/react-tooltip";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MyAnimeList Episode Ratings",
-  description: "Fetch episode ratings from MyAnimeList",
+  title: "Anime Stats - Track Episode Ratings",
+  description: "Dive deep into anime episode ratings from MyAnimeList and IMDb. Discover top-rated episodes and analyze your favorite series like never before!",
 };
 
 export default function RootLayout({
