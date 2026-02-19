@@ -28,6 +28,7 @@ import {
 	ChartTooltip,
 } from "@/components/ui/chart";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
 	Table,
 	TableBody,
@@ -127,9 +128,9 @@ export default function RatingsDisplay({
 	episodeCount,
 	dataSource,
 	isOnePieceOnly,
+	loading,
 }: RatingsDisplayProps) {
 	const isLongAnime = results.length > 80;
-	const isMediumAnime = results.length > 24 && results.length <= 80;
 	const entryTitle =
 		animeInfo?.titles.find((title) => title.type === "Default")?.title ??
 		animeInfo?.title ??
@@ -154,7 +155,10 @@ export default function RatingsDisplay({
 		ratingDisplayFormat: dataSource === "mal" ? "2decimal" : "1decimal",
 	});
 
-	const customNbOfTicks = options.horizontalZoom === "fit" ? Math.max(5, Math.ceil(results.length / 20 / 5) * 5) : 5;
+	const customNbOfTicks =
+		options.horizontalZoom === "fit"
+			? Math.max(5, Math.ceil(results.length / 20 / 5) * 5)
+			: 5;
 
 	const sortedResults = useMemo(() => {
 		let sorted = [...results].sort((a, b) =>
@@ -267,10 +271,10 @@ export default function RatingsDisplay({
 		return sortedResults.map((item) => ({
 			...item,
 			// Store rounded /10 values for chart display
-			ratingAllStarsChart: item.ratingAllStars === null ? undefined : roundRating(
-				item.ratingAllStars,
-				options.ratingDisplayFormat,
-			),
+			ratingAllStarsChart:
+				item.ratingAllStars === null
+					? undefined
+					: roundRating(item.ratingAllStars, options.ratingDisplayFormat),
 			// Keep five stars as percentage for right Y-axis
 			ratingFiveStarsChart:
 				item.ratingFiveStars === 0 ? undefined : item.ratingFiveStars,
@@ -351,7 +355,6 @@ export default function RatingsDisplay({
 		payload: any;
 		label: string | boolean;
 	}) => {
-
 		if (active && payload && payload.length) {
 			const ratingValue = payload[0].payload.ratingAllStarsChart;
 			const fiveStarsValue = payload[0].payload.ratingFiveStarsChart;
@@ -376,11 +379,14 @@ export default function RatingsDisplay({
 								{`# of votes: ${payload[0].payload.nbOfVotes.toLocaleString("en-US")}`}
 							</li>
 						)}
-					{ratingValue && options.visibleRatingInfo.ratingAllStars && ratingValue !== null && ratingValue !== 0 && (
-						<li className="label">
-							• {`Rating: ${formatValue(ratingValue)}/10`}
-						</li>
-					)}
+					{ratingValue &&
+						options.visibleRatingInfo.ratingAllStars &&
+						ratingValue !== null &&
+						ratingValue !== 0 && (
+							<li className="label">
+								• {`Rating: ${formatValue(ratingValue)}/10`}
+							</li>
+						)}
 					{fetchingMethod === "cheerioParser" &&
 						options.visibleRatingInfo.ratingFiveStars &&
 						fiveStarsValue && (
@@ -421,7 +427,8 @@ export default function RatingsDisplay({
 		}));
 	};
 
-	const hasRecapOrFiller = () => results.some((result) => result.recap || result.filler);
+	const hasRecapOrFiller = () =>
+		results.some((result) => result.recap || result.filler);
 
 	const hasZeroValues = (type: "ratingFiveStars" | "ratingAllStars" | "all") =>
 		results.some((r) =>
@@ -549,18 +556,48 @@ export default function RatingsDisplay({
 				},
 			];
 
+	if (loading) {
+		return (
+			<>
+				<div className="mb-4 p-2 max-w-[525px] sm:p-4 border border-gray-200 rounded-lg bg-gray-50/50 dark:bg-gray-900/50 dark:border-gray-700">
+					<div className="flex flex-row items-start gap-4 max-md:mb-4">
+						<Skeleton className="w-[130px] h-[180px] flex-none" />
+						<div className="grow w-full">
+							<Skeleton className="w-full h-5 mb-5" />
+							<div
+								className={cn(
+									"grid gap-2 grid-cols-1 ",
+									dataSource === "mal" && "sm:grid-cols-2"
+								)}
+							>
+								{[...Array(6)].map((_, index) => (
+									<Skeleton key={index} className="max-sm:w-[150px] w-full h-4" />
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="flex flex-row items-center gap-3">
+					<Skeleton className="w-[140px] h-[40px]" />
+					<Skeleton className="w-[140px] h-[40px]" />
+					<Skeleton className="w-[140px] h-[40px]" />
+				</div>
+				<div className="border border-foreground/10 rounded-lg p-2 mt-6">
+					<Skeleton className="aspect-video w-full" />
+				</div>
+			</>
+		);
+	}
+
 	return (
 		<>
 			{animeInfo && (
 				<div className="mb-4 p-2 sm:p-4 border border-gray-200 rounded-lg w-fit bg-gray-50/50 dark:bg-gray-900/50 dark:border-gray-700">
-					{/* <div className="flex flex-col sm:flex-row items-start"> */}
 					<div className="flex flex-row items-start gap-4 max-md:mb-4">
 						{animeInfo.images?.webp?.image_url && (
 							<Image
 								src={animeInfo.images.webp?.image_url}
-								alt={
-									entryTitle || "Entry cover"
-								}
+								alt={entryTitle || "Entry cover"}
 								width={130}
 								height={180}
 								className="rounded-lg shadow-md flex-none max-md:w-[100px] max-md:h-[140px]"
@@ -588,7 +625,12 @@ export default function RatingsDisplay({
 									</button>
 								)}
 							</div>
-							<div className={cn("grid gap-2 text-sm max-md:hidden", dataSource === "mal" ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1")}>
+							<div
+								className={cn(
+									"grid gap-2 text-sm max-md:hidden grid-cols-1 ",
+									dataSource === "mal" && "sm:grid-cols-2"
+								)}
+							>
 								{entryStats.map(({ label, value }) => (
 									<p key={label}>
 										<span className="font-semibold">{label}:</span> {value}
@@ -597,7 +639,14 @@ export default function RatingsDisplay({
 							</div>
 						</div>
 					</div>
-					<div className={cn("grid gap-2 text-sm md:hidden", dataSource === "mal" ? "max-[400px]:grid-cols-1 grid-cols-2 max-[380px]:grid-rows-2" : "grid-cols-1")}>
+					<div
+						className={cn(
+							"grid gap-2 text-sm md:hidden",
+							dataSource === "mal"
+								? "max-[400px]:grid-cols-1 grid-cols-2 max-[380px]:grid-rows-2"
+								: "grid-cols-1",
+						)}
+					>
 						{entryStats.map(({ label, value }) => (
 							<p key={label}>
 								<span className="font-semibold">{label}:</span> {value}
@@ -620,32 +669,40 @@ export default function RatingsDisplay({
 					{/* Legend - only show tiers present in results */}
 					<TooltipProvider>
 						<div className="flex flex-wrap gap-4 mb-6">
-							{ratingTierLegend.filter((tier) => {
-								return sortedResults.some((result) => {
-									const resultTier = getRatingTier(result.ratingAllStars, options.ratingDisplayFormat);
-									return resultTier.label === tier.label;
-								});
-							}).map((tier) => {
-								const thresholdText = tier.label === "Garbage"
-									? "< 4.0"
-									: `≥ ${tier.threshold.toFixed(1)}`;
-								return (
-									<Tooltip key={tier.label}>
-										<TooltipTrigger asChild>
-											<div className="flex items-center gap-2">
-												<div
-													className="w-3 h-3 rounded-full"
-													style={{ backgroundColor: tier.color }}
-												/>
-												<span className="text-sm text-foreground">{tier.label}</span>
-											</div>
-										</TooltipTrigger>
-										<TooltipContent>
-											<p>Score: {thresholdText}</p>
-										</TooltipContent>
-									</Tooltip>
-								);
-							})}
+							{ratingTierLegend
+								.filter((tier) => {
+									return sortedResults.some((result) => {
+										const resultTier = getRatingTier(
+											result.ratingAllStars,
+											options.ratingDisplayFormat,
+										);
+										return resultTier.label === tier.label;
+									});
+								})
+								.map((tier) => {
+									const thresholdText =
+										tier.label === "Garbage"
+											? "< 4.0"
+											: `≥ ${tier.threshold.toFixed(1)}`;
+									return (
+										<Tooltip key={tier.label}>
+											<TooltipTrigger asChild>
+												<div className="flex items-center gap-2">
+													<div
+														className="w-3 h-3 rounded-full"
+														style={{ backgroundColor: tier.color }}
+													/>
+													<span className="text-sm text-foreground">
+														{tier.label}
+													</span>
+												</div>
+											</TooltipTrigger>
+											<TooltipContent>
+												<p>Score: {thresholdText}</p>
+											</TooltipContent>
+										</Tooltip>
+									);
+								})}
 						</div>
 					</TooltipProvider>
 
@@ -724,16 +781,33 @@ export default function RatingsDisplay({
 					</TooltipProvider>
 				</div>
 			) : options.viewMode === "graph" ? (
-				<ScrollArea key={`chart-${options.horizontalZoom}`} className="rounded-md border py-4 w-full [&>div>div]:block!" >
-					<ChartContainer config={chartConfig} className={cn("",
-						results.length > 20 && options.horizontalZoom !== "fit" ? "max-md:h-[300px] max-lg:h-[500px] max-lg:min-w-(--dynamic-width)" : "",
-						results.length > 20 && results.length < 40 ? "w-full" : "", // for animes between 20 and 40 episodes, we want to make the chart full width
-						((options.horizontalZoom === "extended" && results.length > 20) || (options.horizontalZoom === "automatic" && isLongAnime)) ? "max-sm:h-[450px] max-md:h-[500px] h-[600px] 2xl:h-[700px]" : ""
-					)}
-						style={{
-							'--dynamic-width': `${results.length * 20}px`,
-							minWidth: (options.horizontalZoom === "extended" || (options.horizontalZoom === "automatic" && isLongAnime)) ? `${results.length * 20}px` : ""
-						} as React.CSSProperties}
+				<ScrollArea
+					key={`chart-${options.horizontalZoom}`}
+					className="rounded-md border py-4 w-full [&>div>div]:block!"
+				>
+					<ChartContainer
+						config={chartConfig}
+						className={cn(
+							"",
+							results.length > 20 && options.horizontalZoom !== "fit"
+								? "max-md:h-[300px] max-lg:h-[500px] max-lg:min-w-(--dynamic-width)"
+								: "",
+							results.length > 20 && results.length < 40 ? "w-full" : "", // for animes between 20 and 40 episodes, we want to make the chart full width
+							(options.horizontalZoom === "extended" && results.length > 20) ||
+								(options.horizontalZoom === "automatic" && isLongAnime)
+								? "max-sm:h-[450px] max-md:h-[500px] h-[600px] 2xl:h-[700px]"
+								: "",
+						)}
+						style={
+							{
+								"--dynamic-width": `${results.length * 20}px`,
+								minWidth:
+									options.horizontalZoom === "extended" ||
+										(options.horizontalZoom === "automatic" && isLongAnime)
+										? `${results.length * 20}px`
+										: "",
+							} as React.CSSProperties
+						}
 					>
 						<LineChart
 							accessibilityLayer
@@ -754,7 +828,8 @@ export default function RatingsDisplay({
 											...Array.from(
 												{
 													length: Math.ceil(
-														results[results.length - 1].episodeNb / customNbOfTicks,
+														results[results.length - 1].episodeNb /
+														customNbOfTicks,
 													),
 												},
 												(_, i) =>
@@ -1031,7 +1106,9 @@ export default function RatingsDisplay({
 								<TableHead className="max-w-[60px]">Forum URL</TableHead>
 								{(fetchingMethod === "cheerioParser" ||
 									(isOnePieceOnly && entryType === "manga")) && (
-										<TableHead className="min-w-[200px]">Ratings distribution</TableHead>
+										<TableHead className="min-w-[200px]">
+											Ratings distribution
+										</TableHead>
 									)}
 							</TableRow>
 						</TableHeader>
@@ -1101,8 +1178,12 @@ export default function RatingsDisplay({
 										</TableCell>
 										{isOnePieceOnly && !isProduction && (
 											<>
-												<TableCell className="max-w-[100px]">{result.currentSaga || "-"}</TableCell>
-												<TableCell className="max-w-[100px]">{result.currentArc || "-"}</TableCell>
+												<TableCell className="max-w-[100px]">
+													{result.currentSaga || "-"}
+												</TableCell>
+												<TableCell className="max-w-[100px]">
+													{result.currentArc || "-"}
+												</TableCell>
 											</>
 										)}
 										<TableCell>
@@ -1161,7 +1242,10 @@ export default function RatingsDisplay({
 					].map(
 						(item) =>
 							item.type && (
-								<div key={item.key} className="rounded-lg bg-background dark:border dark:border-gray-800 p-3 shadow-sm">
+								<div
+									key={item.key}
+									className="rounded-lg bg-background dark:border dark:border-gray-800 p-3 shadow-sm"
+								>
 									<dt className="text-sm font-medium text-muted-foreground">
 										{item.label}
 									</dt>
@@ -1171,21 +1255,24 @@ export default function RatingsDisplay({
 												? `${Number(item.value).toFixed(1)}%`
 												: `${formatRating(Number(item.value), options.ratingDisplayFormat)}/10`}
 										</dd>
-										{hasZeroValues(item.key as "ratingFiveStars" | "ratingAllStars" | "all") && (
-											<div className="flex items-center mt-1">
-												<Tooltip>
-													<TooltipTrigger asChild>
-														<InfoIcon className="size-4 text-red-500" />
-													</TooltipTrigger>
-													<TooltipContent side="top">
-														<span>
-															Can&apos;t calculate exact average, because some episodes
-															are not rated. But for the available episodes, that is the average.
-														</span>
-													</TooltipContent>
-												</Tooltip>
-											</div>
-										)}
+										{hasZeroValues(
+											item.key as "ratingFiveStars" | "ratingAllStars" | "all",
+										) && (
+												<div className="flex items-center mt-1">
+													<Tooltip>
+														<TooltipTrigger asChild>
+															<InfoIcon className="size-4 text-red-500" />
+														</TooltipTrigger>
+														<TooltipContent side="top">
+															<span>
+																Can&apos;t calculate exact average, because some
+																episodes are not rated. But for the available
+																episodes, that is the average.
+															</span>
+														</TooltipContent>
+													</Tooltip>
+												</div>
+											)}
 									</div>
 								</div>
 							),

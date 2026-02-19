@@ -57,10 +57,17 @@ const Header = () => {
 						<nav className="hidden md:flex items-center gap-6">
 							{navigationItems.map((item) => {
 								const isActive = currentPath === item.href;
+								const handleClick = (e: React.MouseEvent) => {
+									if (item.href === "/episodes") {
+										e.preventDefault();
+										window.location.href = "/episodes";
+									}
+								};
 								return (
 									<Link
 										key={item.href}
 										href={item.href}
+										onClick={handleClick}
 										className={cn(
 											"text-[13px] font-medium transition-colors duration-150",
 											isActive
@@ -149,11 +156,18 @@ const Header = () => {
 								<div className="space-y-1">
 									{navigationItems.map((item) => {
 										const isActive = currentPath === item.href;
+										const handleClick = (e: React.MouseEvent) => {
+											setIsMobilePopoverOpen(false);
+											if (item.href === "/episodes") {
+												e.preventDefault();
+												window.location.href = "/episodes";
+											}
+										};
 										return (
 											<Link
 												key={item.href}
 												href={item.href}
-												onClick={() => setIsMobilePopoverOpen(false)}
+												onClick={handleClick}
 												className={cn(
 													"block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
 													isActive

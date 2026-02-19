@@ -15,13 +15,7 @@ import {
 } from "@/components/OnePieceOnly/utils2";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import SuggestedAnimeCards from "@/components/SuggestedAnimeCards";
-import {
-	Alert,
-	AlertAction,
-	AlertDescription,
-	AlertTitle,
-} from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
 	Dialog,
 	DialogContent,
@@ -37,13 +31,13 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useFetchingMethodContext } from "@/contexts/FetchingMethodContext";
 import { fetchRatings } from "@/lib/fetchRatings";
-import { isProduction } from "@/lib/utils";
+import { cn, isProduction } from "@/lib/utils";
 import type {
 	AnimeInfo,
 	EpisodeInfos,
-	FetchingMethod,
 	ParserEpisodeInfos,
 	RatingsDisplayProps,
 	RatingsFetcherProps,
@@ -52,11 +46,14 @@ import type {
 export default function RatingsFetcher({
 	isOnePieceOnly = false,
 }: RatingsFetcherProps) {
-	const [results, setResults] = useState<ParserEpisodeInfos[] | EpisodeInfos[]>(
-		[],
-	);
+	const searchParams = useSearchParams();
+	const animeIdFromQuery = searchParams.get("animeId");
+	const imdbIdFromQuery = searchParams.get("imdbId");
+	const sourceFromQuery = searchParams.get("source");
+	const isRedirected = searchParams.get("redirected") === "true";
 
-	const [loading, setLoading] = useState(false);
+	const [results, setResults] = useState<ParserEpisodeInfos[] | EpisodeInfos[]>([]);
+	const [loading, setLoading] = useState(animeIdFromQuery ? true : false);
 	const [error, setError] = useState("");
 	const [animeInput, setAnimeInput] = useState("");
 	const [animeInputForApi, setAnimeInputForApi] = useState("");
@@ -93,6 +90,7 @@ export default function RatingsFetcher({
 	const inputRef = useRef(null); // Ref for the input element
 	const searchresultRef = useRef(null); // Ref for the input element
 	const initialInputValue = useRef(animeInput); // Store the initial input value
+	const router = useRouter();
 
 	const extractAnimeInfoFromUrl = (
 		input: string,
@@ -110,13 +108,6 @@ export default function RatingsFetcher({
 
 	const { animeId, entryTypeFromUrl } =
 		extractAnimeInfoFromUrl(animeInputForApi);
-
-	const searchParams = useSearchParams();
-	const animeIdFromQuery = searchParams.get("animeId");
-	const imdbIdFromQuery = searchParams.get("imdbId");
-	const sourceFromQuery = searchParams.get("source");
-	const isRedirected = searchParams.get("redirected") === "true";
-	const router = useRouter();
 
 	// Set the entry type from the URL
 	useEffect(() => {
@@ -1032,13 +1023,6 @@ export default function RatingsFetcher({
 							Want to try another method? Click here
 						</p>
 					)}
-					{/* {loading && (fetchingMethod === "jikanOnly" || cheerioParsingMethod === "axios") && ( */}
-					{loading && (
-						<div className="flex justify-center items-center mt-4">
-							<LoaderCircle className="animate-spin size-8 text-blue-500" />
-							<span className="ml-2 text-blue-500">Loading...</span>
-						</div>
-					)}
 					{loading &&
 						fetchingMethod === "cheerioParser" &&
 						cheerioParsingMethod === "api-route" && (
@@ -1061,7 +1045,6 @@ export default function RatingsFetcher({
 											? ((estimatedTime - timeLeft) / estimatedTime) * 100
 											: undefined
 									}
-									// className="w-full mt-2 *:bg-red-600"
 									className="w-full mt-2"
 								/>
 							</>
@@ -1073,7 +1056,12 @@ export default function RatingsFetcher({
 					<InfoIcon className="size-5" />
 					<AlertTitle>You got redirected</AlertTitle>
 					<AlertDescription>
-						This is a dedicated page for One Piece. To go back browsing other anime, <a href="/episodes" className="text-blue-500 hover:underline">click here</a>.
+						This is a dedicated page for One Piece. To go back browsing other
+						anime,{" "}
+						<a href="/episodes" className="text-blue-500 hover:underline">
+							click here
+						</a>
+						.
 					</AlertDescription>
 				</Alert>
 			)}
@@ -1096,8 +1084,10 @@ export default function RatingsFetcher({
 			{results.length === 0 &&
 				!loading &&
 				dataSource === "mal" &&
-				!isOnePieceOnly && <SuggestedAnimeCards />}
-			{results.length > 0 && (
+				!isOnePieceOnly &&
+				animeIdFromQuery !== undefined && <SuggestedAnimeCards />}
+
+			{(results.length > 0 || loading) && (
 				<RatingsDisplay
 					results={results as EpisodeInfos[]}
 					entryType={entryType}
@@ -1106,6 +1096,7 @@ export default function RatingsFetcher({
 					episodeCount={episodeCount}
 					dataSource={dataSource}
 					isOnePieceOnly={isOnePieceOnly}
+					loading={loading}
 				/>
 			)}
 

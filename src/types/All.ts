@@ -64,6 +64,7 @@ export interface RatingsDisplayProps {
 	episodeCount?: number | "";
 	dataSource: "mal" | "imdb";
 	isOnePieceOnly?: boolean;
+	loading: boolean;
 }
 
 export interface RatingsDisplayOptionsProps {
