@@ -1,5 +1,5 @@
 "use client";
-import { InfoIcon, LoaderCircle, Search, Settings } from "lucide-react";
+import { InfoIcon, LoaderCircle, Search, Settings, X } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation"; // Import the useSearchParams hook and useRouter
 import posthog from "posthog-js";
@@ -31,10 +31,9 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Skeleton } from "@/components/ui/skeleton";
 import { useFetchingMethodContext } from "@/contexts/FetchingMethodContext";
 import { fetchRatings } from "@/lib/fetchRatings";
-import { cn, isProduction } from "@/lib/utils";
+import { isProduction } from "@/lib/utils";
 import type {
 	AnimeInfo,
 	EpisodeInfos,
@@ -74,6 +73,7 @@ export default function RatingsFetcher({
 		}[]
 	>([]);
 	const [dataSource, setDataSource] = useState<"mal" | "imdb">("mal");
+	const [isSearching, setIsSearching] = useState(false);
 	const [seasonPickerOpen, setSeasonPickerOpen] = useState(false);
 	const [pendingImdbData, setPendingImdbData] = useState<{
 		imdbId: string;
@@ -632,6 +632,7 @@ export default function RatingsFetcher({
 				return;
 			}
 			try {
+				setIsSearching(true);
 				if (dataSource === "imdb") {
 					const response = await fetch(
 						`${IMDB_API_BASE}/search/titles?query=${encodeURIComponent(query)}`,
@@ -693,6 +694,8 @@ export default function RatingsFetcher({
 				}
 			} catch (error) {
 				console.error("Error fetching searchresults:", error);
+			} finally {
+				setIsSearching(false);
 			}
 		},
 		[shouldFetchSearchResults, entryType, dataSource],
@@ -762,11 +765,16 @@ export default function RatingsFetcher({
 							</div>
 						)}
 						<div className="grow relative overflow-visible">
+							<div
+								className="absolute inset-y-0 left-1.5 sm:left-2 flex items-center text-gray-600 transition-colors"
+							>
+								<Search className="size-4 sm:size-5" />
+							</div>
 							<input
 								type="text"
 								id="animeInput"
 								value={animeInput}
-								className="block w-full px-4 py-[7px] pr-10 text-gray-900 bg-white dark:bg-muted dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-hidden focus:ring-1 focus:ring-foreground focus:border-foreground"
+								className="block w-full px-4 py-[7px] pl-7 sm:pl-8 pr-[30px] text-gray-900 bg-white dark:bg-muted dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-md focus:outline-hidden focus:ring-1 focus:ring-foreground focus:border-foreground"
 								onChange={(e) => {
 									setAnimeInput(e.target.value);
 									setShouldFetchSearchResults(true);
@@ -836,23 +844,32 @@ export default function RatingsFetcher({
 								}}
 								placeholder={
 									dataSource === "imdb"
-										? "Search anime on IMDb..."
-										: `Search any ${entryType} or paste link from MAL`
+										? "Search anime"
+										: `Search ${entryType}`
 								}
 							/>
-							<button
-								type="submit"
-								disabled={loading}
-								className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600 hover:text-blue-500 transition-colors disabled:opacity-50"
-							>
-								<Search />
-							</button>
-							{searchresults.length > 0 && (
+							{animeInput && (
+								<button
+									type="button"
+									onClick={(e) => {
+										e.preventDefault();
+										setAnimeInput("");
+										setAnimeInputForApi("");
+										setSearchResults([]);
+										setShouldFetchSearchResults(false);
+										clearAnimeIdFromUrl();
+									}}
+									className="absolute inset-y-0 right-1 w-6 justify-center flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+									aria-label="Clear input"
+								>
+									<X className="size-4" />
+								</button>
+							)}
+							{animeInput.trim().length > 2 && searchresults.length > 0 && (
 								<ul
 									className="absolute z-10 w-full bg-background border border-gray-300 dark:border-gray-700 rounded-md mt-1 top-full left-0"
 									ref={searchresultRef}
 								>
-									{/* <ul className="absolute z-50 w-full bg-white border border-gray-300 rounded-md mt-1 shadow-lg max-h-60 overflow-y-auto" ref={searchresultRef}></ul> */}
 									{searchresults.map((searchresult, index) => (
 										// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 										<li
@@ -900,6 +917,15 @@ export default function RatingsFetcher({
 									))}
 								</ul>
 							)}
+							{!isSearching &&
+								debouncedQuery.length >= 3 &&
+								searchresults.length === 0 && animeInput.length > 2 && (
+									<div className="absolute z-10 w-full bg-background border border-gray-300 dark:border-gray-700 rounded-md mt-1 top-full left-0">
+										<div className="px-4 py-6 flex items-center justify-center">
+											<span className="text-gray-500">No results found</span>
+										</div>
+									</div>
+								)}
 						</div>
 						<button
 							type="button"
