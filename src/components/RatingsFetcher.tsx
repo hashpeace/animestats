@@ -53,6 +53,7 @@ export default function RatingsFetcher({
 
 	const [results, setResults] = useState<ParserEpisodeInfos[] | EpisodeInfos[]>([]);
 	const [loading, setLoading] = useState(animeIdFromQuery ? true : false);
+	const [loadingDetailed, setLoadingDetailed] = useState(animeIdFromQuery ? false : true);
 	const [error, setError] = useState("");
 	const [animeInput, setAnimeInput] = useState("");
 	const [animeInputForApi, setAnimeInputForApi] = useState("");
@@ -364,6 +365,7 @@ export default function RatingsFetcher({
 		const currentEntryType = overrideUrl ? fetchEntryType : entryType;
 
 		setLoading(true);
+		setLoadingDetailed(true)
 		setError("");
 		setResults([]);
 		setEstimatedTime(null);
@@ -439,6 +441,7 @@ export default function RatingsFetcher({
 					}));
 
 				setResults(newResults);
+				setLoading(false);
 
 				if (currentEntryType === "anime" && newResults?.length === 0) {
 					setError("No episodes found for this anime");
@@ -498,6 +501,7 @@ export default function RatingsFetcher({
 							return updatedResults;
 						});
 						setLoading(false);
+						setLoadingDetailed(false)
 					}
 				}
 			};
@@ -534,8 +538,10 @@ export default function RatingsFetcher({
 						return updatedResults;
 					});
 					setLoading(false);
+					setLoadingDetailed(false)
 				} else {
 					setLoading(false);
+					setLoadingDetailed(false)
 				}
 			};
 
@@ -554,11 +560,13 @@ export default function RatingsFetcher({
 				});
 			} else {
 				setLoading(false);
+				setLoadingDetailed(false)
 			}
 		} catch (err) {
 			setError("An error occurred while fetching data.");
 			console.error(err);
 			setLoading(false);
+			setLoadingDetailed(false)
 		}
 	};
 
@@ -591,7 +599,7 @@ export default function RatingsFetcher({
 		let timer: NodeJS.Timeout;
 		if (
 			cheerioParsingMethod === "api-route" &&
-			loading &&
+			loadingDetailed &&
 			estimatedTime !== null &&
 			timeLeft !== null &&
 			timeLeft > 0
@@ -607,7 +615,7 @@ export default function RatingsFetcher({
 			}, 1000);
 		}
 		return () => clearInterval(timer);
-	}, [loading, estimatedTime, timeLeft, cheerioParsingMethod]);
+	}, [loadingDetailed, estimatedTime, timeLeft, cheerioParsingMethod]);
 
 	// Fetch searchresults only if the user has started typing
 	useEffect(() => {
@@ -879,6 +887,7 @@ export default function RatingsFetcher({
 												setAnimeInput(searchresult.title);
 												setAnimeInputForApi(searchresult.url);
 												setSearchResults([]);
+												setAnimeInput("");
 												setShouldFetchSearchResults(false);
 												clearAnimeIdFromUrl();
 												fetchData(searchresult.url);
@@ -1049,7 +1058,7 @@ export default function RatingsFetcher({
 							Want to try another method? Click here
 						</p>
 					)}
-					{loading &&
+					{loadingDetailed &&
 						fetchingMethod === "cheerioParser" &&
 						cheerioParsingMethod === "api-route" && (
 							<>

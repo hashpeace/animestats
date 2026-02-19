@@ -19,6 +19,16 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const STORAGE_KEY = "theme";
 
+function updateThemeColor(theme: Theme) {
+	const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+	if (metaThemeColor) {
+		metaThemeColor.setAttribute(
+			"content",
+			theme === "dark" ? "#111111" : "#ffffff",
+		);
+	}
+}
+
 function applyTheme(theme: Theme) {
 	const root = document.documentElement;
 	if (theme === "dark") {
@@ -26,6 +36,7 @@ function applyTheme(theme: Theme) {
 	} else {
 		root.classList.remove("dark");
 	}
+	updateThemeColor(theme);
 }
 
 export function useTheme() {
