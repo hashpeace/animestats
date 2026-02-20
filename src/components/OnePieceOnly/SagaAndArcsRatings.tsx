@@ -314,7 +314,7 @@ export function SagaAndArcsRatings({
 								/>
 							);
 						}}
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+						// biome-ignore lint/suspicious/noExplicitAny: to be fixed
 						activeDot={(props: any) => {
 							const isFiller = props.payload.filler;
 							return (

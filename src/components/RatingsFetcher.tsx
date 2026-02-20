@@ -53,6 +53,7 @@ export default function RatingsFetcher({
 
 	const [results, setResults] = useState<ParserEpisodeInfos[] | EpisodeInfos[]>([]);
 	const [loading, setLoading] = useState(animeIdFromQuery ? true : false);
+	// const [loadingDetailed, setLoadingDetailed] = useState(animeIdFromQuery ? false : true);
 	const [loadingDetailed, setLoadingDetailed] = useState(animeIdFromQuery ? false : true);
 	const [error, setError] = useState("");
 	const [animeInput, setAnimeInput] = useState("");

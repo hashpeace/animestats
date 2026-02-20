@@ -19,7 +19,7 @@ export const onePieceSagasChapters = (results: EpisodeInfos[]) => {
 			],
 		},
 		{
-			saga: "Arabasta",
+			saga: "Alabasta",
 			story_arcs: [
 				{ arc: "Reverse Mountain", episodesOrChapters: "101—105", volumes: "12" },
 				{ arc: "Whisky Peak", episodesOrChapters: "106—114", volumes: "12—13" },
@@ -141,7 +141,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 9, "nbOfVotes": 136 }
 		],
 		"title": "Romance Dawn - The Dawn of the Adventure",
-		"aired": "1997-07-19T00:00:00+00:00",
+		"aired": "1997-07-18T00:00:00.000Z",
 		"score": 4
 	},
 	{
@@ -158,7 +158,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 8 }
 		],
 		"title": "That Guy, \"Straw Hat Luffy\"",
-		"aired": "1997-07-28T00:00:00+00:00",
+		"aired": "1997-07-27T00:00:00.000Z",
 		"score": 4.24
 	},
 	{
@@ -175,7 +175,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 4 }
 		],
 		"title": "Introducing \"Pirate Hunter Zoro\"",
-		"aired": "1997-08-04T00:00:00+00:00",
+		"aired": "1997-08-03T00:00:00.000Z",
 		"score": 4.2700000000000005
 	},
 	{
@@ -192,7 +192,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.6, "nbOfVotes": 7 }
 		],
 		"title": "Marine Captain \"Axe-Hand Morgan\"",
-		"aired": "1997-08-11T00:00:00+00:00",
+		"aired": "1997-08-10T00:00:00.000Z",
 		"score": 4.220000000000001
 	},
 	{
@@ -209,7 +209,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 4 }
 		],
 		"title": "Pirate King and Master Swordsman",
-		"aired": "1997-08-25T00:00:00+00:00",
+		"aired": "1997-08-24T00:00:00.000Z",
 		"score": 4.29
 	},
 	{
@@ -226,7 +226,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 2 }
 		],
 		"title": "The First Crew Member",
-		"aired": "1997-09-01T00:00:00+00:00",
+		"aired": "1997-08-31T00:00:00.000Z",
 		"score": 4.29
 	},
 	{
@@ -243,7 +243,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 4 }
 		],
 		"title": "Friends",
-		"aired": "1997-09-08T00:00:00+00:00",
+		"aired": "1997-09-07T00:00:00.000Z",
 		"score": 4.3
 	},
 	{
@@ -260,7 +260,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Introducing Nami",
-		"aired": "1997-09-13T00:00:00+00:00",
+		"aired": "1997-09-12T00:00:00.000Z",
 		"score": 4.2299999999999995
 	},
 	{
@@ -277,7 +277,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "The Devil Girl",
-		"aired": "1997-09-22T00:00:00+00:00",
+		"aired": "1997-09-21T00:00:00.000Z",
 		"score": 4.3100000000000005
 	},
 	{
@@ -294,7 +294,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 11 }
 		],
 		"title": "The Incident at the Bar",
-		"aired": "1997-09-29T00:00:00+00:00",
+		"aired": "1997-09-28T00:00:00.000Z",
 		"score": 4.0600000000000005
 	},
 	{
@@ -311,7 +311,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.1, "nbOfVotes": 14 }
 		],
 		"title": "Take Flight",
-		"aired": "1997-10-06T00:00:00+00:00",
+		"aired": "1997-10-05T00:00:00.000Z",
 		"score": 4
 	},
 	{
@@ -328,7 +328,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Dog",
-		"aired": "1997-10-13T00:00:00+00:00",
+		"aired": "1997-10-12T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -345,7 +345,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Treasure",
-		"aired": "1997-10-20T00:00:00+00:00",
+		"aired": "1997-10-19T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -362,7 +362,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Reckless!!",
-		"aired": "1997-10-27T00:00:00+00:00",
+		"aired": "1997-10-25T23:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -379,7 +379,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Gong",
-		"aired": "1997-11-01T00:00:00+00:00",
+		"aired": "1997-10-31T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -396,7 +396,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Versus!! The Buggy Pirate Crew",
-		"aired": "1997-11-10T00:00:00+00:00",
+		"aired": "1997-11-09T00:00:00.000Z",
 		"score": 4.33
 	},
 	{
@@ -413,7 +413,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Character",
-		"aired": "1997-11-17T00:00:00+00:00",
+		"aired": "1997-11-16T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -430,7 +430,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate \"Buggy the Clown\"",
-		"aired": "1997-11-22T00:00:00+00:00",
+		"aired": "1997-11-21T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -447,7 +447,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Devil Fruit",
-		"aired": "1997-12-01T00:00:00+00:00",
+		"aired": "1997-11-30T00:00:00.000Z",
 		"score": 4.37
 	},
 	{
@@ -464,7 +464,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "A Thief's Philosophy",
-		"aired": "1997-12-08T00:00:00+00:00",
+		"aired": "1997-12-07T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -481,7 +481,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Town",
-		"aired": "1997-12-22T00:00:00+00:00",
+		"aired": "1997-12-21T00:00:00.000Z",
 		"score": 4.33
 	},
 	{
@@ -498,7 +498,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "You're the Rare Breed",
-		"aired": "1998-01-05T00:00:00+00:00",
+		"aired": "1998-01-04T00:00:00.000Z",
 		"score": 4.25
 	},
 	{
@@ -515,7 +515,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Captain Usopp Appears",
-		"aired": "1998-01-12T00:00:00+00:00",
+		"aired": "1998-01-11T00:00:00.000Z",
 		"score": 4.25
 	},
 	{
@@ -532,7 +532,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Things That Can't Be Faked",
-		"aired": "1998-01-19T00:00:00+00:00",
+		"aired": "1998-01-18T00:00:00.000Z",
 		"score": 4.29
 	},
 	{
@@ -549,7 +549,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "800 Lies",
-		"aired": "1998-01-26T00:00:00+00:00",
+		"aired": "1998-01-25T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -566,7 +566,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Captain Kuro's Plan",
-		"aired": "1998-02-02T00:00:00+00:00",
+		"aired": "1998-02-01T00:00:00.000Z",
 		"score": 4.24
 	},
 	{
@@ -583,7 +583,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Plan",
-		"aired": "1998-02-09T00:00:00+00:00",
+		"aired": "1998-02-08T00:00:00.000Z",
 		"score": 4.29
 	},
 	{
@@ -600,7 +600,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Crescent Moon",
-		"aired": "1998-02-16T00:00:00+00:00",
+		"aired": "1998-02-15T00:00:00.000Z",
 		"score": 4.43
 	},
 	{
@@ -617,7 +617,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Hill Road",
-		"aired": "1998-02-23T00:00:00+00:00",
+		"aired": "1998-02-22T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -634,7 +634,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Great!!!",
-		"aired": "1998-03-02T00:00:00+00:00",
+		"aired": "1998-03-01T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -651,7 +651,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Truth",
-		"aired": "1998-03-09T00:00:00+00:00",
+		"aired": "1998-03-08T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -668,7 +668,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Disaster",
-		"aired": "1998-03-16T00:00:00+00:00",
+		"aired": "1998-03-15T00:00:00.000Z",
 		"score": 4.3100000000000005
 	},
 	{
@@ -685,7 +685,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Silent Man",
-		"aired": "1998-03-23T00:00:00+00:00",
+		"aired": "1998-03-22T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -702,7 +702,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Klahadore the Butler",
-		"aired": "1998-03-30T00:00:00+00:00",
+		"aired": "1998-03-29T01:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -719,7 +719,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Neo Hill Road",
-		"aired": "1998-04-06T00:00:00+00:00",
+		"aired": "1998-04-05T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -736,7 +736,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Follow Them!!",
-		"aired": "1998-04-13T00:00:00+00:00",
+		"aired": "1998-04-12T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -753,7 +753,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 1 }
 		],
 		"title": "The Pirate, \"Kuro of a Hundred Plans\"",
-		"aired": "1998-04-20T00:00:00+00:00",
+		"aired": "1998-04-19T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -770,7 +770,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Crew",
-		"aired": "1998-04-27T00:00:00+00:00",
+		"aired": "1998-04-26T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -787,7 +787,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "For Whom the Bell Tolls",
-		"aired": "1998-05-11T00:00:00+00:00",
+		"aired": "1998-05-10T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -804,7 +804,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 3 }
 		],
 		"title": "The Usopp Pirates",
-		"aired": "1998-05-18T00:00:00+00:00",
+		"aired": "1998-05-17T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -821,7 +821,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "To the Sea",
-		"aired": "1998-05-25T00:00:00+00:00",
+		"aired": "1998-05-24T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -838,7 +838,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Yosaku and Johnny",
-		"aired": "1998-06-01T00:00:00+00:00",
+		"aired": "1998-05-31T00:00:00.000Z",
 		"score": 4.21
 	},
 	{
@@ -855,7 +855,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Introducing Sanji",
-		"aired": "1998-06-08T00:00:00+00:00",
+		"aired": "1998-06-07T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -872,7 +872,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Three Cooks",
-		"aired": "1998-06-15T00:00:00+00:00",
+		"aired": "1998-06-14T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -889,7 +889,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Before the Storm",
-		"aired": "1998-06-22T00:00:00+00:00",
+		"aired": "1998-06-21T00:00:00.000Z",
 		"score": 4.3100000000000005
 	},
 	{
@@ -906,7 +906,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "An Uninvited Guest",
-		"aired": "1998-06-29T00:00:00+00:00",
+		"aired": "1998-06-28T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -923,7 +923,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Fleet Admiral \"Don Krieg\"",
-		"aired": "1998-07-06T00:00:00+00:00",
+		"aired": "1998-07-05T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -940,7 +940,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Leave That Path Alone",
-		"aired": "1998-07-13T00:00:00+00:00",
+		"aired": "1998-07-12T00:00:00.000Z",
 		"score": 4.36
 	},
 	{
@@ -957,7 +957,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Storm",
-		"aired": "1998-07-18T00:00:00+00:00",
+		"aired": "1998-07-17T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -974,7 +974,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Every One is a Road",
-		"aired": "1998-07-27T00:00:00+00:00",
+		"aired": "1998-07-26T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -991,7 +991,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Roronoa Zoro Falls Into the Sea",
-		"aired": "1998-08-03T00:00:00+00:00",
+		"aired": "1998-08-02T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -1008,7 +1008,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "The Oath",
-		"aired": "1998-08-10T00:00:00+00:00",
+		"aired": "1998-08-09T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -1025,7 +1025,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sabagashira No. 1",
-		"aired": "1998-08-24T00:00:00+00:00",
+		"aired": "1998-08-23T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -1042,7 +1042,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pearl-san",
-		"aired": "1998-08-31T00:00:00+00:00",
+		"aired": "1998-08-30T00:00:00.000Z",
 		"score": 4.279999999999999
 	},
 	{
@@ -1059,7 +1059,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Jungle Blood",
-		"aired": "1998-09-07T00:00:00+00:00",
+		"aired": "1998-09-06T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -1076,7 +1076,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "No Way",
-		"aired": "1998-09-14T00:00:00+00:00",
+		"aired": "1998-09-13T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -1093,7 +1093,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Because of Dreams",
-		"aired": "1998-09-21T00:00:00+00:00",
+		"aired": "1998-09-20T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -1110,7 +1110,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Old Fart",
-		"aired": "1998-09-28T00:00:00+00:00",
+		"aired": "1998-09-27T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -1127,7 +1127,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Obligation",
-		"aired": "1998-10-05T00:00:00+00:00",
+		"aired": "1998-10-04T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -1144,7 +1144,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Between Right and Wrong",
-		"aired": "1998-10-12T00:00:00+00:00",
+		"aired": "1998-10-11T00:00:00.000Z",
 		"score": 4.3100000000000005
 	},
 	{
@@ -1161,7 +1161,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 1 }
 		],
 		"title": "Demon",
-		"aired": "1998-10-19T00:00:00+00:00",
+		"aired": "1998-10-18T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -1178,7 +1178,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "M-H-5",
-		"aired": "1998-10-26T00:00:00+00:00",
+		"aired": "1998-10-24T23:00:00.000Z",
 		"score": 4.37
 	},
 	{
@@ -1195,7 +1195,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I Ain't Gonna Die",
-		"aired": "1998-11-02T00:00:00+00:00",
+		"aired": "1998-11-01T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -1212,7 +1212,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Giant Battle Spear",
-		"aired": "1998-11-09T00:00:00+00:00",
+		"aired": "1998-11-08T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -1229,7 +1229,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Prepare",
-		"aired": "1998-11-16T00:00:00+00:00",
+		"aired": "1998-11-15T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -1246,7 +1246,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Spear Is Stifled",
-		"aired": "1998-11-21T00:00:00+00:00",
+		"aired": "1998-11-20T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -1263,7 +1263,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 2 }
 		],
 		"title": "Soup",
-		"aired": "1998-11-30T00:00:00+00:00",
+		"aired": "1998-11-29T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -1280,7 +1280,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Fourth Person",
-		"aired": "1998-12-07T00:00:00+00:00",
+		"aired": "1998-12-06T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -1297,7 +1297,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "Arlong Park",
-		"aired": "1998-12-19T00:00:00+00:00",
+		"aired": "1998-12-18T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -1314,7 +1314,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.3, "nbOfVotes": 3 }
 		],
 		"title": "Usopp's Great Manly Adventure",
-		"aired": "1999-01-04T00:00:00+00:00",
+		"aired": "1999-01-03T00:00:00.000Z",
 		"score": 4.18
 	},
 	{
@@ -1331,7 +1331,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "King of the Beasts",
-		"aired": "1999-01-11T00:00:00+00:00",
+		"aired": "1999-01-10T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -1348,7 +1348,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Appropriate",
-		"aired": "1999-01-18T00:00:00+00:00",
+		"aired": "1999-01-17T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -1365,7 +1365,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Monster from the \"Grand Line\"",
-		"aired": "1999-01-25T00:00:00+00:00",
+		"aired": "1999-01-24T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -1382,7 +1382,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Business",
-		"aired": "1999-02-01T00:00:00+00:00",
+		"aired": "1999-01-31T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -1399,7 +1399,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sea Charts and Fishman",
-		"aired": "1999-02-08T00:00:00+00:00",
+		"aired": "1999-02-07T00:00:00.000Z",
 		"score": 4.33
 	},
 	{
@@ -1416,7 +1416,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sleep",
-		"aired": "1999-02-15T00:00:00+00:00",
+		"aired": "1999-02-14T00:00:00.000Z",
 		"score": 4.2700000000000005
 	},
 	{
@@ -1433,7 +1433,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "One Step of the Dream",
-		"aired": "1999-02-22T00:00:00+00:00",
+		"aired": "1999-02-21T00:00:00.000Z",
 		"score": 4.43
 	},
 	{
@@ -1450,7 +1450,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4, "nbOfVotes": 3 }
 		],
 		"title": "Bell-mère-san",
-		"aired": "1999-03-01T00:00:00+00:00",
+		"aired": "1999-02-28T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -1467,7 +1467,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 1 }
 		],
 		"title": "Survive",
-		"aired": "1999-03-08T00:00:00+00:00",
+		"aired": "1999-03-07T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -1484,7 +1484,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "A Crime Is a Crime",
-		"aired": "1999-03-15T00:00:00+00:00",
+		"aired": "1999-03-14T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -1501,7 +1501,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Tears",
-		"aired": "1999-03-20T00:00:00+00:00",
+		"aired": "1999-03-19T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -1518,7 +1518,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "OK, Let's Stand Up!",
-		"aired": "1999-03-29T00:00:00+00:00",
+		"aired": "1999-03-28T01:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -1535,7 +1535,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy In Black",
-		"aired": "1999-04-05T00:00:00+00:00",
+		"aired": "1999-04-04T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -1552,7 +1552,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Zombie",
-		"aired": "1999-04-12T00:00:00+00:00",
+		"aired": "1999-04-11T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -1569,7 +1569,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Three-Sword Style vs. Six-Sword Style",
-		"aired": "1999-04-19T00:00:00+00:00",
+		"aired": "1999-04-18T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -1586,7 +1586,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Chivalry vs. Fishman Karate",
-		"aired": "1999-04-26T00:00:00+00:00",
+		"aired": "1999-04-25T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -1603,7 +1603,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 1 }
 		],
 		"title": "It's Over!!",
-		"aired": "1999-05-10T00:00:00+00:00",
+		"aired": "1999-05-09T00:00:00.000Z",
 		"score": 4.32
 	},
 	{
@@ -1620,7 +1620,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Die!!!",
-		"aired": "1999-05-17T00:00:00+00:00",
+		"aired": "1999-05-16T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -1637,7 +1637,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Switch",
-		"aired": "1999-05-24T00:00:00+00:00",
+		"aired": "1999-05-23T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -1654,7 +1654,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 3 }
 		],
 		"title": "What Can You Do?",
-		"aired": "1999-05-31T00:00:00+00:00",
+		"aired": "1999-05-30T00:00:00.000Z",
 		"score": 4.279999999999999
 	},
 	{
@@ -1671,7 +1671,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Darts",
-		"aired": "1999-06-07T00:00:00+00:00",
+		"aired": "1999-06-06T00:00:00.000Z",
 		"score": 4.3100000000000005
 	},
 	{
@@ -1688,7 +1688,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Paradise",
-		"aired": "1999-06-14T00:00:00+00:00",
+		"aired": "1999-06-13T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -1705,7 +1705,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 1 }
 		],
 		"title": "Going Down",
-		"aired": "1999-06-21T00:00:00+00:00",
+		"aired": "1999-06-20T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -1722,7 +1722,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Second Person",
-		"aired": "1999-06-28T00:00:00+00:00",
+		"aired": "1999-06-27T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -1739,7 +1739,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Spin, Pinwheel, Spin",
-		"aired": "1999-07-05T00:00:00+00:00",
+		"aired": "1999-07-04T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -1756,7 +1756,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 1 }
 		],
 		"title": "Greatest Evil of the East",
-		"aired": "1999-07-12T00:00:00+00:00",
+		"aired": "1999-07-11T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -1773,7 +1773,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sandai Kitetsu",
-		"aired": "1999-07-19T00:00:00+00:00",
+		"aired": "1999-07-18T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -1790,7 +1790,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 1 }
 		],
 		"title": "Dark Clouds",
-		"aired": "1999-07-26T00:00:00+00:00",
+		"aired": "1999-07-25T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -1807,7 +1807,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy Died",
-		"aired": "1999-08-02T00:00:00+00:00",
+		"aired": "1999-08-01T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -1824,7 +1824,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 4 }
 		],
 		"title": "The Legend Has Begun",
-		"aired": "1999-08-09T00:00:00+00:00",
+		"aired": "1999-08-08T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -1841,7 +1841,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Reverse Mountain",
-		"aired": "1999-08-23T00:00:00+00:00",
+		"aired": "1999-08-22T00:00:00.000Z",
 		"score": 4.29
 	},
 	{
@@ -1858,7 +1858,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "And now, the Grand Line",
-		"aired": "1999-08-30T00:00:00+00:00",
+		"aired": "1999-08-29T00:00:00.000Z",
 		"score": 4.26
 	},
 	{
@@ -1875,7 +1875,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Whale",
-		"aired": "1999-09-06T00:00:00+00:00",
+		"aired": "1999-09-05T00:00:00.000Z",
 		"score": 4.279999999999999
 	},
 	{
@@ -1892,7 +1892,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Cape Promise",
-		"aired": "1999-09-13T00:00:00+00:00",
+		"aired": "1999-09-12T00:00:00.000Z",
 		"score": 4.36
 	},
 	{
@@ -1909,7 +1909,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Log Pose",
-		"aired": "1999-09-20T00:00:00+00:00",
+		"aired": "1999-09-19T00:00:00.000Z",
 		"score": 4.11
 	},
 	{
@@ -1926,7 +1926,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 1 }
 		],
 		"title": "The Town of Celebration",
-		"aired": "1999-09-27T00:00:00+00:00",
+		"aired": "1999-09-26T00:00:00.000Z",
 		"score": 4.0600000000000005
 	},
 	{
@@ -1943,7 +1943,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Moonlight and Gravestones",
-		"aired": "1999-10-04T00:00:00+00:00",
+		"aired": "1999-10-03T00:00:00.000Z",
 		"score": 4.220000000000001
 	},
 	{
@@ -1960,7 +1960,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 4 }
 		],
 		"title": "100 Bounty Hunters",
-		"aired": "1999-10-09T00:00:00+00:00",
+		"aired": "1999-10-08T00:00:00.000Z",
 		"score": 4.04
 	},
 	{
@@ -1977,7 +1977,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 5 }
 		],
 		"title": "Responsibility Problem",
-		"aired": "1999-10-18T00:00:00+00:00",
+		"aired": "1999-10-17T00:00:00.000Z",
 		"score": 3.9
 	},
 	{
@@ -1994,7 +1994,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 6 }
 		],
 		"title": "The Night Will Not End",
-		"aired": "1999-10-25T00:00:00+00:00",
+		"aired": "1999-10-24T00:00:00.000Z",
 		"score": 3.87
 	},
 	{
@@ -2011,7 +2011,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Secret Criminal Syndicate",
-		"aired": "1999-11-01T00:00:00+00:00",
+		"aired": "1999-10-30T23:00:00.000Z",
 		"score": 4.0200000000000005
 	},
 	{
@@ -2028,7 +2028,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 2 }
 		],
 		"title": "Luffy vs. Zoro",
-		"aired": "1999-11-08T00:00:00+00:00",
+		"aired": "1999-11-07T00:00:00.000Z",
 		"score": 4.2
 	},
 	{
@@ -2045,7 +2045,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "It's Okay!!!",
-		"aired": "1999-11-15T00:00:00+00:00",
+		"aired": "1999-11-14T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -2062,7 +2062,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Route",
-		"aired": "1999-11-22T00:00:00+00:00",
+		"aired": "1999-11-21T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -2079,7 +2079,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "Adventure in Little Garden",
-		"aired": "1999-12-06T00:00:00+00:00",
+		"aired": "1999-12-05T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -2096,7 +2096,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Huge",
-		"aired": "1999-12-13T00:00:00+00:00",
+		"aired": "1999-12-12T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -2113,7 +2113,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Dorry and Brogy",
-		"aired": "1999-12-20T00:00:00+00:00",
+		"aired": "1999-12-19T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -2130,7 +2130,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Someone's Here",
-		"aired": "2000-01-03T00:00:00+00:00",
+		"aired": "2000-01-02T00:00:00.000Z",
 		"score": 4.37
 	},
 	{
@@ -2147,7 +2147,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 1 }
 		],
 		"title": "Makeshift",
-		"aired": "2000-01-17T00:00:00+00:00",
+		"aired": "2000-01-16T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -2164,7 +2164,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Red Ogre Cried",
-		"aired": "2000-01-24T00:00:00+00:00",
+		"aired": "2000-01-23T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -2181,7 +2181,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I Knew",
-		"aired": "2000-01-31T00:00:00+00:00",
+		"aired": "2000-01-30T00:00:00.000Z",
 		"score": 4.33
 	},
 	{
@@ -2198,7 +2198,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 1 }
 		],
 		"title": "A Corpse Won't Help",
-		"aired": "2000-02-07T00:00:00+00:00",
+		"aired": "2000-02-06T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -2215,7 +2215,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy vs. Mr. 3",
-		"aired": "2000-02-14T00:00:00+00:00",
+		"aired": "2000-02-13T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -2232,7 +2232,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Damn Good Tea",
-		"aired": "2000-02-21T00:00:00+00:00",
+		"aired": "2000-02-20T00:00:00.000Z",
 		"score": 4.36
 	},
 	{
@@ -2249,7 +2249,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Candle Champion",
-		"aired": "2000-02-28T00:00:00+00:00",
+		"aired": "2000-02-27T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -2266,7 +2266,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Instinct",
-		"aired": "2000-03-06T00:00:00+00:00",
+		"aired": "2000-03-05T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -2283,7 +2283,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Den Den Mushi",
-		"aired": "2000-03-13T00:00:00+00:00",
+		"aired": "2000-03-12T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -2300,7 +2300,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pride (Pirate Flag)",
-		"aired": "2000-03-18T00:00:00+00:00",
+		"aired": "2000-03-17T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -2317,7 +2317,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Straight Ahead!!!",
-		"aired": "2000-03-27T00:00:00+00:00",
+		"aired": "2000-03-26T01:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -2334,7 +2334,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Maximum Speed",
-		"aired": "2000-04-03T00:00:00+00:00",
+		"aired": "2000-04-02T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -2351,7 +2351,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Tin Plate Wapol",
-		"aired": "2000-04-10T00:00:00+00:00",
+		"aired": "2000-04-09T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -2368,7 +2368,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "See?",
-		"aired": "2000-04-17T00:00:00+00:00",
+		"aired": "2000-04-16T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -2385,7 +2385,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure in the Country Without a Name",
-		"aired": "2000-04-24T00:00:00+00:00",
+		"aired": "2000-04-23T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -2402,7 +2402,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Dr. Kureha",
-		"aired": "2000-05-08T00:00:00+00:00",
+		"aired": "2000-05-07T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -2419,7 +2419,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Lapahn",
-		"aired": "2000-05-15T00:00:00+00:00",
+		"aired": "2000-05-14T00:00:00.000Z",
 		"score": 4.33
 	},
 	{
@@ -2436,7 +2436,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Man Called Dalton",
-		"aired": "2000-05-22T00:00:00+00:00",
+		"aired": "2000-05-21T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -2453,7 +2453,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Avalanche",
-		"aired": "2000-05-29T00:00:00+00:00",
+		"aired": "2000-05-28T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -2470,7 +2470,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Summit",
-		"aired": "2000-06-05T00:00:00+00:00",
+		"aired": "2000-06-04T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -2487,7 +2487,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Introducing Tony Tony Chopper",
-		"aired": "2000-06-12T00:00:00+00:00",
+		"aired": "2000-06-11T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -2504,7 +2504,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Castle of Snow",
-		"aired": "2000-06-19T00:00:00+00:00",
+		"aired": "2000-06-18T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -2521,7 +2521,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Quack Doctor",
-		"aired": "2000-06-26T00:00:00+00:00",
+		"aired": "2000-06-25T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -2538,7 +2538,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Skull, Crossbone and Sakura",
-		"aired": "2000-07-03T00:00:00+00:00",
+		"aired": "2000-07-02T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -2555,7 +2555,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 1 }
 		],
 		"title": "Unskilled",
-		"aired": "2000-07-10T00:00:00+00:00",
+		"aired": "2000-07-09T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -2572,7 +2572,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Snow Story",
-		"aired": "2000-07-17T00:00:00+00:00",
+		"aired": "2000-07-16T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -2589,7 +2589,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Inherited Will",
-		"aired": "2000-07-24T00:00:00+00:00",
+		"aired": "2000-07-23T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -2606,7 +2606,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Battle of National Defense",
-		"aired": "2000-07-31T00:00:00+00:00",
+		"aired": "2000-07-30T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -2623,7 +2623,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 1 }
 		],
 		"title": "Downright Lie",
-		"aired": "2000-08-07T00:00:00+00:00",
+		"aired": "2000-08-06T00:00:00.000Z",
 		"score": 4.36
 	},
 	{
@@ -2640,7 +2640,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "You Can't Destroy It",
-		"aired": "2000-08-21T00:00:00+00:00",
+		"aired": "2000-08-20T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -2657,7 +2657,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rumble!!",
-		"aired": "2000-08-28T00:00:00+00:00",
+		"aired": "2000-08-27T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -2674,7 +2674,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Royal Drum Crown 7-Shot Bliking Cannon",
-		"aired": "2000-09-04T00:00:00+00:00",
+		"aired": "2000-09-03T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -2691,7 +2691,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Drum Skies",
-		"aired": "2000-09-11T00:00:00+00:00",
+		"aired": "2000-09-10T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -2708,7 +2708,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Full Moon",
-		"aired": "2000-09-18T00:00:00+00:00",
+		"aired": "2000-09-17T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -2725,7 +2725,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Hiluluk's Sakura",
-		"aired": "2000-09-25T00:00:00+00:00",
+		"aired": "2000-09-24T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -2742,7 +2742,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.1, "nbOfVotes": 2 }
 		],
 		"title": "To Alabasta",
-		"aired": "2000-10-02T00:00:00+00:00",
+		"aired": "2000-10-01T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -2759,7 +2759,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "Sir Crocodile the \"Pirate\"",
-		"aired": "2000-10-07T00:00:00+00:00",
+		"aired": "2000-10-06T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -2776,7 +2776,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Okama Weather",
-		"aired": "2000-10-16T00:00:00+00:00",
+		"aired": "2000-10-15T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -2793,7 +2793,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Introducing Ace",
-		"aired": "2000-10-23T00:00:00+00:00",
+		"aired": "2000-10-22T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -2810,7 +2810,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Arriving in Alabasta",
-		"aired": "2000-10-30T00:00:00+00:00",
+		"aired": "2000-10-28T23:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -2827,7 +2827,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Come On",
-		"aired": "2000-11-06T00:00:00+00:00",
+		"aired": "2000-11-05T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -2844,7 +2844,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Spiders Cafe, 8 o'clock",
-		"aired": "2000-11-13T00:00:00+00:00",
+		"aired": "2000-11-12T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -2861,7 +2861,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 1 }
 		],
 		"title": "The Green Town, Erumalu",
-		"aired": "2000-11-20T00:00:00+00:00",
+		"aired": "2000-11-19T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -2878,7 +2878,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure in the Kingdom of Sand",
-		"aired": "2000-11-27T00:00:00+00:00",
+		"aired": "2000-11-26T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -2895,7 +2895,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Yuba, the Rebel Town",
-		"aired": "2000-12-04T00:00:00+00:00",
+		"aired": "2000-12-03T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -2912,7 +2912,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 1 }
 		],
 		"title": "I Love This Country",
-		"aired": "2000-12-11T00:00:00+00:00",
+		"aired": "2000-12-10T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -2929,7 +2929,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Plan: Utopia",
-		"aired": "2000-12-18T00:00:00+00:00",
+		"aired": "2000-12-17T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -2946,7 +2946,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "Luffy vs. Vivi",
-		"aired": "2001-01-04T00:00:00+00:00",
+		"aired": "2001-01-03T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -2963,7 +2963,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Battlefront",
-		"aired": "2001-01-15T00:00:00+00:00",
+		"aired": "2001-01-14T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -2980,7 +2980,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rainbase, Town of Dreams",
-		"aired": "2001-01-22T00:00:00+00:00",
+		"aired": "2001-01-21T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -2997,7 +2997,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Strongest Warrior in the Kingdom",
-		"aired": "2001-01-29T00:00:00+00:00",
+		"aired": "2001-01-28T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -3014,7 +3014,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 1 }
 		],
 		"title": "It Begins",
-		"aired": "2001-02-05T00:00:00+00:00",
+		"aired": "2001-02-04T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -3031,7 +3031,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Kohza, Leader of the Rebellion",
-		"aired": "2001-02-10T00:00:00+00:00",
+		"aired": "2001-02-09T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -3048,7 +3048,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rebellion",
-		"aired": "2001-02-26T00:00:00+00:00",
+		"aired": "2001-02-25T00:00:00.000Z",
 		"score": 4.43
 	},
 	{
@@ -3065,7 +3065,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 1 }
 		],
 		"title": "Bananadile",
-		"aired": "2001-03-05T00:00:00+00:00",
+		"aired": "2001-03-04T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -3082,7 +3082,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Mr. Prince",
-		"aired": "2001-03-12T00:00:00+00:00",
+		"aired": "2001-03-11T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -3099,7 +3099,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Liberation",
-		"aired": "2001-03-19T00:00:00+00:00",
+		"aired": "2001-03-18T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -3116,7 +3116,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 1 }
 		],
 		"title": "Rush!!",
-		"aired": "2001-03-26T00:00:00+00:00",
+		"aired": "2001-03-25T01:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -3133,7 +3133,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "30,000,000 vs. 81,000,000",
-		"aired": "2001-04-02T00:00:00+00:00",
+		"aired": "2001-04-01T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -3150,7 +3150,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 1 }
 		],
 		"title": "Level G.L.",
-		"aired": "2001-04-09T00:00:00+00:00",
+		"aired": "2001-04-08T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -3167,7 +3167,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The End Will Be in Alubarna",
-		"aired": "2001-04-16T00:00:00+00:00",
+		"aired": "2001-04-15T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -3184,7 +3184,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.4, "nbOfVotes": 2 }
 		],
 		"title": "Alabasta Animal Kingdom",
-		"aired": "2001-04-23T00:00:00+00:00",
+		"aired": "2001-04-22T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -3201,7 +3201,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Super Spot-Billed Duck Quiz",
-		"aired": "2001-05-07T00:00:00+00:00",
+		"aired": "2001-05-06T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -3218,7 +3218,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Roar",
-		"aired": "2001-05-14T00:00:00+00:00",
+		"aired": "2001-05-13T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -3235,7 +3235,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Commander Carue",
-		"aired": "2001-05-21T00:00:00+00:00",
+		"aired": "2001-05-20T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -3252,7 +3252,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Molehill 4th St.",
-		"aired": "2001-05-28T00:00:00+00:00",
+		"aired": "2001-05-27T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -3269,7 +3269,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Wow, That's Nice",
-		"aired": "2001-06-04T00:00:00+00:00",
+		"aired": "2001-06-03T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -3286,7 +3286,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "4",
-		"aired": "2001-06-11T00:00:00+00:00",
+		"aired": "2001-06-10T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -3303,7 +3303,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Even Match",
-		"aired": "2001-06-18T00:00:00+00:00",
+		"aired": "2001-06-17T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -3320,7 +3320,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Okama Kenpo",
-		"aired": "2001-06-25T00:00:00+00:00",
+		"aired": "2001-06-24T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -3337,7 +3337,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "2",
-		"aired": "2001-07-02T00:00:00+00:00",
+		"aired": "2001-07-01T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -3354,7 +3354,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 1 }
 		],
 		"title": "Clima Tact",
-		"aired": "2001-07-09T00:00:00+00:00",
+		"aired": "2001-07-08T00:00:00.000Z",
 		"score": 4.43
 	},
 	{
@@ -3371,7 +3371,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Woman Who Controls the Weather",
-		"aired": "2001-07-16T00:00:00+00:00",
+		"aired": "2001-07-15T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -3388,7 +3388,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Whirlwind Warning",
-		"aired": "2001-07-23T00:00:00+00:00",
+		"aired": "2001-07-22T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -3405,7 +3405,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ideal Nation",
-		"aired": "2001-07-30T00:00:00+00:00",
+		"aired": "2001-07-29T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -3422,7 +3422,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 1 }
 		],
 		"title": "Cut Through Steel",
-		"aired": "2001-08-06T00:00:00+00:00",
+		"aired": "2001-08-05T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -3439,7 +3439,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 1 }
 		],
 		"title": "Mr. Bushido",
-		"aired": "2001-08-20T00:00:00+00:00",
+		"aired": "2001-08-19T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -3456,7 +3456,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "1",
-		"aired": "2001-08-27T00:00:00+00:00",
+		"aired": "2001-08-26T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -3473,7 +3473,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Leaders",
-		"aired": "2001-09-03T00:00:00+00:00",
+		"aired": "2001-09-02T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -3490,7 +3490,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "4:15 p.m.",
-		"aired": "2001-09-10T00:00:00+00:00",
+		"aired": "2001-09-09T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -3507,7 +3507,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Hope!!",
-		"aired": "2001-09-17T00:00:00+00:00",
+		"aired": "2001-09-16T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -3524,7 +3524,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Water Luffy",
-		"aired": "2001-09-22T00:00:00+00:00",
+		"aired": "2001-09-21T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -3541,7 +3541,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Nico Robin",
-		"aired": "2001-10-01T00:00:00+00:00",
+		"aired": "2001-09-30T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -3558,7 +3558,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Royal Crypt",
-		"aired": "2001-10-06T00:00:00+00:00",
+		"aired": "2001-10-05T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -3575,7 +3575,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Crocish",
-		"aired": "2001-10-15T00:00:00+00:00",
+		"aired": "2001-10-14T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -3592,7 +3592,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 1 }
 		],
 		"title": "Red",
-		"aired": "2001-10-22T00:00:00+00:00",
+		"aired": "2001-10-21T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -3609,7 +3609,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Suna Suna Clan's Secret Base",
-		"aired": "2001-10-29T00:00:00+00:00",
+		"aired": "2001-10-27T23:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -3626,7 +3626,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 1 }
 		],
 		"title": "Ignition",
-		"aired": "2001-11-05T00:00:00+00:00",
+		"aired": "2001-11-04T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -3643,7 +3643,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Nightmare",
-		"aired": "2001-11-12T00:00:00+00:00",
+		"aired": "2001-11-11T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -3660,7 +3660,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Guardian Spirits",
-		"aired": "2001-11-19T00:00:00+00:00",
+		"aired": "2001-11-18T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -3677,7 +3677,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I Will Surpass You",
-		"aired": "2001-11-26T00:00:00+00:00",
+		"aired": "2001-11-25T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -3694,7 +3694,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "0",
-		"aired": "2001-12-03T00:00:00+00:00",
+		"aired": "2001-12-02T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -3711,7 +3711,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 1 }
 		],
 		"title": "King",
-		"aired": "2001-12-10T00:00:00+00:00",
+		"aired": "2001-12-09T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -3728,7 +3728,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Some Justice",
-		"aired": "2001-12-17T00:00:00+00:00",
+		"aired": "2001-12-16T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -3745,7 +3745,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "VIP",
-		"aired": "2001-12-28T00:00:00+00:00",
+		"aired": "2001-12-27T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -3762,7 +3762,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Plan to Escape from the Kingdom of Sand",
-		"aired": "2002-01-07T00:00:00+00:00",
+		"aired": "2002-01-06T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -3779,7 +3779,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Last Waltz",
-		"aired": "2002-01-21T00:00:00+00:00",
+		"aired": "2002-01-20T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -3796,7 +3796,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Vivi's Adventure",
-		"aired": "2002-01-28T00:00:00+00:00",
+		"aired": "2002-01-27T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -3813,7 +3813,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 1 }
 		],
 		"title": "Stowaway",
-		"aired": "2002-02-04T00:00:00+00:00",
+		"aired": "2002-02-03T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -3830,7 +3830,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 1 }
 		],
 		"title": "Why the Log Pose is Spherical",
-		"aired": "2002-02-18T00:00:00+00:00",
+		"aired": "2002-02-17T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -3847,7 +3847,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Salvage King Masira",
-		"aired": "2002-02-25T00:00:00+00:00",
+		"aired": "2002-02-24T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -3864,7 +3864,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sea Floor Stroll",
-		"aired": "2002-03-04T00:00:00+00:00",
+		"aired": "2002-03-03T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -3881,7 +3881,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Monsters",
-		"aired": "2002-03-11T00:00:00+00:00",
+		"aired": "2002-03-10T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -3898,7 +3898,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Big-Time Rookies",
-		"aired": "2002-03-18T00:00:00+00:00",
+		"aired": "2002-03-17T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -3915,7 +3915,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I Promise Not to Fight Within This Town",
-		"aired": "2002-03-25T00:00:00+00:00",
+		"aired": "2002-03-24T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -3932,7 +3932,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Never Dream",
-		"aired": "2002-04-01T00:00:00+00:00",
+		"aired": "2002-03-31T01:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -3949,7 +3949,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "A Man's Dream",
-		"aired": "2002-04-08T00:00:00+00:00",
+		"aired": "2002-04-07T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -3966,7 +3966,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Shoujou King of the Ocean Floor Searches",
-		"aired": "2002-04-15T00:00:00+00:00",
+		"aired": "2002-04-14T00:00:00.000Z",
 		"score": 4.2700000000000005
 	},
 	{
@@ -3983,7 +3983,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 1 }
 		],
 		"title": "Noland the Liar",
-		"aired": "2002-04-22T00:00:00+00:00",
+		"aired": "2002-04-21T00:00:00.000Z",
 		"score": 4.24
 	},
 	{
@@ -4000,7 +4000,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Last Boss of the Allied Saruyama Forces, Montblanc Cricket",
-		"aired": "2002-04-27T00:00:00+00:00",
+		"aired": "2002-04-26T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -4017,7 +4017,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Let's Eat",
-		"aired": "2002-05-13T00:00:00+00:00",
+		"aired": "2002-05-12T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -4034,7 +4034,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Find the South Bird!!",
-		"aired": "2002-05-20T00:00:00+00:00",
+		"aired": "2002-05-19T00:00:00.000Z",
 		"score": 4.33
 	},
 	{
@@ -4051,7 +4051,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Bellamy the Hyena",
-		"aired": "2002-05-27T00:00:00+00:00",
+		"aired": "2002-05-26T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -4068,7 +4068,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Hundred Million Man",
-		"aired": "2002-06-03T00:00:00+00:00",
+		"aired": "2002-06-02T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -4085,7 +4085,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.7, "nbOfVotes": 2 }
 		],
 		"title": "The Highest Authority in the World",
-		"aired": "2002-06-10T00:00:00+00:00",
+		"aired": "2002-06-09T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -4102,7 +4102,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Please Be Sure to Remember It",
-		"aired": "2002-06-17T00:00:00+00:00",
+		"aired": "2002-06-16T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -4119,7 +4119,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Knock Up Stream",
-		"aired": "2002-06-24T00:00:00+00:00",
+		"aired": "2002-06-23T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -4136,7 +4136,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Ship Goes Into the Sky",
-		"aired": "2002-07-01T00:00:00+00:00",
+		"aired": "2002-06-30T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -4153,7 +4153,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "In the Sky",
-		"aired": "2002-07-08T00:00:00+00:00",
+		"aired": "2002-07-07T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -4170,7 +4170,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Heaven's Gate",
-		"aired": "2002-07-15T00:00:00+00:00",
+		"aired": "2002-07-14T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -4187,7 +4187,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Angel Beach",
-		"aired": "2002-07-22T00:00:00+00:00",
+		"aired": "2002-07-21T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -4204,7 +4204,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Dial Energy",
-		"aired": "2002-07-29T00:00:00+00:00",
+		"aired": "2002-07-28T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -4221,7 +4221,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Judgement of Heaven",
-		"aired": "2002-08-05T00:00:00+00:00",
+		"aired": "2002-08-04T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -4238,7 +4238,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 1 }
 		],
 		"title": "Class-2 Criminals",
-		"aired": "2002-08-12T00:00:00+00:00",
+		"aired": "2002-08-11T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -4255,7 +4255,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ordeals",
-		"aired": "2002-08-26T00:00:00+00:00",
+		"aired": "2002-08-25T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -4272,7 +4272,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "SOS",
-		"aired": "2002-09-02T00:00:00+00:00",
+		"aired": "2002-09-01T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -4289,7 +4289,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure on God's Island",
-		"aired": "2002-09-09T00:00:00+00:00",
+		"aired": "2002-09-08T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -4306,7 +4306,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Satori, Priest of the Wandering Forest",
-		"aired": "2002-09-14T00:00:00+00:00",
+		"aired": "2002-09-13T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -4323,7 +4323,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ordeal of Balls",
-		"aired": "2002-09-22T00:00:00+00:00",
+		"aired": "2002-09-21T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -4340,7 +4340,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Former God vs. Priest",
-		"aired": "2002-10-07T00:00:00+00:00",
+		"aired": "2002-10-06T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -4357,7 +4357,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Hidden Cloud Village",
-		"aired": "2002-10-12T00:00:00+00:00",
+		"aired": "2002-10-11T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -4374,7 +4374,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.1, "nbOfVotes": 3 }
 		],
 		"title": "Ball Dragon",
-		"aired": "2002-10-21T00:00:00+00:00",
+		"aired": "2002-10-20T00:00:00.000Z",
 		"score": 4.32
 	},
 	{
@@ -4391,7 +4391,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Overture",
-		"aired": "2002-10-28T00:00:00+00:00",
+		"aired": "2002-10-26T23:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -4408,7 +4408,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Junction",
-		"aired": "2002-11-02T00:00:00+00:00",
+		"aired": "2002-11-01T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -4425,7 +4425,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Vearth",
-		"aired": "2002-11-11T00:00:00+00:00",
+		"aired": "2002-11-10T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -4442,7 +4442,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Aubade",
-		"aired": "2002-11-18T00:00:00+00:00",
+		"aired": "2002-11-17T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -4459,7 +4459,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Anaconda and the Search Team",
-		"aired": "2002-11-25T00:00:00+00:00",
+		"aired": "2002-11-24T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -4476,7 +4476,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 1 }
 		],
 		"title": "Wiper the \"Berserker\"",
-		"aired": "2002-12-02T00:00:00+00:00",
+		"aired": "2002-12-01T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -4493,7 +4493,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Dial Battle",
-		"aired": "2002-12-09T00:00:00+00:00",
+		"aired": "2002-12-08T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -4510,7 +4510,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Several Ways South",
-		"aired": "2002-12-16T00:00:00+00:00",
+		"aired": "2002-12-15T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -4527,7 +4527,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Zoro the Pirate vs. Braham the Warrior",
-		"aired": "2002-12-30T00:00:00+00:00",
+		"aired": "2002-12-29T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -4544,7 +4544,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy the Pirate vs. Wiper the Berserker",
-		"aired": "2003-01-06T00:00:00+00:00",
+		"aired": "2003-01-05T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -4561,7 +4561,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 1 }
 		],
 		"title": "Genbo the Warrior vs. Yama the Head Holy Guard",
-		"aired": "2003-01-20T00:00:00+00:00",
+		"aired": "2003-01-19T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -4578,7 +4578,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Chopper the Pirate vs. Gedatsu the Priest",
-		"aired": "2003-01-27T00:00:00+00:00",
+		"aired": "2003-01-26T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -4595,7 +4595,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Nami the Pirate and the Weird Knight vs. the Holy Guard Second-in-Command Hotori and Kotori",
-		"aired": "2003-02-03T00:00:00+00:00",
+		"aired": "2003-02-02T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -4612,7 +4612,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Kamakiri the Warrior vs. God Enel",
-		"aired": "2003-02-10T00:00:00+00:00",
+		"aired": "2003-02-09T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -4629,7 +4629,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Robin the Pirate vs. Yama the Head Holy Warrior",
-		"aired": "2003-02-17T00:00:00+00:00",
+		"aired": "2003-02-16T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -4646,7 +4646,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Chopper the Pirate vs. Ohm the Priest",
-		"aired": "2003-02-24T00:00:00+00:00",
+		"aired": "2003-02-23T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -4663,7 +4663,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "March",
-		"aired": "2003-03-03T00:00:00+00:00",
+		"aired": "2003-03-02T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -4680,7 +4680,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Suite",
-		"aired": "2003-03-10T00:00:00+00:00",
+		"aired": "2003-03-09T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -4697,7 +4697,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Concerto",
-		"aired": "2003-03-17T00:00:00+00:00",
+		"aired": "2003-03-16T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -4714,7 +4714,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Serenade",
-		"aired": "2003-03-31T00:00:00+00:00",
+		"aired": "2003-03-30T01:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -4731,7 +4731,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Zoro the Pirate vs. Ohm the Priest",
-		"aired": "2003-04-07T00:00:00+00:00",
+		"aired": "2003-04-06T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -4748,7 +4748,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 1 }
 		],
 		"title": "Play",
-		"aired": "2003-04-14T00:00:00+00:00",
+		"aired": "2003-04-13T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -4765,7 +4765,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Quintet",
-		"aired": "2003-04-21T00:00:00+00:00",
+		"aired": "2003-04-20T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -4782,7 +4782,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Oratorio",
-		"aired": "2003-04-28T00:00:00+00:00",
+		"aired": "2003-04-27T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -4799,7 +4799,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 1 }
 		],
 		"title": "Divina Commedia",
-		"aired": "2003-05-12T00:00:00+00:00",
+		"aired": "2003-05-11T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -4816,7 +4816,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 1 }
 		],
 		"title": "Shandia Rhythm",
-		"aired": "2003-05-19T00:00:00+00:00",
+		"aired": "2003-05-18T00:00:00.000Z",
 		"score": 4.37
 	},
 	{
@@ -4833,7 +4833,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Maxim",
-		"aired": "2003-05-26T00:00:00+00:00",
+		"aired": "2003-05-25T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -4850,7 +4850,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Conis",
-		"aired": "2003-06-02T00:00:00+00:00",
+		"aired": "2003-06-01T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -4867,7 +4867,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy the Pirate vs. God Enel",
-		"aired": "2003-06-09T00:00:00+00:00",
+		"aired": "2003-06-08T00:00:00.000Z",
 		"score": 4.9
 	},
 	{
@@ -4884,7 +4884,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Surfacing",
-		"aired": "2003-06-16T00:00:00+00:00",
+		"aired": "2003-06-15T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -4901,7 +4901,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Deathpiea",
-		"aired": "2003-06-23T00:00:00+00:00",
+		"aired": "2003-06-22T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -4918,7 +4918,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Desire",
-		"aired": "2003-06-30T00:00:00+00:00",
+		"aired": "2003-06-29T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -4935,7 +4935,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Operation Love Rescue: Front Line",
-		"aired": "2003-07-07T00:00:00+00:00",
+		"aired": "2003-07-06T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -4952,7 +4952,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Thanks",
-		"aired": "2003-07-14T00:00:00+00:00",
+		"aired": "2003-07-13T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -4969,7 +4969,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 1 }
 		],
 		"title": "Capriccio",
-		"aired": "2003-07-19T00:00:00+00:00",
+		"aired": "2003-07-18T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -4986,7 +4986,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Monster of Shandora",
-		"aired": "2003-07-28T00:00:00+00:00",
+		"aired": "2003-07-27T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -5003,7 +5003,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 1 }
 		],
 		"title": "Godkiller",
-		"aired": "2003-08-11T00:00:00+00:00",
+		"aired": "2003-08-10T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -5020,7 +5020,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Curse",
-		"aired": "2003-08-25T00:00:00+00:00",
+		"aired": "2003-08-24T00:00:00.000Z",
 		"score": 4.37
 	},
 	{
@@ -5037,7 +5037,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 1 }
 		],
 		"title": "Full Moon",
-		"aired": "2003-09-01T00:00:00+00:00",
+		"aired": "2003-08-31T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -5054,7 +5054,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Light of Shandora",
-		"aired": "2003-09-08T00:00:00+00:00",
+		"aired": "2003-09-07T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -5071,7 +5071,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I'm Right Here",
-		"aired": "2003-09-13T00:00:00+00:00",
+		"aired": "2003-09-12T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -5088,7 +5088,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Meeting a Broken Moon Through the Clouds",
-		"aired": "2003-09-22T00:00:00+00:00",
+		"aired": "2003-09-21T00:00:00.000Z",
 		"score": 4.87
 	},
 	{
@@ -5105,7 +5105,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Bolero",
-		"aired": "2003-09-29T00:00:00+00:00",
+		"aired": "2003-09-28T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -5122,7 +5122,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Raigoh",
-		"aired": "2003-10-06T00:00:00+00:00",
+		"aired": "2003-10-05T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -5139,7 +5139,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Giant Jack",
-		"aired": "2003-10-11T00:00:00+00:00",
+		"aired": "2003-10-10T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -5156,7 +5156,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "High-Altitude Situation",
-		"aired": "2003-10-20T00:00:00+00:00",
+		"aired": "2003-10-19T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -5173,7 +5173,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Praises of the Earth",
-		"aired": "2003-10-27T00:00:00+00:00",
+		"aired": "2003-10-25T23:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -5190,7 +5190,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Love Song",
-		"aired": "2003-11-01T00:00:00+00:00",
+		"aired": "2003-10-31T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -5207,7 +5207,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Fantasia",
-		"aired": "2003-11-10T00:00:00+00:00",
+		"aired": "2003-11-09T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -5224,7 +5224,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 1 }
 		],
 		"title": "Symphony",
-		"aired": "2003-11-22T00:00:00+00:00",
+		"aired": "2003-11-21T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -5241,7 +5241,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 1 }
 		],
 		"title": "I Was Here",
-		"aired": "2003-12-01T00:00:00+00:00",
+		"aired": "2003-11-30T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -5258,7 +5258,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Finale",
-		"aired": "2003-12-08T00:00:00+00:00",
+		"aired": "2003-12-07T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -5275,7 +5275,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rich Pirates",
-		"aired": "2003-12-15T00:00:00+00:00",
+		"aired": "2003-12-14T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -5292,7 +5292,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 1 }
 		],
 		"title": "Adventure on a Long Island",
-		"aired": "2003-12-22T00:00:00+00:00",
+		"aired": "2003-12-21T00:00:00.000Z",
 		"score": 4.43
 	},
 	{
@@ -5309,7 +5309,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Foxy the Silver Fox",
-		"aired": "2004-01-05T00:00:00+00:00",
+		"aired": "2004-01-04T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -5326,7 +5326,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Donut Race!!",
-		"aired": "2004-01-19T00:00:00+00:00",
+		"aired": "2004-01-18T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -5343,7 +5343,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ready, Donuts!!",
-		"aired": "2004-01-26T00:00:00+00:00",
+		"aired": "2004-01-25T00:00:00.000Z",
 		"score": 4.09
 	},
 	{
@@ -5360,7 +5360,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 1 }
 		],
 		"title": "The Grand Interference Plan",
-		"aired": "2004-02-02T00:00:00+00:00",
+		"aired": "2004-02-01T00:00:00.000Z",
 		"score": 4.15
 	},
 	{
@@ -5377,7 +5377,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Groggy Monsters",
-		"aired": "2004-02-09T00:00:00+00:00",
+		"aired": "2004-02-08T00:00:00.000Z",
 		"score": 4.1899999999999995
 	},
 	{
@@ -5394,7 +5394,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 1 }
 		],
 		"title": "Groggy Ring!!",
-		"aired": "2004-02-16T00:00:00+00:00",
+		"aired": "2004-02-15T00:00:00.000Z",
 		"score": 4.08
 	},
 	{
@@ -5411,7 +5411,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 8.3, "nbOfVotes": 3 }
 		],
 		"title": "Rough Game",
-		"aired": "2004-02-23T00:00:00+00:00",
+		"aired": "2004-02-22T00:00:00.000Z",
 		"score": 4
 	},
 	{
@@ -5428,7 +5428,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Goal!!",
-		"aired": "2004-03-01T00:00:00+00:00",
+		"aired": "2004-02-29T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -5445,7 +5445,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 1 }
 		],
 		"title": "Main Event",
-		"aired": "2004-03-08T00:00:00+00:00",
+		"aired": "2004-03-07T00:00:00.000Z",
 		"score": 4.18
 	},
 	{
@@ -5462,7 +5462,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.3, "nbOfVotes": 1 }
 		],
 		"title": "Combat!!!",
-		"aired": "2004-03-15T00:00:00+00:00",
+		"aired": "2004-03-14T00:00:00.000Z",
 		"score": 3.9299999999999997
 	},
 	{
@@ -5479,7 +5479,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 1 }
 		],
 		"title": "Secret Room",
-		"aired": "2004-03-22T00:00:00+00:00",
+		"aired": "2004-03-21T00:00:00.000Z",
 		"score": 4.2299999999999995
 	},
 	{
@@ -5496,7 +5496,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.8, "nbOfVotes": 2 }
 		],
 		"title": "Brother Soul",
-		"aired": "2004-03-29T00:00:00+00:00",
+		"aired": "2004-03-28T01:00:00.000Z",
 		"score": 4.14
 	},
 	{
@@ -5513,7 +5513,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 1 }
 		],
 		"title": "K.O.",
-		"aired": "2004-04-12T00:00:00+00:00",
+		"aired": "2004-04-11T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -5530,7 +5530,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Closure",
-		"aired": "2004-04-19T00:00:00+00:00",
+		"aired": "2004-04-18T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -5547,7 +5547,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Marine Headquarters \"Admiral\" Aokiji",
-		"aired": "2004-04-26T00:00:00+00:00",
+		"aired": "2004-04-25T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -5564,7 +5564,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Greatest Power",
-		"aired": "2004-05-10T00:00:00+00:00",
+		"aired": "2004-05-09T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -5581,7 +5581,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 1 }
 		],
 		"title": "One-on-One",
-		"aired": "2004-05-17T00:00:00+00:00",
+		"aired": "2004-05-16T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -5598,7 +5598,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.8, "nbOfVotes": 2 }
 		],
 		"title": "Puffing Tom",
-		"aired": "2004-05-24T00:00:00+00:00",
+		"aired": "2004-05-23T00:00:00.000Z",
 		"score": 4.2700000000000005
 	},
 	{
@@ -5615,7 +5615,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Water Metropolis, Water 7",
-		"aired": "2004-05-31T00:00:00+00:00",
+		"aired": "2004-05-30T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -5632,7 +5632,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 1 }
 		],
 		"title": "Adventure in the City of Water",
-		"aired": "2004-06-07T00:00:00+00:00",
+		"aired": "2004-06-06T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -5649,7 +5649,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Franky Family",
-		"aired": "2004-06-14T00:00:00+00:00",
+		"aired": "2004-06-13T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -5666,7 +5666,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Iceburg-san",
-		"aired": "2004-06-21T00:00:00+00:00",
+		"aired": "2004-06-20T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -5683,7 +5683,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Shipyard Island, Construction Dock No. 1",
-		"aired": "2004-06-28T00:00:00+00:00",
+		"aired": "2004-06-27T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -5700,7 +5700,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Pirate Kidnapping Incident",
-		"aired": "2004-07-12T00:00:00+00:00",
+		"aired": "2004-07-11T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -5717,7 +5717,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "My Name is \"Franky\"",
-		"aired": "2004-07-17T00:00:00+00:00",
+		"aired": "2004-07-16T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -5734,7 +5734,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I've Decided",
-		"aired": "2004-07-26T00:00:00+00:00",
+		"aired": "2004-07-25T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -5751,7 +5751,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "A Big Quarrel",
-		"aired": "2004-08-02T00:00:00+00:00",
+		"aired": "2004-08-01T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -5768,7 +5768,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy vs. Usopp",
-		"aired": "2004-08-09T00:00:00+00:00",
+		"aired": "2004-08-08T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -5785,7 +5785,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Captain",
-		"aired": "2004-08-23T00:00:00+00:00",
+		"aired": "2004-08-22T00:00:00.000Z",
 		"score": 4.93
 	},
 	{
@@ -5802,7 +5802,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Case of the Sealed Room",
-		"aired": "2004-08-30T00:00:00+00:00",
+		"aired": "2004-08-29T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -5819,7 +5819,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Warning",
-		"aired": "2004-09-06T00:00:00+00:00",
+		"aired": "2004-09-05T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -5836,7 +5836,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy vs. Franky",
-		"aired": "2004-09-13T00:00:00+00:00",
+		"aired": "2004-09-12T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -5853,7 +5853,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Bodyguards of the \"Water Metropolis\"",
-		"aired": "2004-09-18T00:00:00+00:00",
+		"aired": "2004-09-17T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -5870,7 +5870,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Coup de Vent",
-		"aired": "2004-09-27T00:00:00+00:00",
+		"aired": "2004-09-26T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -5887,7 +5887,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rumors",
-		"aired": "2004-10-04T00:00:00+00:00",
+		"aired": "2004-10-03T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -5904,7 +5904,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Woman Who Brings Darkness",
-		"aired": "2004-10-09T00:00:00+00:00",
+		"aired": "2004-10-08T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -5921,7 +5921,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Devil",
-		"aired": "2004-10-18T00:00:00+00:00",
+		"aired": "2004-10-17T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -5938,7 +5938,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Messengers of Darkness",
-		"aired": "2004-10-25T00:00:00+00:00",
+		"aired": "2004-10-24T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -5955,7 +5955,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Cipher Pol No. 9",
-		"aired": "2004-11-01T00:00:00+00:00",
+		"aired": "2004-10-30T23:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -5972,7 +5972,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Opposing Powers",
-		"aired": "2004-11-08T00:00:00+00:00",
+		"aired": "2004-11-07T00:00:00.000Z",
 		"score": 4.87
 	},
 	{
@@ -5989,7 +5989,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Concealed",
-		"aired": "2004-11-15T00:00:00+00:00",
+		"aired": "2004-11-14T00:00:00.000Z",
 		"score": 4.92
 	},
 	{
@@ -6006,7 +6006,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 1 }
 		],
 		"title": "The 9th Justice",
-		"aired": "2004-11-29T00:00:00+00:00",
+		"aired": "2004-11-28T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -6023,7 +6023,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rokushiki",
-		"aired": "2004-12-06T00:00:00+00:00",
+		"aired": "2004-12-05T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -6040,7 +6040,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.3, "nbOfVotes": 1 }
 		],
 		"title": "Combat Power",
-		"aired": "2004-12-13T00:00:00+00:00",
+		"aired": "2004-12-12T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -6057,7 +6057,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.4, "nbOfVotes": 2 }
 		],
 		"title": "One Citizen",
-		"aired": "2004-12-20T00:00:00+00:00",
+		"aired": "2004-12-19T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -6074,7 +6074,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Warehouse Under the Bridge",
-		"aired": "2005-01-03T00:00:00+00:00",
+		"aired": "2005-01-02T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -6091,7 +6091,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Klabautermann",
-		"aired": "2005-01-17T00:00:00+00:00",
+		"aired": "2005-01-16T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -6108,7 +6108,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Tom's Workers",
-		"aired": "2005-01-24T00:00:00+00:00",
+		"aired": "2005-01-23T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -6125,7 +6125,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Legendary Shipwright",
-		"aired": "2005-01-31T00:00:00+00:00",
+		"aired": "2005-01-30T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -6142,7 +6142,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sea Train",
-		"aired": "2005-02-07T00:00:00+00:00",
+		"aired": "2005-02-06T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -6159,7 +6159,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Spandam",
-		"aired": "2005-02-14T00:00:00+00:00",
+		"aired": "2005-02-13T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -6176,7 +6176,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Tom-san",
-		"aired": "2005-02-28T00:00:00+00:00",
+		"aired": "2005-02-27T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -6193,7 +6193,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Cutty Flam",
-		"aired": "2005-03-07T00:00:00+00:00",
+		"aired": "2005-03-06T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -6210,7 +6210,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Revival",
-		"aired": "2005-03-14T00:00:00+00:00",
+		"aired": "2005-03-13T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -6227,7 +6227,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 1 }
 		],
 		"title": "Bingo",
-		"aired": "2005-03-19T00:00:00+00:00",
+		"aired": "2005-03-18T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -6244,7 +6244,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Departing Soon",
-		"aired": "2005-03-28T00:00:00+00:00",
+		"aired": "2005-03-27T01:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -6261,7 +6261,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "P.S.",
-		"aired": "2005-04-04T00:00:00+00:00",
+		"aired": "2005-04-03T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -6278,7 +6278,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ebb Tide",
-		"aired": "2005-04-11T00:00:00+00:00",
+		"aired": "2005-04-10T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -6295,7 +6295,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Aqua Laguna",
-		"aired": "2005-04-18T00:00:00+00:00",
+		"aired": "2005-04-17T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -6312,7 +6312,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Kokoro",
-		"aired": "2005-04-25T00:00:00+00:00",
+		"aired": "2005-04-24T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -6329,7 +6329,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rocketman!!",
-		"aired": "2005-05-09T00:00:00+00:00",
+		"aired": "2005-05-08T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -6346,7 +6346,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sortie!!",
-		"aired": "2005-05-16T00:00:00+00:00",
+		"aired": "2005-05-15T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -6363,7 +6363,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sogeking",
-		"aired": "2005-05-23T00:00:00+00:00",
+		"aired": "2005-05-22T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -6380,7 +6380,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sea Train Battle Game",
-		"aired": "2005-05-30T00:00:00+00:00",
+		"aired": "2005-05-29T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -6397,7 +6397,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ramen Kenpo",
-		"aired": "2005-06-06T00:00:00+00:00",
+		"aired": "2005-06-05T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -6414,7 +6414,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.8, "nbOfVotes": 1 }
 		],
 		"title": "You're Not Alone",
-		"aired": "2005-06-13T00:00:00+00:00",
+		"aired": "2005-06-12T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -6431,7 +6431,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.1, "nbOfVotes": 1 }
 		],
 		"title": "The Admirable Captain T-Bone",
-		"aired": "2005-06-20T00:00:00+00:00",
+		"aired": "2005-06-19T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -6448,7 +6448,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Parage",
-		"aired": "2005-06-27T00:00:00+00:00",
+		"aired": "2005-06-26T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -6465,7 +6465,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Necessary Evil",
-		"aired": "2005-07-04T00:00:00+00:00",
+		"aired": "2005-07-03T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -6482,7 +6482,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Struggle",
-		"aired": "2005-07-16T00:00:00+00:00",
+		"aired": "2005-07-15T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -6499,7 +6499,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 1 }
 		],
 		"title": "The Superhumans of Enies Lobby",
-		"aired": "2005-07-25T00:00:00+00:00",
+		"aired": "2005-07-24T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -6516,7 +6516,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Got It!!!",
-		"aired": "2005-08-01T00:00:00+00:00",
+		"aired": "2005-07-31T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -6533,7 +6533,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Great Battle on the Judiciary Island!!",
-		"aired": "2005-08-08T00:00:00+00:00",
+		"aired": "2005-08-07T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -6550,7 +6550,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 1 }
 		],
 		"title": "Damage Report",
-		"aired": "2005-08-22T00:00:00+00:00",
+		"aired": "2005-08-21T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -6567,7 +6567,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 1 }
 		],
 		"title": "Dōriki",
-		"aired": "2005-08-29T00:00:00+00:00",
+		"aired": "2005-08-28T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -6584,7 +6584,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Express to Enies Lobby Main Island",
-		"aired": "2005-09-05T00:00:00+00:00",
+		"aired": "2005-09-04T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -6601,7 +6601,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Fired",
-		"aired": "2005-09-12T00:00:00+00:00",
+		"aired": "2005-09-11T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -6618,7 +6618,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Demon's Hideout",
-		"aired": "2005-09-17T00:00:00+00:00",
+		"aired": "2005-09-16T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -6635,7 +6635,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy vs. Blueno",
-		"aired": "2005-09-26T00:00:00+00:00",
+		"aired": "2005-09-25T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -6652,7 +6652,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Raise the Counterattack Signal",
-		"aired": "2005-10-03T00:00:00+00:00",
+		"aired": "2005-10-02T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -6669,7 +6669,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "There Is a Way",
-		"aired": "2005-10-08T00:00:00+00:00",
+		"aired": "2005-10-07T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -6686,7 +6686,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Unprecedented",
-		"aired": "2005-10-17T00:00:00+00:00",
+		"aired": "2005-10-16T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -6703,7 +6703,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gear",
-		"aired": "2005-10-31T00:00:00+00:00",
+		"aired": "2005-10-29T23:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -6720,7 +6720,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gear Second",
-		"aired": "2005-11-07T00:00:00+00:00",
+		"aired": "2005-11-06T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -6737,7 +6737,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Respond",
-		"aired": "2005-11-14T00:00:00+00:00",
+		"aired": "2005-11-13T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -6754,7 +6754,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Return Fire",
-		"aired": "2005-11-21T00:00:00+00:00",
+		"aired": "2005-11-20T00:00:00.000Z",
 		"score": 4.9
 	},
 	{
@@ -6771,7 +6771,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Girl Called \"Devil\"",
-		"aired": "2005-11-28T00:00:00+00:00",
+		"aired": "2005-11-27T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -6788,7 +6788,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Dereshi",
-		"aired": "2005-12-12T00:00:00+00:00",
+		"aired": "2005-12-11T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -6805,7 +6805,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Olvia",
-		"aired": "2005-12-19T00:00:00+00:00",
+		"aired": "2005-12-18T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -6822,7 +6822,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Demons of Ohara",
-		"aired": "2005-12-26T00:00:00+00:00",
+		"aired": "2005-12-25T00:00:00.000Z",
 		"score": 4.88
 	},
 	{
@@ -6839,7 +6839,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ohara vs. the World Government",
-		"aired": "2006-01-07T00:00:00+00:00",
+		"aired": "2006-01-06T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -6856,7 +6856,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Saul",
-		"aired": "2006-01-23T00:00:00+00:00",
+		"aired": "2006-01-22T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -6873,7 +6873,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "In Order to Reach the Future",
-		"aired": "2006-01-30T00:00:00+00:00",
+		"aired": "2006-01-29T00:00:00.000Z",
 		"score": 4.92
 	},
 	{
@@ -6890,7 +6890,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Declaration of War",
-		"aired": "2006-02-06T00:00:00+00:00",
+		"aired": "2006-02-05T00:00:00.000Z",
 		"score": 4.95
 	},
 	{
@@ -6907,7 +6907,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Jump into the Waterfall!!",
-		"aired": "2006-02-13T00:00:00+00:00",
+		"aired": "2006-02-12T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -6924,7 +6924,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Releasing Key",
-		"aired": "2006-02-20T00:00:00+00:00",
+		"aired": "2006-02-19T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -6941,7 +6941,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirates vs. CP9",
-		"aired": "2006-02-27T00:00:00+00:00",
+		"aired": "2006-02-26T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -6958,7 +6958,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "No. 2 Handcuffs",
-		"aired": "2006-03-06T00:00:00+00:00",
+		"aired": "2006-03-05T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -6975,7 +6975,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Mr. Chivalry",
-		"aired": "2006-03-13T00:00:00+00:00",
+		"aired": "2006-03-12T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -6992,7 +6992,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Franky vs. Fukuro",
-		"aired": "2006-03-20T00:00:00+00:00",
+		"aired": "2006-03-19T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -7009,7 +7009,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Power",
-		"aired": "2006-03-27T00:00:00+00:00",
+		"aired": "2006-03-26T01:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -7026,7 +7026,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Seimei Kikan",
-		"aired": "2006-04-10T00:00:00+00:00",
+		"aired": "2006-04-09T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -7043,7 +7043,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Monster",
-		"aired": "2006-04-17T00:00:00+00:00",
+		"aired": "2006-04-16T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -7060,7 +7060,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Monster vs. Kumadori",
-		"aired": "2006-04-24T00:00:00+00:00",
+		"aired": "2006-04-23T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -7077,7 +7077,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 1 }
 		],
 		"title": "Emergency Bad News Broadcast",
-		"aired": "2006-05-08T00:00:00+00:00",
+		"aired": "2006-05-07T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -7094,7 +7094,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 1 }
 		],
 		"title": "Nami Becomes Huge",
-		"aired": "2006-05-15T00:00:00+00:00",
+		"aired": "2006-05-14T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -7111,7 +7111,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Nami vs. Kalifa",
-		"aired": "2006-05-22T00:00:00+00:00",
+		"aired": "2006-05-21T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -7128,7 +7128,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Chance Has Ended",
-		"aired": "2006-05-29T00:00:00+00:00",
+		"aired": "2006-05-28T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -7145,7 +7145,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Hunter",
-		"aired": "2006-06-05T00:00:00+00:00",
+		"aired": "2006-06-04T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -7162,7 +7162,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sanji vs. Jabra",
-		"aired": "2006-06-12T00:00:00+00:00",
+		"aired": "2006-06-11T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -7179,7 +7179,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Heat Up",
-		"aired": "2006-06-19T00:00:00+00:00",
+		"aired": "2006-06-18T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -7196,7 +7196,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Zoro vs. Kaku",
-		"aired": "2006-06-26T00:00:00+00:00",
+		"aired": "2006-06-25T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -7213,7 +7213,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Asura",
-		"aired": "2006-07-03T00:00:00+00:00",
+		"aired": "2006-07-02T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -7230,7 +7230,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy vs. Rob Lucci",
-		"aired": "2006-07-10T00:00:00+00:00",
+		"aired": "2006-07-09T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -7247,7 +7247,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Legendary Hero",
-		"aired": "2006-07-15T00:00:00+00:00",
+		"aired": "2006-07-14T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -7264,7 +7264,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Buster Call",
-		"aired": "2006-07-24T00:00:00+00:00",
+		"aired": "2006-07-23T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -7281,7 +7281,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gear Third",
-		"aired": "2006-07-31T00:00:00+00:00",
+		"aired": "2006-07-30T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -7298,7 +7298,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rob Lucci",
-		"aired": "2006-08-07T00:00:00+00:00",
+		"aired": "2006-08-06T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -7315,7 +7315,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Mermaid Legend",
-		"aired": "2006-08-21T00:00:00+00:00",
+		"aired": "2006-08-20T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -7332,7 +7332,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Escape Ship",
-		"aired": "2006-08-28T00:00:00+00:00",
+		"aired": "2006-08-27T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -7349,7 +7349,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Struggle on the Bridge",
-		"aired": "2006-09-04T00:00:00+00:00",
+		"aired": "2006-09-03T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -7366,7 +7366,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "A Ship Waiting for Wind",
-		"aired": "2006-09-11T00:00:00+00:00",
+		"aired": "2006-09-10T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -7383,7 +7383,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "It's Not Like It's Hell Here",
-		"aired": "2006-09-16T00:00:00+00:00",
+		"aired": "2006-09-15T00:00:00.000Z",
 		"score": 4.95
 	},
 	{
@@ -7400,7 +7400,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Let's Return",
-		"aired": "2006-09-25T00:00:00+00:00",
+		"aired": "2006-09-24T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -7417,7 +7417,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Complete Defeat",
-		"aired": "2006-10-02T00:00:00+00:00",
+		"aired": "2006-10-01T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -7434,7 +7434,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Falling Snow of Reminiscence",
-		"aired": "2006-10-07T00:00:00+00:00",
+		"aired": "2006-10-06T00:00:00.000Z",
 		"score": 4.91
 	},
 	{
@@ -7451,7 +7451,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Fist of Love",
-		"aired": "2006-10-23T00:00:00+00:00",
+		"aired": "2006-10-22T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -7468,7 +7468,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Jack in the Box",
-		"aired": "2006-10-30T00:00:00+00:00",
+		"aired": "2006-10-28T23:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -7485,7 +7485,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Name of that Sea is",
-		"aired": "2006-11-06T00:00:00+00:00",
+		"aired": "2006-11-05T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -7502,7 +7502,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Whitebeard and Redhair",
-		"aired": "2006-11-13T00:00:00+00:00",
+		"aired": "2006-11-12T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -7519,7 +7519,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 1 }
 		],
 		"title": "Understanding Your Feelings",
-		"aired": "2006-11-20T00:00:00+00:00",
+		"aired": "2006-11-19T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -7536,7 +7536,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pants from Frankyhouse",
-		"aired": "2006-12-04T00:00:00+00:00",
+		"aired": "2006-12-03T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -7553,7 +7553,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Naked But Great",
-		"aired": "2006-12-11T00:00:00+00:00",
+		"aired": "2006-12-10T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -7570,7 +7570,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pride",
-		"aired": "2006-12-18T00:00:00+00:00",
+		"aired": "2006-12-17T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -7587,7 +7587,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Third and the Seventh",
-		"aired": "2006-12-25T00:00:00+00:00",
+		"aired": "2006-12-24T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -7604,7 +7604,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Fire Fist vs. Blackbeard",
-		"aired": "2007-01-06T00:00:00+00:00",
+		"aired": "2007-01-05T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -7621,7 +7621,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Duel on Banaro Island",
-		"aired": "2007-01-22T00:00:00+00:00",
+		"aired": "2007-01-21T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -7638,7 +7638,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure in the Demon Sea",
-		"aired": "2007-01-29T00:00:00+00:00",
+		"aired": "2007-01-28T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -7655,7 +7655,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Thriller Bark",
-		"aired": "2007-02-05T00:00:00+00:00",
+		"aired": "2007-02-04T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -7672,7 +7672,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure on the Ghost Island",
-		"aired": "2007-02-10T00:00:00+00:00",
+		"aired": "2007-02-09T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -7689,7 +7689,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Zombie",
-		"aired": "2007-02-19T00:00:00+00:00",
+		"aired": "2007-02-18T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -7706,7 +7706,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.1, "nbOfVotes": 1 }
 		],
 		"title": "Doctor Hogback",
-		"aired": "2007-02-26T00:00:00+00:00",
+		"aired": "2007-02-25T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -7723,7 +7723,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Surprise Zombie",
-		"aired": "2007-03-05T00:00:00+00:00",
+		"aired": "2007-03-04T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -7740,7 +7740,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 1 }
 		],
 		"title": "Moriah",
-		"aired": "2007-03-12T00:00:00+00:00",
+		"aired": "2007-03-11T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -7757,7 +7757,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Mysterious Four of Thriller Bark",
-		"aired": "2007-03-26T00:00:00+00:00",
+		"aired": "2007-03-25T01:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -7774,7 +7774,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "General Zombie Night",
-		"aired": "2007-04-02T00:00:00+00:00",
+		"aired": "2007-04-01T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -7791,7 +7791,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Perona's Wonder Garden",
-		"aired": "2007-04-09T00:00:00+00:00",
+		"aired": "2007-04-08T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -7808,7 +7808,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Jigorou of the Wind",
-		"aired": "2007-04-16T00:00:00+00:00",
+		"aired": "2007-04-15T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -7825,7 +7825,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Cloudy With a Small Chance of Bone",
-		"aired": "2007-04-23T00:00:00+00:00",
+		"aired": "2007-04-22T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -7842,7 +7842,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Humming",
-		"aired": "2007-04-28T00:00:00+00:00",
+		"aired": "2007-04-27T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -7859,7 +7859,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Royal Shichibukai, Gekko Moriah",
-		"aired": "2007-05-14T00:00:00+00:00",
+		"aired": "2007-05-13T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -7876,7 +7876,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Demon from the Frozen Land",
-		"aired": "2007-05-21T00:00:00+00:00",
+		"aired": "2007-05-20T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -7893,7 +7893,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.2, "nbOfVotes": 1 }
 		],
 		"title": "Meeeeeaaaaaat!!!",
-		"aired": "2007-05-28T00:00:00+00:00",
+		"aired": "2007-05-27T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -7910,7 +7910,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Not the Afro",
-		"aired": "2007-06-04T00:00:00+00:00",
+		"aired": "2007-06-03T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -7927,7 +7927,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Being Dead Isn't an Apology",
-		"aired": "2007-06-11T00:00:00+00:00",
+		"aired": "2007-06-10T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -7944,7 +7944,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Get Back Before Dawn!!",
-		"aired": "2007-06-25T00:00:00+00:00",
+		"aired": "2007-06-24T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -7961,7 +7961,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ghost Buster",
-		"aired": "2007-07-02T00:00:00+00:00",
+		"aired": "2007-07-01T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -7978,7 +7978,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Oars' Adventure",
-		"aired": "2007-07-09T00:00:00+00:00",
+		"aired": "2007-07-08T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -7995,7 +7995,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Sanji vs. Mysterious Absalom",
-		"aired": "2007-07-14T00:00:00+00:00",
+		"aired": "2007-07-13T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -8012,7 +8012,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 11.1, "nbOfVotes": 4 }
 		],
 		"title": "Sanji's Dream",
-		"aired": "2007-07-23T00:00:00+00:00",
+		"aired": "2007-07-22T00:00:00.000Z",
 		"score": 4.220000000000001
 	},
 	{
@@ -8029,7 +8029,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Usopp vs. Princess Perona",
-		"aired": "2007-07-30T00:00:00+00:00",
+		"aired": "2007-07-29T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -8046,7 +8046,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Conclusion",
-		"aired": "2007-08-06T00:00:00+00:00",
+		"aired": "2007-08-05T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -8063,7 +8063,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Zoro vs. Samurai Ryuma",
-		"aired": "2007-08-20T00:00:00+00:00",
+		"aired": "2007-08-19T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -8080,7 +8080,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Chopper vs. Mysterious Hogback",
-		"aired": "2007-08-27T00:00:00+00:00",
+		"aired": "2007-08-26T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -8097,7 +8097,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Show Yourselves, Straw Hat Crew!!!",
-		"aired": "2007-09-03T00:00:00+00:00",
+		"aired": "2007-09-02T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -8114,7 +8114,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Oars vs. the Straw Hat Crew",
-		"aired": "2007-09-10T00:00:00+00:00",
+		"aired": "2007-09-09T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -8131,7 +8131,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "My Friend",
-		"aired": "2007-09-22T00:00:00+00:00",
+		"aired": "2007-09-21T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -8148,7 +8148,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Down",
-		"aired": "2007-10-01T00:00:00+00:00",
+		"aired": "2007-09-30T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -8165,7 +8165,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Royal Shichibukai, Bartholomew Kuma Appears",
-		"aired": "2007-10-06T00:00:00+00:00",
+		"aired": "2007-10-05T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -8182,7 +8182,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.1, "nbOfVotes": 2 }
 		],
 		"title": "Gotta Do It!!!",
-		"aired": "2007-10-15T00:00:00+00:00",
+		"aired": "2007-10-14T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -8199,7 +8199,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Forest Pirates",
-		"aired": "2007-10-22T00:00:00+00:00",
+		"aired": "2007-10-21T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -8216,7 +8216,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Nightmare Luffy",
-		"aired": "2007-10-29T00:00:00+00:00",
+		"aired": "2007-10-27T23:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -8233,7 +8233,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "3/8",
-		"aired": "2007-11-05T00:00:00+00:00",
+		"aired": "2007-11-04T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -8250,7 +8250,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 1 }
 		],
 		"title": "Luffy vs. Luffy",
-		"aired": "2007-11-12T00:00:00+00:00",
+		"aired": "2007-11-11T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -8267,7 +8267,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 1 }
 		],
 		"title": "Warrior of Hope",
-		"aired": "2007-11-19T00:00:00+00:00",
+		"aired": "2007-11-18T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -8284,7 +8284,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ambush Attack",
-		"aired": "2007-12-03T00:00:00+00:00",
+		"aired": "2007-12-02T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -8301,7 +8301,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Shadow's Asgard",
-		"aired": "2007-12-10T00:00:00+00:00",
+		"aired": "2007-12-09T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -8318,7 +8318,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Morning Comes",
-		"aired": "2007-12-17T00:00:00+00:00",
+		"aired": "2007-12-16T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -8335,7 +8335,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "End of the Dream",
-		"aired": "2007-12-25T00:00:00+00:00",
+		"aired": "2007-12-24T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -8352,7 +8352,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Squish",
-		"aired": "2008-01-04T00:00:00+00:00",
+		"aired": "2008-01-03T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -8369,7 +8369,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Straw Hat Crew - Pirate Hunter Zoro",
-		"aired": "2008-01-21T00:00:00+00:00",
+		"aired": "2008-01-20T00:00:00.000Z",
 		"score": 4.92
 	},
 	{
@@ -8386,7 +8386,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Piano",
-		"aired": "2008-01-28T00:00:00+00:00",
+		"aired": "2008-01-27T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -8403,7 +8403,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "That Song",
-		"aired": "2008-02-04T00:00:00+00:00",
+		"aired": "2008-02-03T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -8420,7 +8420,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Song of Life",
-		"aired": "2008-02-09T00:00:00+00:00",
+		"aired": "2008-02-08T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -8437,7 +8437,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.3, "nbOfVotes": 2 }
 		],
 		"title": "The Eighth",
-		"aired": "2008-02-25T00:00:00+00:00",
+		"aired": "2008-02-24T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -8454,7 +8454,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "Arriving Once Again",
-		"aired": "2008-03-03T00:00:00+00:00",
+		"aired": "2008-03-02T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -8471,7 +8471,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Flying Fish Riders",
-		"aired": "2008-03-10T00:00:00+00:00",
+		"aired": "2008-03-09T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -8488,7 +8488,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Iron Mask Duval",
-		"aired": "2008-03-17T00:00:00+00:00",
+		"aired": "2008-03-16T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -8505,7 +8505,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "You Know",
-		"aired": "2008-03-24T00:00:00+00:00",
+		"aired": "2008-03-23T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -8522,7 +8522,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Duval's Tragedy",
-		"aired": "2008-03-31T00:00:00+00:00",
+		"aired": "2008-03-30T01:00:00.000Z",
 		"score": 4.87
 	},
 	{
@@ -8539,7 +8539,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gaon Cannon",
-		"aired": "2008-04-07T00:00:00+00:00",
+		"aired": "2008-04-06T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -8556,7 +8556,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Yarukiman Mangrove",
-		"aired": "2008-04-14T00:00:00+00:00",
+		"aired": "2008-04-13T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -8573,7 +8573,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure on the Archipelago of Dancing Soap Bubbles",
-		"aired": "2008-04-21T00:00:00+00:00",
+		"aired": "2008-04-20T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -8590,7 +8590,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The 11 Supernovas",
-		"aired": "2008-04-28T00:00:00+00:00",
+		"aired": "2008-04-27T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -8607,7 +8607,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sabaody Park",
-		"aired": "2008-05-19T00:00:00+00:00",
+		"aired": "2008-05-18T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -8624,7 +8624,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "Embers of History",
-		"aired": "2008-05-26T00:00:00+00:00",
+		"aired": "2008-05-25T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -8641,7 +8641,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "A World Beginning to Swell",
-		"aired": "2008-06-02T00:00:00+00:00",
+		"aired": "2008-06-01T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -8658,7 +8658,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Celestial Dragon Incident",
-		"aired": "2008-06-09T00:00:00+00:00",
+		"aired": "2008-06-08T00:00:00.000Z",
 		"score": 4.87
 	},
 	{
@@ -8675,7 +8675,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "An Island in Chaos",
-		"aired": "2008-06-16T00:00:00+00:00",
+		"aired": "2008-06-15T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -8692,7 +8692,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Frontline On The Move!!",
-		"aired": "2008-06-23T00:00:00+00:00",
+		"aired": "2008-06-22T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -8709,7 +8709,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Kuma",
-		"aired": "2008-06-30T00:00:00+00:00",
+		"aired": "2008-06-29T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -8726,7 +8726,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Roger and Rayleigh",
-		"aired": "2008-07-07T00:00:00+00:00",
+		"aired": "2008-07-06T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -8743,7 +8743,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Kizaru Arrives",
-		"aired": "2008-07-19T00:00:00+00:00",
+		"aired": "2008-07-18T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -8760,7 +8760,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Island of Carnage",
-		"aired": "2008-07-28T00:00:00+00:00",
+		"aired": "2008-07-27T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -8777,7 +8777,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Kizaru vs. the 4 Captains",
-		"aired": "2008-08-04T00:00:00+00:00",
+		"aired": "2008-08-03T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -8794,7 +8794,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Straw Hat Crew vs. Combat Weapon",
-		"aired": "2008-08-11T00:00:00+00:00",
+		"aired": "2008-08-10T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -8811,7 +8811,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Axe-Wielding Sentomaru",
-		"aired": "2008-08-25T00:00:00+00:00",
+		"aired": "2008-08-24T00:00:00.000Z",
 		"score": 4.9
 	},
 	{
@@ -8828,7 +8828,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Zoro Lost",
-		"aired": "2008-09-01T00:00:00+00:00",
+		"aired": "2008-08-31T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -8845,7 +8845,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I Couldn't Save Them!!!",
-		"aired": "2008-09-08T00:00:00+00:00",
+		"aired": "2008-09-07T00:00:00.000Z",
 		"score": 4.9399999999999995
 	},
 	{
@@ -8862,7 +8862,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Mushrooms Only Grow from the Body",
-		"aired": "2008-09-13T00:00:00+00:00",
+		"aired": "2008-09-12T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -8879,7 +8879,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure on an Island of Women",
-		"aired": "2008-09-22T00:00:00+00:00",
+		"aired": "2008-09-21T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -8896,7 +8896,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.8, "nbOfVotes": 2 }
 		],
 		"title": "The Pirate Empress Boa Hancock",
-		"aired": "2008-09-29T00:00:00+00:00",
+		"aired": "2008-09-28T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -8913,7 +8913,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Bathing",
-		"aired": "2008-10-06T00:00:00+00:00",
+		"aired": "2008-10-05T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -8930,7 +8930,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Arena",
-		"aired": "2008-10-11T00:00:00+00:00",
+		"aired": "2008-10-10T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -8947,7 +8947,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 1 }
 		],
 		"title": "A King's Disposition",
-		"aired": "2008-10-27T00:00:00+00:00",
+		"aired": "2008-10-25T23:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -8964,7 +8964,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gorgon's Eyes",
-		"aired": "2008-11-01T00:00:00+00:00",
+		"aired": "2008-10-31T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -8981,7 +8981,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Hoof of Celestial Dragons",
-		"aired": "2008-11-10T00:00:00+00:00",
+		"aired": "2008-11-09T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -8998,7 +8998,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Fatal Disease",
-		"aired": "2008-11-17T00:00:00+00:00",
+		"aired": "2008-11-16T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -9015,7 +9015,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Hell",
-		"aired": "2008-11-22T00:00:00+00:00",
+		"aired": "2008-11-21T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -9032,7 +9032,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "No One Can Stop This Now",
-		"aired": "2008-12-01T00:00:00+00:00",
+		"aired": "2008-11-30T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -9049,7 +9049,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Underwater Prison Impel Down",
-		"aired": "2008-12-08T00:00:00+00:00",
+		"aired": "2008-12-07T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -9066,7 +9066,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure in the Great Prison",
-		"aired": "2008-12-22T00:00:00+00:00",
+		"aired": "2008-12-21T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -9083,7 +9083,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Level 1 Crimson Hell",
-		"aired": "2009-01-05T00:00:00+00:00",
+		"aired": "2009-01-04T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -9100,7 +9100,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Jinbe, Knight of the Sea",
-		"aired": "2009-01-19T00:00:00+00:00",
+		"aired": "2009-01-18T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -9117,7 +9117,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Level 2 Wild Beast Hell",
-		"aired": "2009-01-26T00:00:00+00:00",
+		"aired": "2009-01-25T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -9134,7 +9134,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "From Hell to Hell",
-		"aired": "2009-02-02T00:00:00+00:00",
+		"aired": "2009-02-01T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -9151,7 +9151,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Level 3 Starvation Hell",
-		"aired": "2009-02-09T00:00:00+00:00",
+		"aired": "2009-02-08T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -9168,7 +9168,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Jailer Beast Minotaurus",
-		"aired": "2009-02-16T00:00:00+00:00",
+		"aired": "2009-02-15T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -9185,7 +9185,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Level 4 Inferno Hell",
-		"aired": "2009-02-23T00:00:00+00:00",
+		"aired": "2009-02-22T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -9202,7 +9202,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Chief Warden Magellan vs. Pirate Luffy",
-		"aired": "2009-03-09T00:00:00+00:00",
+		"aired": "2009-03-08T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -9219,7 +9219,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Friends",
-		"aired": "2009-03-16T00:00:00+00:00",
+		"aired": "2009-03-15T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -9236,7 +9236,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 2 }
 		],
 		"title": "Level 5 Frozen Hell",
-		"aired": "2009-03-23T00:00:00+00:00",
+		"aired": "2009-03-22T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -9253,7 +9253,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "Okama in Hell",
-		"aired": "2009-03-30T00:00:00+00:00",
+		"aired": "2009-03-29T01:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -9270,7 +9270,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "Level 5.5 New Kama Land",
-		"aired": "2009-04-06T00:00:00+00:00",
+		"aired": "2009-04-05T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -9287,7 +9287,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Emporio Tension Hormones",
-		"aired": "2009-04-13T00:00:00+00:00",
+		"aired": "2009-04-12T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -9304,7 +9304,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Level 6 Eternal Hell",
-		"aired": "2009-04-27T00:00:00+00:00",
+		"aired": "2009-04-26T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -9321,7 +9321,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Likes of Which It Has Never Seen",
-		"aired": "2009-05-11T00:00:00+00:00",
+		"aired": "2009-05-10T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -9338,7 +9338,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Another Incident to Be Told",
-		"aired": "2009-05-18T00:00:00+00:00",
+		"aired": "2009-05-17T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -9355,7 +9355,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Straw Hat and Blackbeard",
-		"aired": "2009-05-25T00:00:00+00:00",
+		"aired": "2009-05-24T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -9372,7 +9372,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "Even the Lid of Hell's Cauldron Will Open",
-		"aired": "2009-06-01T00:00:00+00:00",
+		"aired": "2009-05-31T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -9389,7 +9389,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "To the Sunshine in Outside World",
-		"aired": "2009-06-08T00:00:00+00:00",
+		"aired": "2009-06-07T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -9406,7 +9406,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Captain of Fishmen Pirates, \"Shichibukai\" Jinbe",
-		"aired": "2009-06-15T00:00:00+00:00",
+		"aired": "2009-06-14T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -9423,7 +9423,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "Escaping the Island",
-		"aired": "2009-06-22T00:00:00+00:00",
+		"aired": "2009-06-21T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -9440,7 +9440,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Thank You",
-		"aired": "2009-06-29T00:00:00+00:00",
+		"aired": "2009-06-28T00:00:00.000Z",
 		"score": 4.93
 	},
 	{
@@ -9457,7 +9457,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ship Sailing Forth",
-		"aired": "2009-07-06T00:00:00+00:00",
+		"aired": "2009-07-05T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -9474,7 +9474,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 2 }
 		],
 		"title": "Marine Headquarters",
-		"aired": "2009-07-18T00:00:00+00:00",
+		"aired": "2009-07-17T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -9491,7 +9491,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Yonko \"Whitebeard\"",
-		"aired": "2009-07-27T00:00:00+00:00",
+		"aired": "2009-07-26T00:00:00.000Z",
 		"score": 4.93
 	},
 	{
@@ -9508,7 +9508,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Ace and Whitebeard",
-		"aired": "2009-08-03T00:00:00+00:00",
+		"aired": "2009-08-02T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -9525,7 +9525,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Conflict at the Summit",
-		"aired": "2009-08-10T00:00:00+00:00",
+		"aired": "2009-08-09T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -9542,7 +9542,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Admiral Akainu",
-		"aired": "2009-08-24T00:00:00+00:00",
+		"aired": "2009-08-23T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -9559,7 +9559,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Oars and the kasa",
-		"aired": "2009-08-31T00:00:00+00:00",
+		"aired": "2009-08-30T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -9576,7 +9576,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Justice will Prevail!!",
-		"aired": "2009-09-07T00:00:00+00:00",
+		"aired": "2009-09-06T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -9593,7 +9593,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 3 }
 		],
 		"title": "Luffy and Whitebeard",
-		"aired": "2009-09-19T00:00:00+00:00",
+		"aired": "2009-09-18T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -9610,7 +9610,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Younger Brother",
-		"aired": "2009-09-28T00:00:00+00:00",
+		"aired": "2009-09-27T00:00:00.000Z",
 		"score": 4.91
 	},
 	{
@@ -9627,7 +9627,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Karma",
-		"aired": "2009-10-05T00:00:00+00:00",
+		"aired": "2009-10-04T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -9644,7 +9644,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Prisoners of Impel Down",
-		"aired": "2009-10-10T00:00:00+00:00",
+		"aired": "2009-10-09T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -9661,7 +9661,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy vs. Mihawk",
-		"aired": "2009-10-26T00:00:00+00:00",
+		"aired": "2009-10-24T23:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -9678,7 +9678,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Maelstrom Spider Squard",
-		"aired": "2009-11-02T00:00:00+00:00",
+		"aired": "2009-11-01T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -9695,7 +9695,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "One Heart, One Man",
-		"aired": "2009-11-09T00:00:00+00:00",
+		"aired": "2009-11-08T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -9712,7 +9712,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Man Who Shakes The World",
-		"aired": "2009-11-21T00:00:00+00:00",
+		"aired": "2009-11-20T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -9729,7 +9729,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Path of Oars",
-		"aired": "2009-11-30T00:00:00+00:00",
+		"aired": "2009-11-29T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -9746,7 +9746,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Assault",
-		"aired": "2009-12-07T00:00:00+00:00",
+		"aired": "2009-12-06T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -9763,7 +9763,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Marineford Marine Headquarters, Oris Plaza",
-		"aired": "2009-12-14T00:00:00+00:00",
+		"aired": "2009-12-13T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -9780,7 +9780,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Have It Your Own Damned Way",
-		"aired": "2009-12-21T00:00:00+00:00",
+		"aired": "2009-12-20T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -9797,7 +9797,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "White Monster",
-		"aired": "2010-01-04T00:00:00+00:00",
+		"aired": "2010-01-03T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -9814,7 +9814,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Bridge of Life",
-		"aired": "2010-01-18T00:00:00+00:00",
+		"aired": "2010-01-17T00:00:00.000Z",
 		"score": 4.87
 	},
 	{
@@ -9831,7 +9831,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Execution Platform",
-		"aired": "2010-01-25T00:00:00+00:00",
+		"aired": "2010-01-24T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -9848,7 +9848,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Times They Are A-Changin'",
-		"aired": "2010-02-01T00:00:00+00:00",
+		"aired": "2010-01-31T00:00:00.000Z",
 		"score": 4.91
 	},
 	{
@@ -9865,7 +9865,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 4 }
 		],
 		"title": "I Call the Name of This Age \"Whitebeard\"",
-		"aired": "2010-02-08T00:00:00+00:00",
+		"aired": "2010-02-07T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -9882,7 +9882,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 6.4, "nbOfVotes": 25 }
 		],
 		"title": "Portgas D. Ace Dies",
-		"aired": "2010-02-15T00:00:00+00:00",
+		"aired": "2010-02-14T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -9899,7 +9899,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Anger Without Words",
-		"aired": "2010-02-22T00:00:00+00:00",
+		"aired": "2010-02-21T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -9916,7 +9916,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Great Pirate Edward Newgate",
-		"aired": "2010-03-08T00:00:00+00:00",
+		"aired": "2010-03-07T00:00:00.000Z",
 		"score": 4.95
 	},
 	{
@@ -9933,7 +9933,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Major Events Piling Up One After Another",
-		"aired": "2010-03-15T00:00:00+00:00",
+		"aired": "2010-03-14T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -9950,7 +9950,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "He Who Must Live to See a New Age",
-		"aired": "2010-03-20T00:00:00+00:00",
+		"aired": "2010-03-19T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -9967,7 +9967,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Seconds of Courage",
-		"aired": "2010-03-29T00:00:00+00:00",
+		"aired": "2010-03-28T01:00:00.000Z",
 		"score": 4.91
 	},
 	{
@@ -9984,7 +9984,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "End of the War",
-		"aired": "2010-04-05T00:00:00+00:00",
+		"aired": "2010-04-04T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -10001,7 +10001,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Creeping Future",
-		"aired": "2010-04-19T00:00:00+00:00",
+		"aired": "2010-04-18T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -10018,7 +10018,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy and Ace",
-		"aired": "2010-04-26T00:00:00+00:00",
+		"aired": "2010-04-25T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -10035,7 +10035,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Gray Terminal - The Final Destination of the Uncertainty",
-		"aired": "2010-05-10T00:00:00+00:00",
+		"aired": "2010-05-09T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -10052,7 +10052,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "The Porchemy Incident",
-		"aired": "2010-05-17T00:00:00+00:00",
+		"aired": "2010-05-16T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -10069,7 +10069,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Brothers' Sake Cups",
-		"aired": "2010-05-24T00:00:00+00:00",
+		"aired": "2010-05-23T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -10086,7 +10086,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "A Fetid Town",
-		"aired": "2010-05-31T00:00:00+00:00",
+		"aired": "2010-05-30T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -10103,7 +10103,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I Will Not Run!",
-		"aired": "2010-06-07T00:00:00+00:00",
+		"aired": "2010-06-06T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -10120,7 +10120,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Sabo's Ocean",
-		"aired": "2010-06-14T00:00:00+00:00",
+		"aired": "2010-06-13T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -10137,7 +10137,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Efforts Toward Glory",
-		"aired": "2010-06-28T00:00:00+00:00",
+		"aired": "2010-06-27T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -10154,7 +10154,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "My Little Brother",
-		"aired": "2010-07-05T00:00:00+00:00",
+		"aired": "2010-07-04T00:00:00.000Z",
 		"score": 4.87
 	},
 	{
@@ -10171,7 +10171,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "You Sure That's Alright?",
-		"aired": "2010-07-12T00:00:00+00:00",
+		"aired": "2010-07-11T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -10188,7 +10188,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.8, "nbOfVotes": 3 }
 		],
 		"title": "Yell",
-		"aired": "2010-07-17T00:00:00+00:00",
+		"aired": "2010-07-16T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -10205,7 +10205,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "News",
-		"aired": "2010-07-26T00:00:00+00:00",
+		"aired": "2010-07-25T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -10222,7 +10222,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Message",
-		"aired": "2010-08-02T00:00:00+00:00",
+		"aired": "2010-08-01T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -10239,7 +10239,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Oath",
-		"aired": "2010-08-09T00:00:00+00:00",
+		"aired": "2010-08-08T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -10256,7 +10256,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Spectrum",
-		"aired": "2010-08-23T00:00:00+00:00",
+		"aired": "2010-08-22T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -10273,7 +10273,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "3D2Y",
-		"aired": "2010-08-30T00:00:00+00:00",
+		"aired": "2010-08-29T00:00:00.000Z",
 		"score": 4.88
 	},
 	{
@@ -10290,7 +10290,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.3, "nbOfVotes": 1 }
 		],
 		"title": "2 Years Later",
-		"aired": "2010-10-04T00:00:00+00:00",
+		"aired": "2010-10-03T00:00:00.000Z",
 		"score": 4.87
 	},
 	{
@@ -10307,7 +10307,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "9 Pirates",
-		"aired": "2010-10-09T00:00:00+00:00",
+		"aired": "2010-10-08T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -10324,7 +10324,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "The Island of Restarting",
-		"aired": "2010-10-18T00:00:00+00:00",
+		"aired": "2010-10-17T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -10341,7 +10341,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Romance Dawn for the new world - The Dawn of an Adventure into the New World",
-		"aired": "2010-10-25T00:00:00+00:00",
+		"aired": "2010-10-24T00:00:00.000Z",
 		"score": 4.91
 	},
 	{
@@ -10358,7 +10358,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rudder Straight Down!!",
-		"aired": "2010-11-01T00:00:00+00:00",
+		"aired": "2010-10-30T23:00:00.000Z",
 		"score": 4.9399999999999995
 	},
 	{
@@ -10375,7 +10375,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "Keep It in Your Heart",
-		"aired": "2010-11-08T00:00:00+00:00",
+		"aired": "2010-11-07T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -10392,7 +10392,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Into the Depths",
-		"aired": "2010-11-15T00:00:00+00:00",
+		"aired": "2010-11-14T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -10409,7 +10409,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "The Kraken and the Pirates",
-		"aired": "2010-11-29T00:00:00+00:00",
+		"aired": "2010-11-28T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -10426,7 +10426,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 2 }
 		],
 		"title": "Adventure in the Ocean Depths",
-		"aired": "2010-12-06T00:00:00+00:00",
+		"aired": "2010-12-05T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -10443,7 +10443,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 1 }
 		],
 		"title": "10,000 Meters Under the Sea",
-		"aired": "2010-12-13T00:00:00+00:00",
+		"aired": "2010-12-12T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -10460,7 +10460,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Undersea Paradise",
-		"aired": "2010-12-20T00:00:00+00:00",
+		"aired": "2010-12-19T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -10477,7 +10477,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 3 }
 		],
 		"title": "Adventure on Fishman Island",
-		"aired": "2011-01-04T00:00:00+00:00",
+		"aired": "2011-01-03T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -10494,7 +10494,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Fortune-Teller Madame Shyarly",
-		"aired": "2011-01-17T00:00:00+00:00",
+		"aired": "2011-01-16T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -10511,7 +10511,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "Hody Jones",
-		"aired": "2011-01-24T00:00:00+00:00",
+		"aired": "2011-01-23T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -10528,7 +10528,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Brought by the Shark They Saved",
-		"aired": "2011-01-31T00:00:00+00:00",
+		"aired": "2011-01-30T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -10545,7 +10545,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Mermaid Princess in Hard-Shell Tower",
-		"aired": "2011-02-07T00:00:00+00:00",
+		"aired": "2011-02-06T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -10562,7 +10562,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "What's Done is Done",
-		"aired": "2011-02-14T00:00:00+00:00",
+		"aired": "2011-02-13T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -10579,7 +10579,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Curse of Mato Mato",
-		"aired": "2011-02-21T00:00:00+00:00",
+		"aired": "2011-02-20T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -10596,7 +10596,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Anniversary of Revenge",
-		"aired": "2011-02-28T00:00:00+00:00",
+		"aired": "2011-02-27T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -10613,7 +10613,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Major Incident on Coral Hill",
-		"aired": "2011-03-14T00:00:00+00:00",
+		"aired": "2011-03-13T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -10630,7 +10630,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 1 }
 		],
 		"title": "Proposal",
-		"aired": "2011-03-19T00:00:00+00:00",
+		"aired": "2011-03-18T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -10647,7 +10647,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "At the Sea Forest",
-		"aired": "2011-04-04T00:00:00+00:00",
+		"aired": "2011-04-03T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -10664,7 +10664,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "The Longed-For Amusement Park",
-		"aired": "2011-04-11T00:00:00+00:00",
+		"aired": "2011-04-10T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -10681,7 +10681,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "Otohime and Tiger",
-		"aired": "2011-04-18T00:00:00+00:00",
+		"aired": "2011-04-17T00:00:00.000Z",
 		"score": 4.3
 	},
 	{
@@ -10698,7 +10698,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "The Sun Pirates",
-		"aired": "2011-04-25T00:00:00+00:00",
+		"aired": "2011-04-24T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -10715,7 +10715,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Fisher Tiger",
-		"aired": "2011-05-09T00:00:00+00:00",
+		"aired": "2011-05-08T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -10732,7 +10732,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Queen Otohime",
-		"aired": "2011-05-16T00:00:00+00:00",
+		"aired": "2011-05-15T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -10749,7 +10749,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 1 }
 		],
 		"title": "Uninherited Will",
-		"aired": "2011-05-23T00:00:00+00:00",
+		"aired": "2011-05-22T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -10766,7 +10766,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "The Three Neptune Brothers",
-		"aired": "2011-05-30T00:00:00+00:00",
+		"aired": "2011-05-29T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -10783,7 +10783,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "You Have My Gratitude",
-		"aired": "2011-06-06T00:00:00+00:00",
+		"aired": "2011-06-05T00:00:00.000Z",
 		"score": 4.43
 	},
 	{
@@ -10800,7 +10800,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Major Cleanup",
-		"aired": "2011-06-20T00:00:00+00:00",
+		"aired": "2011-06-19T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -10817,7 +10817,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 1 }
 		],
 		"title": "The Former Shichibukai Who Stands in the Way",
-		"aired": "2011-06-27T00:00:00+00:00",
+		"aired": "2011-06-26T00:00:00.000Z",
 		"score": 4.33
 	},
 	{
@@ -10834,7 +10834,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.5, "nbOfVotes": 4 }
 		],
 		"title": "Lashing Out",
-		"aired": "2011-07-04T00:00:00+00:00",
+		"aired": "2011-07-03T00:00:00.000Z",
 		"score": 3.81
 	},
 	{
@@ -10851,7 +10851,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 2 }
 		],
 		"title": "Gyoncorde Plaza",
-		"aired": "2011-07-11T00:00:00+00:00",
+		"aired": "2011-07-10T00:00:00.000Z",
 		"score": 4.1899999999999995
 	},
 	{
@@ -10868,7 +10868,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.2, "nbOfVotes": 2 }
 		],
 		"title": "I Knew it All Along",
-		"aired": "2011-07-16T00:00:00+00:00",
+		"aired": "2011-07-15T00:00:00.000Z",
 		"score": 4.17
 	},
 	{
@@ -10885,7 +10885,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Friend or Foe",
-		"aired": "2011-08-01T00:00:00+00:00",
+		"aired": "2011-07-31T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -10902,7 +10902,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "100,000 vs. 10",
-		"aired": "2011-08-08T00:00:00+00:00",
+		"aired": "2011-08-07T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -10919,7 +10919,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "So Disgusting It Makes Me Fly",
-		"aired": "2011-08-22T00:00:00+00:00",
+		"aired": "2011-08-21T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -10936,7 +10936,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 3 }
 		],
 		"title": "The General From the Future Land",
-		"aired": "2011-08-29T00:00:00+00:00",
+		"aired": "2011-08-28T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -10953,7 +10953,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Ancient Ark",
-		"aired": "2011-09-05T00:00:00+00:00",
+		"aired": "2011-09-04T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -10970,7 +10970,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 2 }
 		],
 		"title": "Runawayhoshi",
-		"aired": "2011-09-12T00:00:00+00:00",
+		"aired": "2011-09-11T00:00:00.000Z",
 		"score": 4.36
 	},
 	{
@@ -10987,7 +10987,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 1 }
 		],
 		"title": "I'll Protect Everything",
-		"aired": "2011-09-17T00:00:00+00:00",
+		"aired": "2011-09-16T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -11004,7 +11004,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 1 }
 		],
 		"title": "Right Above Fishman Island",
-		"aired": "2011-09-26T00:00:00+00:00",
+		"aired": "2011-09-25T00:00:00.000Z",
 		"score": 4.1899999999999995
 	},
 	{
@@ -11021,7 +11021,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "What Are You?",
-		"aired": "2011-10-08T00:00:00+00:00",
+		"aired": "2011-10-07T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -11038,7 +11038,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Complete Loss of Face",
-		"aired": "2011-10-17T00:00:00+00:00",
+		"aired": "2011-10-16T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -11055,7 +11055,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 1 }
 		],
 		"title": "Phantom",
-		"aired": "2011-10-24T00:00:00+00:00",
+		"aired": "2011-10-23T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -11072,7 +11072,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "To Zero",
-		"aired": "2011-10-31T00:00:00+00:00",
+		"aired": "2011-10-29T23:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -11089,7 +11089,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Death is Also Revenge",
-		"aired": "2011-11-07T00:00:00+00:00",
+		"aired": "2011-11-06T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -11106,7 +11106,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 2 }
 		],
 		"title": "Frog",
-		"aired": "2011-11-21T00:00:00+00:00",
+		"aired": "2011-11-20T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -11123,7 +11123,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 2 }
 		],
 		"title": "Stop, Noah!",
-		"aired": "2011-11-28T00:00:00+00:00",
+		"aired": "2011-11-27T00:00:00.000Z",
 		"score": 4.29
 	},
 	{
@@ -11140,7 +11140,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 2 }
 		],
 		"title": "The Path Towards the Sun",
-		"aired": "2011-12-05T00:00:00+00:00",
+		"aired": "2011-12-04T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -11157,7 +11157,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Dance of Sea Breams and Flounders",
-		"aired": "2011-12-12T00:00:00+00:00",
+		"aired": "2011-12-11T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -11174,7 +11174,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Two Changes You Need to Know",
-		"aired": "2011-12-19T00:00:00+00:00",
+		"aired": "2011-12-18T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -11191,7 +11191,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "The Voice From the New World",
-		"aired": "2012-01-04T00:00:00+00:00",
+		"aired": "2012-01-03T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -11208,7 +11208,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Grim Premonitions",
-		"aired": "2012-01-16T00:00:00+00:00",
+		"aired": "2012-01-15T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -11225,7 +11225,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "The Hero's Hat",
-		"aired": "2012-01-23T00:00:00+00:00",
+		"aired": "2012-01-22T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -11242,7 +11242,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gam",
-		"aired": "2012-01-30T00:00:00+00:00",
+		"aired": "2012-01-29T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -11259,7 +11259,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Punk Hazard",
-		"aired": "2012-02-06T00:00:00+00:00",
+		"aired": "2012-02-05T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -11276,7 +11276,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure on the Burning Island",
-		"aired": "2012-02-13T00:00:00+00:00",
+		"aired": "2012-02-12T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -11293,7 +11293,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Severed Head",
-		"aired": "2012-02-20T00:00:00+00:00",
+		"aired": "2012-02-19T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -11310,7 +11310,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Biscuits Room",
-		"aired": "2012-03-05T00:00:00+00:00",
+		"aired": "2012-03-04T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -11327,7 +11327,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "About My Torso",
-		"aired": "2012-03-12T00:00:00+00:00",
+		"aired": "2012-03-11T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -11344,7 +11344,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Royal Shichibukai Trafalgar Law",
-		"aired": "2012-03-19T00:00:00+00:00",
+		"aired": "2012-03-18T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -11361,7 +11361,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "The Lake of Bandits",
-		"aired": "2012-03-26T00:00:00+00:00",
+		"aired": "2012-03-25T01:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -11378,7 +11378,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Shichibukai Law vs. Vice Admiral Smoker",
-		"aired": "2012-04-02T00:00:00+00:00",
+		"aired": "2012-04-01T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -11395,7 +11395,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "CC",
-		"aired": "2012-04-16T00:00:00+00:00",
+		"aired": "2012-04-15T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -11412,7 +11412,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Master Caesar Clown",
-		"aired": "2012-04-23T00:00:00+00:00",
+		"aired": "2012-04-22T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -11429,7 +11429,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Candy",
-		"aired": "2012-05-07T00:00:00+00:00",
+		"aired": "2012-05-06T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -11446,7 +11446,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "Yeti Cool Brothers",
-		"aired": "2012-05-14T00:00:00+00:00",
+		"aired": "2012-05-13T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -11463,7 +11463,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 2 }
 		],
 		"title": "Cool Fight",
-		"aired": "2012-05-21T00:00:00+00:00",
+		"aired": "2012-05-20T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -11480,7 +11480,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Pirate Alliance",
-		"aired": "2012-05-28T00:00:00+00:00",
+		"aired": "2012-05-27T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -11497,7 +11497,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Operation Begins",
-		"aired": "2012-06-04T00:00:00+00:00",
+		"aired": "2012-06-03T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -11514,7 +11514,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Blizzard With a Chance of Slime",
-		"aired": "2012-06-11T00:00:00+00:00",
+		"aired": "2012-06-10T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -11531,7 +11531,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gasu Gasu no Mi",
-		"aired": "2012-06-18T00:00:00+00:00",
+		"aired": "2012-06-17T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -11548,7 +11548,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "My Name Is Kin'emon!!",
-		"aired": "2012-07-02T00:00:00+00:00",
+		"aired": "2012-07-01T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -11565,7 +11565,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Vergo and Joker",
-		"aired": "2012-07-09T00:00:00+00:00",
+		"aired": "2012-07-08T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -11582,7 +11582,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 3 }
 		],
 		"title": "Spectators",
-		"aired": "2012-07-14T00:00:00+00:00",
+		"aired": "2012-07-13T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -11599,7 +11599,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.8, "nbOfVotes": 4 }
 		],
 		"title": "Its Name is 'Shinokuni'",
-		"aired": "2012-07-30T00:00:00+00:00",
+		"aired": "2012-07-29T00:00:00.000Z",
 		"score": 4.1899999999999995
 	},
 	{
@@ -11616,7 +11616,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "The Perfected Weapon of Mass Destruction",
-		"aired": "2012-08-06T00:00:00+00:00",
+		"aired": "2012-08-05T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -11633,7 +11633,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Counter Hazard!!",
-		"aired": "2012-08-20T00:00:00+00:00",
+		"aired": "2012-08-19T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -11650,7 +11650,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 3 }
 		],
 		"title": "The Lobby of Laboratory Building A",
-		"aired": "2012-08-27T00:00:00+00:00",
+		"aired": "2012-08-26T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -11667,7 +11667,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Spirit of G-5",
-		"aired": "2012-09-03T00:00:00+00:00",
+		"aired": "2012-09-02T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -11684,7 +11684,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Marine G-5 Base Leader: Demon Bamboo Vergo",
-		"aired": "2012-09-10T00:00:00+00:00",
+		"aired": "2012-09-09T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -11701,7 +11701,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Luffy vs. Master",
-		"aired": "2012-09-15T00:00:00+00:00",
+		"aired": "2012-09-14T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -11718,7 +11718,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Mastermind",
-		"aired": "2012-09-24T00:00:00+00:00",
+		"aired": "2012-09-23T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -11735,7 +11735,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "An Icy Woman",
-		"aired": "2012-10-06T00:00:00+00:00",
+		"aired": "2012-10-05T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -11752,7 +11752,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Stop It, Vegapunk",
-		"aired": "2012-10-15T00:00:00+00:00",
+		"aired": "2012-10-14T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -11769,7 +11769,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 2 }
 		],
 		"title": "My Name is Momonosuke!!",
-		"aired": "2012-10-22T00:00:00+00:00",
+		"aired": "2012-10-21T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -11786,7 +11786,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4, "nbOfVotes": 4 }
 		],
 		"title": "The Snow Woman in the Biscuits Room",
-		"aired": "2012-10-29T00:00:00+00:00",
+		"aired": "2012-10-27T23:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -11803,7 +11803,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.2, "nbOfVotes": 5 }
 		],
 		"title": "Wild Animal",
-		"aired": "2012-11-05T00:00:00+00:00",
+		"aired": "2012-11-04T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -11820,7 +11820,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5, "nbOfVotes": 5 }
 		],
 		"title": "Mocha",
-		"aired": "2012-11-12T00:00:00+00:00",
+		"aired": "2012-11-11T00:00:00.000Z",
 		"score": 4.21
 	},
 	{
@@ -11837,7 +11837,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "A Seemingly Non-Existent Island",
-		"aired": "2012-11-26T00:00:00+00:00",
+		"aired": "2012-11-25T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -11854,7 +11854,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 2 }
 		],
 		"title": "SAD",
-		"aired": "2012-12-03T00:00:00+00:00",
+		"aired": "2012-12-02T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -11871,7 +11871,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 2 }
 		],
 		"title": "The King of the Land of Death",
-		"aired": "2012-12-10T00:00:00+00:00",
+		"aired": "2012-12-09T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -11888,7 +11888,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "The Assassins from Dressrosa",
-		"aired": "2012-12-17T00:00:00+00:00",
+		"aired": "2012-12-16T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -11905,7 +11905,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.8, "nbOfVotes": 3 }
 		],
 		"title": "Die for Me",
-		"aired": "2012-12-22T00:00:00+00:00",
+		"aired": "2012-12-21T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -11922,7 +11922,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.2, "nbOfVotes": 4 }
 		],
 		"title": "The Most Dangerous Man",
-		"aired": "2013-01-04T00:00:00+00:00",
+		"aired": "2013-01-03T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -11939,7 +11939,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 3 }
 		],
 		"title": "Leave It to Me!!!",
-		"aired": "2013-01-21T00:00:00+00:00",
+		"aired": "2013-01-20T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -11956,7 +11956,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "Community of Interests",
-		"aired": "2013-01-28T00:00:00+00:00",
+		"aired": "2013-01-27T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -11973,7 +11973,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 3 }
 		],
 		"title": "Deal",
-		"aired": "2013-02-04T00:00:00+00:00",
+		"aired": "2013-02-03T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -11990,7 +11990,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 3 }
 		],
 		"title": "Doflamingo Appears",
-		"aired": "2013-02-09T00:00:00+00:00",
+		"aired": "2013-02-08T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -12007,7 +12007,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Morning Paper",
-		"aired": "2013-02-25T00:00:00+00:00",
+		"aired": "2013-02-24T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -12024,7 +12024,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.2, "nbOfVotes": 9 }
 		],
 		"title": "His Own Pace",
-		"aired": "2013-03-04T00:00:00+00:00",
+		"aired": "2013-03-03T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -12041,7 +12041,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.5, "nbOfVotes": 7 }
 		],
 		"title": "Adventure in the Country of Love, Passion, and Toys",
-		"aired": "2013-03-11T00:00:00+00:00",
+		"aired": "2013-03-10T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -12058,7 +12058,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "Corrida Colosseum",
-		"aired": "2013-03-25T00:00:00+00:00",
+		"aired": "2013-03-24T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -12075,7 +12075,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "Waiting Room",
-		"aired": "2013-04-01T00:00:00+00:00",
+		"aired": "2013-03-31T01:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -12092,7 +12092,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Lucy and the Statue of Kyros",
-		"aired": "2013-04-08T00:00:00+00:00",
+		"aired": "2013-04-07T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -12109,7 +12109,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Maynard the Pursuer",
-		"aired": "2013-04-15T00:00:00+00:00",
+		"aired": "2013-04-14T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -12126,7 +12126,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I Won't Laugh at You",
-		"aired": "2013-04-22T00:00:00+00:00",
+		"aired": "2013-04-21T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -12143,7 +12143,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "B Block",
-		"aired": "2013-04-27T00:00:00+00:00",
+		"aired": "2013-04-26T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -12160,7 +12160,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Colosseum of Rascals",
-		"aired": "2013-05-13T00:00:00+00:00",
+		"aired": "2013-05-12T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -12177,7 +12177,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "King Punch!!",
-		"aired": "2013-05-20T00:00:00+00:00",
+		"aired": "2013-05-19T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -12194,7 +12194,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "To Green Bit",
-		"aired": "2013-06-10T00:00:00+00:00",
+		"aired": "2013-06-09T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -12211,7 +12211,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Adventure in the Land of Dwarves",
-		"aired": "2013-06-17T00:00:00+00:00",
+		"aired": "2013-06-16T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -12228,7 +12228,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 3 }
 		],
 		"title": "Violet",
-		"aired": "2013-07-01T00:00:00+00:00",
+		"aired": "2013-06-30T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -12245,7 +12245,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Usoland",
-		"aired": "2013-07-08T00:00:00+00:00",
+		"aired": "2013-07-07T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -12262,7 +12262,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "Lucy and Ucy",
-		"aired": "2013-07-13T00:00:00+00:00",
+		"aired": "2013-07-12T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -12279,7 +12279,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 3 }
 		],
 		"title": "Closely Contested C Block",
-		"aired": "2013-07-22T00:00:00+00:00",
+		"aired": "2013-07-21T00:00:00.000Z",
 		"score": 4.25
 	},
 	{
@@ -12296,7 +12296,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Don Chinjao",
-		"aired": "2013-08-05T00:00:00+00:00",
+		"aired": "2013-08-04T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -12313,7 +12313,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Forgotten of Dressrosa",
-		"aired": "2013-08-12T00:00:00+00:00",
+		"aired": "2013-08-11T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -12330,7 +12330,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Riku Royal Army in the Flower Fields",
-		"aired": "2013-08-26T00:00:00+00:00",
+		"aired": "2013-08-25T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -12347,7 +12347,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.6, "nbOfVotes": 5 }
 		],
 		"title": "Open Chinjao",
-		"aired": "2013-09-02T00:00:00+00:00",
+		"aired": "2013-09-01T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -12364,7 +12364,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Prisoner Gladiators",
-		"aired": "2013-09-09T00:00:00+00:00",
+		"aired": "2013-09-08T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -12381,7 +12381,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.5, "nbOfVotes": 4 }
 		],
 		"title": "Rebecca and Soldier-san",
-		"aired": "2013-09-14T00:00:00+00:00",
+		"aired": "2013-09-13T00:00:00.000Z",
 		"score": 4.24
 	},
 	{
@@ -12398,7 +12398,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 3 }
 		],
 		"title": "Royal Bloodlines",
-		"aired": "2013-09-30T00:00:00+00:00",
+		"aired": "2013-09-29T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -12415,7 +12415,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Change of Plans",
-		"aired": "2013-10-07T00:00:00+00:00",
+		"aired": "2013-10-06T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -12432,7 +12432,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Law's Strategy",
-		"aired": "2013-10-12T00:00:00+00:00",
+		"aired": "2013-10-11T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -12449,7 +12449,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 3 }
 		],
 		"title": "The Undefeated Woman",
-		"aired": "2013-10-21T00:00:00+00:00",
+		"aired": "2013-10-20T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -12466,7 +12466,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "The Riku Family",
-		"aired": "2013-11-02T00:00:00+00:00",
+		"aired": "2013-11-01T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -12483,7 +12483,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.5, "nbOfVotes": 3 }
 		],
 		"title": "The Lurking Hero",
-		"aired": "2013-11-11T00:00:00+00:00",
+		"aired": "2013-11-10T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -12500,7 +12500,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "The Number of Tragedies",
-		"aired": "2013-11-18T00:00:00+00:00",
+		"aired": "2013-11-17T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -12517,7 +12517,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.5, "nbOfVotes": 5 }
 		],
 		"title": "Shichibukai Doflamingo vs. Shichibukai Law",
-		"aired": "2013-11-25T00:00:00+00:00",
+		"aired": "2013-11-24T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -12534,7 +12534,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 4 }
 		],
 		"title": "3 Cards",
-		"aired": "2013-12-09T00:00:00+00:00",
+		"aired": "2013-12-08T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -12551,7 +12551,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 10 }
 		],
 		"title": "Operation Dressrosa SOP",
-		"aired": "2013-12-16T00:00:00+00:00",
+		"aired": "2013-12-15T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -12568,7 +12568,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.4, "nbOfVotes": 5 }
 		],
 		"title": "The Underground World",
-		"aired": "2013-12-21T00:00:00+00:00",
+		"aired": "2013-12-20T00:00:00.000Z",
 		"score": 4.11
 	},
 	{
@@ -12585,7 +12585,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 4 }
 		],
 		"title": "What Soldier-san Wants",
-		"aired": "2014-01-04T00:00:00+00:00",
+		"aired": "2014-01-03T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -12602,7 +12602,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "The Kamaitachi of Rommel",
-		"aired": "2014-01-20T00:00:00+00:00",
+		"aired": "2014-01-19T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -12619,7 +12619,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Fujitora's Intention",
-		"aired": "2014-01-27T00:00:00+00:00",
+		"aired": "2014-01-26T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -12636,7 +12636,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 2 }
 		],
 		"title": "Executive Officer Diamante",
-		"aired": "2014-02-03T00:00:00+00:00",
+		"aired": "2014-02-02T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -12653,7 +12653,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Officer Tower",
-		"aired": "2014-02-10T00:00:00+00:00",
+		"aired": "2014-02-09T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -12670,7 +12670,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Trebol Army Special Officer Sugar",
-		"aired": "2014-02-24T00:00:00+00:00",
+		"aired": "2014-02-23T00:00:00.000Z",
 		"score": 4.15
 	},
 	{
@@ -12687,7 +12687,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "Commander",
-		"aired": "2014-03-03T00:00:00+00:00",
+		"aired": "2014-03-02T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -12704,7 +12704,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 3 }
 		],
 		"title": "It's Up to You!!!",
-		"aired": "2014-03-10T00:00:00+00:00",
+		"aired": "2014-03-09T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -12721,7 +12721,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Liar Usoland",
-		"aired": "2014-03-17T00:00:00+00:00",
+		"aired": "2014-03-16T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -12738,7 +12738,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 5 }
 		],
 		"title": "I'll Always Be By Your Side",
-		"aired": "2014-03-31T00:00:00+00:00",
+		"aired": "2014-03-30T01:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -12755,7 +12755,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 2 }
 		],
 		"title": "Dressrosa in Turmoil",
-		"aired": "2014-04-07T00:00:00+00:00",
+		"aired": "2014-04-06T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -12772,7 +12772,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 4 }
 		],
 		"title": "The Revolutionary Army Chief of Staff",
-		"aired": "2014-04-14T00:00:00+00:00",
+		"aired": "2014-04-13T00:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -12789,7 +12789,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 3 }
 		],
 		"title": "Birdcage",
-		"aired": "2014-04-28T00:00:00+00:00",
+		"aired": "2014-04-27T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -12806,7 +12806,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 2 }
 		],
 		"title": "Stars",
-		"aired": "2014-05-12T00:00:00+00:00",
+		"aired": "2014-05-11T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -12823,7 +12823,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 3 }
 		],
 		"title": "Executive Officer Pica",
-		"aired": "2014-05-19T00:00:00+00:00",
+		"aired": "2014-05-18T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -12840,7 +12840,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.4, "nbOfVotes": 6 }
 		],
 		"title": "My Repayment",
-		"aired": "2014-05-26T00:00:00+00:00",
+		"aired": "2014-05-25T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -12857,7 +12857,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 2 }
 		],
 		"title": "March Forward!! Army of Rascals",
-		"aired": "2014-06-02T00:00:00+00:00",
+		"aired": "2014-06-01T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -12874,7 +12874,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 3 }
 		],
 		"title": "The State of the War",
-		"aired": "2014-06-23T00:00:00+00:00",
+		"aired": "2014-06-22T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -12891,7 +12891,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.3, "nbOfVotes": 4 }
 		],
 		"title": "Sabo vs. Admiral Fujitora",
-		"aired": "2014-06-30T00:00:00+00:00",
+		"aired": "2014-06-29T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -12908,7 +12908,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4, "nbOfVotes": 5 }
 		],
 		"title": "Palm",
-		"aired": "2014-07-07T00:00:00+00:00",
+		"aired": "2014-07-06T00:00:00.000Z",
 		"score": 4.35
 	},
 	{
@@ -12925,7 +12925,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.1, "nbOfVotes": 6 }
 		],
 		"title": "War",
-		"aired": "2014-07-19T00:00:00+00:00",
+		"aired": "2014-07-18T00:00:00.000Z",
 		"score": 3.9
 	},
 	{
@@ -12942,7 +12942,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.6, "nbOfVotes": 8 }
 		],
 		"title": "Pleased to Make Your Acquaintance",
-		"aired": "2014-07-28T00:00:00+00:00",
+		"aired": "2014-07-27T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -12959,7 +12959,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.1, "nbOfVotes": 5 }
 		],
 		"title": "World of Men",
-		"aired": "2014-08-04T00:00:00+00:00",
+		"aired": "2014-08-03T00:00:00.000Z",
 		"score": 4.0200000000000005
 	},
 	{
@@ -12976,7 +12976,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 3 }
 		],
 		"title": "The Fourth Level",
-		"aired": "2014-08-11T00:00:00+00:00",
+		"aired": "2014-08-10T00:00:00.000Z",
 		"score": 4.26
 	},
 	{
@@ -12993,7 +12993,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 3 }
 		],
 		"title": "Trump Card",
-		"aired": "2014-08-25T00:00:00+00:00",
+		"aired": "2014-08-24T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -13010,7 +13010,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 2 }
 		],
 		"title": "Leave It and Go Ahead",
-		"aired": "2014-09-01T00:00:00+00:00",
+		"aired": "2014-08-31T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -13027,7 +13027,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Secret Plan",
-		"aired": "2014-09-08T00:00:00+00:00",
+		"aired": "2014-09-07T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -13044,7 +13044,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "The Same Bet",
-		"aired": "2014-09-13T00:00:00+00:00",
+		"aired": "2014-09-12T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -13061,7 +13061,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 2 }
 		],
 		"title": "Ope Ope no Mi",
-		"aired": "2014-09-22T00:00:00+00:00",
+		"aired": "2014-09-21T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -13078,7 +13078,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.8, "nbOfVotes": 10 }
 		],
 		"title": "The White City",
-		"aired": "2014-10-06T00:00:00+00:00",
+		"aired": "2014-10-05T00:00:00.000Z",
 		"score": 4.34
 	},
 	{
@@ -13095,7 +13095,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 2 }
 		],
 		"title": "Humanity Declaration",
-		"aired": "2014-10-11T00:00:00+00:00",
+		"aired": "2014-10-10T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -13112,7 +13112,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 4 }
 		],
 		"title": "White Monster",
-		"aired": "2014-10-20T00:00:00+00:00",
+		"aired": "2014-10-19T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -13129,7 +13129,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 2 }
 		],
 		"title": "The Island of Fate: Minion",
-		"aired": "2014-10-27T00:00:00+00:00",
+		"aired": "2014-10-25T23:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -13146,7 +13146,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 2 }
 		],
 		"title": "Smile",
-		"aired": "2014-11-10T00:00:00+00:00",
+		"aired": "2014-11-09T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -13163,7 +13163,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 3 }
 		],
 		"title": "Cora-san",
-		"aired": "2014-11-17T00:00:00+00:00",
+		"aired": "2014-11-16T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -13180,7 +13180,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.1, "nbOfVotes": 4 }
 		],
 		"title": "The Trigger on That Day",
-		"aired": "2014-11-22T00:00:00+00:00",
+		"aired": "2014-11-21T00:00:00.000Z",
 		"score": 4.32
 	},
 	{
@@ -13197,7 +13197,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 2 }
 		],
 		"title": "Pirate Bellamy",
-		"aired": "2014-12-01T00:00:00+00:00",
+		"aired": "2014-11-30T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -13214,7 +13214,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.3, "nbOfVotes": 4 }
 		],
 		"title": "The Spear of Elbaf",
-		"aired": "2014-12-15T00:00:00+00:00",
+		"aired": "2014-12-14T00:00:00.000Z",
 		"score": 4.05
 	},
 	{
@@ -13231,7 +13231,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 6.8, "nbOfVotes": 11 }
 		],
 		"title": "Happo Navy Don Sai",
-		"aired": "2014-12-22T00:00:00+00:00",
+		"aired": "2014-12-21T00:00:00.000Z",
 		"score": 4.13
 	},
 	{
@@ -13248,7 +13248,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.6, "nbOfVotes": 4 }
 		],
 		"title": "Cabbage & Lomeo",
-		"aired": "2015-01-05T00:00:00+00:00",
+		"aired": "2015-01-04T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -13265,7 +13265,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 3 }
 		],
 		"title": "Half & Half",
-		"aired": "2015-01-19T00:00:00+00:00",
+		"aired": "2015-01-18T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -13282,7 +13282,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.2, "nbOfVotes": 5 }
 		],
 		"title": "Leo, the Tontatta Troop Leader",
-		"aired": "2015-01-26T00:00:00+00:00",
+		"aired": "2015-01-25T00:00:00.000Z",
 		"score": 4.09
 	},
 	{
@@ -13299,7 +13299,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 5 }
 		],
 		"title": "To Russian, With Love",
-		"aired": "2015-02-02T00:00:00+00:00",
+		"aired": "2015-02-01T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -13316,7 +13316,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.9, "nbOfVotes": 7 }
 		],
 		"title": "The Hero of the Colosseum",
-		"aired": "2015-02-16T00:00:00+00:00",
+		"aired": "2015-02-15T00:00:00.000Z",
 		"score": 4.2
 	},
 	{
@@ -13333,7 +13333,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.2, "nbOfVotes": 5 }
 		],
 		"title": "Zoro vs. Pica",
-		"aired": "2015-02-23T00:00:00+00:00",
+		"aired": "2015-02-22T00:00:00.000Z",
 		"score": 4.26
 	},
 	{
@@ -13350,7 +13350,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.6, "nbOfVotes": 6 }
 		],
 		"title": "Tactics No. 5",
-		"aired": "2015-03-02T00:00:00+00:00",
+		"aired": "2015-03-01T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -13367,7 +13367,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 3 }
 		],
 		"title": "The Last Fight",
-		"aired": "2015-03-09T00:00:00+00:00",
+		"aired": "2015-03-08T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -13384,7 +13384,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 4 }
 		],
 		"title": "The Curse of Heart",
-		"aired": "2015-03-23T00:00:00+00:00",
+		"aired": "2015-03-22T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -13401,7 +13401,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5, "nbOfVotes": 11 }
 		],
 		"title": "Long-Cherished Desire",
-		"aired": "2015-03-30T00:00:00+00:00",
+		"aired": "2015-03-29T01:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -13418,7 +13418,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 4 }
 		],
 		"title": "The Charisma of Evil",
-		"aired": "2015-04-06T00:00:00+00:00",
+		"aired": "2015-04-05T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -13435,7 +13435,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.9, "nbOfVotes": 16 }
 		],
 		"title": "In My Way",
-		"aired": "2015-04-13T00:00:00+00:00",
+		"aired": "2015-04-12T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -13452,7 +13452,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gear Fourth",
-		"aired": "2015-04-27T00:00:00+00:00",
+		"aired": "2015-04-26T00:00:00.000Z",
 		"score": 4.89
 	},
 	{
@@ -13469,7 +13469,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 5 }
 		],
 		"title": "Even If Your Legs Break",
-		"aired": "2015-05-11T00:00:00+00:00",
+		"aired": "2015-05-10T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -13486,7 +13486,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 4 }
 		],
 		"title": "Gatz",
-		"aired": "2015-05-18T00:00:00+00:00",
+		"aired": "2015-05-17T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -13503,7 +13503,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.3, "nbOfVotes": 6 }
 		],
 		"title": "4 Minutes Before",
-		"aired": "2015-05-25T00:00:00+00:00",
+		"aired": "2015-05-24T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -13520,7 +13520,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 6.1, "nbOfVotes": 8 }
 		],
 		"title": "My Fight",
-		"aired": "2015-06-01T00:00:00+00:00",
+		"aired": "2015-05-31T00:00:00.000Z",
 		"score": 3.9200000000000004
 	},
 	{
@@ -13537,7 +13537,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 8.8, "nbOfVotes": 13 }
 		],
 		"title": "Lucy!!",
-		"aired": "2015-06-08T00:00:00+00:00",
+		"aired": "2015-06-07T00:00:00.000Z",
 		"score": 3.9899999999999998
 	},
 	{
@@ -13554,7 +13554,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.9, "nbOfVotes": 11 }
 		],
 		"title": "Heaven and Earth",
-		"aired": "2015-06-22T00:00:00+00:00",
+		"aired": "2015-06-21T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -13571,7 +13571,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 14.3, "nbOfVotes": 25 }
 		],
 		"title": "Rubble",
-		"aired": "2015-06-29T00:00:00+00:00",
+		"aired": "2015-06-28T00:00:00.000Z",
 		"score": 3.7399999999999998
 	},
 	{
@@ -13588,7 +13588,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 6.5, "nbOfVotes": 10 }
 		],
 		"title": "Prostration",
-		"aired": "2015-07-06T00:00:00+00:00",
+		"aired": "2015-07-05T00:00:00.000Z",
 		"score": 4.2299999999999995
 	},
 	{
@@ -13605,7 +13605,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 5 }
 		],
 		"title": "Tiger and Dog",
-		"aired": "2015-07-13T00:00:00+00:00",
+		"aired": "2015-07-12T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -13622,7 +13622,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.6, "nbOfVotes": 6 }
 		],
 		"title": "Sabo's Adventure",
-		"aired": "2015-07-18T00:00:00+00:00",
+		"aired": "2015-07-17T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -13639,7 +13639,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 5 }
 		],
 		"title": "Suicide",
-		"aired": "2015-08-03T00:00:00+00:00",
+		"aired": "2015-08-02T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -13656,7 +13656,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 3 }
 		],
 		"title": "Soldier-san's Determination",
-		"aired": "2015-08-10T00:00:00+00:00",
+		"aired": "2015-08-09T00:00:00.000Z",
 		"score": 4.3100000000000005
 	},
 	{
@@ -13673,7 +13673,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 9, "nbOfVotes": 12 }
 		],
 		"title": "Rebecca",
-		"aired": "2015-08-24T00:00:00+00:00",
+		"aired": "2015-08-23T00:00:00.000Z",
 		"score": 3.9
 	},
 	{
@@ -13690,7 +13690,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 3 }
 		],
 		"title": "Heart",
-		"aired": "2015-08-31T00:00:00+00:00",
+		"aired": "2015-08-30T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -13707,7 +13707,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 3 }
 		],
 		"title": "Parent and Child",
-		"aired": "2015-09-07T00:00:00+00:00",
+		"aired": "2015-09-06T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -13724,7 +13724,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 5 }
 		],
 		"title": "Followers' Sake Cups",
-		"aired": "2015-09-19T00:00:00+00:00",
+		"aired": "2015-09-18T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -13741,7 +13741,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 5 }
 		],
 		"title": "Opening Declaration",
-		"aired": "2015-09-28T00:00:00+00:00",
+		"aired": "2015-09-27T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -13758,7 +13758,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 2 }
 		],
 		"title": "Zou",
-		"aired": "2015-10-05T00:00:00+00:00",
+		"aired": "2015-10-04T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -13775,7 +13775,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.8, "nbOfVotes": 5 }
 		],
 		"title": "Elephant Climbing",
-		"aired": "2015-10-10T00:00:00+00:00",
+		"aired": "2015-10-09T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -13792,7 +13792,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.3, "nbOfVotes": 3 }
 		],
 		"title": "Adventure in the Country on the Back of an Elephant",
-		"aired": "2015-10-26T00:00:00+00:00",
+		"aired": "2015-10-24T23:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -13809,7 +13809,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "The Mink Tribe",
-		"aired": "2015-11-02T00:00:00+00:00",
+		"aired": "2015-11-01T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -13826,7 +13826,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 2 }
 		],
 		"title": "At the Fortress of Right Belly",
-		"aired": "2015-11-09T00:00:00+00:00",
+		"aired": "2015-11-08T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -13843,7 +13843,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.7, "nbOfVotes": 5 }
 		],
 		"title": "10 Days Ago",
-		"aired": "2015-11-21T00:00:00+00:00",
+		"aired": "2015-11-20T00:00:00.000Z",
 		"score": 4.1899999999999995
 	},
 	{
@@ -13860,7 +13860,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Duke Inuarashi",
-		"aired": "2015-11-30T00:00:00+00:00",
+		"aired": "2015-11-29T00:00:00.000Z",
 		"score": 4.45
 	},
 	{
@@ -13877,7 +13877,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.5, "nbOfVotes": 3 }
 		],
 		"title": "Master Nekomamushi",
-		"aired": "2015-12-07T00:00:00+00:00",
+		"aired": "2015-12-06T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -13894,7 +13894,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "The Curly Hat Pirates Arrive",
-		"aired": "2015-12-21T00:00:00+00:00",
+		"aired": "2015-12-20T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -13911,7 +13911,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Roko",
-		"aired": "2016-01-04T00:00:00+00:00",
+		"aired": "2016-01-03T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -13928,7 +13928,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 1 }
 		],
 		"title": "Capone \"Gang\" Bege",
-		"aired": "2016-01-18T00:00:00+00:00",
+		"aired": "2016-01-17T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -13945,7 +13945,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 3 }
 		],
 		"title": "Tea Party Invitation",
-		"aired": "2016-01-25T00:00:00+00:00",
+		"aired": "2016-01-24T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -13962,7 +13962,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 2 }
 		],
 		"title": "Let's Go See Master Nekomamushi",
-		"aired": "2016-02-01T00:00:00+00:00",
+		"aired": "2016-01-31T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -13979,7 +13979,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 3 }
 		],
 		"title": "Take Me with You!!",
-		"aired": "2016-02-08T00:00:00+00:00",
+		"aired": "2016-02-07T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -13996,7 +13996,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 3 }
 		],
 		"title": "Dog vs. Cat",
-		"aired": "2016-02-15T00:00:00+00:00",
+		"aired": "2016-02-14T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -14013,7 +14013,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 3 }
 		],
 		"title": "Raizo of the Mist",
-		"aired": "2016-02-29T00:00:00+00:00",
+		"aired": "2016-02-28T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -14030,7 +14030,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 2 }
 		],
 		"title": "Inside the Whale",
-		"aired": "2016-03-07T00:00:00+00:00",
+		"aired": "2016-03-06T00:00:00.000Z",
 		"score": 4.89
 	},
 	{
@@ -14047,7 +14047,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Momonosuke, Heir of the Kozuki Family",
-		"aired": "2016-03-14T00:00:00+00:00",
+		"aired": "2016-03-13T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -14064,7 +14064,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Dog and Cat Have a History",
-		"aired": "2016-03-19T00:00:00+00:00",
+		"aired": "2016-03-18T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -14081,7 +14081,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Understood",
-		"aired": "2016-04-04T00:00:00+00:00",
+		"aired": "2016-04-03T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -14098,7 +14098,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Descending the Elephant",
-		"aired": "2016-04-11T00:00:00+00:00",
+		"aired": "2016-04-10T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -14115,7 +14115,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 2 }
 		],
 		"title": "A World Abuzz",
-		"aired": "2016-04-18T00:00:00+00:00",
+		"aired": "2016-04-17T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -14132,7 +14132,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 4 }
 		],
 		"title": "Whim",
-		"aired": "2016-04-25T00:00:00+00:00",
+		"aired": "2016-04-24T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -14149,7 +14149,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "The WEJ's Comic Strip",
-		"aired": "2016-05-09T00:00:00+00:00",
+		"aired": "2016-05-08T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -14166,7 +14166,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "0 and 4",
-		"aired": "2016-05-23T00:00:00+00:00",
+		"aired": "2016-05-22T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -14183,7 +14183,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Totto Land",
-		"aired": "2016-05-30T00:00:00+00:00",
+		"aired": "2016-05-29T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -14200,7 +14200,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "1 and 2",
-		"aired": "2016-06-06T00:00:00+00:00",
+		"aired": "2016-06-05T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -14217,7 +14217,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "The Yonko, Charlotte Linlin the Pirate",
-		"aired": "2016-06-20T00:00:00+00:00",
+		"aired": "2016-06-19T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -14234,7 +14234,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "A Man You Can Bet On",
-		"aired": "2016-06-27T00:00:00+00:00",
+		"aired": "2016-06-26T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -14251,7 +14251,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Adventure in the Mysterious Forest",
-		"aired": "2016-07-04T00:00:00+00:00",
+		"aired": "2016-07-03T00:00:00.000Z",
 		"score": 4.0200000000000005
 	},
 	{
@@ -14268,7 +14268,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Germa Kingdom",
-		"aired": "2016-07-16T00:00:00+00:00",
+		"aired": "2016-07-15T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -14285,7 +14285,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 2 }
 		],
 		"title": "Vinsmoke Judge",
-		"aired": "2016-07-25T00:00:00+00:00",
+		"aired": "2016-07-24T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -14302,7 +14302,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 1 }
 		],
 		"title": "My Dream",
-		"aired": "2016-08-01T00:00:00+00:00",
+		"aired": "2016-07-31T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -14319,7 +14319,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "The Nation of Souls",
-		"aired": "2016-08-08T00:00:00+00:00",
+		"aired": "2016-08-07T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -14336,7 +14336,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "The Vivre Card Lola Gave",
-		"aired": "2016-08-22T00:00:00+00:00",
+		"aired": "2016-08-21T00:00:00.000Z",
 		"score": 4.29
 	},
 	{
@@ -14353,7 +14353,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Luffy vs. Commander Cracker",
-		"aired": "2016-08-29T00:00:00+00:00",
+		"aired": "2016-08-28T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -14370,7 +14370,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Choniki",
-		"aired": "2016-09-05T00:00:00+00:00",
+		"aired": "2016-09-04T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -14387,7 +14387,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "I Owe You My Life",
-		"aired": "2016-09-17T00:00:00+00:00",
+		"aired": "2016-09-16T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -14404,7 +14404,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Iron Mask",
-		"aired": "2016-09-26T00:00:00+00:00",
+		"aired": "2016-09-25T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -14421,7 +14421,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "To the East Blue",
-		"aired": "2016-10-03T00:00:00+00:00",
+		"aired": "2016-10-02T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -14438,7 +14438,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "The Power of Fullness",
-		"aired": "2016-10-08T00:00:00+00:00",
+		"aired": "2016-10-07T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -14455,7 +14455,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 2 }
 		],
 		"title": "Vinsmoke Sanji",
-		"aired": "2016-10-24T00:00:00+00:00",
+		"aired": "2016-10-23T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -14472,7 +14472,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 1 }
 		],
 		"title": "Luffy vs. Sanji",
-		"aired": "2016-10-31T00:00:00+00:00",
+		"aired": "2016-10-29T23:00:00.000Z",
 		"score": 4.86
 	},
 	{
@@ -14489,7 +14489,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Forces of Rage",
-		"aired": "2016-11-07T00:00:00+00:00",
+		"aired": "2016-11-06T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -14506,7 +14506,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Tamago's Security",
-		"aired": "2016-11-21T00:00:00+00:00",
+		"aired": "2016-11-20T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -14523,7 +14523,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy and Big Mom",
-		"aired": "2016-11-28T00:00:00+00:00",
+		"aired": "2016-11-27T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -14540,7 +14540,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Goodbye",
-		"aired": "2016-12-05T00:00:00+00:00",
+		"aired": "2016-12-04T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -14557,7 +14557,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Choniki in Mirrorland",
-		"aired": "2016-12-12T00:00:00+00:00",
+		"aired": "2016-12-11T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -14574,7 +14574,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 6 }
 		],
 		"title": "A Ray of Light",
-		"aired": "2016-12-26T00:00:00+00:00",
+		"aired": "2016-12-25T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -14591,7 +14591,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Moist Cigarette",
-		"aired": "2017-01-07T00:00:00+00:00",
+		"aired": "2017-01-06T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -14608,7 +14608,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Germa's Failure",
-		"aired": "2017-01-16T00:00:00+00:00",
+		"aired": "2017-01-15T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -14625,7 +14625,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Not Here",
-		"aired": "2017-01-30T00:00:00+00:00",
+		"aired": "2017-01-29T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -14642,7 +14642,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "What Are You Doing?",
-		"aired": "2017-02-06T00:00:00+00:00",
+		"aired": "2017-02-05T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -14659,7 +14659,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gugyurururu!!!",
-		"aired": "2017-02-13T00:00:00+00:00",
+		"aired": "2017-02-12T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -14676,7 +14676,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Liar",
-		"aired": "2017-02-20T00:00:00+00:00",
+		"aired": "2017-02-19T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -14693,7 +14693,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Rook",
-		"aired": "2017-03-06T00:00:00+00:00",
+		"aired": "2017-03-05T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -14710,7 +14710,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Meeting",
-		"aired": "2017-03-13T00:00:00+00:00",
+		"aired": "2017-03-12T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -14727,7 +14727,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 2 }
 		],
 		"title": "Yonko Assassination Plan",
-		"aired": "2017-03-18T00:00:00+00:00",
+		"aired": "2017-03-17T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -14744,7 +14744,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "10:00 Opening of the Banquet",
-		"aired": "2017-03-27T00:00:00+00:00",
+		"aired": "2017-03-26T01:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -14761,7 +14761,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Good Actor",
-		"aired": "2017-04-03T00:00:00+00:00",
+		"aired": "2017-04-02T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -14778,7 +14778,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "The Intelligent Ones",
-		"aired": "2017-04-17T00:00:00+00:00",
+		"aired": "2017-04-16T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -14795,7 +14795,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Honorable",
-		"aired": "2017-04-24T00:00:00+00:00",
+		"aired": "2017-04-23T00:00:00.000Z",
 		"score": 4.91
 	},
 	{
@@ -14812,7 +14812,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "The Vinsmoke Family Massacre Plan",
-		"aired": "2017-05-08T00:00:00+00:00",
+		"aired": "2017-05-07T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -14829,7 +14829,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Hey, Mother",
-		"aired": "2017-05-15T00:00:00+00:00",
+		"aired": "2017-05-14T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -14846,7 +14846,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Natural Born Destroyer",
-		"aired": "2017-05-29T00:00:00+00:00",
+		"aired": "2017-05-28T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -14863,7 +14863,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Happy Birthday",
-		"aired": "2017-06-05T00:00:00+00:00",
+		"aired": "2017-06-04T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -14880,7 +14880,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "KX Launcher",
-		"aired": "2017-06-12T00:00:00+00:00",
+		"aired": "2017-06-11T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -14897,7 +14897,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Under Siege",
-		"aired": "2017-06-19T00:00:00+00:00",
+		"aired": "2017-06-18T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -14914,7 +14914,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Parting",
-		"aired": "2017-07-03T00:00:00+00:00",
+		"aired": "2017-07-02T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -14931,7 +14931,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "You Can Do It, Caesar!!",
-		"aired": "2017-07-10T00:00:00+00:00",
+		"aired": "2017-07-09T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -14948,7 +14948,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Thick and Fluffy",
-		"aired": "2017-07-15T00:00:00+00:00",
+		"aired": "2017-07-14T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -14965,7 +14965,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Trapped Like Sweets in a Cage",
-		"aired": "2017-07-24T00:00:00+00:00",
+		"aired": "2017-07-23T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -14982,7 +14982,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Become My Servant",
-		"aired": "2017-08-07T00:00:00+00:00",
+		"aired": "2017-08-06T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -14999,7 +14999,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.5, "nbOfVotes": 4 }
 		],
 		"title": "A Woman's Honor",
-		"aired": "2017-08-21T00:00:00+00:00",
+		"aired": "2017-08-20T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -15016,7 +15016,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.1, "nbOfVotes": 3 }
 		],
 		"title": "Pudding Coincidentally Appears!!",
-		"aired": "2017-08-28T00:00:00+00:00",
+		"aired": "2017-08-27T00:00:00.000Z",
 		"score": 4.3
 	},
 	{
@@ -15033,7 +15033,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Not Sweet",
-		"aired": "2017-09-04T00:00:00+00:00",
+		"aired": "2017-09-03T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -15050,7 +15050,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Mink Tribe, Guardians Captain Pedro",
-		"aired": "2017-09-16T00:00:00+00:00",
+		"aired": "2017-09-15T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -15067,7 +15067,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "One of Big Mom's \"3 Sweet Commanders\", Katakuri",
-		"aired": "2017-09-25T00:00:00+00:00",
+		"aired": "2017-09-24T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -15084,7 +15084,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Zero Escape",
-		"aired": "2017-10-02T00:00:00+00:00",
+		"aired": "2017-10-01T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -15101,7 +15101,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Wave Room",
-		"aired": "2017-10-07T00:00:00+00:00",
+		"aired": "2017-10-06T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -15118,7 +15118,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Beyond the Yonko's Expectations",
-		"aired": "2017-10-23T00:00:00+00:00",
+		"aired": "2017-10-22T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -15135,7 +15135,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "Merienda",
-		"aired": "2017-10-30T00:00:00+00:00",
+		"aired": "2017-10-28T23:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -15152,7 +15152,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Who",
-		"aired": "2017-11-06T00:00:00+00:00",
+		"aired": "2017-11-05T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -15169,7 +15169,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "It's Brûlée!!!",
-		"aired": "2017-11-13T00:00:00+00:00",
+		"aired": "2017-11-12T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -15186,7 +15186,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Way of Life",
-		"aired": "2017-11-27T00:00:00+00:00",
+		"aired": "2017-11-26T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -15203,7 +15203,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "Somewhere, Someone is Wishing for Your Happiness",
-		"aired": "2017-12-04T00:00:00+00:00",
+		"aired": "2017-12-03T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -15220,7 +15220,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Lion",
-		"aired": "2017-12-11T00:00:00+00:00",
+		"aired": "2017-12-10T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -15237,7 +15237,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "An Unknown Mama",
-		"aired": "2017-12-25T00:00:00+00:00",
+		"aired": "2017-12-24T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -15254,7 +15254,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.5, "nbOfVotes": 4 }
 		],
 		"title": "Big Mom on the Ship",
-		"aired": "2018-01-04T00:00:00+00:00",
+		"aired": "2018-01-03T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -15271,7 +15271,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Believing in Me",
-		"aired": "2018-01-15T00:00:00+00:00",
+		"aired": "2018-01-14T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -15288,7 +15288,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Recognized as Strong Opponents",
-		"aired": "2018-01-29T00:00:00+00:00",
+		"aired": "2018-01-28T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -15305,7 +15305,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "36th Daughter of the Charlotte Family - Flampe",
-		"aired": "2018-02-05T00:00:00+00:00",
+		"aired": "2018-02-04T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -15322,7 +15322,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "12:05",
-		"aired": "2018-02-10T00:00:00+00:00",
+		"aired": "2018-02-09T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -15339,7 +15339,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pirate Luffy vs. Commander Katakuri",
-		"aired": "2018-02-19T00:00:00+00:00",
+		"aired": "2018-02-18T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -15356,7 +15356,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 3 }
 		],
 		"title": "The Last Request",
-		"aired": "2018-03-05T00:00:00+00:00",
+		"aired": "2018-03-04T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -15373,7 +15373,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Pekoms's Cacao Island Esca",
-		"aired": "2018-03-12T00:00:00+00:00",
+		"aired": "2018-03-11T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -15390,7 +15390,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "We'll Definitely Return",
-		"aired": "2018-03-19T00:00:00+00:00",
+		"aired": "2018-03-18T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -15407,7 +15407,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Last Stand",
-		"aired": "2018-03-26T00:00:00+00:00",
+		"aired": "2018-03-25T01:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -15424,7 +15424,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Bad End Musical",
-		"aired": "2018-04-02T00:00:00+00:00",
+		"aired": "2018-04-01T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -15441,7 +15441,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 4 }
 		],
 		"title": "Even If You Die, Don't Die!!!",
-		"aired": "2018-04-16T00:00:00+00:00",
+		"aired": "2018-04-15T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -15458,7 +15458,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 2 }
 		],
 		"title": "End Roll",
-		"aired": "2018-04-23T00:00:00+00:00",
+		"aired": "2018-04-22T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -15475,7 +15475,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 5 }
 		],
 		"title": "The Fifth Emperor",
-		"aired": "2018-05-02T00:00:00+00:00",
+		"aired": "2018-05-01T00:00:00.000Z",
 		"score": 4.88
 	},
 	{
@@ -15492,7 +15492,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Entrance of the Revolutionary Army Commanders",
-		"aired": "2018-05-14T00:00:00+00:00",
+		"aired": "2018-05-13T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -15509,7 +15509,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "A Beautiful World",
-		"aired": "2018-05-28T00:00:00+00:00",
+		"aired": "2018-05-27T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -15526,7 +15526,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Holy Land Mary Geoise",
-		"aired": "2018-06-04T00:00:00+00:00",
+		"aired": "2018-06-03T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -15543,7 +15543,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Empty Throne",
-		"aired": "2018-06-11T00:00:00+00:00",
+		"aired": "2018-06-10T00:00:00.000Z",
 		"score": 4.88
 	},
 	{
@@ -15560,7 +15560,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Reverie Begins",
-		"aired": "2018-06-18T00:00:00+00:00",
+		"aired": "2018-06-17T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -15577,7 +15577,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Seppuku",
-		"aired": "2018-07-02T00:00:00+00:00",
+		"aired": "2018-07-01T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -15594,7 +15594,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 1 }
 		],
 		"title": "Onward to Wano Country",
-		"aired": "2018-07-09T00:00:00+00:00",
+		"aired": "2018-07-08T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -15611,7 +15611,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Adventure in the Land of Samurai",
-		"aired": "2018-07-14T00:00:00+00:00",
+		"aired": "2018-07-13T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -15628,7 +15628,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Amigasa Village",
-		"aired": "2018-07-23T00:00:00+00:00",
+		"aired": "2018-07-22T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -15645,7 +15645,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 1 }
 		],
 		"title": "Tsuru Returns the Favor",
-		"aired": "2018-08-06T00:00:00+00:00",
+		"aired": "2018-08-05T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -15662,7 +15662,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Okobore Town",
-		"aired": "2018-08-20T00:00:00+00:00",
+		"aired": "2018-08-19T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -15679,7 +15679,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Bakura Town",
-		"aired": "2018-08-27T00:00:00+00:00",
+		"aired": "2018-08-26T00:00:00.000Z",
 		"score": 4.37
 	},
 	{
@@ -15696,7 +15696,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Wano Country Grand Sumo Tournament",
-		"aired": "2018-09-03T00:00:00+00:00",
+		"aired": "2018-09-02T00:00:00.000Z",
 		"score": 4.5600000000000005
 	},
 	{
@@ -15713,7 +15713,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "The Treasure Ship of Provisions",
-		"aired": "2018-09-15T00:00:00+00:00",
+		"aired": "2018-09-14T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -15730,7 +15730,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Luffy-tarou Repays the Favor",
-		"aired": "2018-09-22T00:00:00+00:00",
+		"aired": "2018-09-21T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -15747,7 +15747,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "The Ruins of Oden Castle",
-		"aired": "2018-10-01T00:00:00+00:00",
+		"aired": "2018-09-30T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -15764,7 +15764,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "For Love of Oden",
-		"aired": "2018-10-06T00:00:00+00:00",
+		"aired": "2018-10-05T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -15781,7 +15781,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Shutenmaru",
-		"aired": "2018-10-22T00:00:00+00:00",
+		"aired": "2018-10-21T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -15798,7 +15798,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Beasts Pirates General: Kaido",
-		"aired": "2018-10-29T00:00:00+00:00",
+		"aired": "2018-10-27T23:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -15815,7 +15815,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Yonko Kaido vs. Luffy",
-		"aired": "2018-11-05T00:00:00+00:00",
+		"aired": "2018-11-04T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -15832,7 +15832,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 2 }
 		],
 		"title": "Ha",
-		"aired": "2018-11-12T00:00:00+00:00",
+		"aired": "2018-11-11T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -15849,7 +15849,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Blank",
-		"aired": "2018-11-26T00:00:00+00:00",
+		"aired": "2018-11-25T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -15866,7 +15866,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "The Prisoner Mine",
-		"aired": "2018-12-03T00:00:00+00:00",
+		"aired": "2018-12-02T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -15883,7 +15883,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Courtesan's Kamuro",
-		"aired": "2018-12-10T00:00:00+00:00",
+		"aired": "2018-12-09T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -15900,7 +15900,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.1, "nbOfVotes": 3 }
 		],
 		"title": "The Oiran Komurasaki Takes the Stage",
-		"aired": "2018-12-22T00:00:00+00:00",
+		"aired": "2018-12-21T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -15917,7 +15917,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 2 }
 		],
 		"title": "Kurozumi Orochi, Shogun of the Wano Country",
-		"aired": "2019-01-07T00:00:00+00:00",
+		"aired": "2019-01-06T00:00:00.000Z",
 		"score": 4.3
 	},
 	{
@@ -15934,7 +15934,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Ebisu Town",
-		"aired": "2019-01-21T00:00:00+00:00",
+		"aired": "2019-01-20T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -15951,7 +15951,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.7, "nbOfVotes": 6 }
 		],
 		"title": "Soba Mask",
-		"aired": "2019-02-04T00:00:00+00:00",
+		"aired": "2019-02-03T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -15968,7 +15968,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Shogun and the Courtesan",
-		"aired": "2019-02-09T00:00:00+00:00",
+		"aired": "2019-02-08T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -15985,7 +15985,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "A Samurai's Mercy",
-		"aired": "2019-02-18T00:00:00+00:00",
+		"aired": "2019-02-17T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -16002,7 +16002,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 2 }
 		],
 		"title": "Hyogoro of the Flower",
-		"aired": "2019-02-25T00:00:00+00:00",
+		"aired": "2019-02-24T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -16019,7 +16019,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.2, "nbOfVotes": 2 }
 		],
 		"title": "Queen",
-		"aired": "2019-03-11T00:00:00+00:00",
+		"aired": "2019-03-10T00:00:00.000Z",
 		"score": 4.32
 	},
 	{
@@ -16036,7 +16036,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.1, "nbOfVotes": 3 }
 		],
 		"title": "The Great Sumo Inferno",
-		"aired": "2019-03-18T00:00:00+00:00",
+		"aired": "2019-03-17T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -16053,7 +16053,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Gyukimaru of Bandit Bridge",
-		"aired": "2019-03-25T00:00:00+00:00",
+		"aired": "2019-03-24T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -16070,7 +16070,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Her Secret",
-		"aired": "2019-04-01T00:00:00+00:00",
+		"aired": "2019-03-31T01:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -16087,7 +16087,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "An Old Leopard Knows The Way",
-		"aired": "2019-04-15T00:00:00+00:00",
+		"aired": "2019-04-14T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -16104,7 +16104,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "The Spark of Rebellion",
-		"aired": "2019-04-22T00:00:00+00:00",
+		"aired": "2019-04-21T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -16121,7 +16121,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Ebisu Town's Most Beloved",
-		"aired": "2019-04-27T00:00:00+00:00",
+		"aired": "2019-04-26T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -16138,7 +16138,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 2 }
 		],
 		"title": "The Daimyo of Hakumai, Shimotsuki Yasuie",
-		"aired": "2019-05-13T00:00:00+00:00",
+		"aired": "2019-05-12T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -16155,7 +16155,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "SMILE",
-		"aired": "2019-05-27T00:00:00+00:00",
+		"aired": "2019-05-26T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -16172,7 +16172,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 3 }
 		],
 		"title": "Partner",
-		"aired": "2019-06-03T00:00:00+00:00",
+		"aired": "2019-06-02T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -16189,7 +16189,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.7, "nbOfVotes": 4 }
 		],
 		"title": "O-Lin",
-		"aired": "2019-06-10T00:00:00+00:00",
+		"aired": "2019-06-09T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -16206,7 +16206,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "Queen vs. O-Lin",
-		"aired": "2019-06-24T00:00:00+00:00",
+		"aired": "2019-06-23T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -16223,7 +16223,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Queen's Gamble",
-		"aired": "2019-07-01T00:00:00+00:00",
+		"aired": "2019-06-30T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -16240,7 +16240,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "Kawamatsu the Kappa Takes the Stage",
-		"aired": "2019-07-08T00:00:00+00:00",
+		"aired": "2019-07-07T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -16257,7 +16257,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "Mummy",
-		"aired": "2019-07-22T00:00:00+00:00",
+		"aired": "2019-07-21T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -16274,7 +16274,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 1 }
 		],
 		"title": "The Warriors' Dreams",
-		"aired": "2019-07-29T00:00:00+00:00",
+		"aired": "2019-07-28T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -16291,7 +16291,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Rampage",
-		"aired": "2019-08-05T00:00:00+00:00",
+		"aired": "2019-08-04T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -16308,7 +16308,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Hiyori and Kawamatsu",
-		"aired": "2019-08-19T00:00:00+00:00",
+		"aired": "2019-08-18T00:00:00.000Z",
 		"score": 4.2700000000000005
 	},
 	{
@@ -16325,7 +16325,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Once Upon a Fox",
-		"aired": "2019-08-26T00:00:00+00:00",
+		"aired": "2019-08-25T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -16342,7 +16342,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "Like Giving Wings to a Dragon",
-		"aired": "2019-09-02T00:00:00+00:00",
+		"aired": "2019-09-01T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -16359,7 +16359,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Enma",
-		"aired": "2019-09-14T00:00:00+00:00",
+		"aired": "2019-09-13T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -16376,7 +16376,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Big News",
-		"aired": "2019-09-21T00:00:00+00:00",
+		"aired": "2019-09-20T00:00:00.000Z",
 		"score": 4.89
 	},
 	{
@@ -16393,7 +16393,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Ultimate",
-		"aired": "2019-09-30T00:00:00+00:00",
+		"aired": "2019-09-29T00:00:00.000Z",
 		"score": 4.93
 	},
 	{
@@ -16410,7 +16410,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "The Promised Port",
-		"aired": "2019-10-07T00:00:00+00:00",
+		"aired": "2019-10-06T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -16427,7 +16427,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "Samurai",
-		"aired": "2019-10-21T00:00:00+00:00",
+		"aired": "2019-10-20T00:00:00.000Z",
 		"score": 4.43
 	},
 	{
@@ -16444,7 +16444,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 2 }
 		],
 		"title": "Kozuki Oden Takes the Stage",
-		"aired": "2019-10-28T00:00:00+00:00",
+		"aired": "2019-10-26T23:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -16461,7 +16461,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "The Mountain God Incident",
-		"aired": "2019-11-02T00:00:00+00:00",
+		"aired": "2019-11-01T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -16478,7 +16478,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 1 }
 		],
 		"title": "The Daimyo and His Retainers",
-		"aired": "2019-11-18T00:00:00+00:00",
+		"aired": "2019-11-17T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -16495,7 +16495,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "Becoming Samurai",
-		"aired": "2019-11-25T00:00:00+00:00",
+		"aired": "2019-11-24T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -16512,7 +16512,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Oden's Adventure",
-		"aired": "2019-12-02T00:00:00+00:00",
+		"aired": "2019-12-01T00:00:00.000Z",
 		"score": 4.9
 	},
 	{
@@ -16529,7 +16529,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Kurozumi Family Conspiracy",
-		"aired": "2019-12-16T00:00:00+00:00",
+		"aired": "2019-12-15T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -16546,7 +16546,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Roger and Whitebeard",
-		"aired": "2019-12-23T00:00:00+00:00",
+		"aired": "2019-12-22T00:00:00.000Z",
 		"score": 4.92
 	},
 	{
@@ -16563,7 +16563,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 1 }
 		],
 		"title": "Roger's Adventure",
-		"aired": "2020-01-07T00:00:00+00:00",
+		"aired": "2020-01-06T00:00:00.000Z",
 		"score": 4.89
 	},
 	{
@@ -16580,7 +16580,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Oden's Return",
-		"aired": "2020-01-20T00:00:00+00:00",
+		"aired": "2020-01-19T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -16597,7 +16597,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 3 }
 		],
 		"title": "Fool of a Lord",
-		"aired": "2020-01-27T00:00:00+00:00",
+		"aired": "2020-01-26T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -16614,7 +16614,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.1, "nbOfVotes": 6 }
 		],
 		"title": "Oden vs. Kaido",
-		"aired": "2020-02-03T00:00:00+00:00",
+		"aired": "2020-02-02T00:00:00.000Z",
 		"score": 4.39
 	},
 	{
@@ -16631,7 +16631,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 2 }
 		],
 		"title": "Boiled Alive",
-		"aired": "2020-02-17T00:00:00+00:00",
+		"aired": "2020-02-16T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -16648,7 +16648,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "I am Oden, And I Was Born to Boil",
-		"aired": "2020-02-22T00:00:00+00:00",
+		"aired": "2020-02-21T00:00:00.000Z",
 		"score": 4.83
 	},
 	{
@@ -16665,7 +16665,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "The Kozuki Clan",
-		"aired": "2020-03-09T00:00:00+00:00",
+		"aired": "2020-03-08T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -16682,7 +16682,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 2 }
 		],
 		"title": "Onward to Onigashima!!",
-		"aired": "2020-03-16T00:00:00+00:00",
+		"aired": "2020-03-15T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -16699,7 +16699,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "Kin'emon's Clever Trick",
-		"aired": "2020-03-23T00:00:00+00:00",
+		"aired": "2020-03-22T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -16716,7 +16716,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Allow Me to Introduce Myself!!!",
-		"aired": "2020-04-06T00:00:00+00:00",
+		"aired": "2020-04-05T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -16733,7 +16733,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "The Party's Off!!!",
-		"aired": "2020-04-13T00:00:00+00:00",
+		"aired": "2020-04-12T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -16750,7 +16750,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 2 }
 		],
 		"title": "Tobiroppo Introduction",
-		"aired": "2020-04-27T00:00:00+00:00",
+		"aired": "2020-04-26T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -16767,7 +16767,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "Family Problems",
-		"aired": "2020-05-11T00:00:00+00:00",
+		"aired": "2020-05-10T00:00:00.000Z",
 		"score": 4.42
 	},
 	{
@@ -16784,7 +16784,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Takatau Music",
-		"aired": "2020-05-25T00:00:00+00:00",
+		"aired": "2020-05-24T00:00:00.000Z",
 		"score": 4.36
 	},
 	{
@@ -16801,7 +16801,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "Joining the Fight",
-		"aired": "2020-07-08T00:00:00+00:00",
+		"aired": "2020-07-07T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -16818,7 +16818,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Ruffian Meets Ruffian",
-		"aired": "2020-07-15T00:00:00+00:00",
+		"aired": "2020-07-14T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -16835,7 +16835,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Thunder",
-		"aired": "2020-07-22T00:00:00+00:00",
+		"aired": "2020-07-21T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -16852,7 +16852,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "My Bible",
-		"aired": "2020-08-06T00:00:00+00:00",
+		"aired": "2020-08-05T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -16869,7 +16869,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "New Onigashima Project",
-		"aired": "2020-08-20T00:00:00+00:00",
+		"aired": "2020-08-19T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -16886,7 +16886,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "My Name",
-		"aired": "2020-08-03T00:00:00+00:00",
+		"aired": "2020-08-02T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -16903,7 +16903,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "The Brocade of Loyal Retainers",
-		"aired": "2020-08-11T00:00:00+00:00",
+		"aired": "2020-08-10T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -16920,7 +16920,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "Sorry For the Wait",
-		"aired": "2020-08-24T00:00:00+00:00",
+		"aired": "2020-08-23T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -16937,7 +16937,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 1 }
 		],
 		"title": "I Can't Imagine Losing",
-		"aired": "2020-09-07T00:00:00+00:00",
+		"aired": "2020-09-06T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -16954,7 +16954,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "Army of One",
-		"aired": "2020-09-14T00:00:00+00:00",
+		"aired": "2020-09-13T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -16971,7 +16971,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Let Us Die!!!",
-		"aired": "2020-09-28T00:00:00+00:00",
+		"aired": "2020-09-27T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -16988,7 +16988,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 2 }
 		],
 		"title": "Remnants",
-		"aired": "2020-10-17T00:00:00+00:00",
+		"aired": "2020-10-16T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -17005,7 +17005,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 2 }
 		],
 		"title": "The Dream of Wano Country",
-		"aired": "2020-10-26T00:00:00+00:00",
+		"aired": "2020-10-24T23:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -17022,7 +17022,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "My Other Name is Yamato",
-		"aired": "2020-11-02T00:00:00+00:00",
+		"aired": "2020-11-01T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -17039,7 +17039,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.5, "nbOfVotes": 2 }
 		],
 		"title": "A Kunoichi's Oath",
-		"aired": "2020-11-16T00:00:00+00:00",
+		"aired": "2020-11-15T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -17056,7 +17056,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 1 }
 		],
 		"title": "Island of the Strongest",
-		"aired": "2020-11-21T00:00:00+00:00",
+		"aired": "2020-11-20T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -17073,7 +17073,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Flames",
-		"aired": "2020-11-29T00:00:00+00:00",
+		"aired": "2020-11-28T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -17090,7 +17090,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 2 }
 		],
 		"title": "Ancient Types",
-		"aired": "2020-12-14T00:00:00+00:00",
+		"aired": "2020-12-13T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -17107,7 +17107,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.5, "nbOfVotes": 5 }
 		],
 		"title": "The Sake I Brewed to Drink With You",
-		"aired": "2020-12-21T00:00:00+00:00",
+		"aired": "2020-12-20T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -17124,7 +17124,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 14.9, "nbOfVotes": 118 }
 		],
 		"title": "Straw Hat Luffy",
-		"aired": "2021-01-04T00:00:00+00:00",
+		"aired": "2021-01-03T00:00:00.000Z",
 		"score": 4.220000000000001
 	},
 	{
@@ -17141,7 +17141,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 3 }
 		],
 		"title": "Battle of Monsters on Onigashima",
-		"aired": "2021-01-18T00:00:00+00:00",
+		"aired": "2021-01-17T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -17158,7 +17158,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 2 }
 		],
 		"title": "Four Emperors vs. New Generation",
-		"aired": "2021-02-01T00:00:00+00:00",
+		"aired": "2021-01-31T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -17175,7 +17175,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 3 }
 		],
 		"title": "Night on the Board",
-		"aired": "2021-02-08T00:00:00+00:00",
+		"aired": "2021-02-07T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -17192,7 +17192,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 4 }
 		],
 		"title": "Kibi Dango",
-		"aired": "2021-02-15T00:00:00+00:00",
+		"aired": "2021-02-14T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -17209,7 +17209,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 5 }
 		],
 		"title": "Devil Child",
-		"aired": "2021-03-01T00:00:00+00:00",
+		"aired": "2021-02-28T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -17226,7 +17226,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 3 }
 		],
 		"title": "The Honorable Hyogoro of the Flower",
-		"aired": "2021-03-08T00:00:00+00:00",
+		"aired": "2021-03-07T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -17243,7 +17243,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.8, "nbOfVotes": 6 }
 		],
 		"title": "Tanuki-San",
-		"aired": "2021-03-15T00:00:00+00:00",
+		"aired": "2021-03-14T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -17260,7 +17260,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Leader of the Mt. Atama Thieves, Ashura Doji",
-		"aired": "2021-03-29T00:00:00+00:00",
+		"aired": "2021-03-28T01:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -17277,7 +17277,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Hell",
-		"aired": "2021-04-05T00:00:00+00:00",
+		"aired": "2021-04-04T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -17294,7 +17294,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 6 }
 		],
 		"title": "Haoshoku",
-		"aired": "2021-04-12T00:00:00+00:00",
+		"aired": "2021-04-11T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -17311,7 +17311,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 5 }
 		],
 		"title": "Anko Standards",
-		"aired": "2021-04-26T00:00:00+00:00",
+		"aired": "2021-04-25T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -17328,7 +17328,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 3 }
 		],
 		"title": "Itch",
-		"aired": "2021-05-10T00:00:00+00:00",
+		"aired": "2021-05-09T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -17345,7 +17345,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Anarchy In The B.M.",
-		"aired": "2021-05-17T00:00:00+00:00",
+		"aired": "2021-05-16T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -17362,7 +17362,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 1 }
 		],
 		"title": "Life's Lousy Actor",
-		"aired": "2021-05-31T00:00:00+00:00",
+		"aired": "2021-05-30T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -17379,7 +17379,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 2 }
 		],
 		"title": "Chains",
-		"aired": "2021-06-07T00:00:00+00:00",
+		"aired": "2021-06-06T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -17396,7 +17396,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 3 }
 		],
 		"title": "This is O-Tama!!",
-		"aired": "2021-06-14T00:00:00+00:00",
+		"aired": "2021-06-13T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -17413,7 +17413,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "Orders",
-		"aired": "2021-06-28T00:00:00+00:00",
+		"aired": "2021-06-27T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -17430,7 +17430,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Jinbe vs. Who's-Who",
-		"aired": "2021-07-05T00:00:00+00:00",
+		"aired": "2021-07-04T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -17447,7 +17447,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.8, "nbOfVotes": 3 }
 		],
 		"title": "Heliceratops",
-		"aired": "2021-07-19T00:00:00+00:00",
+		"aired": "2021-07-18T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -17464,7 +17464,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 2 }
 		],
 		"title": "Robin vs. Black Maria",
-		"aired": "2021-08-02T00:00:00+00:00",
+		"aired": "2021-08-01T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -17481,7 +17481,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 5 }
 		],
 		"title": "Demonio",
-		"aired": "2021-08-10T00:00:00+00:00",
+		"aired": "2021-08-09T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -17498,7 +17498,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 3 }
 		],
 		"title": "The Stars Take the Stage",
-		"aired": "2021-08-23T00:00:00+00:00",
+		"aired": "2021-08-22T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -17515,7 +17515,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 2 }
 		],
 		"title": "Two Peas in a Pod",
-		"aired": "2021-08-30T00:00:00+00:00",
+		"aired": "2021-08-29T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -17532,7 +17532,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 2 }
 		],
 		"title": "Absol Absolved!",
-		"aired": "2021-09-06T00:00:00+00:00",
+		"aired": "2021-09-05T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -17549,7 +17549,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 2 }
 		],
 		"title": "Twin Dragons Painting",
-		"aired": "2021-09-13T00:00:00+00:00",
+		"aired": "2021-09-12T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -17566,7 +17566,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 3 }
 		],
 		"title": "The Pivotal Clash",
-		"aired": "2021-09-27T00:00:00+00:00",
+		"aired": "2021-09-26T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -17583,7 +17583,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Danger Beyond Imagining",
-		"aired": "2021-10-04T00:00:00+00:00",
+		"aired": "2021-10-03T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -17600,7 +17600,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 2 }
 		],
 		"title": "Brachiojaurus",
-		"aired": "2021-10-11T00:00:00+00:00",
+		"aired": "2021-10-10T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -17617,7 +17617,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 3 }
 		],
 		"title": "The Tower",
-		"aired": "2021-10-25T00:00:00+00:00",
+		"aired": "2021-10-24T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -17634,7 +17634,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 14.1, "nbOfVotes": 35 }
 		],
 		"title": "Echoing the Impermanence of All Things",
-		"aired": "2021-11-01T00:00:00+00:00",
+		"aired": "2021-10-30T23:00:00.000Z",
 		"score": 3.81
 	},
 	{
@@ -17651,7 +17651,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 8.7, "nbOfVotes": 24 }
 		],
 		"title": "Warrior of Science",
-		"aired": "2021-11-08T00:00:00+00:00",
+		"aired": "2021-11-07T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -17668,7 +17668,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 2 }
 		],
 		"title": "Oden's Beloved Blade",
-		"aired": "2021-11-22T00:00:00+00:00",
+		"aired": "2021-11-21T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -17685,7 +17685,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 2 }
 		],
 		"title": "Shimotsuki Kozaburo",
-		"aired": "2021-11-29T00:00:00+00:00",
+		"aired": "2021-11-28T00:00:00.000Z",
 		"score": 4.85
 	},
 	{
@@ -17702,7 +17702,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 5 }
 		],
 		"title": "Sanji vs. Queen",
-		"aired": "2021-12-06T00:00:00+00:00",
+		"aired": "2021-12-05T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -17719,7 +17719,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.5, "nbOfVotes": 8 }
 		],
 		"title": "Zoro vs. King",
-		"aired": "2021-12-20T00:00:00+00:00",
+		"aired": "2021-12-19T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -17736,7 +17736,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3, "nbOfVotes": 6 }
 		],
 		"title": "Bushido is the Way of Death",
-		"aired": "2022-01-04T00:00:00+00:00",
+		"aired": "2022-01-03T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -17753,7 +17753,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 3 }
 		],
 		"title": "Shuron Hakke",
-		"aired": "2022-01-17T00:00:00+00:00",
+		"aired": "2022-01-16T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -17770,7 +17770,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.3, "nbOfVotes": 6 }
 		],
 		"title": "Kid & Law vs. Big Mom",
-		"aired": "2022-01-31T00:00:00+00:00",
+		"aired": "2022-01-30T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -17787,7 +17787,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5, "nbOfVotes": 12 }
 		],
 		"title": "Top Billing",
-		"aired": "2022-02-07T00:00:00+00:00",
+		"aired": "2022-02-06T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -17804,7 +17804,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.7, "nbOfVotes": 10 }
 		],
 		"title": "Wasted Words on Young Ears",
-		"aired": "2022-02-14T00:00:00+00:00",
+		"aired": "2022-02-13T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -17821,7 +17821,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.9, "nbOfVotes": 6 }
 		],
 		"title": "Komurasaki",
-		"aired": "2022-02-28T00:00:00+00:00",
+		"aired": "2022-02-27T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -17838,7 +17838,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.6, "nbOfVotes": 10 }
 		],
 		"title": "The Victor Needs No Epithet",
-		"aired": "2022-03-07T00:00:00+00:00",
+		"aired": "2022-03-06T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -17855,7 +17855,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.8, "nbOfVotes": 14 }
 		],
 		"title": "Let's Face Death Together!!!",
-		"aired": "2022-03-14T00:00:00+00:00",
+		"aired": "2022-03-13T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -17872,7 +17872,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 14.6, "nbOfVotes": 166 }
 		],
 		"title": "Warrior of Liberation",
-		"aired": "2022-03-28T00:00:00+00:00",
+		"aired": "2022-03-27T01:00:00.000Z",
 		"score": 4.24
 	},
 	{
@@ -17889,7 +17889,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 8.3, "nbOfVotes": 44 }
 		],
 		"title": "Next Level",
-		"aired": "2022-04-04T00:00:00+00:00",
+		"aired": "2022-04-03T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -17906,7 +17906,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.6, "nbOfVotes": 15 }
 		],
 		"title": "Raizo",
-		"aired": "2022-04-11T00:00:00+00:00",
+		"aired": "2022-04-10T00:00:00.000Z",
 		"score": 4.46
 	},
 	{
@@ -17923,7 +17923,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 4.2, "nbOfVotes": 9 }
 		],
 		"title": "The Sky Over the Capital",
-		"aired": "2022-04-25T00:00:00+00:00",
+		"aired": "2022-04-24T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -17940,7 +17940,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 7.1, "nbOfVotes": 16 }
 		],
 		"title": "Twenty Years",
-		"aired": "2022-05-09T00:00:00+00:00",
+		"aired": "2022-05-08T00:00:00.000Z",
 		"score": 4.1
 	},
 	{
@@ -17957,7 +17957,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.9, "nbOfVotes": 18 }
 		],
 		"title": "The World That Should Be",
-		"aired": "2022-05-16T00:00:00+00:00",
+		"aired": "2022-05-15T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
 	{
@@ -17974,7 +17974,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5.2, "nbOfVotes": 19 }
 		],
 		"title": "Honor",
-		"aired": "2022-05-30T00:00:00+00:00",
+		"aired": "2022-05-29T00:00:00.000Z",
 		"score": 4.26
 	},
 	{
@@ -17991,7 +17991,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 9 }
 		],
 		"title": "Shogun of Wano Country, Kozuki Momonosuke",
-		"aired": "2022-06-06T00:00:00+00:00",
+		"aired": "2022-06-05T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -18008,7 +18008,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 5, "nbOfVotes": 16 }
 		],
 		"title": "A New Morning",
-		"aired": "2022-06-13T00:00:00+00:00",
+		"aired": "2022-06-12T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -18025,7 +18025,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.1, "nbOfVotes": 13 }
 		],
 		"title": "New Emperors",
-		"aired": "2022-06-20T00:00:00+00:00",
+		"aired": "2022-06-19T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -18042,7 +18042,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.4, "nbOfVotes": 14 }
 		],
 		"title": "Flame Emperor",
-		"aired": "2022-07-25T00:00:00+00:00",
+		"aired": "2022-07-24T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -18059,7 +18059,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.4, "nbOfVotes": 8 }
 		],
 		"title": "The New Era",
-		"aired": "2022-08-01T00:00:00+00:00",
+		"aired": "2022-07-31T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -18076,7 +18076,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.7, "nbOfVotes": 14 }
 		],
 		"title": "Cross Guild",
-		"aired": "2022-08-08T00:00:00+00:00",
+		"aired": "2022-08-07T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -18093,7 +18093,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 9.7, "nbOfVotes": 90 }
 		],
 		"title": "The End",
-		"aired": "2022-08-22T00:00:00+00:00",
+		"aired": "2022-08-21T00:00:00.000Z",
 		"score": 4
 	},
 	{
@@ -18110,7 +18110,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 18 }
 		],
 		"title": "New Emperor",
-		"aired": "2022-08-29T00:00:00+00:00",
+		"aired": "2022-08-28T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -18127,7 +18127,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 11 }
 		],
 		"title": "The Matter Involving Captain Koby",
-		"aired": "2022-09-12T00:00:00+00:00",
+		"aired": "2022-09-11T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -18144,7 +18144,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 23 }
 		],
 		"title": "Luffy's Dream",
-		"aired": "2022-09-19T00:00:00+00:00",
+		"aired": "2022-09-18T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -18161,7 +18161,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 13 }
 		],
 		"title": "Future Island Egghead",
-		"aired": "2022-09-26T00:00:00+00:00",
+		"aired": "2022-09-25T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -18178,7 +18178,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 9 }
 		],
 		"title": "Adventure in the Land of Science",
-		"aired": "2022-10-11T00:00:00+00:00",
+		"aired": "2022-10-10T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -18195,7 +18195,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 3 }
 		],
 		"title": "My Only Family",
-		"aired": "2022-10-17T00:00:00+00:00",
+		"aired": "2022-10-16T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -18212,7 +18212,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 9 }
 		],
 		"title": "Egghead Labophase",
-		"aired": "2022-10-24T00:00:00+00:00",
+		"aired": "2022-10-23T00:00:00.000Z",
 		"score": 4.6
 	},
 	{
@@ -18229,7 +18229,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 5 }
 		],
 		"title": "Six Vegapunks",
-		"aired": "2022-11-07T00:00:00+00:00",
+		"aired": "2022-11-06T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -18246,7 +18246,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 5 }
 		],
 		"title": "The Will of Ohara",
-		"aired": "2022-11-14T00:00:00+00:00",
+		"aired": "2022-11-13T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -18263,7 +18263,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 7 }
 		],
 		"title": "Punk Records",
-		"aired": "2022-11-21T00:00:00+00:00",
+		"aired": "2022-11-20T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -18280,7 +18280,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.3, "nbOfVotes": 2 }
 		],
 		"title": "A Genius's Dream",
-		"aired": "2022-12-05T00:00:00+00:00",
+		"aired": "2022-12-04T00:00:00.000Z",
 		"score": 4.57
 	},
 	{
@@ -18297,7 +18297,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 9 }
 		],
 		"title": "All Things Are Brought Into This World With Hope",
-		"aired": "2022-12-12T00:00:00+00:00",
+		"aired": "2022-12-11T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -18314,7 +18314,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 11 }
 		],
 		"title": "The Strongest Form of Humanity",
-		"aired": "2022-12-26T00:00:00+00:00",
+		"aired": "2022-12-25T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -18331,7 +18331,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 7 }
 		],
 		"title": "The Hero Deploys",
-		"aired": "2023-01-07T00:00:00+00:00",
+		"aired": "2023-01-06T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -18348,7 +18348,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 6 }
 		],
 		"title": "The Weight of Memory",
-		"aired": "2023-01-23T00:00:00+00:00",
+		"aired": "2023-01-22T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -18365,7 +18365,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 6 }
 		],
 		"title": "Miss Buckingham Stussy",
-		"aired": "2023-01-30T00:00:00+00:00",
+		"aired": "2023-01-29T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -18382,7 +18382,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 5 }
 		],
 		"title": "Mark III",
-		"aired": "2023-02-13T00:00:00+00:00",
+		"aired": "2023-02-12T00:00:00.000Z",
 		"score": 4.54
 	},
 	{
@@ -18399,7 +18399,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 11 }
 		],
 		"title": "Labophase Death Game",
-		"aired": "2023-02-20T00:00:00+00:00",
+		"aired": "2023-02-19T00:00:00.000Z",
 		"score": 4.41
 	},
 	{
@@ -18416,7 +18416,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 3 }
 		],
 		"title": "Old Friends",
-		"aired": "2023-02-27T00:00:00+00:00",
+		"aired": "2023-02-26T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -18433,7 +18433,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 7 }
 		],
 		"title": "Should Have Noticed Sooner",
-		"aired": "2023-03-13T00:00:00+00:00",
+		"aired": "2023-03-12T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -18450,7 +18450,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 9 }
 		],
 		"title": "Escape Limit",
-		"aired": "2023-03-20T00:00:00+00:00",
+		"aired": "2023-03-19T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -18467,7 +18467,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 13 }
 		],
 		"title": "The Emperor's Crew, The Red Hair Pirates",
-		"aired": "2023-03-27T00:00:00+00:00",
+		"aired": "2023-03-26T01:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -18484,7 +18484,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 5 }
 		],
 		"title": "The Hero of Legend",
-		"aired": "2023-04-10T00:00:00+00:00",
+		"aired": "2023-04-09T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -18501,7 +18501,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 5 }
 		],
 		"title": "Tenth Ship Captain of the Blackbeard Pirates, Kuzan",
-		"aired": "2023-04-24T00:00:00+00:00",
+		"aired": "2023-04-23T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -18518,7 +18518,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 8 }
 		],
 		"title": "Let's Go and Take It!!",
-		"aired": "2023-05-08T00:00:00+00:00",
+		"aired": "2023-05-07T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -18535,7 +18535,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 4 }
 		],
 		"title": "The Truth of That Day",
-		"aired": "2023-05-15T00:00:00+00:00",
+		"aired": "2023-05-14T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -18552,7 +18552,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 5 }
 		],
 		"title": "The Attempted Murder of a Celestial Dragon",
-		"aired": "2023-05-22T00:00:00+00:00",
+		"aired": "2023-05-21T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -18569,7 +18569,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 5 }
 		],
 		"title": "The Death of Nefertari Cobra",
-		"aired": "2023-06-05T00:00:00+00:00",
+		"aired": "2023-06-04T00:00:00.000Z",
 		"score": 4.8
 	},
 	{
@@ -18586,7 +18586,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 6 }
 		],
 		"title": "The Five Elders",
-		"aired": "2023-06-12T00:00:00+00:00",
+		"aired": "2023-06-11T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -18603,7 +18603,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 5 }
 		],
 		"title": "Battleship Bags",
-		"aired": "2023-07-17T00:00:00+00:00",
+		"aired": "2023-07-16T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -18620,7 +18620,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 5 }
 		],
 		"title": "Final Lesson",
-		"aired": "2023-07-24T00:00:00+00:00",
+		"aired": "2023-07-23T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -18637,7 +18637,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 4 }
 		],
 		"title": "Hostage Situation",
-		"aired": "2023-08-07T00:00:00+00:00",
+		"aired": "2023-08-06T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -18654,7 +18654,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 7 }
 		],
 		"title": "Kizaru",
-		"aired": "2023-08-21T00:00:00+00:00",
+		"aired": "2023-08-20T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -18671,7 +18671,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 7 }
 		],
 		"title": "Sentomaru",
-		"aired": "2023-09-04T00:00:00+00:00",
+		"aired": "2023-09-03T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -18688,7 +18688,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 3 }
 		],
 		"title": "Kuma the Tyrant's Holy Land Rampage",
-		"aired": "2023-09-18T00:00:00+00:00",
+		"aired": "2023-09-17T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -18705,7 +18705,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 10 }
 		],
 		"title": "Luffy vs. Kizaru",
-		"aired": "2023-09-25T00:00:00+00:00",
+		"aired": "2023-09-24T00:00:00.000Z",
 		"score": 4.5200000000000005
 	},
 	{
@@ -18722,7 +18722,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 5 }
 		],
 		"title": "Five Elders, Warrior God of Science and Defense, Saint Jaygarcia Saturn",
-		"aired": "2023-10-09T00:00:00+00:00",
+		"aired": "2023-10-08T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -18739,7 +18739,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 6 }
 		],
 		"title": "Better Off Dead in This World",
-		"aired": "2023-10-16T00:00:00+00:00",
+		"aired": "2023-10-15T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -18756,7 +18756,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 6 }
 		],
 		"title": "Kumachi",
-		"aired": "2023-10-30T00:00:00+00:00",
+		"aired": "2023-10-28T23:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -18773,7 +18773,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 2 }
 		],
 		"title": "Ginny",
-		"aired": "2023-11-06T00:00:00+00:00",
+		"aired": "2023-11-05T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -18790,7 +18790,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 14 }
 		],
 		"title": "Bonney's Birth",
-		"aired": "2023-11-13T00:00:00+00:00",
+		"aired": "2023-11-12T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -18807,7 +18807,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.7, "nbOfVotes": 8 }
 		],
 		"title": "Pacifist",
-		"aired": "2023-11-27T00:00:00+00:00",
+		"aired": "2023-11-26T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -18824,7 +18824,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 7 }
 		],
 		"title": "Thank You, Bonney",
-		"aired": "2023-12-04T00:00:00+00:00",
+		"aired": "2023-12-03T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -18841,7 +18841,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 4 }
 		],
 		"title": "To Bonney",
-		"aired": "2023-12-11T00:00:00+00:00",
+		"aired": "2023-12-10T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -18858,7 +18858,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 6 }
 		],
 		"title": "Kuma's Life",
-		"aired": "2023-12-25T00:00:00+00:00",
+		"aired": "2023-12-24T00:00:00.000Z",
 		"score": 4.84
 	},
 	{
@@ -18875,7 +18875,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 7 }
 		],
 		"title": "I'm Sorry, Daddy",
-		"aired": "2024-01-06T00:00:00+00:00",
+		"aired": "2024-01-05T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -18892,7 +18892,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 4 }
 		],
 		"title": "Thank You, Daddy",
-		"aired": "2024-01-22T00:00:00+00:00",
+		"aired": "2024-01-21T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -18909,7 +18909,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 5 }
 		],
 		"title": "The Height Of Folly",
-		"aired": "2024-01-29T00:00:00+00:00",
+		"aired": "2024-01-28T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -18926,7 +18926,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 4 }
 		],
 		"title": "On Your Side",
-		"aired": "2024-02-05T00:00:00+00:00",
+		"aired": "2024-02-04T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -18943,7 +18943,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 8 }
 		],
 		"title": "I've Been Looking For You!!",
-		"aired": "2024-02-19T00:00:00+00:00",
+		"aired": "2024-02-18T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -18960,7 +18960,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.2, "nbOfVotes": 1 }
 		],
 		"title": "Come In, World",
-		"aired": "2024-02-26T00:00:00+00:00",
+		"aired": "2024-02-25T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -18977,7 +18977,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 4 }
 		],
 		"title": "Interception",
-		"aired": "2024-03-04T00:00:00+00:00",
+		"aired": "2024-03-03T00:00:00.000Z",
 		"score": 4.720000000000001
 	},
 	{
@@ -18994,7 +18994,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 6 }
 		],
 		"title": "Starfall",
-		"aired": "2024-03-18T00:00:00+00:00",
+		"aired": "2024-03-17T00:00:00.000Z",
 		"score": 4.76
 	},
 	{
@@ -19011,7 +19011,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 8 }
 		],
 		"title": "Sun-Shield",
-		"aired": "2024-03-25T00:00:00+00:00",
+		"aired": "2024-03-24T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -19028,7 +19028,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2, "nbOfVotes": 9 }
 		],
 		"title": "Hard Aspects",
-		"aired": "2024-04-22T00:00:00+00:00",
+		"aired": "2024-04-21T00:00:00.000Z",
 		"score": 4.470000000000001
 	},
 	{
@@ -19045,7 +19045,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 6 }
 		],
 		"title": "Stalemate",
-		"aired": "2024-04-29T00:00:00+00:00",
+		"aired": "2024-04-28T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -19062,7 +19062,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 5 }
 		],
 		"title": "The Wings of Icarus",
-		"aired": "2024-05-13T00:00:00+00:00",
+		"aired": "2024-05-12T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -19079,7 +19079,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 4 }
 		],
 		"title": "Pieces of a Continent",
-		"aired": "2024-05-27T00:00:00+00:00",
+		"aired": "2024-05-26T00:00:00.000Z",
 		"score": 4.779999999999999
 	},
 	{
@@ -19096,7 +19096,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 5 }
 		],
 		"title": "Inner Conflict",
-		"aired": "2024-06-03T00:00:00+00:00",
+		"aired": "2024-06-02T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -19113,7 +19113,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 3.6, "nbOfVotes": 16 }
 		],
 		"title": "A",
-		"aired": "2024-06-17T00:00:00+00:00",
+		"aired": "2024-06-16T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -19130,7 +19130,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 6.3, "nbOfVotes": 31 }
 		],
 		"title": "The Most Free",
-		"aired": "2024-06-24T00:00:00+00:00",
+		"aired": "2024-06-23T00:00:00.000Z",
 		"score": 4.2
 	},
 	{
@@ -19147,7 +19147,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 4 }
 		],
 		"title": "Emet",
-		"aired": "2024-07-01T00:00:00+00:00",
+		"aired": "2024-06-30T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -19164,7 +19164,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 3 }
 		],
 		"title": "Atlas",
-		"aired": "2024-07-15T00:00:00+00:00",
+		"aired": "2024-07-14T00:00:00.000Z",
 		"score": 4.65
 	},
 	{
@@ -19181,7 +19181,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 7 }
 		],
 		"title": "The Ebb and Flow of the Ages",
-		"aired": "2024-07-22T00:00:00+00:00",
+		"aired": "2024-07-21T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -19198,7 +19198,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 5 }
 		],
 		"title": "Time is Right",
-		"aired": "2024-08-05T00:00:00+00:00",
+		"aired": "2024-08-04T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -19215,7 +19215,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 2.6, "nbOfVotes": 10 }
 		],
 		"title": "The Void Fortnight",
-		"aired": "2024-08-19T00:00:00+00:00",
+		"aired": "2024-08-18T00:00:00.000Z",
 		"score": 4.4
 	},
 	{
@@ -19232,7 +19232,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 7 }
 		],
 		"title": "Close Friend",
-		"aired": "2024-08-26T00:00:00+00:00",
+		"aired": "2024-08-25T00:00:00.000Z",
 		"score": 4.51
 	},
 	{
@@ -19249,7 +19249,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
 		],
 		"title": "What Death Means",
-		"aired": "2024-09-09T00:00:00+00:00",
+		"aired": "2024-09-08T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -19266,7 +19266,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
 		],
 		"title": "Settling the Score",
-		"aired": "2024-09-16T00:00:00+00:00",
+		"aired": "2024-09-15T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -19283,7 +19283,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 4 }
 		],
 		"title": "Adventure in the Land of Mystery",
-		"aired": "2024-09-23T00:00:00+00:00",
+		"aired": "2024-09-22T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -19300,7 +19300,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 2 }
 		],
 		"title": "RPG",
-		"aired": "2024-10-07T00:00:00+00:00",
+		"aired": "2024-10-06T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -19317,7 +19317,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 3 }
 		],
 		"title": "Livedolls",
-		"aired": "2024-10-14T00:00:00+00:00",
+		"aired": "2024-10-13T00:00:00.000Z",
 		"score": 4.38
 	},
 	{
@@ -19334,7 +19334,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "The Accursed Prince",
-		"aired": "2024-10-21T00:00:00+00:00",
+		"aired": "2024-10-20T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -19351,7 +19351,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
 		],
 		"title": "Loki in the Underworld",
-		"aired": "2024-11-11T00:00:00+00:00",
+		"aired": "2024-11-10T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -19368,7 +19368,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.3, "nbOfVotes": 1 }
 		],
 		"title": "Adventure in Elbaph",
-		"aired": "2024-12-02T00:00:00+00:00",
+		"aired": "2024-12-01T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -19385,7 +19385,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 5 }
 		],
 		"title": "I Want You to Praise Me",
-		"aired": "2024-12-09T00:00:00+00:00",
+		"aired": "2024-12-08T00:00:00.000Z",
 		"score": 4.81
 	},
 	{
@@ -19402,7 +19402,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 3 }
 		],
 		"title": "The Owl Library",
-		"aired": "2024-12-23T00:00:00+00:00",
+		"aired": "2024-12-22T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -19419,7 +19419,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 4 }
 		],
 		"title": "Friends' Cups",
-		"aired": "2025-01-04T00:00:00+00:00",
+		"aired": "2025-01-03T00:00:00.000Z",
 		"score": 4.56
 	},
 	{
@@ -19436,7 +19436,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
 		],
 		"title": "The Land That Awaits the Sun",
-		"aired": "2025-01-20T00:00:00+00:00",
+		"aired": "2025-01-19T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -19453,7 +19453,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.3, "nbOfVotes": 5 }
 		],
 		"title": "Introducing Shamrock",
-		"aired": "2025-01-27T00:00:00+00:00",
+		"aired": "2025-01-26T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -19470,7 +19470,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 2 }
 		],
 		"title": "The Harley",
-		"aired": "2025-02-03T00:00:00+00:00",
+		"aired": "2025-02-02T00:00:00.000Z",
 		"score": 4.87
 	},
 	{
@@ -19487,7 +19487,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 4 }
 		],
 		"title": "Mountain-Eater",
-		"aired": "2025-02-10T00:00:00+00:00",
+		"aired": "2025-02-09T00:00:00.000Z",
 		"score": 4.68
 	},
 	{
@@ -19504,7 +19504,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 2 }
 		],
 		"title": "Scopper Gaban",
-		"aired": "2025-02-24T00:00:00+00:00",
+		"aired": "2025-02-23T00:00:00.000Z",
 		"score": 4.58
 	},
 	{
@@ -19521,7 +19521,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 3 }
 		],
 		"title": "An Older Woman",
-		"aired": "2025-03-03T00:00:00+00:00",
+		"aired": "2025-03-02T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -19538,7 +19538,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 5 }
 		],
 		"title": "What I'm Afraid Of",
-		"aired": "2025-03-10T00:00:00+00:00",
+		"aired": "2025-03-09T00:00:00.000Z",
 		"score": 4.61
 	},
 	{
@@ -19555,8 +19555,535 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 2 }
 		],
 		"title": "God's Knights",
-		"aired": "2025-03-24T00:00:00+00:00",
+		"aired": "2025-03-23T00:00:00.000Z",
 		"score": 4.51
+	},
+	{
+		"episodeNb": 1144,
+		"title": "A Time for Warriors",
+		"ratingFiveStars": 63.6,
+		"ratingAllStars": 90,
+		"nbOfVotes": 343,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2207499&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 63.6, "nbOfVotes": 218 },
+			{ "star": 4, "rating": 24.8, "nbOfVotes": 85 },
+			{ "star": 3, "rating": 10.2, "nbOfVotes": 35 },
+			{ "star": 2, "rating": 0.9, "nbOfVotes": 3 },
+			{ "star": 1, "rating": 0.6, "nbOfVotes": 2 }
+		],
+		"aired": "2025-03-30T00:00:00+00:00",
+		"score": 4.5
+	},
+	{
+		"episodeNb": 1145,
+		"title": "Wildfire in Forest Sector 2, Branch Route 8",
+		"ratingFiveStars": 67.7,
+		"ratingAllStars": 91,
+		"nbOfVotes": 368,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2208708&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 67.7, "nbOfVotes": 249 },
+			{ "star": 4, "rating": 23.6, "nbOfVotes": 87 },
+			{ "star": 3, "rating": 6.8, "nbOfVotes": 25 },
+			{ "star": 2, "rating": 0.3, "nbOfVotes": 1 },
+			{ "star": 1, "rating": 1.6, "nbOfVotes": 6 }
+		],
+		"aired": "2025-04-06T00:00:00+00:00",
+		"score": 4.55
+	},
+	{
+		"episodeNb": 1146,
+		"title": "Motion in Stillness",
+		"ratingFiveStars": 63.7,
+		"ratingAllStars": 90.6,
+		"nbOfVotes": 331,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2210831&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 63.7, "nbOfVotes": 211 },
+			{ "star": 4, "rating": 26.9, "nbOfVotes": 89 },
+			{ "star": 3, "rating": 8.5, "nbOfVotes": 28 },
+			{ "star": 2, "rating": 0, "nbOfVotes": 0 },
+			{ "star": 1, "rating": 0.9, "nbOfVotes": 3 }
+		],
+		"aired": "2025-04-20T00:00:00+00:00",
+		"score": 4.529999999999999
+	},
+	{
+		"episodeNb": 1147,
+		"title": "What We're Afraid Of",
+		"ratingFiveStars": 66.8,
+		"ratingAllStars": 90,
+		"nbOfVotes": 352,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2211823&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 66.8, "nbOfVotes": 235 },
+			{ "star": 4, "rating": 20.7, "nbOfVotes": 73 },
+			{ "star": 3, "rating": 9.7, "nbOfVotes": 34 },
+			{ "star": 2, "rating": 1.7, "nbOfVotes": 6 },
+			{ "star": 1, "rating": 1.1, "nbOfVotes": 4 }
+		],
+		"aired": "2025-04-27T00:00:00+00:00",
+		"score": 4.5
+	},
+	{
+		"episodeNb": 1148,
+		"title": "Ronja",
+		"ratingFiveStars": 75,
+		"ratingAllStars": 93.4,
+		"nbOfVotes": 372,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2213461&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 75, "nbOfVotes": 279 },
+			{ "star": 4, "rating": 19.1, "nbOfVotes": 71 },
+			{ "star": 3, "rating": 4.8, "nbOfVotes": 18 },
+			{ "star": 2, "rating": 0, "nbOfVotes": 0 },
+			{ "star": 1, "rating": 1.1, "nbOfVotes": 4 }
+		],
+		"aired": "2025-05-11T00:00:00+00:00",
+		"score": 4.67
+	},
+	{
+		"episodeNb": 1149,
+		"title": "One Second",
+		"ratingFiveStars": 80.4,
+		"ratingAllStars": 94.6,
+		"nbOfVotes": 387,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2215566&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 80.4, "nbOfVotes": 311 },
+			{ "star": 4, "rating": 14.2, "nbOfVotes": 55 },
+			{ "star": 3, "rating": 4.4, "nbOfVotes": 17 },
+			{ "star": 2, "rating": 0.3, "nbOfVotes": 1 },
+			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
+		],
+		"aired": "2025-05-25T00:00:00+00:00",
+		"score": 4.7299999999999995
+	},
+	{
+		"episodeNb": 1150,
+		"title": "Domi Reversi",
+		"ratingFiveStars": 73.4,
+		"ratingAllStars": 91.8,
+		"nbOfVotes": 402,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2216443&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 73.4, "nbOfVotes": 295 },
+			{ "star": 4, "rating": 15.9, "nbOfVotes": 64 },
+			{ "star": 3, "rating": 8.5, "nbOfVotes": 34 },
+			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
+			{ "star": 1, "rating": 1.2, "nbOfVotes": 5 }
+		],
+		"aired": "2025-06-01T00:00:00+00:00",
+		"score": 4.59
+	},
+	{
+		"episodeNb": 1151,
+		"title": "I Get the Idea!!!",
+		"ratingFiveStars": 69.4,
+		"ratingAllStars": 91.8,
+		"nbOfVotes": 360,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2217211&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 69.4, "nbOfVotes": 250 },
+			{ "star": 4, "rating": 23.6, "nbOfVotes": 85 },
+			{ "star": 3, "rating": 5.3, "nbOfVotes": 19 },
+			{ "star": 2, "rating": 0.3, "nbOfVotes": 1 },
+			{ "star": 1, "rating": 1.4, "nbOfVotes": 5 }
+		],
+		"aired": "2025-06-08T00:00:00+00:00",
+		"score": 4.59
+	},
+	{
+		"episodeNb": 1152,
+		"title": "A Horrible Day",
+		"ratingFiveStars": 77.7,
+		"ratingAllStars": 93.8,
+		"nbOfVotes": 381,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2219383&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 77.7, "nbOfVotes": 296 },
+			{ "star": 4, "rating": 15.7, "nbOfVotes": 60 },
+			{ "star": 3, "rating": 5, "nbOfVotes": 19 },
+			{ "star": 2, "rating": 0.8, "nbOfVotes": 3 },
+			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
+		],
+		"aired": "2025-06-22T00:00:00+00:00",
+		"score": 4.6899999999999995
+	},
+	{
+		"episodeNb": 1153,
+		"title": "The Birth of Loki",
+		"ratingFiveStars": 71.9,
+		"ratingAllStars": 92.4,
+		"nbOfVotes": 388,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2220356&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 71.9, "nbOfVotes": 279 },
+			{ "star": 4, "rating": 20.9, "nbOfVotes": 81 },
+			{ "star": 3, "rating": 5.4, "nbOfVotes": 21 },
+			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
+			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
+		],
+		"aired": "2025-06-29T00:00:00+00:00",
+		"score": 4.62
+	},
+	{
+		"episodeNb": 1154,
+		"title": "Can't Even Die",
+		"ratingFiveStars": 83.5,
+		"ratingAllStars": 95.8,
+		"nbOfVotes": 461,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2222819&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 83.5, "nbOfVotes": 385 },
+			{ "star": 4, "rating": 13.7, "nbOfVotes": 63 },
+			{ "star": 3, "rating": 2, "nbOfVotes": 9 },
+			{ "star": 2, "rating": 0.4, "nbOfVotes": 2 },
+			{ "star": 1, "rating": 0.4, "nbOfVotes": 2 }
+		],
+		"aired": "2025-07-13T00:00:00+00:00",
+		"score": 4.79
+	},
+	{
+		"episodeNb": 1155,
+		"title": "The Rocks Pirates",
+		"ratingFiveStars": 83.7,
+		"ratingAllStars": 95.4,
+		"nbOfVotes": 455,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2224220&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 83.7, "nbOfVotes": 381 },
+			{ "star": 4, "rating": 11.6, "nbOfVotes": 53 },
+			{ "star": 3, "rating": 3.5, "nbOfVotes": 16 },
+			{ "star": 2, "rating": 0.4, "nbOfVotes": 2 },
+			{ "star": 1, "rating": 0.7, "nbOfVotes": 3 }
+		],
+		"aired": "2025-07-20T00:00:00+00:00",
+		"score": 4.7700000000000005
+	},
+	{
+		"episodeNb": 1156,
+		"title": "Idols",
+		"ratingFiveStars": 76.6,
+		"ratingAllStars": 94,
+		"nbOfVotes": 435,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2226352&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 76.6, "nbOfVotes": 333 },
+			{ "star": 4, "rating": 18.2, "nbOfVotes": 79 },
+			{ "star": 3, "rating": 4.6, "nbOfVotes": 20 },
+			{ "star": 2, "rating": 0.5, "nbOfVotes": 2 },
+			{ "star": 1, "rating": 0.2, "nbOfVotes": 1 }
+		],
+		"aired": "2025-08-03T00:00:00+00:00",
+		"score": 4.7
+	},
+	{
+		"episodeNb": 1157,
+		"title": "Legendary Bar",
+		"ratingFiveStars": 69.8,
+		"ratingAllStars": 91,
+		"nbOfVotes": 378,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2228082&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 69.8, "nbOfVotes": 264 },
+			{ "star": 4, "rating": 21.2, "nbOfVotes": 80 },
+			{ "star": 3, "rating": 5, "nbOfVotes": 19 },
+			{ "star": 2, "rating": 1.9, "nbOfVotes": 7 },
+			{ "star": 1, "rating": 2.1, "nbOfVotes": 8 }
+		],
+		"aired": "2025-08-17T00:00:00+00:00",
+		"score": 4.55
+	},
+	{
+		"episodeNb": 1158,
+		"title": "Rocks vs. Harald",
+		"ratingFiveStars": 77.9,
+		"ratingAllStars": 94.2,
+		"nbOfVotes": 317,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2230084&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 77.9, "nbOfVotes": 247 },
+			{ "star": 4, "rating": 16.4, "nbOfVotes": 52 },
+			{ "star": 3, "rating": 4.7, "nbOfVotes": 15 },
+			{ "star": 2, "rating": 0.6, "nbOfVotes": 2 },
+			{ "star": 1, "rating": 0.3, "nbOfVotes": 1 }
+		],
+		"aired": "2025-08-31T00:00:00+00:00",
+		"score": 4.71
+	},
+	{
+		"episodeNb": 1159,
+		"title": "The Island of Fate",
+		"ratingFiveStars": 86.8,
+		"ratingAllStars": 96.2,
+		"nbOfVotes": 402,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2231001&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 86.8, "nbOfVotes": 349 },
+			{ "star": 4, "rating": 10.2, "nbOfVotes": 41 },
+			{ "star": 3, "rating": 1.2, "nbOfVotes": 5 },
+			{ "star": 2, "rating": 0.7, "nbOfVotes": 3 },
+			{ "star": 1, "rating": 1, "nbOfVotes": 4 }
+		],
+		"aired": "2025-09-07T00:00:00+00:00",
+		"score": 4.8100000000000005
+	},
+	{
+		"episodeNb": 1160,
+		"title": "The God Valley Incident",
+		"ratingFiveStars": 77.8,
+		"ratingAllStars": 94,
+		"nbOfVotes": 418,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2232030&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 77.8, "nbOfVotes": 325 },
+			{ "star": 4, "rating": 16.3, "nbOfVotes": 68 },
+			{ "star": 3, "rating": 4.3, "nbOfVotes": 18 },
+			{ "star": 2, "rating": 1.2, "nbOfVotes": 5 },
+			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
+		],
+		"aired": "2025-09-14T00:00:00+00:00",
+		"score": 4.7
+	},
+	{
+		"episodeNb": 1161,
+		"title": "A Song of Love Bound Under a Hail of Arrows",
+		"ratingFiveStars": 73,
+		"ratingAllStars": 92.8,
+		"nbOfVotes": 381,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2233830&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 73, "nbOfVotes": 278 },
+			{ "star": 4, "rating": 19.7, "nbOfVotes": 75 },
+			{ "star": 3, "rating": 5.8, "nbOfVotes": 22 },
+			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
+			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
+		],
+		"aired": "2025-09-28T00:00:00+00:00",
+		"score": 4.64
+	},
+	{
+		"episodeNb": 1162,
+		"title": "God Valley Battle Royale",
+		"ratingFiveStars": 81.4,
+		"ratingAllStars": 94.8,
+		"nbOfVotes": 414,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2235660&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 81.4, "nbOfVotes": 337 },
+			{ "star": 4, "rating": 12.8, "nbOfVotes": 53 },
+			{ "star": 3, "rating": 4.3, "nbOfVotes": 18 },
+			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
+			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
+		],
+		"aired": "2025-10-12T00:00:00+00:00",
+		"score": 4.74
+	},
+	{
+		"episodeNb": 1163,
+		"title": "Promise",
+		"ratingFiveStars": 83.9,
+		"ratingAllStars": 95,
+		"nbOfVotes": 372,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2237550&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 83.9, "nbOfVotes": 312 },
+			{ "star": 4, "rating": 10.2, "nbOfVotes": 38 },
+			{ "star": 3, "rating": 4.3, "nbOfVotes": 16 },
+			{ "star": 2, "rating": 0.5, "nbOfVotes": 2 },
+			{ "star": 1, "rating": 1.1, "nbOfVotes": 4 }
+		],
+		"aired": "2025-10-26T00:00:00+00:00",
+		"score": 4.75
+	},
+	{
+		"episodeNb": 1164,
+		"title": "Davy Blood",
+		"ratingFiveStars": 84.1,
+		"ratingAllStars": 95.8,
+		"nbOfVotes": 390,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2238587&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 84.1, "nbOfVotes": 328 },
+			{ "star": 4, "rating": 12.6, "nbOfVotes": 49 },
+			{ "star": 3, "rating": 2.6, "nbOfVotes": 10 },
+			{ "star": 2, "rating": 0, "nbOfVotes": 0 },
+			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
+		],
+		"aired": "2025-11-02T00:00:00+00:00",
+		"score": 4.79
+	},
+	{
+		"episodeNb": 1165,
+		"title": "Reverberations",
+		"ratingFiveStars": 79.3,
+		"ratingAllStars": 93.8,
+		"nbOfVotes": 406,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2239707&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 79.3, "nbOfVotes": 322 },
+			{ "star": 4, "rating": 13.8, "nbOfVotes": 56 },
+			{ "star": 3, "rating": 4.9, "nbOfVotes": 20 },
+			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
+			{ "star": 1, "rating": 1, "nbOfVotes": 4 }
+		],
+		"aired": "2025-11-09T00:00:00+00:00",
+		"score": 4.6899999999999995
+	},
+	{
+		"episodeNb": 1166,
+		"title": "New Stories",
+		"ratingFiveStars": 72.9,
+		"ratingAllStars": 92.6,
+		"nbOfVotes": 339,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2241777&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 72.9, "nbOfVotes": 247 },
+			{ "star": 4, "rating": 20.6, "nbOfVotes": 70 },
+			{ "star": 3, "rating": 4.4, "nbOfVotes": 15 },
+			{ "star": 2, "rating": 1.2, "nbOfVotes": 4 },
+			{ "star": 1, "rating": 0.9, "nbOfVotes": 3 }
+		],
+		"aired": "2025-11-23T00:00:00+00:00",
+		"score": 4.63
+	},
+	{
+		"episodeNb": 1167,
+		"title": "Ida's Sons",
+		"ratingFiveStars": 79.4,
+		"ratingAllStars": 94.8,
+		"nbOfVotes": 360,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2242773&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 79.4, "nbOfVotes": 286 },
+			{ "star": 4, "rating": 15.8, "nbOfVotes": 57 },
+			{ "star": 3, "rating": 4.2, "nbOfVotes": 15 },
+			{ "star": 2, "rating": 0.3, "nbOfVotes": 1 },
+			{ "star": 1, "rating": 0.3, "nbOfVotes": 1 }
+		],
+		"aired": "2025-11-30T00:00:00+00:00",
+		"score": 4.74
+	},
+	{
+		"episodeNb": 1168,
+		"title": "The Snows of Elbaph",
+		"ratingFiveStars": 72.9,
+		"ratingAllStars": 92.4,
+		"nbOfVotes": 340,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2243437&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 72.9, "nbOfVotes": 248 },
+			{ "star": 4, "rating": 18.8, "nbOfVotes": 64 },
+			{ "star": 3, "rating": 6.8, "nbOfVotes": 23 },
+			{ "star": 2, "rating": 0.6, "nbOfVotes": 2 },
+			{ "star": 1, "rating": 0.9, "nbOfVotes": 3 }
+		],
+		"aired": "2025-12-07T00:00:00+00:00",
+		"score": 4.62
+	},
+	{
+		"episodeNb": 1169,
+		"title": "My Death Cannot Come Soon Enough",
+		"ratingFiveStars": 76.2,
+		"ratingAllStars": 94.2,
+		"nbOfVotes": 294,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2245237&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 76.2, "nbOfVotes": 224 },
+			{ "star": 4, "rating": 19.7, "nbOfVotes": 58 },
+			{ "star": 3, "rating": 3.1, "nbOfVotes": 9 },
+			{ "star": 2, "rating": 0.7, "nbOfVotes": 2 },
+			{ "star": 1, "rating": 0.3, "nbOfVotes": 1 }
+		],
+		"aired": "2025-12-21T00:00:00+00:00",
+		"score": 4.71
+	},
+	{
+		"episodeNb": 1170,
+		"title": "Contrary",
+		"ratingFiveStars": 79.4,
+		"ratingAllStars": 94,
+		"nbOfVotes": 441,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2246523&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 79.4, "nbOfVotes": 350 },
+			{ "star": 4, "rating": 14.3, "nbOfVotes": 63 },
+			{ "star": 3, "rating": 4.5, "nbOfVotes": 20 },
+			{ "star": 2, "rating": 0.2, "nbOfVotes": 1 },
+			{ "star": 1, "rating": 1.6, "nbOfVotes": 7 }
+		],
+		"aired": "2026-01-04T00:00:00+00:00",
+		"score": 4.7
+	},
+	{
+		"episodeNb": 1171,
+		"title": "Ragnir",
+		"ratingFiveStars": 72.7,
+		"ratingAllStars": 92.4,
+		"nbOfVotes": 333,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2249012&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 72.7, "nbOfVotes": 242 },
+			{ "star": 4, "rating": 18.6, "nbOfVotes": 62 },
+			{ "star": 3, "rating": 7.2, "nbOfVotes": 24 },
+			{ "star": 2, "rating": 0.9, "nbOfVotes": 3 },
+			{ "star": 1, "rating": 0.6, "nbOfVotes": 2 }
+		],
+		"aired": "2026-01-18T00:00:00+00:00",
+		"score": 4.62
+	},
+	{
+		"episodeNb": 1172,
+		"title": "The Elbaph I Dreamed Of",
+		"ratingFiveStars": 61.2,
+		"ratingAllStars": 88.8,
+		"nbOfVotes": 268,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2250667&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 61.2, "nbOfVotes": 164 },
+			{ "star": 4, "rating": 26.1, "nbOfVotes": 70 },
+			{ "star": 3, "rating": 9.7, "nbOfVotes": 26 },
+			{ "star": 2, "rating": 1.1, "nbOfVotes": 3 },
+			{ "star": 1, "rating": 1.9, "nbOfVotes": 5 }
+		],
+		"aired": "2026-02-01T00:00:00+00:00",
+		"score": 4.4399999999999995
+	},
+	{
+		"episodeNb": 1173,
+		"title": "Warrior Generation",
+		"ratingFiveStars": 63,
+		"ratingAllStars": 89.6,
+		"nbOfVotes": 254,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2251585&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 63, "nbOfVotes": 160 },
+			{ "star": 4, "rating": 23.6, "nbOfVotes": 60 },
+			{ "star": 3, "rating": 11.8, "nbOfVotes": 30 },
+			{ "star": 2, "rating": 1.2, "nbOfVotes": 3 },
+			{ "star": 1, "rating": 0.4, "nbOfVotes": 1 }
+		],
+		"aired": "2026-02-08T00:00:00+00:00",
+		"score": 4.4799999999999995
+	},
+	{
+		"episodeNb": 1174,
+		"title": "The Strongest Thing in the World",
+		"ratingFiveStars": 80.8,
+		"ratingAllStars": 94.4,
+		"nbOfVotes": 281,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2252505&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 80.8, "nbOfVotes": 227 },
+			{ "star": 4, "rating": 12.5, "nbOfVotes": 35 },
+			{ "star": 3, "rating": 5.3, "nbOfVotes": 15 },
+			{ "star": 2, "rating": 0.4, "nbOfVotes": 1 },
+			{ "star": 1, "rating": 1.1, "nbOfVotes": 3 }
+		],
+		"aired": "2026-02-15T00:00:00+00:00",
+		"score": 4.720000000000001
 	}
 ]
 

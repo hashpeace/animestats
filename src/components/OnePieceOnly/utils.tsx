@@ -18279,7 +18279,7 @@ export const onePieceEpisodes = [
 		title: "A Pledge to Ginny: Kuma Becomes a Father",
 		title_japanese: "ジニーへの誓い 父となったくま",
 		title_romanji: "Ginny e no Chikai: Chichi to Natta Kuma ",
-		aired: "2025-07-08T00:00:00+00:00",
+		aired: "2025-06-08T00:00:00+00:00",
 		score: 4.59,
 		filler: false,
 		recap: false,
