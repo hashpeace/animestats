@@ -27,6 +27,7 @@ export interface ParserEpisodeInfos {
 	ratingFiveStars: number;
 	ratingAllStars: number | undefined;
 	allRatings: { star: number; rating: number; nbOfVotes: number }[];
+	date_of_first_post?: string;
 }
 
 export type EpisodeInfos = ParserEpisodeInfos & JikanEpisodeInfo;

@@ -20068,26 +20068,26 @@ export const onePieceChapters = [
 		"aired": "2026-02-08T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
-	// {
-	// 	"episodeNb": 1174,
-	// 	"title": "The Strongest Thing in the World",
-	// 	"ratingFiveStars": 80.8,
-	// 	"ratingAllStars": 94.4,
-	// 	"nbOfVotes": 281,
-	// 	"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2252505&pollresults=1",
-	// 	"allRatings": [
-	// 		{ "star": 5, "rating": 80.8, "nbOfVotes": 227 },
-	// 		{ "star": 4, "rating": 12.5, "nbOfVotes": 35 },
-	// 		{ "star": 3, "rating": 5.3, "nbOfVotes": 15 },
-	// 		{ "star": 2, "rating": 0.4, "nbOfVotes": 1 },
-	// 		{ "star": 1, "rating": 1.1, "nbOfVotes": 3 }
-	// 	],
-	// 	"aired": "2026-02-15T00:00:00.000Z",
-	// 	"score": 4.720000000000001
-	// }
+	{
+		"episodeNb": 1174,
+		"title": "The Strongest Thing in the World",
+		"ratingFiveStars": 80.8,
+		"ratingAllStars": 94.4,
+		"nbOfVotes": 281,
+		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2252505&pollresults=1",
+		"allRatings": [
+			{ "star": 5, "rating": 80.8, "nbOfVotes": 227 },
+			{ "star": 4, "rating": 12.5, "nbOfVotes": 35 },
+			{ "star": 3, "rating": 5.3, "nbOfVotes": 15 },
+			{ "star": 2, "rating": 0.4, "nbOfVotes": 1 },
+			{ "star": 1, "rating": 1.1, "nbOfVotes": 3 }
+		],
+		"aired": "2026-02-15T00:00:00.000Z",
+		"score": 4.720000000000001
+	}
 ]
 
-const LAST_STATIC_CHAPTER = 1173;
+const LAST_STATIC_CHAPTER = 1174;
 
 export const fetchLatestOnePieceChapters = async (): Promise<EpisodeInfos[]> => {
 	const staticChapters = onePieceChapters as EpisodeInfos[];
