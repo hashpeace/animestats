@@ -16801,7 +16801,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 2 }
 		],
 		"title": "Joining the Fight",
-		"aired": "2020-07-07T00:00:00.000Z",
+		"aired": "2020-06-07T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -16818,7 +16818,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1, "nbOfVotes": 1 }
 		],
 		"title": "Ruffian Meets Ruffian",
-		"aired": "2020-07-14T00:00:00.000Z",
+		"aired": "2020-06-14T00:00:00.000Z",
 		"score": 4.49
 	},
 	{
@@ -16835,7 +16835,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 1 }
 		],
 		"title": "Thunder",
-		"aired": "2020-07-21T00:00:00.000Z",
+		"aired": "2020-06-21T00:00:00.000Z",
 		"score": 4.66
 	},
 	{
@@ -16852,7 +16852,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0, "nbOfVotes": 0 }
 		],
 		"title": "My Bible",
-		"aired": "2020-08-05T00:00:00.000Z",
+		"aired": "2020-07-05T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -16869,7 +16869,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 1 }
 		],
 		"title": "New Onigashima Project",
-		"aired": "2020-08-19T00:00:00.000Z",
+		"aired": "2020-07-19T00:00:00.000Z",
 		"score": 4.82
 	},
 	{
@@ -18178,7 +18178,7 @@ export const onePieceChapters = [
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 9 }
 		],
 		"title": "Adventure in the Land of Science",
-		"aired": "2022-10-10T00:00:00.000Z",
+		"aired": "2022-10-09T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -19572,7 +19572,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.9, "nbOfVotes": 3 },
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 2 }
 		],
-		"aired": "2025-03-30T00:00:00+00:00",
+		"aired": "2025-03-30T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -19589,7 +19589,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.3, "nbOfVotes": 1 },
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 6 }
 		],
-		"aired": "2025-04-06T00:00:00+00:00",
+		"aired": "2025-04-06T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -19606,7 +19606,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0, "nbOfVotes": 0 },
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 3 }
 		],
-		"aired": "2025-04-20T00:00:00+00:00",
+		"aired": "2025-04-20T00:00:00.000Z",
 		"score": 4.529999999999999
 	},
 	{
@@ -19623,7 +19623,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1.7, "nbOfVotes": 6 },
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 4 }
 		],
-		"aired": "2025-04-27T00:00:00+00:00",
+		"aired": "2025-04-27T00:00:00.000Z",
 		"score": 4.5
 	},
 	{
@@ -19640,7 +19640,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0, "nbOfVotes": 0 },
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 4 }
 		],
-		"aired": "2025-05-11T00:00:00+00:00",
+		"aired": "2025-05-11T00:00:00.000Z",
 		"score": 4.67
 	},
 	{
@@ -19657,7 +19657,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.3, "nbOfVotes": 1 },
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
 		],
-		"aired": "2025-05-25T00:00:00+00:00",
+		"aired": "2025-05-25T00:00:00.000Z",
 		"score": 4.7299999999999995
 	},
 	{
@@ -19674,7 +19674,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
 			{ "star": 1, "rating": 1.2, "nbOfVotes": 5 }
 		],
-		"aired": "2025-06-01T00:00:00+00:00",
+		"aired": "2025-06-01T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -19691,7 +19691,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.3, "nbOfVotes": 1 },
 			{ "star": 1, "rating": 1.4, "nbOfVotes": 5 }
 		],
-		"aired": "2025-06-08T00:00:00+00:00",
+		"aired": "2025-06-08T00:00:00.000Z",
 		"score": 4.59
 	},
 	{
@@ -19708,7 +19708,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.8, "nbOfVotes": 3 },
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
 		],
-		"aired": "2025-06-22T00:00:00+00:00",
+		"aired": "2025-06-22T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -19725,7 +19725,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
 		],
-		"aired": "2025-06-29T00:00:00+00:00",
+		"aired": "2025-06-29T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -19742,7 +19742,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.4, "nbOfVotes": 2 },
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 2 }
 		],
-		"aired": "2025-07-13T00:00:00+00:00",
+		"aired": "2025-07-13T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -19759,7 +19759,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.4, "nbOfVotes": 2 },
 			{ "star": 1, "rating": 0.7, "nbOfVotes": 3 }
 		],
-		"aired": "2025-07-20T00:00:00+00:00",
+		"aired": "2025-07-20T00:00:00.000Z",
 		"score": 4.7700000000000005
 	},
 	{
@@ -19776,7 +19776,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.5, "nbOfVotes": 2 },
 			{ "star": 1, "rating": 0.2, "nbOfVotes": 1 }
 		],
-		"aired": "2025-08-03T00:00:00+00:00",
+		"aired": "2025-08-03T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -19793,7 +19793,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1.9, "nbOfVotes": 7 },
 			{ "star": 1, "rating": 2.1, "nbOfVotes": 8 }
 		],
-		"aired": "2025-08-17T00:00:00+00:00",
+		"aired": "2025-08-17T00:00:00.000Z",
 		"score": 4.55
 	},
 	{
@@ -19810,7 +19810,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.6, "nbOfVotes": 2 },
 			{ "star": 1, "rating": 0.3, "nbOfVotes": 1 }
 		],
-		"aired": "2025-08-31T00:00:00+00:00",
+		"aired": "2025-08-31T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -19827,7 +19827,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.7, "nbOfVotes": 3 },
 			{ "star": 1, "rating": 1, "nbOfVotes": 4 }
 		],
-		"aired": "2025-09-07T00:00:00+00:00",
+		"aired": "2025-09-07T00:00:00.000Z",
 		"score": 4.8100000000000005
 	},
 	{
@@ -19844,7 +19844,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1.2, "nbOfVotes": 5 },
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
 		],
-		"aired": "2025-09-14T00:00:00+00:00",
+		"aired": "2025-09-14T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -19861,7 +19861,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
 		],
-		"aired": "2025-09-28T00:00:00+00:00",
+		"aired": "2025-09-28T00:00:00.000Z",
 		"score": 4.64
 	},
 	{
@@ -19878,7 +19878,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
 			{ "star": 1, "rating": 0.5, "nbOfVotes": 2 }
 		],
-		"aired": "2025-10-12T00:00:00+00:00",
+		"aired": "2025-10-12T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -19895,7 +19895,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.5, "nbOfVotes": 2 },
 			{ "star": 1, "rating": 1.1, "nbOfVotes": 4 }
 		],
-		"aired": "2025-10-26T00:00:00+00:00",
+		"aired": "2025-10-26T00:00:00.000Z",
 		"score": 4.75
 	},
 	{
@@ -19912,7 +19912,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0, "nbOfVotes": 0 },
 			{ "star": 1, "rating": 0.8, "nbOfVotes": 3 }
 		],
-		"aired": "2025-11-02T00:00:00+00:00",
+		"aired": "2025-11-02T00:00:00.000Z",
 		"score": 4.79
 	},
 	{
@@ -19929,7 +19929,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1, "nbOfVotes": 4 },
 			{ "star": 1, "rating": 1, "nbOfVotes": 4 }
 		],
-		"aired": "2025-11-09T00:00:00+00:00",
+		"aired": "2025-11-09T00:00:00.000Z",
 		"score": 4.6899999999999995
 	},
 	{
@@ -19946,7 +19946,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1.2, "nbOfVotes": 4 },
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 3 }
 		],
-		"aired": "2025-11-23T00:00:00+00:00",
+		"aired": "2025-11-23T00:00:00.000Z",
 		"score": 4.63
 	},
 	{
@@ -19963,7 +19963,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.3, "nbOfVotes": 1 },
 			{ "star": 1, "rating": 0.3, "nbOfVotes": 1 }
 		],
-		"aired": "2025-11-30T00:00:00+00:00",
+		"aired": "2025-11-30T00:00:00.000Z",
 		"score": 4.74
 	},
 	{
@@ -19980,7 +19980,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.6, "nbOfVotes": 2 },
 			{ "star": 1, "rating": 0.9, "nbOfVotes": 3 }
 		],
-		"aired": "2025-12-07T00:00:00+00:00",
+		"aired": "2025-12-07T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -19997,7 +19997,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.7, "nbOfVotes": 2 },
 			{ "star": 1, "rating": 0.3, "nbOfVotes": 1 }
 		],
-		"aired": "2025-12-21T00:00:00+00:00",
+		"aired": "2025-12-21T00:00:00.000Z",
 		"score": 4.71
 	},
 	{
@@ -20014,7 +20014,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.2, "nbOfVotes": 1 },
 			{ "star": 1, "rating": 1.6, "nbOfVotes": 7 }
 		],
-		"aired": "2026-01-04T00:00:00+00:00",
+		"aired": "2026-01-04T00:00:00.000Z",
 		"score": 4.7
 	},
 	{
@@ -20031,7 +20031,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 0.9, "nbOfVotes": 3 },
 			{ "star": 1, "rating": 0.6, "nbOfVotes": 2 }
 		],
-		"aired": "2026-01-18T00:00:00+00:00",
+		"aired": "2026-01-18T00:00:00.000Z",
 		"score": 4.62
 	},
 	{
@@ -20048,7 +20048,7 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1.1, "nbOfVotes": 3 },
 			{ "star": 1, "rating": 1.9, "nbOfVotes": 5 }
 		],
-		"aired": "2026-02-01T00:00:00+00:00",
+		"aired": "2026-02-01T00:00:00.000Z",
 		"score": 4.4399999999999995
 	},
 	{
@@ -20065,29 +20065,29 @@ export const onePieceChapters = [
 			{ "star": 2, "rating": 1.2, "nbOfVotes": 3 },
 			{ "star": 1, "rating": 0.4, "nbOfVotes": 1 }
 		],
-		"aired": "2026-02-08T00:00:00+00:00",
+		"aired": "2026-02-08T00:00:00.000Z",
 		"score": 4.4799999999999995
 	},
-	{
-		"episodeNb": 1174,
-		"title": "The Strongest Thing in the World",
-		"ratingFiveStars": 80.8,
-		"ratingAllStars": 94.4,
-		"nbOfVotes": 281,
-		"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2252505&pollresults=1",
-		"allRatings": [
-			{ "star": 5, "rating": 80.8, "nbOfVotes": 227 },
-			{ "star": 4, "rating": 12.5, "nbOfVotes": 35 },
-			{ "star": 3, "rating": 5.3, "nbOfVotes": 15 },
-			{ "star": 2, "rating": 0.4, "nbOfVotes": 1 },
-			{ "star": 1, "rating": 1.1, "nbOfVotes": 3 }
-		],
-		"aired": "2026-02-15T00:00:00+00:00",
-		"score": 4.720000000000001
-	}
+	// {
+	// 	"episodeNb": 1174,
+	// 	"title": "The Strongest Thing in the World",
+	// 	"ratingFiveStars": 80.8,
+	// 	"ratingAllStars": 94.4,
+	// 	"nbOfVotes": 281,
+	// 	"forumTopicUrl": "https://myanimelist.net/forum/?topicid=2252505&pollresults=1",
+	// 	"allRatings": [
+	// 		{ "star": 5, "rating": 80.8, "nbOfVotes": 227 },
+	// 		{ "star": 4, "rating": 12.5, "nbOfVotes": 35 },
+	// 		{ "star": 3, "rating": 5.3, "nbOfVotes": 15 },
+	// 		{ "star": 2, "rating": 0.4, "nbOfVotes": 1 },
+	// 		{ "star": 1, "rating": 1.1, "nbOfVotes": 3 }
+	// 	],
+	// 	"aired": "2026-02-15T00:00:00.000Z",
+	// 	"score": 4.720000000000001
+	// }
 ]
 
-const LAST_STATIC_CHAPTER = 1143;
+const LAST_STATIC_CHAPTER = 1173;
 
 export const fetchLatestOnePieceChapters = async (): Promise<EpisodeInfos[]> => {
 	const staticChapters = onePieceChapters as EpisodeInfos[];
