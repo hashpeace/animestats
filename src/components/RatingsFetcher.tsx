@@ -85,6 +85,7 @@ export default function RatingsFetcher({
 		useState(true);
 	const [debouncedQuery, setDebouncedQuery] = useState("");
 	const [showSearchFilters, setShowSearchFilters] = useState(false);
+	// const [showNoResultsMsg, setShowNoResultsMsg] = useState(false);
 
 	const cheerioParsingMethod = isProduction ? "axios" : "api-route";
 	// const cheerioParsingMethod = "axios";
@@ -107,13 +108,20 @@ export default function RatingsFetcher({
 		return { animeId: "", entryTypeFromUrl: "anime" };
 	};
 
-	const { animeId, entryTypeFromUrl } =
-		extractAnimeInfoFromUrl(animeInputForApi);
+	const { animeId, entryTypeFromUrl } = extractAnimeInfoFromUrl(animeInputForApi);
 
 	// Set the entry type from the URL
 	useEffect(() => {
 		setEntryType(entryTypeFromUrl);
 	}, [entryTypeFromUrl]);
+
+	// useEffect(() => {
+	// 	if (!isSearching && debouncedQuery.length >= 3 && searchresults.length === 0 && animeInput.length > 2) {
+	// 		setShowNoResultsMsg(true);
+	// 	} else {
+	// 		setShowNoResultsMsg(false);
+	// 	}
+	// }, [searchresults, debouncedQuery, animeInput, isSearching]);
 
 	// Set entryType to "anime" when fetchingMethod is "jikanOnly" (jikanOnly only supports anime)
 	useEffect(() => {
@@ -751,7 +759,7 @@ export default function RatingsFetcher({
 							animeTitle: animeInput,
 							entryType: entryType,
 							episodeCount: episodeCount,
-							fetchingMethod: fetchingMethod,
+							fetchingMethod: dataSource === "imdb" ? "imdb" : fetchingMethod,
 							cheerioParsingMethod: cheerioParsingMethod,
 						});
 					}}
@@ -804,6 +812,7 @@ export default function RatingsFetcher({
 								}}
 								autoComplete="off"
 								autoFocus
+								// onBlur={() => setShowNoResultsMsg(false)}
 								onKeyDown={(e) => {
 									const searchresultsList =
 										searchresultRef.current as HTMLUListElement | null;
