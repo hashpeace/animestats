@@ -7,8 +7,8 @@ import {
 	XAxis,
 	YAxis,
 } from "recharts";
-import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/utils";
-import { onePieceSagasChapters } from "@/components/OnePieceOnly/utils2";
+import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/manualEpisodesList";
+import { onePieceSagasChapters } from "@/components/OnePieceOnly/manualChaptersList";
 import {
 	type ChartConfig,
 	ChartContainer,

@@ -18,8 +18,8 @@ import {
 } from "recharts";
 import { toast } from "sonner";
 import { AllStarsRatingStacked } from "@/components/AllStarsRatingStacked";
-import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/utils";
-import { onePieceSagasChapters } from "@/components/OnePieceOnly/utils2";
+import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/manualEpisodesList";
+import { onePieceSagasChapters } from "@/components/OnePieceOnly/manualChaptersList";
 import RatingsDisplayAdditionalGraph from "@/components/RatingsDisplayAdditionalGraph";
 import RatingsDisplayOptions from "@/components/RatingsDisplayOptions";
 import {

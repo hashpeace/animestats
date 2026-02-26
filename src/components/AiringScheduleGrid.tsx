@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/utils";
-import { onePieceSagasChapters } from "@/components/OnePieceOnly/utils2";
+import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/manualEpisodesList";
+import { onePieceSagasChapters } from "@/components/OnePieceOnly/manualChaptersList";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
 	Select,

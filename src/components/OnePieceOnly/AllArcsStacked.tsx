@@ -1,6 +1,6 @@
 "use client"
-import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/utils"
-import { onePieceSagasChapters } from "@/components/OnePieceOnly/utils2"
+import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/manualEpisodesList"
+import { onePieceSagasChapters } from "@/components/OnePieceOnly/manualChaptersList"
 import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import type { EntryType, EpisodeInfos } from "@/types/All"
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from "recharts"

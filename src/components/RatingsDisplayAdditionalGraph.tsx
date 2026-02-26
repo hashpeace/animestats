@@ -11,8 +11,8 @@ import {
 import AiringScheduleGrid from "@/components/AiringScheduleGrid";
 import { AllArcsStacked } from "@/components/OnePieceOnly/AllArcsStacked";
 import { SagaAndArcsRatings } from "@/components/OnePieceOnly/SagaAndArcsRatings";
-import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/utils";
-import { onePieceSagasChapters } from "@/components/OnePieceOnly/utils2";
+import { onePieceSagasEpisodes } from "@/components/OnePieceOnly/manualEpisodesList";
+import { onePieceSagasChapters } from "@/components/OnePieceOnly/manualChaptersList";
 import {
 	Alert,
 	AlertAction,

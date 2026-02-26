@@ -8,11 +8,11 @@ import {
 	fetchLatestOnePieceEpisodes,
 	LAST_STATIC_OP_EPISODE,
 	onePieceEpisodes,
-} from "@/components/OnePieceOnly/utils";
+} from "@/components/OnePieceOnly/manualEpisodesList";
 import {
 	fetchLatestOnePieceChapters,
 	onePieceChapters,
-} from "@/components/OnePieceOnly/utils2";
+} from "@/components/OnePieceOnly/manualChaptersList";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import SuggestedAnimeCards from "@/components/SuggestedAnimeCards";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
