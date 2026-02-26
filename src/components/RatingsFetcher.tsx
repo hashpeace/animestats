@@ -33,7 +33,7 @@ import {
 } from "@/components/ui/select";
 import { useFetchingMethodContext } from "@/contexts/FetchingMethodContext";
 import { fetchRatings } from "@/lib/fetchRatings";
-import { isProduction } from "@/lib/utils";
+import { cn, isProduction } from "@/lib/utils";
 import type {
 	AnimeInfo,
 	EpisodeInfos,
@@ -255,11 +255,18 @@ export default function RatingsFetcher({
 						const rating = ep.rating!.aggregateRating;
 						const ratingPct = rating * 10;
 						const aired = ep.releaseDate
-							? new Date(
-								ep.releaseDate.year,
-								ep.releaseDate.month - 1,
-								ep.releaseDate.day ?? 1,
-							).toISOString()
+							? (() => {
+								const { year, month, day } = ep.releaseDate;
+								if (year && month && day) {
+									return new Date(year, month - 1, day).toISOString();
+								} else if (year && month) {
+									return new Date(year, month - 1, 1).toISOString();
+								} else if (year) {
+									return new Date(year, 0, 1).toISOString();
+								} else {
+									return "";
+								}
+							})()
 							: "";
 						return {
 							mal_id: ep.episodeNumber,
@@ -946,7 +953,7 @@ export default function RatingsFetcher({
 						</button>
 					</div>
 					{showSearchFilters && (
-						<div className="flex items-center gap-4 mt-2 flex-wrap p-2 rounded-md border border-gray-200 dark:border-gray-700">
+						<div className={cn("flex items-center gap-4 mt-2 flex-wrap p-2 rounded-md border border-gray-200 dark:border-gray-700", dataSource === "imdb" && "md:hidden")}>
 							{/* Source */}
 							<div className="flex flex-col gap-1 md:hidden">
 								<Label className="text-sm font-medium mb-0">Source</Label>

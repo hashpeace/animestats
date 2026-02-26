@@ -1,6 +1,6 @@
 import { Settings2Icon } from "lucide-react";
 import posthog from "posthog-js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -50,6 +50,24 @@ export default function RatingsDisplayOptions({
 
 	const [scoreInput, setScoreInput] = useState<string>("");
 	const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+
+		const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+		const handleChange = (event: MediaQueryListEvent) => {
+			setIsMobile(event.matches);
+		};
+
+		setIsMobile(mediaQuery.matches);
+		mediaQuery.addEventListener("change", handleChange);
+
+		return () => {
+			mediaQuery.removeEventListener("change", handleChange);
+		};
+	}, []);
 
 	const handleScoreFilter = (scoreStr: string) => {
 		const score = Number.parseFloat(scoreStr);
@@ -178,9 +196,9 @@ export default function RatingsDisplayOptions({
 									</SelectContent>
 								</Select>
 							</div>
-							{resultsLength > 20 && (
+							{resultsLength > 20 && (isMobile || resultsLength >= 40) && (
 								<div className="flex flex-col">
-									<Label htmlFor="horizontalZoom-select">View zoom</Label>
+									<Label htmlFor="horizontalZoom-select">Horizontal zoom</Label>
 									<Select
 										value={options.horizontalZoom ?? "automatic"}
 										onValueChange={(value: "fit" | "automatic" | "extended") => {
@@ -195,7 +213,7 @@ export default function RatingsDisplayOptions({
 										}}
 									>
 										<SelectTrigger className="w-[140px] focus:ring-offset-1 focus:ring-2 bg-white">
-											<SelectValue placeholder="View zoom" />
+											<SelectValue placeholder="Horizontal zoom" />
 										</SelectTrigger>
 										<SelectContent>
 											<SelectItem value="fit">Fit</SelectItem>
