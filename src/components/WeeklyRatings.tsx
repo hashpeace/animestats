@@ -1293,7 +1293,7 @@ export default function WeeklyRatings() {
 										</h4>
 										{thisWeekEpisode ? (
 											<>
-												<Tooltip>
+												<Tooltip useTouch={true}>
 													<TooltipTrigger asChild>
 														<div className="bg-yellow-300 text-black px-2 py-1 text-xs font-bold rounded-tr-lg rounded-bl-lg flex items-center w-fit mb-1">
 															<span className="mr-1">★</span>
@@ -1305,7 +1305,7 @@ export default function WeeklyRatings() {
 													</TooltipContent>
 												</Tooltip>
 												<div className="flex items-center">
-													<Tooltip>
+													<Tooltip useTouch={true}>
 														<TooltipTrigger asChild>
 															<div className="bg-blue-500 text-white px-2 py-1 text-xs font-bold rounded-tr-lg rounded-bl-lg flex items-center">
 																<Trophy className="size-3 mr-1" />{" "}
@@ -1317,7 +1317,7 @@ export default function WeeklyRatings() {
 														</TooltipContent>
 													</Tooltip>
 													{lastWeekRanking && thisWeekEpisode.mal_id !== 1 && (
-														<Tooltip>
+														<Tooltip useTouch={true}>
 															<TooltipTrigger asChild>
 																<span
 																	className={`ml-2 ${lastWeekRanking > thisWeekRanking

@@ -119,8 +119,8 @@ export default function RatingsDisplayOptions({
 						</SelectTrigger>
 						<SelectContent>
 							<SelectItem value="graph">Graph</SelectItem>
-							<SelectItem value="table">Table</SelectItem>
 							<SelectItem value="wrapped">Cards</SelectItem>
+							<SelectItem value="table">Table</SelectItem>
 						</SelectContent>
 					</Select>
 				</div>

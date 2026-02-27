@@ -16,6 +16,7 @@ import {
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
 import type { EntryType, EpisodeInfos } from "@/types/All";
+import { cn } from "@/lib/utils";
 
 const SAGA_COLORS = [
 	"#22c55e",
@@ -185,11 +186,13 @@ function getArcForEpisodeNumber(
 export default function AiringScheduleGrid({
 	results,
 	entryType,
+	isOnePieceOnly,
 }: {
 	results: EpisodeInfos[];
 	entryType: EntryType;
+	isOnePieceOnly: boolean;
 }) {
-	const [bigBoxes, setBigBoxes] = useState(false);
+	const [bigBoxes, setBigBoxes] = useState(true);
 	const [colorBySaga, setColorBySaga] = useState(false);
 
 	const sagas = useMemo(
@@ -458,35 +461,35 @@ export default function AiringScheduleGrid({
 								<SelectValue />
 							</SelectTrigger>
 							<SelectContent>
+								<SelectItem value="true">Large</SelectItem>
 								<SelectItem value="false">Small</SelectItem>
-								<SelectItem value="true">
-									Large (with ep./ch. number)
-								</SelectItem>
 							</SelectContent>
 						</Select>
 					</div>
-					<div className="flex flex-col gap-1">
-						<label
-							htmlFor="color-by-saga"
-							className="text-sm text-muted-foreground"
-						>
-							Color
-						</label>
-						<Select
-							value={colorBySaga ? "saga" : "default"}
-							onValueChange={(v) => setColorBySaga(v === "saga")}
-						>
-							<SelectTrigger id="color-by-saga">
-								<SelectValue />
-							</SelectTrigger>
-							<SelectContent>
-								<SelectItem value="default">Aired / No episode</SelectItem>
-								<SelectItem value="saga">By saga</SelectItem>
-							</SelectContent>
-						</Select>
-					</div>
+					{isOnePieceOnly && (
+						<div className="flex flex-col gap-1">
+							<label
+								htmlFor="color-by-saga"
+								className="text-sm text-muted-foreground"
+							>
+								Color
+							</label>
+							<Select
+								value={colorBySaga ? "saga" : "default"}
+								onValueChange={(v) => setColorBySaga(v === "saga")}
+							>
+								<SelectTrigger id="color-by-saga">
+									<SelectValue />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem value="default">Default</SelectItem>
+									<SelectItem value="saga">By saga</SelectItem>
+								</SelectContent>
+							</Select>
+						</div>
+					)}
 				</div>
-				<div className="rounded-md border overflow-x-auto overflow-y-auto" style={{ maxHeight: '80vh' }}>
+				<div className="rounded-md border overflow-x-scroll overflow-y-auto" style={{ maxHeight: '80vh' }}>
 					<div className="flex flex-col gap-1">
 						{/* Table header: week numbers only on the first line */}
 						<div className="flex items-center gap-2 sticky top-0 bg-background dark:bg-background z-50 border-b pb-1 mb-1 shadow-sm w-fit">
@@ -495,7 +498,10 @@ export default function AiringScheduleGrid({
 								{Array.from({ length: maxWeeks }, (_, i) => (
 									<span
 										key={i}
-										className={`${boxSize} flex items-center justify-center rounded-[2px] text-xs font-medium text-muted-foreground tabular-nums`}
+										className={cn(
+											`${boxSize} flex items-center justify-center rounded-[2px] font-medium text-muted-foreground tabular-nums`,
+											bigBoxes ? "text-xs" : "text-[8px]",
+										)}
 									>
 										{i + 1}
 									</span>
@@ -736,7 +742,7 @@ export default function AiringScheduleGrid({
 																		{`# of votes: ${ep.nbOfVotes.toLocaleString("en-US")}`}
 																	</li>
 																)}
-																{sagaName && (
+																{sagaName && isOnePieceOnly && (
 																	<li
 																		key={`ep-${ep.episodeNb}-saga`}
 																		className="label"
@@ -744,7 +750,7 @@ export default function AiringScheduleGrid({
 																		• {`Saga: ${sagaName}`}
 																	</li>
 																)}
-																{arcName && (
+																{arcName && isOnePieceOnly && (
 																	<li
 																		key={`ep-${ep.episodeNb}-arc`}
 																		className="label"
@@ -772,7 +778,7 @@ export default function AiringScheduleGrid({
 											);
 
 											return (
-												<Tooltip key={week.weekStart.getTime()}>
+												<Tooltip key={week.weekStart.getTime()} useTouch={true}>
 													<TooltipTrigger asChild>
 														<div
 															className={`${boxSize} rounded-[2px] flex items-center justify-center text-[10px] font-medium tabular-nums ${boxBg} ${bigBoxes ? "min-w-8" : ""}`}
@@ -807,7 +813,7 @@ export default function AiringScheduleGrid({
 										})}
 									</div>
 									{/* Summary columns */}
-									{entryType === "manga" && (
+									{entryType === "manga" && isOnePieceOnly && (
 										<div className={`flex ${gapClass} ml-2 border-l pl-2`}>
 											<div className={`${boxSize} flex items-center justify-center rounded-[2px] text-xs font-medium bg-gray-100 dark:bg-gray-800 text-muted-foreground tabular-nums`}>
 												{totalChapters}
@@ -846,7 +852,7 @@ export default function AiringScheduleGrid({
 									<span>Special/Recap</span>
 								</div>
 							)}
-							{entryType === "manga" && (
+							{entryType === "manga" && isOnePieceOnly && (
 								<>
 									<div className="flex items-center gap-1.5">
 										<div
@@ -875,7 +881,7 @@ export default function AiringScheduleGrid({
 								<div className="size-[11px] rounded-[2px] bg-emerald-500 dark:bg-emerald-400" />
 								<span>Aired</span>
 							</div>
-							{entryType === "manga" && (
+							{entryType === "manga" && isOnePieceOnly && (
 								<>
 									<div className="flex items-center gap-1.5">
 										<div

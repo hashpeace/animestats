@@ -286,7 +286,7 @@ export default function RatingsDisplayAdditionalGraph({
 						</>
 					) : (
 						<>
-							Show graph of average ratings by year
+							Show more graphs
 							<ChevronDown className="size-4" />
 						</>
 					)}
@@ -446,6 +446,7 @@ export default function RatingsDisplayAdditionalGraph({
 					<AiringScheduleGrid
 						results={filteredResults}
 						entryType={entryType}
+						isOnePieceOnly={isOnePieceOnly ?? false}
 					/>
 				</div>
 			)}

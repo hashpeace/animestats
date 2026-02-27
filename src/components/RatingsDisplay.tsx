@@ -685,7 +685,7 @@ export default function RatingsDisplay({
 											? "< 4.0"
 											: `≥ ${tier.threshold.toFixed(1)}`;
 									return (
-										<Tooltip key={tier.label}>
+										<Tooltip key={tier.label} useTouch={true}>
 											<TooltipTrigger asChild>
 												<div className="flex items-center gap-2">
 													<div
@@ -719,7 +719,7 @@ export default function RatingsDisplay({
 								const isFillerOrRecap = result.filler || result.recap;
 
 								return (
-									<Tooltip key={result.episodeNb}>
+									<Tooltip key={result.episodeNb} useTouch={true}>
 										<TooltipTrigger asChild>
 											<div
 												className={cn(
@@ -1259,7 +1259,7 @@ export default function RatingsDisplay({
 											item.key as "ratingFiveStars" | "ratingAllStars" | "all",
 										) && (
 												<div className="flex items-center mt-1">
-													<Tooltip>
+													<Tooltip useTouch={true}>
 														<TooltipTrigger asChild>
 															<InfoIcon className="size-4 text-red-500" />
 														</TooltipTrigger>
