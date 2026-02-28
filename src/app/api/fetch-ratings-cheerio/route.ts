@@ -170,10 +170,16 @@ export async function GET(request: Request) {
 					.first()
 					.find(".message-header .date")
 					.attr("data-time");
-				// console.log("dateOfFirstPost", dateOfFirstPost);
+					
+				// const formattedDateOfFirstPost = dateOfFirstPost ? new Date(Number(dateOfFirstPost) * 1000).toISOString().replace("Z", "+00:00") : "";
+				const formattedDateOfFirstPost = dateOfFirstPost ? new Date(Number(dateOfFirstPost) * 1000).toISOString() : "";
 
 				const averageRating = calculateAverageRating(allRatings);
+				const ratingAllStars = Number.parseFloat(
+					((Math.round(averageRating * 100) / 100) * 20).toFixed(1),
+				)
 				//   console.log(`The average rating is: ${averageRating}`);
+				
 				if (Number.isNaN(allRatings[0].rating)) {
 					// console.log(`Invalid rating found for episode ${episode}: "${ratings[0].rating}"`)
 				} else {
@@ -181,11 +187,10 @@ export async function GET(request: Request) {
 					episodesStats.push({
 						episodeNb,
 						ratingFiveStars: allRatings.find((r) => r.star === 5)?.rating || 0,
-						ratingAllStars: Number.parseFloat(
-							((Math.round(averageRating * 100) / 100) * 20).toFixed(1),
-						), // Return the transformed entry as a number (on a scale of 100)
+						ratingAllStars: ratingAllStars, // Return the transformed entry as a number (on a scale of 100)
 						// ratingAllStars: parseFloat((Math.round(averageRating * 100) / 100).toFixed(2)), // Return the transformed entry as a number (on a scale of 5)
 						// ratingAllStarsRounded: parseFloat(averageRating.toFixed(1))*20 || undefined,
+						score: ratingAllStars / 20 || undefined,
 						nbOfVotes: allRatings.reduce(
 							(sum, rating) => sum + rating.nbOfVotes,
 							0,
@@ -194,7 +199,7 @@ export async function GET(request: Request) {
 						allRatings,
 						...(dateOfFirstPost != null &&
 							dateOfFirstPost !== "" && {
-								date_of_first_post: dateOfFirstPost,
+								aired: formattedDateOfFirstPost ?? "",
 							}),
 					});
 				}

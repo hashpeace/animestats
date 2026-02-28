@@ -49,10 +49,10 @@ export function SagaAndArcsRatings({
 		const filteredEpisodes = hideFillerAndRecapFromAverage
 			? episodes.filter((episode) => !episode.filler && !episode.recap && episode.score !== null)
 			: episodes;
-		return (
+		const avgOutOf5 =
 			filteredEpisodes.reduce((sum, episode) => sum + episode.score, 0) /
-			filteredEpisodes.length
-		);
+			filteredEpisodes.length;
+		return avgOutOf5 * 2; // convert 0–5 to 0–10
 	};
 	const onePieceSagas =
 		entryType === "anime"
@@ -164,7 +164,7 @@ export function SagaAndArcsRatings({
 						<li className="label">• {`Saga: ${data.saga}`}</li>
 					)}
 					<li className="label">
-						• {`Average rating: ${data.averageScore}/5`}
+						• {`Average rating: ${data.averageScore}/10`}
 					</li>
 					<li className="label">
 						•{" "}
@@ -285,10 +285,9 @@ export function SagaAndArcsRatings({
 						tickLine={false}
 						axisLine={false}
 						tickMargin={8}
-						domain={[4, 4.8]}
-						// ticks={[4, 4.5, 4.8]}
+						domain={[8, 9.6]}
 						label={{
-							value: "Average Score (/5)",
+							value: "Average Score (/10)",
 							angle: -90,
 							position: "insideLeft",
 							offset: 0,
