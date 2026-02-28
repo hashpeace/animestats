@@ -1061,7 +1061,8 @@ export default function RatingsDisplay({
 									className="md:min-w-[90px] md:max-w-[100px] xl:min-w-[55px] xl:max-w-[55px] cursor-pointer hover:text-gray-700"
 									onClick={() => handleTableClickSort("episodeNb")}
 								>
-									{entryType === "anime" ? "Episode" : "Chapter"}
+									<span className="sm:hidden">{entryType === "anime" ? "Ep." : "Ch."}</span>
+									<span className="max-sm:hidden">{entryType === "anime" ? "Episode" : "Chapter"}</span>
 									{options.sortBy === "episodeNb" && (
 										<ChevronDown className="inline-block ml-1" size={16} />
 									)}
@@ -1103,7 +1104,7 @@ export default function RatingsDisplay({
 								{isOnePieceOnly && <TableHead>Arc</TableHead>}
 								{/* {isOnePieceOnly && !isProduction && <TableHead>Saga</TableHead>}
 								{isOnePieceOnly && !isProduction && <TableHead>Arc</TableHead>} */}
-								<TableHead className="max-w-[60px]">Forum URL</TableHead>
+								<TableHead className="max-w-[60px]">Forum link</TableHead>
 								{(fetchingMethod === "cheerioParser" ||
 									(isOnePieceOnly && entryType === "manga")) && (
 										<TableHead className="min-w-[200px]">
@@ -1125,11 +1126,12 @@ export default function RatingsDisplay({
 									options.filterFillerAndRecap === "highlight" &&
 									"text-red-500",
 									isBelowScoreAndHighlighted && "text-orange-400",
+									"max-[540px]:w-[20px]"
 								);
 
 								return (
 									<TableRow key={result.episodeNb}>
-										<TableCell>{result.episodeNb}</TableCell>
+										<TableCell className="max-[540px]:w-[25px]">{result.episodeNb}</TableCell>
 										{options.visibleRatingInfo.ratingAllStars && (
 											<TableCell className={ratingCellClasses}>
 												{formatRating(

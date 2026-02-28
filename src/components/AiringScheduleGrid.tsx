@@ -443,7 +443,7 @@ export default function AiringScheduleGrid({
 	return (
 		<TooltipProvider>
 			<div className="mt-8">
-				<h3 className="text-xl font-semibold mb-4">Airing schedule</h3>
+				<h3 className="text-xl font-semibold mb-4">Weekly Airing Schedule</h3>
 				{/* <p className="text-sm text-muted-foreground mb-2">
 					{airedWeeks} of {totalWeeks} weeks had{" "}
 					{entryType === "anime" ? "an episode air" : "a chapter publish"}
