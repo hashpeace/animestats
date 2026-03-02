@@ -38,8 +38,8 @@ import type {
 	ChartOptions,
 	EntryType,
 	EpisodeInfos,
-	FilterType,
 } from "@/types/All";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 export const chartConfig = {
 	ratingFiveStars: {
@@ -325,122 +325,146 @@ export default function RatingsDisplayAdditionalGraph({
 					</div>
 					{fillerAlert}
 					{/* Graph */}
-					<ChartContainer config={chartConfig}>
-						<LineChart
-							accessibilityLayer
-							data={sortedAverageScores}
-							margin={{ top: 20, left: 12, right: 12, bottom: 20 }}
-						>
-							<CartesianGrid vertical={false} />
-							<XAxis
-								dataKey="year"
-								tickLine={false}
-								axisLine={false}
-								tickMargin={8}
-								label={{ value: "Year", position: "bottom", offset: 10 }}
-							/>
-							<YAxis
-								tickLine={false}
-								axisLine={false}
-								tickMargin={8}
-								ticks={(() => {
-									const minScore = Math.min(
-										...sortedAverageScores.map((item) => item.averageScore),
-									);
-									const maxScore = Math.max(
-										...sortedAverageScores.map((item) => item.averageScore),
-									);
-									const roundedMin = Math.floor(minScore * 20) / 20;
-									const roundedMax = Math.ceil(maxScore * 20) / 20;
-									return Array.from(
-										{
-											length: Math.floor((roundedMax - roundedMin) / 0.05) + 1,
-										},
-										(_, i) => Math.round((roundedMin + i * 0.05) * 100) / 100,
-									);
-								})()}
-								tickFormatter={(value) => (value * 2).toFixed(1)}
-								label={{
-									value: "Average Score (/10)",
-									angle: -90,
-									position: "insideLeft",
-									offset: 0,
-								}}
-								domain={["dataMin-0.01", "dataMax+0.01"]}
-							/>
-							<ChartTooltip content={<CustomTooltip active payload label />} />
-							{/* <Tooltip /> */}
-							<Line
-								dataKey="averageScore"
-								type="monotone"
-								stroke="var(--color-ratingAllStars)"
-								strokeWidth={2}
-								dot={{ fill: "var(--color-ratingAllStars)" }}
-								activeDot={{ r: 6 }}
+					<ScrollArea key="averageScoreByYearChart"
+						className="rounded-md border py-4 w-full [&>div>div]:block!"
+					>
+						<ChartContainer config={chartConfig}
+							className="max-lg:min-w-(--dynamic-width)"
+							style={
+								{
+									"--dynamic-width": `${sortedAverageScores.length * 20}px`,
+									minWidth: `${sortedAverageScores.length * 30}px`
+								} as React.CSSProperties
+							}>
+							<LineChart
+								accessibilityLayer
+								data={sortedAverageScores}
+								margin={{ top: 20, left: 12, right: 12, bottom: 20 }}
 							>
-								<LabelList
-									position="top"
-									offset={12}
-									className="fill-foreground"
-									fontSize={12}
-									formatter={(value: number) =>
-										formatRating(value * 20, options.ratingDisplayFormat)
-									}
+								<CartesianGrid vertical={false} />
+								<XAxis
+									dataKey="year"
+									tickLine={false}
+									axisLine={false}
+									tickMargin={8}
+									label={{ value: "Year", position: "bottom", offset: 10 }}
 								/>
-							</Line>
-						</LineChart>
-					</ChartContainer>
+								<YAxis
+									tickLine={false}
+									axisLine={false}
+									tickMargin={8}
+									ticks={(() => {
+										const minScore = Math.min(
+											...sortedAverageScores.map((item) => item.averageScore),
+										);
+										const maxScore = Math.max(
+											...sortedAverageScores.map((item) => item.averageScore),
+										);
+										const roundedMin = Math.floor(minScore * 20) / 20;
+										const roundedMax = Math.ceil(maxScore * 20) / 20;
+										return Array.from(
+											{
+												length: Math.floor((roundedMax - roundedMin) / 0.05) + 1,
+											},
+											(_, i) => Math.round((roundedMin + i * 0.05) * 100) / 100,
+										);
+									})()}
+									tickFormatter={(value) => (value * 2).toFixed(1)}
+									label={{
+										value: "Average Score (/10)",
+										angle: -90,
+										position: "insideLeft",
+										offset: 0,
+									}}
+									domain={["dataMin-0.01", "dataMax+0.01"]}
+								/>
+								<ChartTooltip content={<CustomTooltip active payload label />} />
+								{/* <Tooltip /> */}
+								<Line
+									dataKey="averageScore"
+									type="monotone"
+									stroke="var(--color-ratingAllStars)"
+									strokeWidth={2}
+									dot={{ fill: "var(--color-ratingAllStars)" }}
+									activeDot={{ r: 6 }}
+								>
+									<LabelList
+										position="top"
+										offset={12}
+										className="fill-foreground"
+										fontSize={12}
+										formatter={(value: number) =>
+											formatRating(value * 20, options.ratingDisplayFormat)
+										}
+									/>
+								</Line>
+							</LineChart>
+						</ChartContainer>
+						<ScrollBar orientation="horizontal" />
+					</ScrollArea>
 
 					{/* -- Number of episodes by year -- */}
 					<h3 className="text-xl font-semibold mt-5 mb-3">
 						Number of {entryType === "anime" ? "episodes" : "chapters"} by year
 					</h3>
 					{fillerAlert}
-					<ChartContainer config={chartConfig}>
-						<LineChart
-							accessibilityLayer
-							data={sortedAverageScores}
-							margin={{ top: 20, left: 12, right: 12, bottom: 20 }}
-						>
-							<CartesianGrid vertical={false} />
-							<XAxis
-								dataKey="year"
-								tickLine={false}
-								axisLine={false}
-								tickMargin={8}
-								label={{ value: "Year", position: "bottom", offset: 10 }}
-							/>
-							<YAxis
-								tickLine={false}
-								axisLine={false}
-								tickMargin={8}
-								label={{
-									value: `Number of ${entryType === "anime" ? "episodes" : "chapters"}`,
-									angle: -90,
-									position: "insideLeft",
-									offset: 0,
-								}}
-								domain={[0, "dataMax+1"]}
-							/>
-							<ChartTooltip content={<CustomTooltip active payload label />} />
-							<Line
-								dataKey="count"
-								type="monotone"
-								stroke="var(--color-ratingAllStars)"
-								strokeWidth={2}
-								dot={{ fill: "var(--color-ratingAllStars)" }}
-								activeDot={{ r: 6 }}
+					<ScrollArea key="numberOfEpisodesByYearChart"
+						className="rounded-md border py-4 w-full [&>div>div]:block!"
+					>
+						<ChartContainer config={chartConfig}
+							className="max-lg:min-w-(--dynamic-width)"
+							style={
+								{
+									"--dynamic-width": `${sortedAverageScores.length * 20}px`,
+									minWidth: `${sortedAverageScores.length * 30}px`
+								} as React.CSSProperties
+							}>
+							<LineChart
+								accessibilityLayer
+								data={sortedAverageScores}
+								margin={{ top: 20, left: 12, right: 12, bottom: 20 }}
 							>
-								<LabelList
-									position="top"
-									offset={12}
-									className="fill-foreground"
-									fontSize={12}
-									formatter={(value: number) => value.toString()}
+								<CartesianGrid vertical={false} />
+								<XAxis
+									dataKey="year"
+									tickLine={false}
+									axisLine={false}
+									tickMargin={8}
+									label={{ value: "Year", position: "bottom", offset: 10 }}
 								/>
-							</Line>
-						</LineChart>
-					</ChartContainer>
+								<YAxis
+									tickLine={false}
+									axisLine={false}
+									tickMargin={8}
+									label={{
+										value: `Number of ${entryType === "anime" ? "episodes" : "chapters"}`,
+										angle: -90,
+										position: "insideLeft",
+										offset: 0,
+									}}
+									domain={[0, "dataMax+1"]}
+								/>
+								<ChartTooltip content={<CustomTooltip active payload label />} />
+								<Line
+									dataKey="count"
+									type="monotone"
+									stroke="var(--color-ratingAllStars)"
+									strokeWidth={2}
+									dot={{ fill: "var(--color-ratingAllStars)" }}
+									activeDot={{ r: 6 }}
+								>
+									<LabelList
+										position="top"
+										offset={12}
+										className="fill-foreground"
+										fontSize={12}
+										formatter={(value: number) => value.toString()}
+									/>
+								</Line>
+							</LineChart>
+						</ChartContainer>
+						<ScrollBar orientation="horizontal" />
+					</ScrollArea>
 
 					{/* -- Airing schedule heatmap -- */}
 					<AiringScheduleGrid

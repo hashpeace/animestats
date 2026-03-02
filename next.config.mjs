@@ -20,6 +20,12 @@ const nextConfig = {
 				port: "",
 				pathname: "/**",
 			},
+			{
+				protocol: "https",
+				hostname: "myanimelist.net",
+				port: "",
+				pathname: "/**",
+			},
 		],
 	},
 	reactStrictMode: false,

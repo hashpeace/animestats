@@ -22,6 +22,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import type { EntryType, EpisodeInfos } from "@/types/All";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const chartConfig = {
 	averageScore: {
@@ -265,78 +266,91 @@ export function SagaAndArcsRatings({
 					</div>
 				)}
 			</div>
-			<ChartContainer config={chartConfig}>
-				<LineChart
-					data={sortedData}
-					margin={{ top: 20, left: 20, right: 20, bottom: 60 }}
+			<ScrollArea key="sagaAndArcsRatingsChart"
+				className="rounded-md border py-4 w-full [&>div>div]:block!"
+			>
+				<ChartContainer config={chartConfig}
+					className="max-lg:min-w-(--dynamic-width)"
+					style={
+						{
+							"--dynamic-width": `${sortedData.length * 20}px`,
+							minWidth: `${sortedData.length * 30}px`
+						} as React.CSSProperties
+					}
 				>
-					<CartesianGrid vertical={false} />
-					<XAxis
-						dataKey={mode === "saga" ? "saga" : "arc"}
-						tickLine={false}
-						axisLine={false}
-						tickMargin={8}
-						angle={-45}
-						textAnchor="end"
-						height={80}
-						interval={0}
-					/>
-					<YAxis
-						tickLine={false}
-						axisLine={false}
-						tickMargin={8}
-						domain={[8, 9.6]}
-						label={{
-							value: "Average Score (/10)",
-							angle: -90,
-							position: "insideLeft",
-							offset: 0,
-						}}
-					/>
-					<ChartTooltip content={<CustomTooltip />} />
-					<Line
-						type="monotone"
-						dataKey="averageScore"
-						stroke="hsl(var(--chart-3))"
-						strokeWidth={2}
-						// dot={{ fill: "hsl(var(--chart-3))" }}
-						dot={(props) => {
-							const isFiller = props.payload.filler;
-							return (
-								<circle
-									cx={props.cx}
-									cy={props.cy}
-									r={4}
-									fill={
-										isFiller ? "hsl(var(--destructive))" : "hsl(var(--chart-3))"
-									}
-								/>
-							);
-						}}
-						// biome-ignore lint/suspicious/noExplicitAny: to be fixed
-						activeDot={(props: any) => {
-							const isFiller = props.payload.filler;
-							return (
-								<circle
-									cx={props.cx}
-									cy={props.cy}
-									r={6}
-									fill={
-										isFiller ? "hsl(var(--destructive))" : "hsl(var(--chart-3))"
-									}
-								/>
-							);
-						}}
+					<LineChart
+						data={sortedData}
+						margin={{ top: 20, left: 20, right: 20, bottom: 60 }}
 					>
-						<LabelList
-							position="top"
-							offset={12}
-							className="fill-foreground"
-							fontSize={12}
+						<CartesianGrid vertical={false} />
+						<XAxis
+							dataKey={mode === "saga" ? "saga" : "arc"}
+							tickLine={false}
+							axisLine={false}
+							tickMargin={8}
+							angle={-45}
+							textAnchor="end"
+							height={80}
+							interval={0}
 						/>
-					</Line>
-				</LineChart>
-			</ChartContainer>
+						<YAxis
+							tickLine={false}
+							axisLine={false}
+							tickMargin={8}
+							domain={[8, 9.6]}
+							label={{
+								value: "Average Score (/10)",
+								angle: -90,
+								position: "insideLeft",
+								offset: 0,
+							}}
+						/>
+						<ChartTooltip content={<CustomTooltip />} />
+						<Line
+							type="monotone"
+							dataKey="averageScore"
+							stroke="hsl(var(--chart-3))"
+							strokeWidth={2}
+							// dot={{ fill: "hsl(var(--chart-3))" }}
+							dot={(props) => {
+								const isFiller = props.payload.filler;
+								return (
+									<circle
+										cx={props.cx}
+										cy={props.cy}
+										r={4}
+										fill={
+											isFiller ? "hsl(var(--destructive))" : "hsl(var(--chart-3))"
+										}
+									/>
+								);
+							}}
+							// biome-ignore lint/suspicious/noExplicitAny: to be fixed
+							activeDot={(props: any) => {
+								const isFiller = props.payload.filler;
+								return (
+									<circle
+										cx={props.cx}
+										cy={props.cy}
+										r={6}
+										fill={
+											isFiller ? "hsl(var(--destructive))" : "hsl(var(--chart-3))"
+										}
+									/>
+								);
+							}}
+						>
+							<LabelList
+								position="top"
+								offset={12}
+								className="fill-foreground"
+								fontSize={12}
+							/>
+						</Line>
+					</LineChart>
+				</ChartContainer>
+				<ScrollBar orientation="horizontal" />
+			</ScrollArea>
 		</>
 	);
 }

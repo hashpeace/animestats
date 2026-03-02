@@ -489,7 +489,7 @@ export default function AiringScheduleGrid({
 						</div>
 					)}
 				</div>
-				<div className="rounded-md border overflow-x-scroll overflow-y-auto" style={{ maxHeight: '80vh' }}>
+				<div className="rounded-md border overflow-x-scroll overflow-y-scroll" style={{ maxHeight: '80vh' }}>
 					<div className="flex flex-col gap-1">
 						{/* Table header: week numbers only on the first line */}
 						<div className="flex items-center gap-2 sticky top-0 bg-background dark:bg-background z-50 border-b pb-1 mb-1 shadow-sm w-fit">
@@ -560,7 +560,7 @@ export default function AiringScheduleGrid({
 
 							return (
 								<div key={year} className="flex items-center gap-2">
-									<span className="text-xs text-muted-foreground w-10 shrink-0 text-right tabular-nums">
+									<span className="text-xs text-muted-foreground w-10 shrink-0 text-right tabular-nums sticky left-0 bg-background h-[stretch] items-center justify-center flex">
 										{year}
 									</span>
 									<div className={`flex ${gapClass}`}>
