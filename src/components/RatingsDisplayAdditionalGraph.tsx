@@ -306,7 +306,7 @@ export default function RatingsDisplayAdditionalGraph({
 						Average ratings by year
 					</h3>
 					{/* Option panel */}
-					<div className="flex flex-col">
+					<div className="flex flex-col mb-2">
 						<Label htmlFor="sort-select">Sort by</Label>
 						<Select
 							value={sortBy}

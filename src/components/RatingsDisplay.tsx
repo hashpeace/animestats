@@ -50,6 +50,19 @@ import type {
 	EpisodeInfos,
 	RatingsDisplayProps,
 } from "@/types/All";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+type AnimeRelationEntry = {
+	mal_id: number;
+	type: string;
+	name: string;
+	url: string;
+};
+
+type AnimeRelation = {
+	relation: string;
+	entry: AnimeRelationEntry[];
+};
 
 // Rating tier colors for wrapped view (based on percentage 0-100, displayed as /10)
 // When using 1 decimal, we round the displayed value and use that for tier calculation
@@ -104,6 +117,101 @@ const ratingTierLegend = [
 	{ label: "Bad", color: "#ef4444", threshold: 4 },
 	{ label: "Garbage", color: "#a855f7", threshold: 0 },
 ];
+
+const AnimeRelationsButton = ({ animeId }: { animeId: number }) => {
+	const [prequels, setPrequels] = useState<AnimeRelationEntry[]>([]);
+	const [sequels, setSequels] = useState<AnimeRelationEntry[]>([]);
+	const [loading, setLoading] = useState(false);
+	const [noResults, setNoResults] = useState(false);
+	const [hasFetched, setHasFetched] = useState(false);
+	const handleClick = async () => {
+		if (!animeId || loading || hasFetched) return;
+		setHasFetched(true);
+
+		try {
+			setLoading(true);
+			const response = await fetch(
+				`https://api.jikan.moe/v4/anime/${animeId}/relations`,
+			);
+
+			if (!response.ok) {
+				return;
+			}
+
+			const json: { data: AnimeRelation[] } = await response.json();
+
+			const prequelRelations = json.data.filter(
+				(relation) => relation.relation === "Prequel",
+			);
+			const sequelRelations = json.data.filter(
+				(relation) => relation.relation === "Sequel",
+			);
+
+			if (prequelRelations.length === 0 && sequelRelations.length === 0) {
+				setNoResults(true);
+			}
+
+			setPrequels(prequelRelations.flatMap((relation) => relation.entry));
+			setSequels(sequelRelations.flatMap((relation) => relation.entry));
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	return (
+		<div className="mt-4 md:mt-3 flex flex-col gap-2">
+			{!hasFetched && (
+				<Button
+					onClick={handleClick}
+					variant="outline"
+					disabled={loading}
+					className="w-fit"
+					size="sm"
+				>
+					{loading ? "Loading..." : "Show relations"}
+				</Button>
+			)}
+			{noResults && (
+				<p className="text-xs text-muted-foreground">No relations found</p>
+			)}
+			<div className="flex divide-x divide-gray-200 dark:divide-gray-700 *:px-2 -mx-2">
+				{prequels.length > 0 && (
+					<div className="text-xs text-muted-foreground">
+						<span className="mr-1 font-semibold">prequel:</span>
+						{prequels.map((entry, index) => (
+							<span key={entry.mal_id}>
+								<Link
+									href={`/episodes?animeId=${entry.mal_id}`}
+									className="underline hover:text-foreground"
+								>
+									{entry.name}
+								</Link>
+								{index < prequels.length - 1 && ", "}
+							</span>
+						))}
+					</div>
+				)}
+
+				{sequels.length > 0 && (
+					<div className="text-xs text-muted-foreground">
+						<span className="mr-1 font-semibold">sequel:</span>
+						{sequels.map((entry, index) => (
+							<span key={entry.mal_id}>
+								<Link
+									href={`/episodes?animeId=${entry.mal_id}`}
+									className="underline hover:text-foreground"
+								>
+									{entry.name}
+								</Link>
+								{index < sequels.length - 1 && ", "}
+							</span>
+						))}
+					</div>
+				)}
+			</div>
+		</div>
+	);
+};
 
 export const chartConfig = {
 	ratingFiveStars: {
@@ -637,6 +745,8 @@ export default function RatingsDisplay({
 									</p>
 								))}
 							</div>
+
+							<AnimeRelationsButton animeId={animeInfo.mal_id} />
 						</div>
 					</div>
 					<div
@@ -697,7 +807,7 @@ export default function RatingsDisplay({
 													</span>
 												</div>
 											</TooltipTrigger>
-											<TooltipContent>
+											<TooltipContent className="border-accent border-2">
 												<p>Score: {thresholdText}</p>
 											</TooltipContent>
 										</Tooltip>
@@ -745,14 +855,14 @@ export default function RatingsDisplay({
 												</span>
 											</div>
 										</TooltipTrigger>
-										<TooltipContent className="max-w-[280px]">
-											<div className="block">
+										<TooltipContent className="max-w-[280px] border-accent border-2">
+											<div className="block text-sm">
 												<span>
 													{entryType === "anime" ? "Episode" : "Chapter"}{" "}
 													{result.episodeNb}
 												</span>
 												{result.title && (
-													<span className="text-sm">
+													<span>
 														{" - "} {result.title}
 													</span>
 												)}
