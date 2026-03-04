@@ -21,7 +21,6 @@ import {
 } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
-	type ChartConfig,
 	ChartContainer,
 	ChartTooltip,
 } from "@/components/ui/chart";
@@ -40,17 +39,7 @@ import type {
 	EpisodeInfos,
 } from "@/types/All";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-
-export const chartConfig = {
-	ratingFiveStars: {
-		label: "ratingFiveStars",
-		color: "hsl(var(--chart-1))",
-	},
-	ratingAllStars: {
-		label: "ratingAllStars",
-		color: "hsl(var(--chart-3))",
-	},
-} satisfies ChartConfig;
+import { chartConfig } from "@/lib/utils";
 
 export default function RatingsDisplayAdditionalGraph({
 	results,
@@ -301,7 +290,6 @@ export default function RatingsDisplayAdditionalGraph({
 							<AllArcsStacked results={results} entryType={entryType} />
 						</>
 					)}
-					{/* -- Average score by year -- */}
 					<h3 className="text-xl font-semibold mt-5 mb-3">
 						Average ratings by year
 					</h3>
@@ -319,23 +307,26 @@ export default function RatingsDisplayAdditionalGraph({
 							</SelectTrigger>
 							<SelectContent>
 								<SelectItem value="year">Year</SelectItem>
-								<SelectItem value="score">Ratings</SelectItem>
+								<SelectItem value="score">Rating</SelectItem>
 							</SelectContent>
 						</Select>
 					</div>
 					{fillerAlert}
 					{/* Graph */}
-					<ScrollArea key="averageScoreByYearChart"
+					<ScrollArea
+						key="averageScoreByYearChart"
 						className="rounded-md border py-4 w-full [&>div>div]:block!"
 					>
-						<ChartContainer config={chartConfig}
+						<ChartContainer
+							config={chartConfig}
 							className="max-lg:min-w-(--dynamic-width)"
 							style={
 								{
 									"--dynamic-width": `${sortedAverageScores.length * 20}px`,
-									minWidth: `${sortedAverageScores.length * 30}px`
+									minWidth: `${sortedAverageScores.length * 30}px`,
 								} as React.CSSProperties
-							}>
+							}
+						>
 							<LineChart
 								accessibilityLayer
 								data={sortedAverageScores}
@@ -366,12 +357,13 @@ export default function RatingsDisplayAdditionalGraph({
 											{
 												length: Math.floor((roundedMax - roundedMin) / 0.05) + 1,
 											},
-											(_, i) => Math.round((roundedMin + i * 0.05) * 100) / 100,
+											(_, i) =>
+												Math.round((roundedMin + i * 0.05) * 100) / 100,
 										);
 									})()}
 									tickFormatter={(value) => (value * 2).toFixed(1)}
 									label={{
-										value: "Average Score (/10)",
+										value: "Average Rating (/10)",
 										angle: -90,
 										position: "insideLeft",
 										offset: 0,
@@ -379,7 +371,6 @@ export default function RatingsDisplayAdditionalGraph({
 									domain={["dataMin-0.01", "dataMax+0.01"]}
 								/>
 								<ChartTooltip content={<CustomTooltip active payload label />} />
-								{/* <Tooltip /> */}
 								<Line
 									dataKey="averageScore"
 									type="monotone"

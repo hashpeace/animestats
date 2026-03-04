@@ -101,7 +101,7 @@ export default function SuggestedAnimeCards() {
 			) : (
 				<div className="grid grid-cols-3 gap-4 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7">
 					{animeList
-						.filter((anime) => anime.members > 20000)
+						.filter((anime) => anime.members > 20000 && anime.mal_id !== 21)
 						.slice(0, 7)
 						.map((anime) => (
 							<Link

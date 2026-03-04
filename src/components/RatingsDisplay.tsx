@@ -23,7 +23,6 @@ import { onePieceSagasChapters } from "@/components/OnePieceOnly/manualChaptersL
 import RatingsDisplayAdditionalGraph from "@/components/RatingsDisplayAdditionalGraph";
 import RatingsDisplayOptions from "@/components/RatingsDisplayOptions";
 import {
-	type ChartConfig,
 	ChartContainer,
 	ChartTooltip,
 } from "@/components/ui/chart";
@@ -43,9 +42,8 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { cn, isProduction } from "@/lib/utils";
+import { chartConfig, cn, isProduction } from "@/lib/utils";
 import type {
-	AnimeInfo,
 	ChartOptions,
 	EpisodeInfos,
 	RatingsDisplayProps,
@@ -213,21 +211,6 @@ const AnimeRelationsButton = ({ animeId }: { animeId: number }) => {
 	);
 };
 
-export const chartConfig = {
-	ratingFiveStars: {
-		label: "ratingFiveStars",
-		color: "hsl(var(--chart-1))",
-	},
-	ratingAllStars: {
-		label: "ratingAllStars",
-		color: "hsl(var(--chart-3))",
-	},
-	// ratingAllStarsRounded: {
-	// 	label: "ratingAllStarsRounded",
-	// 	color: "hsl(var(--chart-2))",
-	// },
-} satisfies ChartConfig;
-
 export default function RatingsDisplay({
 	results,
 	animeInfo,
@@ -260,6 +243,7 @@ export default function RatingsDisplay({
 		filterFillerAndRecap: "show",
 		filterBelowScore: { score: "", type: "highlight" },
 		showTrendLine: false,
+		showChartLabels: true,
 		ratingDisplayFormat: dataSource === "mal" ? "2decimal" : "1decimal",
 	});
 
@@ -746,7 +730,7 @@ export default function RatingsDisplay({
 								))}
 							</div>
 
-							<AnimeRelationsButton animeId={animeInfo.mal_id} />
+							{!isOnePieceOnly && <AnimeRelationsButton animeId={animeInfo.mal_id} />}
 						</div>
 					</div>
 					<div
@@ -774,122 +758,118 @@ export default function RatingsDisplay({
 				entryType={entryType}
 				dataSource={dataSource}
 			/>
-			{options.viewMode === "wrapped" ? (
-				<div>
-					{/* Legend - only show tiers present in results */}
-					<TooltipProvider>
-						<div className="flex flex-wrap gap-4 mb-6">
-							{ratingTierLegend
-								.filter((tier) => {
-									return sortedResults.some((result) => {
-										const resultTier = getRatingTier(
-											result.ratingAllStars,
-											options.ratingDisplayFormat,
-										);
-										return resultTier.label === tier.label;
-									});
-								})
-								.map((tier) => {
-									const thresholdText =
-										tier.label === "Garbage"
-											? "< 4.0"
-											: `≥ ${tier.threshold.toFixed(1)}`;
-									return (
-										<Tooltip key={tier.label} useTouch={true}>
-											<TooltipTrigger asChild>
-												<div className="flex items-center gap-2">
-													<div
-														className="w-3 h-3 rounded-full"
-														style={{ backgroundColor: tier.color }}
-													/>
-													<span className="text-sm text-foreground">
-														{tier.label}
-													</span>
-												</div>
-											</TooltipTrigger>
-											<TooltipContent className="border-accent border-2">
-												<p>Score: {thresholdText}</p>
-											</TooltipContent>
-										</Tooltip>
-									);
-								})}
-						</div>
-					</TooltipProvider>
-
-					{/* Cards Grid */}
-					<TooltipProvider delayDuration={100}>
-						<div className="flex flex-wrap gap-2">
-							{sortedResults.map((result) => {
-								const rating = result.ratingAllStars;
-								const tier = getRatingTier(rating, options.ratingDisplayFormat);
-								const displayRating = formatRating(
-									rating,
+			{/* {options.viewMode !== "table" && ( */}
+			<TooltipProvider>
+				<div className="flex flex-wrap gap-4 mb-2.5">
+					{ratingTierLegend
+						.filter((tier) => {
+							return sortedResults.some((result) => {
+								const resultTier = getRatingTier(
+									result.ratingAllStars,
 									options.ratingDisplayFormat,
 								);
-								const isFillerOrRecap = result.filler || result.recap;
-
-								return (
-									<Tooltip key={result.episodeNb} useTouch={true}>
-										<TooltipTrigger asChild>
+								return resultTier.label === tier.label;
+							});
+						})
+						.map((tier) => {
+							const thresholdText =
+								tier.label === "Garbage"
+									? "< 4.0"
+									: `≥ ${tier.threshold.toFixed(1)}`;
+							return (
+								<Tooltip key={tier.label} useTouch={true}>
+									<TooltipTrigger asChild>
+										<div className="flex items-center gap-2">
 											<div
-												className={cn(
-													"relative w-[92px] h-[52px] p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:scale-105 hover:shadow-lg",
-													isFillerOrRecap &&
-													options.filterFillerAndRecap === "highlight" &&
-													"ring-2 ring-red-500",
-												)}
+												className="w-3 h-3 rounded-full"
 												style={{ backgroundColor: tier.color }}
+											/>
+											<span className="text-sm text-foreground">
+												{tier.label}
+											</span>
+										</div>
+									</TooltipTrigger>
+									<TooltipContent className="border-accent border-2">
+										<p>Score: {thresholdText}</p>
+									</TooltipContent>
+								</Tooltip>
+							);
+						})}
+				</div>
+			</TooltipProvider>
+			{/* )} */}
+			{options.viewMode === "wrapped" ? (
+				<TooltipProvider delayDuration={100}>
+					<div className="flex flex-wrap gap-2">
+						{sortedResults.map((result) => {
+							const rating = result.ratingAllStars;
+							const tier = getRatingTier(rating, options.ratingDisplayFormat);
+							const displayRating = formatRating(
+								rating,
+								options.ratingDisplayFormat,
+							);
+							const isFillerOrRecap = result.filler || result.recap;
+
+							return (
+								<Tooltip key={result.episodeNb} useTouch={true}>
+									<TooltipTrigger asChild>
+										<div
+											className={cn(
+												"relative w-[92px] h-[52px] p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:scale-105 hover:shadow-lg",
+												((isFillerOrRecap && options.filterFillerAndRecap === "highlight") || options.filterBelowScore?.type === "highlight" && options.filterBelowScore?.score && result.ratingAllStars !== undefined && result.ratingAllStars < Number(options.filterBelowScore.score)) &&
+												"ring-2 ring-[#ff0096]",
+											)}
+											style={{ backgroundColor: tier.color }}
+										>
+											<span
+												className="text-[14px] font-medium opacity-80 w-full text-left"
+												style={{ color: tier.textColor }}
 											>
-												<span
-													className="text-[14px] font-medium opacity-80 w-full text-left"
-													style={{ color: tier.textColor }}
-												>
-													{entryType === "anime" ? "E" : "Ch"}
-													{result.episodeNb}
-												</span>
-												<span
-													className="text-2xl font-bold w-full text-right"
-													style={{ color: tier.textColor }}
-												>
-													{displayRating}
-												</span>
-											</div>
-										</TooltipTrigger>
-										<TooltipContent className="max-w-[280px] border-accent border-2">
-											<div className="block text-sm">
+												{entryType === "anime" ? "E" : "Ch"}
+												{result.episodeNb}
+											</span>
+											<span
+												className="text-2xl font-bold w-full text-right"
+												style={{ color: tier.textColor }}
+											>
+												{displayRating}
+											</span>
+										</div>
+									</TooltipTrigger>
+									<TooltipContent className="max-w-[280px] border-accent border-2">
+										<div className="block text-sm">
+											<span>
+												{entryType === "anime" ? "Episode" : "Chapter"}{" "}
+												{result.episodeNb}
+											</span>
+											{result.title && (
 												<span>
-													{entryType === "anime" ? "Episode" : "Chapter"}{" "}
-													{result.episodeNb}
-												</span>
-												{result.title && (
-													<span>
-														{" - "} {result.title}
-													</span>
-												)}
-												{isFillerOrRecap && (
-													<span className="text-xs text-muted-foreground">
-														{" "}
-														(Filler/Recap)
-													</span>
-												)}
-											</div>
-											{result.aired && (
-												<span className="text-xs text-muted-foreground">
-													Aired:{" "}
-													{new Date(result.aired).toLocaleDateString("en-US", {
-														month: "long",
-														day: "numeric",
-														year: "numeric",
-													})}
+													{" - "} {result.title}
 												</span>
 											)}
-										</TooltipContent>
-									</Tooltip>
-								);
-							})}
-						</div>
-					</TooltipProvider>
-				</div>
+											{isFillerOrRecap && (
+												<span className="text-xs text-muted-foreground">
+													{" "}
+													(Filler/Recap)
+												</span>
+											)}
+										</div>
+										{result.aired && (
+											<span className="text-xs text-muted-foreground">
+												Aired:{" "}
+												{new Date(result.aired).toLocaleDateString("en-US", {
+													month: "long",
+													day: "numeric",
+													year: "numeric",
+												})}
+											</span>
+										)}
+									</TooltipContent>
+								</Tooltip>
+							);
+						})}
+					</div>
+				</TooltipProvider>
 			) : options.viewMode === "graph" ? (
 				<ScrollArea
 					key={`chart-${options.horizontalZoom}`}
@@ -1026,13 +1006,11 @@ export default function RatingsDisplay({
 									<ReferenceLine
 										yAxisId="left"
 										y={Number(options.filterBelowScore.score) / 10}
-										stroke="#fb923c"
+										stroke="#ff0096"
 										strokeDasharray="3 3"
 										label={`Below ${formatRating(Number(options.filterBelowScore.score), options.ratingDisplayFormat)}/10`}
 									/>
 								)}
-							{/* {!hasZeroValues("ratingFiveStars") && options.visibleRatingInfo.ratingFiveStars && <ReferenceLine y={avgRatingFiveStars} stroke="var(--color-ratingFiveStars)" strokeDasharray="3 3" label={`Average: ${avgRatingFiveStars}%`} />}
-						{!hasZeroValues("ratingAllStarsRounded") && options.visibleRatingInfo.ratingAllStars && <ReferenceLine y={avgRatingAllStars} stroke="var(--color-ratingAllStars)" strokeDasharray="3 3" label={`Average: ${avgRatingAllStars}%`} />} */}
 							{options.showTrendLine && options.sortBy === "episodeNb" && (
 								<Line
 									yAxisId="left"
@@ -1061,6 +1039,13 @@ export default function RatingsDisplay({
 											props.payload.ratingAllStarsChart !== undefined &&
 											props.payload.ratingAllStarsChart < filterThreshold &&
 											options.filterBelowScore.type === "highlight";
+										const tierColor =
+											props.payload.ratingAllStarsChart !== undefined
+												? getRatingTier(
+													props.payload.ratingAllStarsChart * 10,
+													options.ratingDisplayFormat,
+												).color
+												: "hsl(var(--chart-3))";
 										const isHighlightedFiller =
 											isFillerOrRecap &&
 											options.filterFillerAndRecap === "highlight";
@@ -1073,10 +1058,10 @@ export default function RatingsDisplay({
 												r={4}
 												fill={
 													isHighlightedFiller
-														? "#ef4444"
+														? "#ff0096"
 														: isBelowScoreAndHighlighted
-															? "#fb923c"
-															: "hsl(var(--chart-3))"
+															? "#ff0096"
+															: tierColor
 												}
 											/>
 										);
@@ -1091,6 +1076,13 @@ export default function RatingsDisplay({
 											props.payload.ratingAllStarsChart !== undefined &&
 											props.payload.ratingAllStarsChart < filterThreshold &&
 											options.filterBelowScore.type === "highlight";
+										const tierColor =
+											props.payload.ratingAllStarsChart !== undefined
+												? getRatingTier(
+													props.payload.ratingAllStarsChart * 10,
+													options.ratingDisplayFormat,
+												).color
+												: "hsl(var(--chart-3))";
 										return (
 											<circle
 												key={`active-dot-${props.payload.episodeNb}`}
@@ -1100,26 +1092,28 @@ export default function RatingsDisplay({
 												fill={
 													isFillerOrRecap &&
 														options.filterFillerAndRecap === "highlight"
-														? "#ef4444"
+														? "#ff0096"
 														: isBelowScoreAndHighlighted
-															? "#fb923c"
-															: "hsl(var(--chart-3))"
+															? "#ff0096"
+															: tierColor
 												}
 											/>
 										);
 									}}
 								>
-									<LabelList
-										position="top"
-										offset={12}
-										className="fill-foreground"
-										fontSize={12}
-										formatter={(value: number) =>
-											options.ratingDisplayFormat === "1decimal"
-												? value.toFixed(1)
-												: value.toFixed(2)
-										}
-									/>
+									{options.showChartLabels && (
+										<LabelList
+											position="top"
+											offset={12}
+											className="fill-foreground"
+											fontSize={12}
+											formatter={(value: number) =>
+												options.ratingDisplayFormat === "1decimal"
+													? value.toFixed(1)
+													: value.toFixed(2)
+											}
+										/>
+									)}
 								</Line>
 							)}
 							{options.visibleRatingInfo.ratingFiveStars && (
@@ -1132,32 +1126,17 @@ export default function RatingsDisplay({
 									dot={{ fill: "var(--color-ratingFiveStars)" }}
 									activeDot={{ r: 6 }}
 								>
-									<LabelList
-										position="top"
-										offset={12}
-										className="fill-foreground"
-										fontSize={12}
-										formatter={(value: number) => `${value.toFixed(1)}%`}
-									/>
+									{options.showChartLabels && (
+										<LabelList
+											position="top"
+											offset={12}
+											className="fill-foreground"
+											fontSize={12}
+											formatter={(value: number) => `${value.toFixed(1)}%`}
+										/>
+									)}
 								</Line>
 							)}
-							{/* {options.visibleRatingInfo.ratingAllStarsRounded && (
-							<Line
-								dataKey="ratingAllStarsRounded"
-								type="monotone"
-								stroke="var(--color-ratingAllStarsRounded)"
-								strokeWidth={2}
-								dot={{ fill: "var(--color-ratingAllStarsRounded)" }}
-								activeDot={{ r: 6 }}
-							>
-								<LabelList
-									position="bottom"
-									offset={12}
-									className="fill-foreground"
-									fontSize={12}
-								/>
-							</Line>
-						)} */}
 						</LineChart>
 					</ChartContainer>
 					<ScrollBar orientation="horizontal" />
@@ -1212,8 +1191,6 @@ export default function RatingsDisplay({
 								<TableHead>Aired</TableHead>
 								{isOnePieceOnly && <TableHead>Saga</TableHead>}
 								{isOnePieceOnly && <TableHead>Arc</TableHead>}
-								{/* {isOnePieceOnly && !isProduction && <TableHead>Saga</TableHead>}
-								{isOnePieceOnly && !isProduction && <TableHead>Arc</TableHead>} */}
 								<TableHead className="max-w-[60px]">Forum link</TableHead>
 								{(fetchingMethod === "cheerioParser" ||
 									(isOnePieceOnly && entryType === "manga")) && (
@@ -1231,11 +1208,16 @@ export default function RatingsDisplay({
 									Number(options.filterBelowScore.score) &&
 									options.filterBelowScore.type === "highlight";
 								const isFillerOrRecap = result.filler || result.recap;
+								const tierColor =
+									result.ratingAllStars !== undefined
+										? getRatingTier(
+											result.ratingAllStars,
+											options.ratingDisplayFormat,
+										).color
+										: "hsl(var(--chart-3))";
 								const ratingCellClasses = cn(
-									isFillerOrRecap &&
-									options.filterFillerAndRecap === "highlight" &&
-									"text-red-500",
-									isBelowScoreAndHighlighted && "text-orange-400",
+									(isFillerOrRecap && options.filterFillerAndRecap === "highlight") && "text-[#ff0096]!",
+									isBelowScoreAndHighlighted && "text-[#ff0096]!",
 									"max-[540px]:w-[20px]"
 								);
 
@@ -1243,7 +1225,7 @@ export default function RatingsDisplay({
 									<TableRow key={result.episodeNb}>
 										<TableCell className="max-[540px]:w-[25px]">{result.episodeNb}</TableCell>
 										{options.visibleRatingInfo.ratingAllStars && (
-											<TableCell className={ratingCellClasses}>
+											<TableCell style={{ color: tierColor }} className={ratingCellClasses} >
 												{formatRating(
 													result.ratingAllStars,
 													options.ratingDisplayFormat,

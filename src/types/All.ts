@@ -53,6 +53,7 @@ export interface ChartOptions {
 		type: "hide" | "highlight" | "remove";
 	};
 	showTrendLine: boolean;
+	showChartLabels: boolean;
 	ratingDisplayFormat: RatingDisplayFormat;
 }
 
@@ -118,3 +119,13 @@ export interface AnimeInfo {
 
 export type ScoreFilterType = "hide" | "highlight" | "remove";
 export type FilterType = "hide" | "highlight" | "show" | "remove";
+
+export interface SearchResult {
+	mal_id?: number;
+	imdbId?: string;
+	title: string;
+	url: string;
+	image: string;
+	type: string;
+	year: number;
+}

@@ -656,7 +656,7 @@ export default function AiringScheduleGrid({
 											} else if (colorBySaga && sagaColor) {
 												boxBg = "text-white";
 											} else {
-												boxBg = "bg-[#919191] text-white";
+												boxBg = colorBySaga ? "bg-[#919191]" : "bg-emerald-600 text-white"
 											}
 
 											const episodes = week.episodeNumbers
@@ -711,7 +711,7 @@ export default function AiringScheduleGrid({
 																		className="label"
 																	>
 																		•{" "}
-																		{`Aired: ${new Date(ep.aired).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`}
+																		{`${entryType === "anime" ? "Aired" : "Published"}: ${new Date(ep.aired).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`}
 																	</li>
 																)}
 																{ep.score != null &&
@@ -878,8 +878,8 @@ export default function AiringScheduleGrid({
 					) : (
 						<>
 							<div className="flex items-center gap-1.5">
-								<div className="size-[11px] rounded-[2px] bg-emerald-500 dark:bg-emerald-400" />
-								<span>Aired</span>
+								<div className="size-[11px] rounded-[2px] bg-emerald-600" />
+								<span>{entryType === "anime" ? "Aired" : "Published"}</span>
 							</div>
 							{entryType === "manga" && isOnePieceOnly && (
 								<>

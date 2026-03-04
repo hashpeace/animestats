@@ -26,7 +26,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const chartConfig = {
 	averageScore: {
-		label: "Average Score",
+		label: "Average Rating",
 		color: "hsl(var(--chart-3))",
 	},
 } satisfies ChartConfig;
@@ -186,7 +186,7 @@ export function SagaAndArcsRatings({
 	return (
 		<>
 			<h3 className="text-xl font-semibold mt-5 mb-3">
-				Average score by {mode === "saga" ? "saga" : "arc"}
+				Average rating by {mode === "saga" ? "saga" : "arc"}
 			</h3>
 			<div className="flex gap-4 mb-4 flex-wrap">
 				<div className="flex flex-col">
@@ -219,7 +219,7 @@ export function SagaAndArcsRatings({
 							<SelectItem value="chronological">
 								{mode === "saga" ? "Saga" : "Arc"}
 							</SelectItem>
-							<SelectItem value="rating">Score</SelectItem>
+							<SelectItem value="rating">Rating</SelectItem>
 						</SelectContent>
 					</Select>
 				</div>
@@ -247,7 +247,7 @@ export function SagaAndArcsRatings({
 				{entryType === "anime" && (
 					<div className="flex flex-col">
 						<label htmlFor="hide-filler-from-average">
-							Count fillers in avg score?
+							Count fillers in avg rating?
 						</label>
 						<Select
 							value={hideFillerAndRecapFromAverage ? "true" : "false"}
@@ -299,7 +299,7 @@ export function SagaAndArcsRatings({
 							tickMargin={8}
 							domain={[8, 9.6]}
 							label={{
-								value: "Average Score (/10)",
+								value: "Average Rating (/10)",
 								angle: -90,
 								position: "insideLeft",
 								offset: 0,

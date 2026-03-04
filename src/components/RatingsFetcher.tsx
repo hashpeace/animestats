@@ -40,6 +40,7 @@ import type {
 	ParserEpisodeInfos,
 	RatingsDisplayProps,
 	RatingsFetcherProps,
+	SearchResult,
 } from "@/types/All";
 
 export default function RatingsFetcher({
@@ -63,16 +64,7 @@ export default function RatingsFetcher({
 	const { fetchingMethod, setFetchingMethod } = useFetchingMethodContext();
 	const [entryType, setEntryType] = useState<"anime" | "manga">("anime");
 	const [animeInfo, setAnimeInfo] = useState<AnimeInfo | null>(null);
-	const [searchresults, setSearchResults] = useState<
-		{
-			title: string;
-			url: string;
-			image: string;
-			type: string;
-			year: number;
-			imdbId?: string;
-		}[]
-	>([]);
+	const [searchresults, setSearchResults] = useState<SearchResult[]>([]);
 	const [dataSource, setDataSource] = useState<"mal" | "imdb">("mal");
 	const [isSearching, setIsSearching] = useState(false);
 	const [seasonPickerOpen, setSeasonPickerOpen] = useState(false);
@@ -707,6 +699,7 @@ export default function RatingsFetcher({
 							)
 							.slice(0, 5)
 							.map((anime: AnimeInfo) => ({
+								mal_id: anime.mal_id,
 								title: anime.title,
 								url: anime.url,
 								image: anime.images.webp.image_url,
@@ -746,6 +739,28 @@ export default function RatingsFetcher({
 			document.removeEventListener("mousedown", handleOutsideClick);
 		};
 	}, []);
+
+	const onSearchResultClick = useCallback((searchresult: SearchResult) => {
+		if (searchresult.mal_id && searchresult.mal_id === 21) {
+			router.push("/onepiece?redirected=true");
+			return;
+		}
+		setAnimeInput(searchresult.title);
+		setAnimeInputForApi(searchresult.url);
+		setSearchResults([]);
+		setAnimeInput("");
+		setShouldFetchSearchResults(false);
+		clearAnimeIdFromUrl();
+		fetchData(searchresult.url);
+		posthog.capture("fetch_data", {
+			animeId: extractAnimeInfoFromUrl(searchresult.url).animeId,
+			animeTitle: searchresult.title,
+			entryType: entryType,
+			episodeCount: episodeCount,
+			fetchingMethod: fetchingMethod,
+			cheerioParsingMethod: cheerioParsingMethod,
+		});
+	}, [setAnimeInput, setAnimeInputForApi, setSearchResults, setShouldFetchSearchResults, clearAnimeIdFromUrl, fetchData, entryType, episodeCount, fetchingMethod, cheerioParsingMethod, router]);
 
 	return (
 		<div>
@@ -847,21 +862,7 @@ export default function RatingsFetcher({
 													).indexOf(activeItem),
 											);
 											if (searchresult) {
-												setAnimeInput(searchresult.title);
-												setAnimeInputForApi(searchresult.url);
-												setSearchResults([]);
-												setShouldFetchSearchResults(false);
-												clearAnimeIdFromUrl();
-												fetchData(searchresult.url);
-												posthog.capture("fetch_data", {
-													animeId: extractAnimeInfoFromUrl(searchresult.url)
-														.animeId,
-													animeTitle: searchresult.title,
-													entryType: entryType,
-													episodeCount: episodeCount,
-													fetchingMethod: fetchingMethod,
-													cheerioParsingMethod: cheerioParsingMethod,
-												});
+												onSearchResultClick(searchresult);
 											}
 										}
 									}
@@ -899,23 +900,13 @@ export default function RatingsFetcher({
 										<li
 											key={index}
 											className={`px-2 py-1 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer flex items-center gap-2 ${index === 0 ? "active" : ""}`}
-											onClick={() => {
-												setAnimeInput(searchresult.title);
-												setAnimeInputForApi(searchresult.url);
-												setSearchResults([]);
-												setAnimeInput("");
-												setShouldFetchSearchResults(false);
-												clearAnimeIdFromUrl();
-												fetchData(searchresult.url);
-												posthog.capture("fetch_data", {
-													animeId: extractAnimeInfoFromUrl(searchresult.url)
-														.animeId,
-													animeTitle: searchresult.title,
-													entryType: entryType,
-													episodeCount: episodeCount,
-													fetchingMethod: fetchingMethod,
-													cheerioParsingMethod: cheerioParsingMethod,
-												});
+											onClick={() => onSearchResultClick(searchresult)}
+											onTouchEnd={() => onSearchResultClick(searchresult)}
+											onKeyDown={(e) => {
+												if (e.key === "Enter" || e.key === " ") {
+													e.preventDefault();
+													onSearchResultClick(searchresult);
+												}
 											}}
 										>
 											<Image

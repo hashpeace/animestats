@@ -95,7 +95,7 @@ export default function RatingsDisplayOptions({
 
 	return (
 		// <div className="border-b border-gray-200 pb-4">
-		<div className="pb-6 pt-2">
+		<div className="pb-5 pt-2">
 			<div className="flex gap-3 items-start flex-wrap">
 				<div className="flex flex-col">
 					<Label htmlFor="sort-select" className="mr-2">
@@ -417,32 +417,62 @@ export default function RatingsDisplayOptions({
 						</div>
 					)}
 					{options.viewMode === "graph" && (
-						<div className="flex items-center mt-4 gap-2">
-							<Switch
-								id="showTrendLine"
-								checked={options.showTrendLine}
-								onCheckedChange={() => {
-									setOptions((prevOptions) => ({
-										...prevOptions,
-										showTrendLine: !prevOptions.showTrendLine,
-									}));
-									posthog.capture("option_panel_event", {
-										option: "show_trend_line",
-										value: !options.showTrendLine,
-									});
-								}}
-							/>
-							<Label
-								htmlFor="showTrendLine"
-								className="text-sm font-medium leading-none"
-							>
-								Show trendline
-							</Label>
-						</div>
+						<>
+
+							<div className="flex flex-col justify-end gap-0.5">
+								<Label htmlFor="show-chart-labels">Show ratings labels</Label>
+								<Switch
+									id="show-chart-labels"
+									checked={options.showChartLabels}
+									onCheckedChange={(checked) => {
+										setOptions((prev) => ({
+											...prev,
+											showChartLabels: checked,
+										}));
+										posthog.capture("option_panel_event", {
+											option: "show_chart_labels",
+											value: checked,
+										});
+									}}
+									size="lg"
+								/>
+							</div>
+							<div className="flex flex-col justify-end gap-0.5">
+
+								<Label
+									htmlFor="showTrendLine"
+									className="text-sm font-medium leading-none"
+								>
+									Show trendline
+								</Label>
+								<Switch
+									id="showTrendLine"
+									checked={options.showTrendLine}
+									onCheckedChange={() => {
+										setOptions((prevOptions) => ({
+											...prevOptions,
+											showTrendLine: !prevOptions.showTrendLine,
+										}));
+										posthog.capture("option_panel_event", {
+											option: "show_trend_line",
+											value: !options.showTrendLine,
+										});
+									}}
+									size="lg"
+								/>
+							</div>
+						</>
 					)}
 					{hasZeroValues && (
-						<div className="flex items-center mt-4 gap-2">
+						<div className="flex flex-col justify-end gap-0.5">
 							{/* TODO: Add a tooltip to explain that this will hide the average rating. Currently it hides the rating of the episodes, updates the average rating (and hides the episodes from the table ??). */}
+
+							<Label
+								htmlFor="hideZeroValues"
+								className="text-sm font-medium leading-none"
+							>
+								Hide zero values
+							</Label>
 							<Switch
 								id="hideZeroValues"
 								checked={options.hideZeroValues}
@@ -456,13 +486,8 @@ export default function RatingsDisplayOptions({
 										value: !options.hideZeroValues,
 									});
 								}}
+								size="lg"
 							/>
-							<Label
-								htmlFor="hideZeroValues"
-								className="text-sm font-medium leading-none"
-							>
-								Hide zero values
-							</Label>
 						</div>
 					)}
 				</div>
