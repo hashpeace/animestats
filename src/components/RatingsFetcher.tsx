@@ -42,6 +42,7 @@ import type {
 	RatingsFetcherProps,
 	SearchResult,
 } from "@/types/All";
+import { toast } from "sonner";
 
 export default function RatingsFetcher({
 	isOnePieceOnly = false,
@@ -178,6 +179,134 @@ export default function RatingsFetcher({
 
 	const IMDB_API_BASE = "https://api.imdbapi.dev";
 
+	const buildImdbAnimeInfo = (
+		imdbId: string,
+		titleData: Record<string, unknown>,
+		title: string,
+	): AnimeInfo => ({
+		mal_id: 0,
+		year: (titleData.startYear as number) ?? 0,
+		images: {
+			webp: {
+				image_url: (titleData.primaryImage as { url?: string })?.url ?? "",
+			},
+		},
+		title,
+		titles: [],
+		url: `https://www.imdb.com/title/${imdbId}/`,
+		type: "TV",
+		episodes: 0,
+		status: "Finished Airing",
+		score:
+			(titleData.rating as { aggregateRating?: number })?.aggregateRating ?? 0,
+		scored_by:
+			(titleData.rating as { voteCount?: number })?.voteCount ?? 0,
+		rank: 0,
+		popularity: 0,
+		members: (titleData.rating as { voteCount?: number })?.voteCount ?? 0,
+	});
+
+	type RawImdbEpisode = {
+		season: string;
+		episodeNumber: number;
+		title: string;
+		releaseDate?: { year: number; month: number; day: number };
+		rating?: { aggregateRating: number; voteCount: number };
+		id: string;
+	};
+
+	const fetchImdbEpisodesForSeasons = async (
+		imdbId: string,
+		seasons: string[],
+	): Promise<RawImdbEpisode[]> => {
+		let allEpisodes: RawImdbEpisode[] = [];
+
+		for (const season of seasons) {
+			let nextPageToken: string | undefined;
+
+			const fetchEpisodesPage = async (pageToken?: string) => {
+				const params = new URLSearchParams();
+				params.set("season", season);
+				if (pageToken) params.set("pageToken", pageToken);
+				const res = await fetch(
+					`${IMDB_API_BASE}/titles/${imdbId}/episodes?${params.toString()}`,
+				);
+				return res.json();
+			};
+
+			do {
+				const epData = await fetchEpisodesPage(nextPageToken);
+				const episodes = (epData.episodes || []).map(
+					(ep: Omit<RawImdbEpisode, "season">) => ({
+						season,
+						...ep,
+					}),
+				);
+				allEpisodes = allEpisodes.concat(episodes);
+				nextPageToken = epData.nextPageToken;
+				if (nextPageToken) {
+					await new Promise((r) => setTimeout(r, 300));
+				}
+			} while (nextPageToken);
+		}
+
+		return allEpisodes;
+	};
+
+	const mapImdbEpisodesToResults = (
+		episodes: RawImdbEpisode[],
+		opts: {
+			useGlobalIndex: boolean;
+			titleFormatter: (ep: RawImdbEpisode, index: number) => string;
+		},
+	): EpisodeInfos[] => {
+		let globalIndex = 1;
+
+		return episodes
+			.filter((ep) => ep.rating?.aggregateRating != null)
+			.map((ep) => {
+				const rating = ep.rating!.aggregateRating;
+				const ratingPct = rating * 10;
+				const aired = ep.releaseDate
+					? (() => {
+						const { year, month, day } = ep.releaseDate;
+						if (year && month && day) {
+							return new Date(year, month - 1, day).toISOString();
+						}
+						if (year && month) {
+							return new Date(year, month - 1, 1).toISOString();
+						}
+						if (year) {
+							return new Date(year, 0, 1).toISOString();
+						}
+						return "";
+					})()
+					: "";
+
+				const episodeNumber =
+					opts.useGlobalIndex ? globalIndex++ : ep.episodeNumber;
+
+				return {
+					mal_id: episodeNumber,
+					url: "",
+					title: opts.titleFormatter(ep, episodeNumber),
+					title_japanese: "",
+					title_romanji: "",
+					aired,
+					score: rating / 2,
+					filler: false,
+					recap: false,
+					forum_url: `https://www.imdb.com/title/${ep.id}`,
+					episodeNb: episodeNumber,
+					nbOfVotes: ep.rating?.voteCount ?? 0,
+					forumTopicUrl: `https://www.imdb.com/title/${ep.id}`,
+					ratingFiveStars: Number.parseFloat(ratingPct.toFixed(2)),
+					ratingAllStars: Number.parseFloat(ratingPct.toFixed(2)),
+					allRatings: [],
+				};
+			});
+	};
+
 	const fetchImdbEpisodesForSeason = useCallback(
 		async (
 			imdbId: string,
@@ -193,101 +322,18 @@ export default function RatingsFetcher({
 					? `${baseTitle} - Season ${season}`
 					: baseTitle;
 
-				const animeInfoMapped: AnimeInfo = {
-					mal_id: 0,
-					year: (titleData.startYear as number) ?? 0,
-					images: {
-						webp: {
-							image_url:
-								(titleData.primaryImage as { url?: string })?.url ?? "",
-						},
-					},
-					title,
-					titles: [],
-					url: `https://www.imdb.com/title/${imdbId}/`,
-					type: "TV",
-					episodes: 0,
-					status: "Finished Airing",
-					score:
-						(titleData.rating as { aggregateRating?: number })
-							?.aggregateRating ?? 0,
-					scored_by:
-						(titleData.rating as { voteCount?: number })?.voteCount ?? 0,
-					rank: 0,
-					popularity: 0,
-					members: (titleData.rating as { voteCount?: number })?.voteCount ?? 0,
-				};
+				const animeInfoMapped = buildImdbAnimeInfo(imdbId, titleData, title);
 				setAnimeInfo(animeInfoMapped);
 
-				let allEpisodes: Array<{
-					episodeNumber: number;
-					title: string;
-					releaseDate?: { year: number; month: number; day: number };
-					rating?: { aggregateRating: number; voteCount: number };
-					id: string;
-				}> = [];
-				let nextPageToken: string | undefined;
+				const episodes = await fetchImdbEpisodesForSeasons(imdbId, [season]);
 
-				const fetchEpisodesPage = async (pageToken?: string) => {
-					const params = new URLSearchParams();
-					params.set("season", season);
-					if (pageToken) params.set("pageToken", pageToken);
-					const res = await fetch(
-						`${IMDB_API_BASE}/titles/${imdbId}/episodes?${params}`,
-					);
-					return res.json();
-				};
-
-				do {
-					const epData = await fetchEpisodesPage(nextPageToken);
-					allEpisodes = allEpisodes.concat(epData.episodes || []);
-					nextPageToken = epData.nextPageToken;
-					if (nextPageToken) {
-						await new Promise((r) => setTimeout(r, 300));
-					}
-				} while (nextPageToken);
-
-				animeInfoMapped.episodes = allEpisodes.length;
+				animeInfoMapped.episodes = episodes.length;
 				setAnimeInfo({ ...animeInfoMapped });
 
-				const newResults: EpisodeInfos[] = allEpisodes
-					.filter((ep) => ep.rating?.aggregateRating != null)
-					.map((ep) => {
-						const rating = ep.rating!.aggregateRating;
-						const ratingPct = rating * 10;
-						const aired = ep.releaseDate
-							? (() => {
-								const { year, month, day } = ep.releaseDate;
-								if (year && month && day) {
-									return new Date(year, month - 1, day).toISOString();
-								} else if (year && month) {
-									return new Date(year, month - 1, 1).toISOString();
-								} else if (year) {
-									return new Date(year, 0, 1).toISOString();
-								} else {
-									return "";
-								}
-							})()
-							: "";
-						return {
-							mal_id: ep.episodeNumber,
-							url: "",
-							title: ep.title,
-							title_japanese: "",
-							title_romanji: "",
-							aired,
-							score: rating / 2,
-							filler: false,
-							recap: false,
-							forum_url: `https://www.imdb.com/title/${ep.id}`,
-							episodeNb: ep.episodeNumber,
-							nbOfVotes: ep.rating?.voteCount ?? 0,
-							forumTopicUrl: `https://www.imdb.com/title/${ep.id}`,
-							ratingFiveStars: Number.parseFloat(ratingPct.toFixed(2)),
-							ratingAllStars: Number.parseFloat(ratingPct.toFixed(2)),
-							allRatings: [],
-						};
-					});
+				const newResults = mapImdbEpisodesToResults(episodes, {
+					useGlobalIndex: false,
+					titleFormatter: (ep) => ep.title,
+				});
 
 				setResults(newResults);
 				if (newResults.length === 0) {
@@ -302,6 +348,43 @@ export default function RatingsFetcher({
 		},
 		[],
 	);
+
+	const fetchImdbEpisodesForAllSeasons = async (
+		imdbId: string,
+		titleData: Record<string, unknown>,
+		seasons: Array<{ season: string; episodeCount: number }>,
+	) => {
+		setLoading(true);
+		setError("");
+
+		try {
+			const baseTitle = (titleData.primaryTitle as string) ?? "";
+			const animeInfoMapped = buildImdbAnimeInfo(imdbId, titleData, baseTitle);
+			setAnimeInfo(animeInfoMapped);
+
+			const seasonIds = seasons.map((s) => s.season);
+			const episodes = await fetchImdbEpisodesForSeasons(imdbId, seasonIds);
+
+			animeInfoMapped.episodes = episodes.length;
+			setAnimeInfo({ ...animeInfoMapped });
+
+			const newResults = mapImdbEpisodesToResults(episodes, {
+				useGlobalIndex: true,
+				titleFormatter: (ep) =>
+					`${ep.title} (S${ep.season}E${ep.episodeNumber})`,
+			});
+
+			setResults(newResults);
+			if (newResults.length === 0) {
+				setError("No episodes found for this title");
+			}
+		} catch (err) {
+			console.error("Error fetching IMDb episodes for all seasons:", err);
+			setError("An error occurred while fetching episodes.");
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	const fetchImdbData = useCallback(
 		async (imdbId: string) => {
@@ -694,6 +777,32 @@ export default function RatingsFetcher({
 					const response = await fetch(
 						`https://api.jikan.moe/v4/${entryType}?q=${query}&limit=10&sfw`,
 					);
+
+					if (!response.ok) {
+						let errorBody: { message?: string } | null = null;
+						try {
+							errorBody = await response.json();
+						} catch {
+							// ignore JSON parse errors, we'll still log status info
+						}
+
+						console.error("Error fetching searchresults:", {
+							status: response.status,
+							statusText: response.statusText,
+							url: response.url,
+							body: errorBody,
+						});
+						if (errorBody?.message === "Jikan failed to connect to MyAnimeList. MyAnimeList may be down/unavailable or refuses to connect") {
+							// toast.error("MyAnimeList may be down/unavailable or refuses to connect. Please try again later or copy/paste the URL from <a href='https://myanimelist.net' target='_blank' rel='noopener noreferrer'>Myanimelist</a> directly on the search bar.");
+							toast(<div>
+								Search error. Please try again later or paste the anime URL from
+								<a href='https://myanimelist.net' target='_blank' rel='noopener noreferrer' className="underline px-1">Myanimelist</a>
+								directly on the search bar.
+							</div>);
+						}
+						return;
+					}
+
 					const data = await response.json();
 					setSearchResults(
 						data.data
@@ -717,7 +826,7 @@ export default function RatingsFetcher({
 					);
 				}
 			} catch (error) {
-				console.error("Error fetching searchresults:", error);
+				console.error("Error fetching searchresults (network or parsing error):", error);
 			} finally {
 				setIsSearching(false);
 			}
@@ -1163,7 +1272,7 @@ export default function RatingsFetcher({
 					</DialogHeader>
 					{pendingImdbData && (
 						<div className="flex flex-col gap-2 mt-2">
-							<p className="text-sm text-gray-600">
+							<p className="text-sm text-foreground">
 								{pendingImdbData.titleData.primaryTitle as string} has multiple
 								seasons. Which one do you want to view?
 							</p>
@@ -1172,7 +1281,7 @@ export default function RatingsFetcher({
 									<button
 										key={s.season}
 										type="button"
-										className="w-full text-left px-4 py-2 rounded-md border border-gray-200 hover:bg-gray-50 transition-colors"
+										className="w-full text-left px-4 py-2 rounded-md border border-gray-200 hover:bg-accent transition-colors"
 										onClick={() => {
 											fetchImdbEpisodesForSeason(
 												pendingImdbData!.imdbId,
@@ -1185,11 +1294,34 @@ export default function RatingsFetcher({
 										}}
 									>
 										<span className="font-medium">Season {s.season}</span>
-										<span className="ml-2 text-sm text-gray-500">
+										<span className="ml-2 text-sm text-muted-foreground">
 											({s.episodeCount} episodes)
 										</span>
 									</button>
 								))}
+								<button
+									type="button"
+									className="w-full text-left px-4 py-2 rounded-md border border-gray-200 hover:bg-accent transition-colors"
+									onClick={() => {
+										fetchImdbEpisodesForAllSeasons(
+											pendingImdbData!.imdbId,
+											pendingImdbData!.titleData,
+											pendingImdbData!.seasons,
+										);
+										setSeasonPickerOpen(false);
+										setPendingImdbData(null);
+									}}
+								>
+									<span className="font-medium">All seasons</span>
+									<span className="ml-2 text-sm text-muted-foreground">
+										(
+										{pendingImdbData.seasons.reduce(
+											(acc, s) => acc + s.episodeCount,
+											0,
+										)}{" "}
+										episodes)
+									</span>
+								</button>
 							</div>
 						</div>
 					)}

@@ -69,7 +69,7 @@ const getRatingTier = (
 	format: "1decimal" | "2decimal" = "2decimal",
 ) => {
 	if (rating === undefined || rating === 0)
-		return { label: "Unrated", color: "#6b7280", textColor: "#ffffff" };
+		return { label: "Unrated", color: "#2a2a2a", textColor: "#ffffff" };
 
 	// Round based on display format to match what user sees
 	const outOf10 = rating / 10;
@@ -464,7 +464,7 @@ export default function RatingsDisplay({
 						{payload[0].payload.filler && " (filler)"}
 						{payload[0].payload.recap && " (recap)"}
 					</li>
-					{fetchingMethod === "cheerioParser" &&
+					{(fetchingMethod === "cheerioParser" || dataSource === "imdb") &&
 						payload[0].payload.nbOfVotes && (
 							<li className="label">
 								•{" "}
@@ -1184,7 +1184,7 @@ export default function RatingsDisplay({
 										{options.sortBy === 'ratingAllStarsRounded' && <ChevronDown className="inline-block ml-1" size={16} />}
 									</TableHead>
 								)} */}
-								{fetchingMethod === "cheerioParser" && (
+								{(fetchingMethod === "cheerioParser" || dataSource === "imdb") && (
 									<TableHead># of votes</TableHead>
 								)}
 								<TableHead>Title</TableHead>
@@ -1241,7 +1241,7 @@ export default function RatingsDisplay({
 											</TableCell>
 										)}
 										{/* {options.visibleRatingInfo.ratingAllStarsRounded && <TableCell>{result.ratingAllStarsRounded !== undefined ? result.ratingAllStarsRounded : '-'}</TableCell>} */}
-										{fetchingMethod === "cheerioParser" && (
+										{(fetchingMethod === "cheerioParser" || dataSource === "imdb") && (
 											<TableCell>
 												{result.nbOfVotes !== undefined
 													? result.nbOfVotes.toLocaleString("en-US")
