@@ -1381,6 +1381,7 @@ export default function RatingsDisplay({
 						options={options}
 						setOptions={setOptions}
 						hasRecapOrFiller={hasRecapOrFiller()}
+						dataSource={dataSource}
 					/>
 				)}
 			</div>
