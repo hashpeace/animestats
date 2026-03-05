@@ -270,7 +270,7 @@ export function SagaAndArcsRatings({
 				className="rounded-md border py-4 w-full [&>div>div]:block!"
 			>
 				<ChartContainer config={chartConfig}
-					className="max-lg:min-w-(--dynamic-width)"
+					className="max-lg:min-w-(--dynamic-width) max-md:min-h-[390px]"
 					style={
 						{
 							"--dynamic-width": `${sortedData.length * 20}px`,
