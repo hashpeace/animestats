@@ -69,7 +69,7 @@ const getRatingTier = (
 	format: "1decimal" | "2decimal" = "2decimal",
 ) => {
 	if (rating === undefined || rating === 0)
-		return { label: "Unrated", color: "#2a2a2a", textColor: "#ffffff" };
+		return { label: "Unrated", color: "#6b7280", textColor: "#ffffff" };
 
 	// Round based on display format to match what user sees
 	const outOf10 = rating / 10;
@@ -84,11 +84,11 @@ const getRatingTier = (
 	if (roundedValue >= 9)
 		return { label: "Awesome", color: "#166534", textColor: "#ffffff" };
 	if (roundedValue >= 8)
-		return { label: "Great", color: "#22c55e", textColor: "#4e4444" };
+		return { label: "Great", color: "#22c55e", textColor: "#2a2a2a" };
 	if (roundedValue >= 7.5)
-		return { label: "Good", color: "#F4D03F", textColor: "#4e4444" };
+		return { label: "Good", color: "#F4D03F", textColor: "#2a2a2a" };
 	if (roundedValue >= 6)
-		return { label: "Regular", color: "#F39C13", textColor: "#4e4444" };
+		return { label: "Regular", color: "#F39C13", textColor: "#2a2a2a" };
 	if (roundedValue >= 4)
 		return { label: "Bad", color: "#ef4444", textColor: "#ffffff" };
 	if (roundedValue === 0 || roundedValue === null)
@@ -800,7 +800,7 @@ export default function RatingsDisplay({
 			{/* )} */}
 			{options.viewMode === "wrapped" ? (
 				<TooltipProvider delayDuration={100}>
-					<div className="flex flex-wrap gap-2">
+					<div className="grid gap-2 grid-cols-[repeat(auto-fit,minmax(80px,1fr))]">
 						{sortedResults.map((result) => {
 							const rating = result.ratingAllStars;
 							const tier = getRatingTier(rating, options.ratingDisplayFormat);
@@ -815,7 +815,7 @@ export default function RatingsDisplay({
 									<TooltipTrigger asChild>
 										<div
 											className={cn(
-												"relative w-[92px] h-[52px] p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:scale-105 hover:shadow-lg",
+												"relative w-full aspect-16/10 h-full p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:scale-105 hover:shadow-lg",
 												((isFillerOrRecap && options.filterFillerAndRecap === "highlight") || options.filterBelowScore?.type === "highlight" && options.filterBelowScore?.score && result.ratingAllStars !== undefined && result.ratingAllStars < Number(options.filterBelowScore.score)) &&
 												"ring-2 ring-[#ff0096]",
 											)}

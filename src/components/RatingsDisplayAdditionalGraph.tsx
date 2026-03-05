@@ -272,7 +272,7 @@ export default function RatingsDisplayAdditionalGraph({
 				>
 					{showAdditionalGraph ? (
 						<>
-							Hide graph
+							Hide graphs
 							<ChevronUp className="size-4" />
 						</>
 					) : (
