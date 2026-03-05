@@ -798,7 +798,7 @@ export default function RatingsFetcher({
 								Search error. Please try again later or paste the anime URL from
 								<a href='https://myanimelist.net' target='_blank' rel='noopener noreferrer' className="underline px-1">Myanimelist</a>
 								directly on the search bar.
-							</div>);
+							</div>, { position: "top-right", duration: 5000 });
 						}
 						return;
 					}
