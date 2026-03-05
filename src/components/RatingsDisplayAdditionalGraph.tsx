@@ -49,6 +49,7 @@ export default function RatingsDisplayAdditionalGraph({
 	entryType,
 	hasRecapOrFiller,
 	setOptions,
+	dataSource,
 }: {
 	results: EpisodeInfos[];
 	animeId: AnimeInfo["mal_id"];
@@ -57,6 +58,7 @@ export default function RatingsDisplayAdditionalGraph({
 	entryType: EntryType;
 	hasRecapOrFiller: boolean;
 	setOptions: React.Dispatch<React.SetStateAction<ChartOptions>>;
+	dataSource: "mal" | "imdb";
 }) {
 	const [showAdditionalGraph, setShowAdditionalGraph] = useState(false);
 	const [sortBy, setSortBy] = useState<"score" | "year">("year");
@@ -266,7 +268,7 @@ export default function RatingsDisplayAdditionalGraph({
 			{!isOnePieceOnly && (
 				<Button
 					onClick={handleShowAdditionalGraph}
-					className="mb-4 p-2 bg-blue-500 text-white rounded flex items-center gap-2 mt-6"
+					className="mt-6"
 				>
 					{showAdditionalGraph ? (
 						<>
@@ -457,12 +459,14 @@ export default function RatingsDisplayAdditionalGraph({
 						<ScrollBar orientation="horizontal" />
 					</ScrollArea>
 
-					{/* -- Airing schedule heatmap -- */}
-					<AiringScheduleGrid
-						results={filteredResults}
-						entryType={entryType}
-						isOnePieceOnly={isOnePieceOnly ?? false}
-					/>
+					{/* -- Weekly Airing schedule grid -- */}
+					{dataSource === "mal" && (
+						<AiringScheduleGrid
+							results={filteredResults}
+							entryType={entryType}
+							isOnePieceOnly={isOnePieceOnly ?? false}
+						/>
+					)}
 				</div>
 			)}
 		</>

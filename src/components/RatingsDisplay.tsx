@@ -707,7 +707,7 @@ export default function RatingsDisplay({
 										{entryTitle}
 									</a>
 								</h2>
-								{entryType === "anime" && (
+								{entryType === "anime" && dataSource === "mal" && (
 									<button
 										onClick={handleShare}
 										className="p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-md transition-colors"
@@ -730,7 +730,7 @@ export default function RatingsDisplay({
 								))}
 							</div>
 
-							{!isOnePieceOnly && <AnimeRelationsButton animeId={animeInfo.mal_id} />}
+							{!isOnePieceOnly && dataSource === "mal" && <AnimeRelationsButton animeId={animeInfo.mal_id} />}
 						</div>
 					</div>
 					<div

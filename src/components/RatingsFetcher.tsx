@@ -224,6 +224,7 @@ export default function RatingsFetcher({
 					title: string;
 					releaseDate?: { year: number; month: number; day: number };
 					rating?: { aggregateRating: number; voteCount: number };
+					id: string;
 				}> = [];
 				let nextPageToken: string | undefined;
 
@@ -278,10 +279,10 @@ export default function RatingsFetcher({
 							score: rating / 2,
 							filler: false,
 							recap: false,
-							forum_url: "",
+							forum_url: `https://www.imdb.com/title/${ep.id}`,
 							episodeNb: ep.episodeNumber,
 							nbOfVotes: ep.rating?.voteCount ?? 0,
-							forumTopicUrl: "",
+							forumTopicUrl: `https://www.imdb.com/title/${ep.id}`,
 							ratingFiveStars: Number.parseFloat(ratingPct.toFixed(2)),
 							ratingAllStars: Number.parseFloat(ratingPct.toFixed(2)),
 							allRatings: [],
@@ -577,6 +578,13 @@ export default function RatingsFetcher({
 		}
 	};
 
+	// Stable reference for effects/callbacks so they don't re-run when fetchData identity changes (avoids flicker)
+	const fetchDataRef = useRef(fetchData);
+	fetchDataRef.current = fetchData;
+	const fetchDataStable = useCallback((overrideUrl?: string) => {
+		fetchDataRef.current(overrideUrl);
+	}, []);
+
 	// If an animeId param is found, set it and fetch data
 	useEffect(() => {
 		if (animeIdFromQuery && sourceFromQuery !== "imdb") {
@@ -586,10 +594,10 @@ export default function RatingsFetcher({
 			);
 			setAnimeInput("");
 			setTimeout(() => {
-				animeId === animeIdFromQuery && fetchData();
+				animeId === animeIdFromQuery && fetchDataStable();
 			}, 500);
 		}
-	}, [animeIdFromQuery, animeId, sourceFromQuery]);
+	}, [animeIdFromQuery, animeId, sourceFromQuery, fetchDataStable]);
 
 	// If imdbId and source=imdb are in URL, fetch from IMDb
 	useEffect(() => {
@@ -751,7 +759,7 @@ export default function RatingsFetcher({
 		setAnimeInput("");
 		setShouldFetchSearchResults(false);
 		clearAnimeIdFromUrl();
-		fetchData(searchresult.url);
+		fetchDataStable(searchresult.url);
 		posthog.capture("fetch_data", {
 			animeId: extractAnimeInfoFromUrl(searchresult.url).animeId,
 			animeTitle: searchresult.title,
@@ -760,7 +768,7 @@ export default function RatingsFetcher({
 			fetchingMethod: fetchingMethod,
 			cheerioParsingMethod: cheerioParsingMethod,
 		});
-	}, [setAnimeInput, setAnimeInputForApi, setSearchResults, setShouldFetchSearchResults, clearAnimeIdFromUrl, fetchData, entryType, episodeCount, fetchingMethod, cheerioParsingMethod, router]);
+	}, [setAnimeInput, setAnimeInputForApi, setSearchResults, setShouldFetchSearchResults, clearAnimeIdFromUrl, fetchDataStable, entryType, episodeCount, fetchingMethod, cheerioParsingMethod, router]);
 
 	return (
 		<div>
