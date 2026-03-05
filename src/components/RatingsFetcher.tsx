@@ -43,6 +43,7 @@ import type {
 	SearchResult,
 } from "@/types/All";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 
 export default function RatingsFetcher({
 	isOnePieceOnly = false,
@@ -795,10 +796,24 @@ export default function RatingsFetcher({
 						if (errorBody?.message === "Jikan failed to connect to MyAnimeList. MyAnimeList may be down/unavailable or refuses to connect") {
 							// toast.error("MyAnimeList may be down/unavailable or refuses to connect. Please try again later or copy/paste the URL from <a href='https://myanimelist.net' target='_blank' rel='noopener noreferrer'>Myanimelist</a> directly on the search bar.");
 							toast(<div>
-								Search error. Please try again later or paste the anime URL from
+								Search error. You can either:
+								<br />- Try again later
+								<br />- Paste the anime URL from
 								<a href='https://myanimelist.net' target='_blank' rel='noopener noreferrer' className="underline px-1">Myanimelist</a>
-								directly on the search bar.
-							</div>, { position: "top-right", duration: 5000 });
+								directly on the search bar
+								<br />-&nbsp;
+								<Button variant="outline" size="sm" onClick={() => {
+									setDataSource("imdb")
+									setShowSearchFilters(true)
+									setAnimeInput("")
+									setAnimeInputForApi("")
+									setSearchResults([])
+									setShouldFetchSearchResults(false)
+									clearAnimeIdFromUrl()
+								}}>
+									Search on IMDb
+								</Button>
+							</div>, { position: "top-right", duration: 7500 });
 						}
 						return;
 					}
