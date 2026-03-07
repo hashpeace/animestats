@@ -165,15 +165,13 @@ export default function WeeklyRatings() {
 	const [showAdditionalInfo, setShowAdditionalInfo] = useState<string[]>([
 		"minimal",
 	]);
-	const [minScore, setMinScore] = useState<number>(7.5);
+	const [minScore, setMinScore] = useState<number>(8);
 	const [minMembers, setMinMembers] = useState<number>(30000);
 	const [showMoreDialog, setShowMoreDialog] = useState(false);
 	const [weekStartMode, setWeekStartMode] = useState<"sunday" | "friday">(
 		"sunday",
 	);
-	const [animeTypeFilter, setAnimeTypeFilter] = useState<
-		"tv" | "tv_and_continuing" | "tv_and_ona"
-	>("tv_and_continuing");
+	const [animeTypeFilter, setAnimeTypeFilter] = useState<"tv" | "tv_and_continuing" | "tv_and_ona">("tv");
 
 	const FIRST_WEEK_FALL_2024 = {
 		sunday: "9/29/2024 - 10/5/2024",

@@ -800,7 +800,7 @@ export default function RatingsDisplay({
 			{/* )} */}
 			{options.viewMode === "wrapped" ? (
 				<TooltipProvider delayDuration={100}>
-					<div className={cn(results.length < 13 ? "flex flex-wrap flex-row gap-2" : "grid gap-2 grid-cols-[repeat(auto-fit,minmax(80px,1fr))]")}>
+					<div className="grid gap-2 grid-cols-[repeat(auto-fill,minmax(80px,1fr))] min-w-0 w-full">
 						{sortedResults.map((result) => {
 							const rating = result.ratingAllStars;
 							const tier = getRatingTier(rating, options.ratingDisplayFormat);
@@ -815,8 +815,7 @@ export default function RatingsDisplay({
 									<TooltipTrigger asChild>
 										<div
 											className={cn(
-												"relative p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:scale-105 hover:shadow-lg",
-												results.length < 13 ? "w-[80px] h-[50px]" : "w-full aspect-16/10 h-full",
+												"relative p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:lg:scale-105 hover:shadow-lg min-h-[50px] max-h-[53px] w-full min-w-0",
 												((isFillerOrRecap && options.filterFillerAndRecap === "highlight") || options.filterBelowScore?.type === "highlight" && options.filterBelowScore?.score && result.ratingAllStars !== undefined && result.ratingAllStars < Number(options.filterBelowScore.score)) &&
 												"ring-2 ring-[#ff0096]",
 											)}

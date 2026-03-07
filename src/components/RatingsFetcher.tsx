@@ -889,13 +889,13 @@ export default function RatingsFetcher({
 			animeTitle: searchresult.title,
 			entryType: entryType,
 			episodeCount: episodeCount,
-			fetchingMethod: fetchingMethod,
+			fetchingMethod: dataSource === "imdb" ? "imdb" : fetchingMethod,
 			cheerioParsingMethod: cheerioParsingMethod,
 		});
 	}, [setAnimeInput, setAnimeInputForApi, setSearchResults, setShouldFetchSearchResults, clearAnimeIdFromUrl, fetchDataStable, entryType, episodeCount, fetchingMethod, cheerioParsingMethod, router]);
 
 	return (
-		<div>
+		<div className="w-full">
 			{!isOnePieceOnly && (
 				<form
 					onSubmit={(e) => {
