@@ -51,16 +51,27 @@ interface ThemeProviderProps {
 	children: ReactNode;
 }
 
+function getSystemTheme(): Theme {
+	if (typeof window === "undefined") return "light";
+	return window.matchMedia("(prefers-color-scheme: dark)").matches
+		? "dark"
+		: "light";
+}
+
 export function ThemeProvider({ children }: ThemeProviderProps) {
 	const [theme, setThemeState] = useState<Theme>("light");
 
-	// Hydrate from localStorage and apply to document
+	// Hydrate from localStorage, or system preference on first session
 	useEffect(() => {
 		if (typeof window === "undefined") return;
 		const saved = localStorage.getItem(STORAGE_KEY) as Theme | null;
 		if (saved === "dark" || saved === "light") {
 			setThemeState(saved);
 			applyTheme(saved);
+		} else {
+			const systemTheme = getSystemTheme();
+			setThemeState(systemTheme);
+			applyTheme(systemTheme);
 		}
 	}, []);
 
