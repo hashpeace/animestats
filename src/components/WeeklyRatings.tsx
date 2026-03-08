@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ChartLine, LoaderCircle, Trophy } from "lucide-react";
+import { ChartLine, ChevronLeft, ChevronRight, LoaderCircle, Trophy } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -163,7 +163,7 @@ export default function WeeklyRatings() {
 	);
 	const [currentWeekIndex, setCurrentWeekIndex] = useState<number>(0);
 	const [weeks, setWeeks] = useState<string[]>([]);
-	const [sortBy, setSortBy] = useState<string>("animeScore");
+	const [sortBy, setSortBy] = useState<string>("episodeScore");
 	const [showAdditionalInfo, setShowAdditionalInfo] = useState<string[]>([
 		"minimal",
 	]);
@@ -453,6 +453,7 @@ export default function WeeklyRatings() {
 	}
 
 	const fetchAllAnime = async () => {
+		setLoading(true);
 		setFetchingAnime(true);
 		const { year, season } = currentSeason;
 		try {
@@ -675,13 +676,60 @@ export default function WeeklyRatings() {
 	// 	setCurrentSeason({ year: Number.parseInt(year), season: season.toLowerCase() })
 	// }
 
-	if (loading) {
-		return (
-			<div className="flex justify-center items-center h-screen">
-				Loading...
-			</div>
-		);
-	}
+	// if (loading) {
+	// 	return (
+	// 		<div className="animate-in fade-in duration-200">
+	// 			{/* Skeleton: filter row */}
+	// 			<div className="flex items-center gap-2 lg:gap-4 mb-4 flex-wrap">
+	// 				<div className="flex flex-col gap-1">
+	// 					<div className="h-4 w-16 bg-muted rounded animate-pulse" />
+	// 					<div className="h-9 w-[180px] bg-muted rounded-md animate-pulse" />
+	// 				</div>
+	// 				<div className="flex items-center gap-1">
+	// 					<div className="flex flex-col gap-1">
+	// 						<div className="h-4 w-12 bg-muted rounded animate-pulse" />
+	// 						<div className="h-9 w-[130px] bg-muted rounded-md animate-pulse" />
+	// 					</div>
+	// 					<div className="flex flex-col gap-1">
+	// 						<div className="h-4 w-8 bg-muted rounded animate-pulse" />
+	// 						<div className="h-9 w-20 bg-muted rounded-md animate-pulse" />
+	// 					</div>
+	// 				</div>
+	// 				<div className="flex items-center gap-3">
+	// 					<div className="flex flex-col gap-1">
+	// 						<div className="h-4 w-14 bg-muted rounded animate-pulse" />
+	// 						<div className="h-9 w-20 bg-muted rounded-md animate-pulse" />
+	// 					</div>
+	// 					<div className="flex flex-col gap-1">
+	// 						<div className="h-4 w-24 bg-muted rounded animate-pulse" />
+	// 						<div className="h-9 w-28 bg-muted rounded-md animate-pulse" />
+	// 					</div>
+	// 				</div>
+	// 			</div>
+	// 			{/* Skeleton: button */}
+	// 			<div className="h-10 w-24 bg-muted rounded-md animate-pulse mb-4" />
+	// 			{/* Skeleton: content grid */}
+	// 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+	// 				{[1, 2, 3, 4, 5, 6].map((i) => (
+	// 					<div
+	// 						key={i}
+	// 						className="bg-background border border-border rounded-lg flex flex-col overflow-hidden"
+	// 					>
+	// 						<div className="flex gap-2 p-2">
+	// 							<div className="w-20 h-[130px] bg-muted rounded-lg shrink-0 animate-pulse" />
+	// 							<div className="flex-1 space-y-2">
+	// 								<div className="h-5 w-3/4 bg-muted rounded animate-pulse" />
+	// 								<div className="h-5 w-1/2 bg-muted rounded animate-pulse" />
+	// 								<div className="h-6 w-16 bg-muted rounded animate-pulse" />
+	// 								<div className="h-6 w-12 bg-muted rounded animate-pulse" />
+	// 							</div>
+	// 						</div>
+	// 					</div>
+	// 				))}
+	// 			</div>
+	// 		</div>
+	// 	);
+	// }
 
 	if (error) {
 		return <div className="text-red-500 text-center">{error}</div>;
@@ -954,7 +1002,7 @@ export default function WeeklyRatings() {
 
 	return (
 		<div className="">
-			<div className="flex items-center gap-2 lg:gap-4 mb-4 flex-wrap">
+			<div className="flex items-end gap-2 lg:gap-4 mb-6 flex-wrap">
 				<div className="flex flex-col gap-1">
 					<Label htmlFor="anime-type-select">Anime Type</Label>
 					<Select
@@ -1055,19 +1103,45 @@ export default function WeeklyRatings() {
 						</select>
 					</div>
 				)} */}
+				<Button
+					onClick={fetchAllAnime}
+					disabled={fetchingAnime}
+					size="lg"
+					variant="default"
+					className={`ml-3 ${fetchingAnime ? "opacity-50 cursor-not-allowed" : ""}`}
+				>
+					Start
+					{fetchingAnime && (
+						<LoaderCircle className="animate-spin size-5 ml-2" />
+					)}
+				</Button>
 			</div>
-			<Button
-				onClick={fetchAllAnime}
-				disabled={fetchingAnime}
-				size="lg"
-				variant="default"
-				className={`mb-4 ${fetchingAnime ? "opacity-50 cursor-not-allowed" : ""}`}
-			>
-				Start
-				{fetchingAnime && (
-					<LoaderCircle className="animate-spin size-5 ml-2" />
-				)}
-			</Button>
+
+			<hr className="my-4" />
+
+			{loading && (
+				<div className="animate-in fade-in duration-200">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{[1, 2, 3, 4, 5, 6].map((i) => (
+							<div
+								key={i}
+								className="bg-background border border-border rounded-lg flex flex-col overflow-hidden"
+							>
+								<div className="flex gap-2 p-2">
+									<div className="w-20 h-[130px] bg-muted rounded-lg shrink-0 animate-pulse" />
+									<div className="flex-1 space-y-2">
+										<div className="h-5 w-3/4 bg-muted rounded animate-pulse" />
+										<div className="h-5 w-1/2 bg-muted rounded animate-pulse" />
+										<div className="h-6 w-16 bg-muted rounded animate-pulse" />
+										<div className="h-6 w-12 bg-muted rounded animate-pulse" />
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			)}
+
 			{sortedAnimeList.length > 0 && (
 				<>
 					<div className="flex gap-2 flex-wrap mb-4 ">
@@ -1078,7 +1152,7 @@ export default function WeeklyRatings() {
 								value={sortBy}
 								onValueChange={(value) => setSortBy(value)}
 							>
-								<SelectTrigger id="sort-select" className="w-[220px]">
+								<SelectTrigger id="sort-select">
 									<SelectValue placeholder="Sort by" />
 								</SelectTrigger>
 								<SelectContent>
@@ -1149,28 +1223,22 @@ export default function WeeklyRatings() {
 						</div>
 					</div>
 					{/* Week Navigation */}
-					<div className="flex items-center mb-4 gap-2">
-						<button
-							onClick={handleNextWeek}
-							disabled={currentWeekIndex === weeks.length - 1}
-							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md shadow-xs hover:bg-muted focus:outline-hidden focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-						>
-							← <span className="max-sm:hidden">Prev Week</span>
-						</button>
-						<span className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md">
+					<div className="flex items-center mb-4 gap-2 bg-background text-foreground border border-border rounded-md p-2 w-fit">
+						<Button className="cursor-pointer" variant="default" size="lg" onClick={handleNextWeek} disabled={currentWeekIndex === weeks.length - 1}>
+							<ChevronLeft className="size-4" />
+							<span className="max-sm:hidden">Prev Week</span>
+						</Button>
+						<span className="text-sm font-medium text-foreground">
 							Week{" "}
 							{getCurrentSeasonFromWeek(weeks[currentWeekIndex]).weekOfSeason}{" "}
 							of {getCurrentSeasonFromWeek(weeks[currentWeekIndex]).season}{" "}
 							{getCurrentSeasonFromWeek(weeks[currentWeekIndex]).year} (
 							{weeks[currentWeekIndex]})
 						</span>
-						<button
-							onClick={handlePreviousWeek}
-							disabled={currentWeekIndex === 0}
-							className="px-2 md:px-4 py-1 md:py-2 text-sm font-medium bg-background text-foreground border border-border rounded-md shadow-xs hover:bg-muted focus:outline-hidden focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-						>
-							<span className="max-sm:hidden">Next Week</span> →
-						</button>
+						<Button className="cursor-pointer" variant="default" size="lg" onClick={handlePreviousWeek} disabled={currentWeekIndex === 0}>
+							<span className="max-sm:hidden">Next Week</span>
+							<ChevronRight className="size-4" />
+						</Button>
 					</div>
 					<hr className="my-4" />
 					<p className="text-sm text-gray-600 mb-4">
@@ -1257,7 +1325,7 @@ export default function WeeklyRatings() {
 							className="bg-background border border-border rounded-lg flex flex-col relative"
 						>
 							{thisWeekEpisode && (
-								<div className="absolute top-0 left-0 bg-foreground text-background px-2 py-1 text-xs font-bold rounded-tl-lg rounded-br-lg z-10">
+								<div className="absolute top-0 left-0 bg-[#FAFAFA] text-black px-2 py-1 text-xs font-bold rounded-tl-lg rounded-br-lg z-10">
 									<span className="mr-1">EP</span>
 									{epOfWeekNb}
 								</div>
@@ -1294,21 +1362,10 @@ export default function WeeklyRatings() {
 										</h4>
 										{thisWeekEpisode ? (
 											<>
-												<Tooltip useTouch={true}>
-													<TooltipTrigger asChild>
-														<div className="bg-yellow-300 text-black px-2 py-1 text-xs font-bold rounded-tr-lg rounded-bl-lg flex items-center w-fit mb-1">
-															<span className="mr-1">★</span>
-															{thisWeekEpisode.score || "N/A"}/5
-														</div>
-													</TooltipTrigger>
-													<TooltipContent>
-														<p>Episode score</p>
-													</TooltipContent>
-												</Tooltip>
 												<div className="flex items-center">
 													<Tooltip useTouch={true}>
 														<TooltipTrigger asChild>
-															<div className="bg-blue-500 text-white px-2 py-1 text-xs font-bold rounded-tr-lg rounded-bl-lg flex items-center">
+															<div className="bg-blue-500 text-white px-2 py-1 text-[16px] font-bold rounded-tr-lg rounded-bl-lg flex items-center">
 																<Trophy className="size-3 mr-1" />{" "}
 																{thisWeekRanking}
 															</div>
@@ -1342,6 +1399,17 @@ export default function WeeklyRatings() {
 														</Tooltip>
 													)}
 												</div>
+												<Tooltip useTouch={true}>
+													<TooltipTrigger asChild>
+														<div className="bg-yellow-300 text-black px-2 py-1 text-xs font-bold rounded-tr-lg rounded-bl-lg flex items-center w-fit mt-2">
+															<span className="mr-1">★</span>
+															{thisWeekEpisode.score || "N/A"}/5
+														</div>
+													</TooltipTrigger>
+													<TooltipContent>
+														<p>Episode score</p>
+													</TooltipContent>
+												</Tooltip>
 												{thisWeekEpisode.isAiredDateEstimated && (
 													<p className="text-sm italic">Aired date estimated</p>
 												)}
