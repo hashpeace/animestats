@@ -95,6 +95,8 @@ export interface AnimeInfo {
 		};
 	};
 	title?: string;
+	title_english?: string | null;
+	title_japanese?: string | null;
 	chapters?: number;
 	titles: Array<{
 		type: string;

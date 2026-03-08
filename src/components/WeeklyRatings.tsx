@@ -35,6 +35,8 @@ import {
 import WeeklyScoreChart, {
 	getSeasonStartDate,
 } from "@/components/WeeklyRatings/WeeklyScoreChart";
+import { getDisplayTitle } from "@/lib/displayTitle";
+import { useTitleLanguage } from "@/contexts/TitleLanguageContext";
 export interface AnimeItem {
 	mal_id: number;
 	url: string;
@@ -177,6 +179,7 @@ export default function WeeklyRatings() {
 		sunday: "9/29/2024 - 10/5/2024",
 		friday: "9/27/2024 - 10/3/2024",
 	}[weekStartMode];
+	const { titleLanguage } = useTitleLanguage();
 
 	const generateWeeks = () => {
 		const weeksArray: string[] = [];
@@ -878,7 +881,7 @@ export default function WeeklyRatings() {
 			(anime) =>
 				anime.episodeData?.map((episode) => ({
 					...episode,
-					animeTitle: anime.title,
+					animeTitle: getDisplayTitle(anime, titleLanguage),
 					imageUrl: anime.image_url,
 				})) || [],
 		)
@@ -1275,9 +1278,9 @@ export default function WeeklyRatings() {
 											<Link
 												href={anime.url}
 												className="hover:underline line-clamp-2"
-												title={anime.title}
+												title={getDisplayTitle(anime, titleLanguage)}
 											>
-												{anime.title}
+												{getDisplayTitle(anime, titleLanguage)}
 											</Link>
 
 											<a

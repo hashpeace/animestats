@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import type { AnimeInfo } from "@/types/All";
+import { getDisplayTitle } from "@/lib/displayTitle";
+import { useTitleLanguage } from "@/contexts/TitleLanguageContext";
 
 type FilterType = "airing" | "bypopularity";
 
@@ -17,6 +19,7 @@ export default function SuggestedAnimeCards() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 	const [filter, setFilter] = useState<FilterType>("airing");
+	const { titleLanguage } = useTitleLanguage();
 
 	useEffect(() => {
 		const fetchTopAnime = async () => {
@@ -112,7 +115,7 @@ export default function SuggestedAnimeCards() {
 								<div className="relative aspect-3/4 w-full overflow-hidden">
 									<Image
 										src={anime.images.webp.image_url}
-										alt={anime.title || ""}
+										alt={getDisplayTitle(anime, titleLanguage) || ""}
 										fill
 										className="object-cover transition-transform group-hover:scale-105"
 										sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
@@ -125,7 +128,7 @@ export default function SuggestedAnimeCards() {
 								</div>
 								<div className="p-2.5">
 									<h3 className="line-clamp-2 text-sm font-semibold text-gray-900 dark:text-white">
-										{anime.title}
+										{getDisplayTitle(anime, titleLanguage)}
 									</h3>
 									{/* <span className="text-xs text-gray-500">
 										({anime.type}

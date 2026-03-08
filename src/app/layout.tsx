@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import { ContainerProvider } from "@/contexts/ContainerContext";
 import { FetchingMethodProvider } from "@/contexts/FetchingMethodContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { TitleLanguageProvider } from "@/contexts/TitleLanguageContext";
 import { CSPostHogProvider } from "./providers";
 import "./globals.css";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
@@ -38,14 +39,16 @@ export default function RootLayout({
       <CSPostHogProvider>
         <body className={inter.className}>
           <ThemeProvider>
-            <ContainerProvider>
-              <FetchingMethodProvider>
-                <TooltipProvider delayDuration={0}>
-                  <Header />
-                  <ContainerWrapper>{children}</ContainerWrapper>
-                </TooltipProvider>
-              </FetchingMethodProvider>
-            </ContainerProvider>
+            <TitleLanguageProvider>
+              <ContainerProvider>
+                <FetchingMethodProvider>
+                  <TooltipProvider delayDuration={0}>
+                    <Header />
+                    <ContainerWrapper>{children}</ContainerWrapper>
+                  </TooltipProvider>
+                </FetchingMethodProvider>
+              </ContainerProvider>
+            </TitleLanguageProvider>
           </ThemeProvider>
           <Toaster />
         </body>

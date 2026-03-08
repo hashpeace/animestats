@@ -2,9 +2,9 @@
 
 import {
 	GalleryHorizontal,
-	Github,
 	Menu,
 	Moon,
+	Settings,
 	Sun,
 } from "lucide-react";
 import Image from "next/image";
@@ -15,18 +15,36 @@ import React, { useState } from "react";
 import { AUTHORIZED_PATHNAMES } from "@/components/ContainerWrapper";
 import { useContainerContext } from "@/contexts/ContainerContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useTitleLanguage } from "@/contexts/TitleLanguageContext";
+import type { TitleLanguage } from "@/lib/displayTitle";
 import { cn } from "@/lib/utils";
+import {
+	Dialog,
+	DialogContent,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
 import {
 	Popover,
 	PopoverContent,
 	PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
 
 const Header = () => {
 	const currentPath = usePathname();
 	const [isMobilePopoverOpen, setIsMobilePopoverOpen] = useState(false);
+	const [settingsOpen, setSettingsOpen] = useState(false);
 	const { useContainer, setUseContainer } = useContainerContext();
 	const { theme, setTheme } = useTheme();
+	const { titleLanguage, setTitleLanguage } = useTitleLanguage();
 
 	const navigationItems = [
 		{ href: "/episodes", label: "Episode Ratings" },
@@ -127,15 +145,57 @@ const Header = () => {
 							</>
 						)}
 
-						<a
-							href="https://github.com/hashpeace/animestats"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
-							aria-label="GitHub"
-						>
-							<Github className="size-4 text-gray-400 hover:text-gray-700   dark:text-gray-400 dark:hover:text-gray-300" />
-						</a>
+						<Dialog open={settingsOpen} onOpenChange={setSettingsOpen}>
+							<DialogTrigger asChild>
+								<button
+									type="button"
+									className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+									aria-label="Display settings"
+								>
+									<Settings className="size-4 text-gray-400 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" />
+								</button>
+							</DialogTrigger>
+							<DialogContent className="sm:max-w-md">
+								<DialogHeader>
+									<DialogTitle className="flex items-center gap-2">
+										<span className="flex items-center justify-center w-8 h-8 rounded bg-primary/10 text-primary">
+											<span className="text-sm font-bold">A</span>
+											<span className="text-sm font-bold ml-0.5">文</span>
+										</span>
+										Display Language
+									</DialogTitle>
+								</DialogHeader>
+								<div className="space-y-4 pt-2">
+									<div className="space-y-2">
+										<h3 className="text-sm font-semibold text-foreground">
+											Title Language
+										</h3>
+										<p className="text-xs text-muted-foreground">
+											Choose the language format for titles.
+										</p>
+										<Select
+											value={titleLanguage}
+											onValueChange={(value: TitleLanguage) => {
+												setTitleLanguage(value);
+												posthog.capture("option_panel_event", {
+													option: "title_language",
+													value,
+												});
+											}}
+										>
+											<SelectTrigger className="w-full">
+												<SelectValue />
+											</SelectTrigger>
+											<SelectContent>
+												<SelectItem value="english">English (Attack on Titan)</SelectItem>
+												<SelectItem value="romanji">Romanji (Shingeki no Kyojin)</SelectItem>
+												<SelectItem value="native">Native (進撃の巨人)</SelectItem>
+											</SelectContent>
+										</Select>
+									</div>
+								</div>
+							</DialogContent>
+						</Dialog>
 
 						{/* Mobile navigation popover */}
 						<Popover open={isMobilePopoverOpen} onOpenChange={setIsMobilePopoverOpen}>

@@ -6,6 +6,7 @@ import EpisodesTab from "@/components/About/EpisodesTab";
 import ExtensionTab from "@/components/About/ExtensionTab";
 import OnePieceTab from "@/components/About/OnePieceTab";
 import WeeklyTab from "@/components/About/WeeklyTab";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 function AboutPageContent() {
 	const searchParams = useSearchParams();
@@ -83,6 +84,17 @@ function AboutPageContent() {
 			{activeTab === "episodes" && <EpisodesTab />}
 			{activeTab === "onepiece" && <OnePieceTab />}
 			{activeTab === "extension" && <ExtensionTab />}
+
+
+			<a
+				href="https://github.com/hashpeace/animestats"
+				target="_blank"
+				rel="noopener noreferrer"
+				className=""
+				aria-label="GitHub"
+			>
+				<GitHubLogoIcon className="mt-6 size-7 text-gray-400 hover:text-gray-700   dark:text-gray-400 dark:hover:text-gray-300" />
+			</a>
 		</>
 	);
 }

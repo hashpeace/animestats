@@ -44,6 +44,8 @@ import type {
 } from "@/types/All";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { useTitleLanguage } from "@/contexts/TitleLanguageContext";
+import { getDisplayTitle } from "@/lib/displayTitle";
 
 export default function RatingsFetcher({
 	isOnePieceOnly = false,
@@ -87,6 +89,8 @@ export default function RatingsFetcher({
 	const searchresultRef = useRef(null); // Ref for the input element
 	const initialInputValue = useRef(animeInput); // Store the initial input value
 	const router = useRouter();
+	const { titleLanguage } = useTitleLanguage();
+	console.log("titleLanguage", titleLanguage);
 
 	const extractAnimeInfoFromUrl = (
 		input: string,
@@ -832,7 +836,7 @@ export default function RatingsFetcher({
 							.slice(0, 5)
 							.map((anime: AnimeInfo) => ({
 								mal_id: anime.mal_id,
-								title: anime.title,
+								title: getDisplayTitle(anime, titleLanguage),
 								url: anime.url,
 								image: anime.images.webp.image_url,
 								type: anime.type,
@@ -877,7 +881,7 @@ export default function RatingsFetcher({
 			router.push("/onepiece?redirected=true");
 			return;
 		}
-		setAnimeInput(searchresult.title);
+		setAnimeInput(getDisplayTitle(searchresult, titleLanguage));
 		setAnimeInputForApi(searchresult.url);
 		setSearchResults([]);
 		setAnimeInput("");
@@ -886,7 +890,7 @@ export default function RatingsFetcher({
 		fetchDataStable(searchresult.url);
 		posthog.capture("fetch_data", {
 			animeId: extractAnimeInfoFromUrl(searchresult.url).animeId,
-			animeTitle: searchresult.title,
+			animeTitle: getDisplayTitle(searchresult, titleLanguage),
 			entryType: entryType,
 			episodeCount: episodeCount,
 			fetchingMethod: dataSource === "imdb" ? "imdb" : fetchingMethod,

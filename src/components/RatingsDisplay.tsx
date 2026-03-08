@@ -42,6 +42,8 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useTitleLanguage } from "@/contexts/TitleLanguageContext";
+import { getDisplayTitle } from "@/lib/displayTitle";
 import { chartConfig, cn, isProduction } from "@/lib/utils";
 import type {
 	ChartOptions,
@@ -222,10 +224,8 @@ export default function RatingsDisplay({
 	loading,
 }: RatingsDisplayProps) {
 	const isLongAnime = results.length > 80;
-	const entryTitle =
-		animeInfo?.titles.find((title) => title.type === "Default")?.title ??
-		animeInfo?.title ??
-		"";
+	const { titleLanguage } = useTitleLanguage();
+	const title = getDisplayTitle(animeInfo, titleLanguage);
 
 	const [options, setOptions] = useState<ChartOptions>({
 		sortBy: "episodeNb",
@@ -561,7 +561,7 @@ export default function RatingsDisplay({
 			: `${currentUrl}?animeId=${animeInfo.mal_id}`;
 
 		const shareData = {
-			text: `Check out the episode ratings for ${entryTitle}`,
+			text: `Check out the episode ratings for ${title}`,
 			url: shareUrl,
 		};
 
@@ -689,7 +689,7 @@ export default function RatingsDisplay({
 						{animeInfo.images?.webp?.image_url && (
 							<Image
 								src={animeInfo.images.webp?.image_url}
-								alt={entryTitle || "Entry cover"}
+								alt={title || "Entry cover"}
 								width={130}
 								height={180}
 								className="rounded-lg shadow-md flex-none max-md:w-[100px] max-md:h-[140px]"
@@ -704,7 +704,7 @@ export default function RatingsDisplay({
 										rel="noopener noreferrer"
 										className="hover:underline"
 									>
-										{entryTitle}
+										{title}
 									</a>
 								</h2>
 								{entryType === "anime" && dataSource === "mal" && (
