@@ -1,5 +1,6 @@
 import {
 	ChevronDown,
+	ChevronUp,
 	ExternalLink,
 	InfoIcon,
 	LoaderCircle,
@@ -563,19 +564,35 @@ export default function RatingsDisplay({
 
 		const urlSearchParams = new URLSearchParams(window.location.search);
 		const currentAnimeIdInQuery = urlSearchParams.get("animeId");
+		const currentNameInQuery = urlSearchParams.get("name");
 		const nextAnimeId = String(animeInfo.mal_id);
+		// Format title for URL name param, e.g.
+		// "Ginga Eiyuu Densetsu: Die Neue These - Sakubou"
+		// -> "Ginga_Eiyuu_Densetsu__Die_Neue_These_-_Sakubou"
+		const formattedName =
+			animeInfo.title
+				?.replace(/:/g, "_")
+				.replace(/ /g, "_") ?? "";
 
-		// Avoid unnecessary URL updates (and feedback loops with initial load)
-		if (currentAnimeIdInQuery === nextAnimeId) return;
+		// Avoid unnecessary URL updates (and feedback loops)
+		if (
+			currentAnimeIdInQuery === nextAnimeId &&
+			(currentNameInQuery || "") === formattedName
+		)
+			return;
 
 		urlSearchParams.set("animeId", nextAnimeId);
+		if (formattedName) {
+			urlSearchParams.set("name", formattedName);
+		} else {
+			urlSearchParams.delete("name");
+		}
 
-		const nextUrl = `${window.location.pathname}${
-			urlSearchParams.toString() ? `?${urlSearchParams.toString()}` : ""
-		}`;
+		const nextUrl = `${window.location.pathname}${urlSearchParams.toString() ? `?${urlSearchParams.toString()}` : ""
+			}`;
 
 		router.replace(nextUrl, { scroll: false });
-	}, [animeInfo?.mal_id, dataSource, entryType, router]);
+	}, [animeInfo?.mal_id, dataSource, entryType, router, title]);
 
 	const handleShare = async () => {
 		if (!animeInfo?.mal_id) return;
@@ -653,7 +670,10 @@ export default function RatingsDisplay({
 							? animeInfo.episodes
 							: animeInfo.chapters || "-",
 				},
-				{ label: "Status", value: animeInfo.status },
+				{
+					label: "Score",
+					value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
+				},
 				{
 					label: "Aired",
 					value:
@@ -661,10 +681,7 @@ export default function RatingsDisplay({
 							? animeInfo.aired?.string || "-"
 							: animeInfo.published?.string || "-",
 				},
-				{
-					label: "Score",
-					value: `${animeInfo.score} (${animeInfo.scored_by?.toLocaleString("en-US") || "-"} users)`,
-				},
+				{ label: "Status", value: animeInfo.status },
 				{ label: "Rank", value: `#${animeInfo.rank}` },
 				{ label: "Popularity", value: `#${animeInfo.popularity}` },
 				{
@@ -672,6 +689,13 @@ export default function RatingsDisplay({
 					value: animeInfo.members.toLocaleString("en-US"),
 				},
 			];
+
+	const [showLast4Stats, setShowLast4Stats] = useState(false);
+	const hasExtraStats = entryStats.length > 4;
+	const visibleEntryStats =
+		hasExtraStats && !showLast4Stats
+			? entryStats.slice(0, -4)
+			: entryStats;
 
 	if (loading) {
 		return (
@@ -758,19 +782,34 @@ export default function RatingsDisplay({
 							{!isOnePieceOnly && dataSource === "mal" && <AnimeRelationsButton animeId={animeInfo.mal_id} />}
 						</div>
 					</div>
-					<div
-						className={cn(
-							"grid gap-2 text-sm md:hidden",
-							dataSource === "mal"
-								? "max-[400px]:grid-cols-1 grid-cols-2 max-[380px]:grid-rows-2"
-								: "grid-cols-1",
+					<div className="md:hidden">
+						<div
+							className={cn(
+								"grid gap-2 text-sm",
+								dataSource === "mal"
+									? "max-[400px]:grid-cols-1 grid-cols-2 max-[380px]:grid-rows-2"
+									: "grid-cols-1",
+							)}
+						>
+							{visibleEntryStats.map(({ label, value }) => (
+								<p key={label}>
+									<span className="font-semibold">{label}:</span> {value}
+								</p>
+							))}
+						</div>
+						{hasExtraStats && (
+							<button
+								type="button"
+								onClick={() => setShowLast4Stats((v) => !v)}
+								className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mt-2"
+							>
+								{showLast4Stats ? (
+									<><ChevronUp className="size-4" /> Show less</>
+								) : (
+									<><ChevronDown className="size-4" /> Show more info</>
+								)}
+							</button>
 						)}
-					>
-						{entryStats.map(({ label, value }) => (
-							<p key={label}>
-								<span className="font-semibold">{label}:</span> {value}
-							</p>
-						))}
 					</div>
 				</div>
 			)}
