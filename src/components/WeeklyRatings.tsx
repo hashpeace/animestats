@@ -1240,7 +1240,6 @@ export default function WeeklyRatings() {
 							<ChevronRight className="size-4" />
 						</Button>
 					</div>
-					<hr className="my-4" />
 					<p className="text-sm text-gray-600 mb-4">
 						{sortedAnimeList.length} animes found
 					</p>
@@ -1365,7 +1364,18 @@ export default function WeeklyRatings() {
 												<div className="flex items-center">
 													<Tooltip useTouch={true}>
 														<TooltipTrigger asChild>
-															<div className="bg-blue-500 text-white px-2 py-1 text-[16px] font-bold rounded-tr-lg rounded-bl-lg flex items-center">
+															<div
+																className={
+																	`${thisWeekRanking === 1
+																		? "bg-[gold] text-black"
+																		: thisWeekRanking === 2
+																			? "bg-[#C0C0C0] text-black"
+																			: thisWeekRanking === 3
+																				? "bg-[#cd7f32] text-white"
+																				: "bg-blue-500 text-white"
+																	} px-2 py-1 text-[16px] font-bold rounded-tr-lg rounded-bl-lg flex items-center`
+																}
+															>
 																<Trophy className="size-3 mr-1" />{" "}
 																{thisWeekRanking}
 															</div>
