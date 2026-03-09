@@ -223,8 +223,6 @@ const WeeklyScoreChart: React.FC<{
 			});
 			return weekData;
 		});
-		console.log({ data })
-		console.log({ animeList })
 
 		interface TooltipPayload {
 			dataKey: string;

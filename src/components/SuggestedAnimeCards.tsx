@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import type { AnimeInfo } from "@/types/All";
@@ -14,14 +14,27 @@ interface JikanResponse {
 	data: AnimeInfo[];
 }
 
-export default function SuggestedAnimeCards() {
+function SuggestedAnimeCardsInner() {
 	const [animeList, setAnimeList] = useState<AnimeInfo[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 	const [filter, setFilter] = useState<FilterType>("airing");
+	const [cachedLists, setCachedLists] = useState<Partial<Record<FilterType, AnimeInfo[]>>>(
+		{},
+	);
 	const { titleLanguage } = useTitleLanguage();
 
 	useEffect(() => {
+		// If we already have data for this filter, reuse it and skip fetching
+		const cached = cachedLists[filter];
+		if (cached && cached.length > 0) {
+			setAnimeList(cached);
+			setLoading(false);
+			return;
+		}
+
+		let isCurrent = true;
+
 		const fetchTopAnime = async () => {
 			setLoading(true);
 			try {
@@ -32,16 +45,28 @@ export default function SuggestedAnimeCards() {
 					throw new Error("Failed to fetch anime data");
 				}
 				const data: JikanResponse = await response.json();
+				if (!isCurrent) return;
 				setAnimeList(data.data);
+				setCachedLists((prev) => ({
+					...prev,
+					[filter]: data.data,
+				}));
 			} catch (err) {
+				if (!isCurrent) return;
 				setError(err instanceof Error ? err.message : "An error occurred");
 			} finally {
-				setLoading(false);
+				if (isCurrent) {
+					setLoading(false);
+				}
 			}
 		};
 
 		fetchTopAnime();
-	}, [filter]);
+
+		return () => {
+			isCurrent = false;
+		};
+	}, [filter, cachedLists]);
 
 	return (
 		<div className="space-y-4 mt-24">
@@ -145,3 +170,9 @@ export default function SuggestedAnimeCards() {
 		</div>
 	);
 }
+
+// Memoize to avoid unnecessary re-renders when parent state (like animeId)
+// changes but this component's props stay the same.
+const SuggestedAnimeCards = memo(SuggestedAnimeCardsInner);
+
+export default SuggestedAnimeCards;

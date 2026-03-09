@@ -1,5 +1,5 @@
 "use client";
-import { InfoIcon, LoaderCircle, Search, Settings, X } from "lucide-react";
+import { InfoIcon, Search, Settings, X } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation"; // Import the useSearchParams hook and useRouter
 import posthog from "posthog-js";
@@ -16,6 +16,7 @@ import {
 import RatingsDisplay from "@/components/RatingsDisplay";
 import SuggestedAnimeCards from "@/components/SuggestedAnimeCards";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { AlertCircleIcon } from "lucide-react"
 import {
 	Dialog,
 	DialogContent,
@@ -90,7 +91,6 @@ export default function RatingsFetcher({
 	const initialInputValue = useRef(animeInput); // Store the initial input value
 	const router = useRouter();
 	const { titleLanguage } = useTitleLanguage();
-	console.log("titleLanguage", titleLanguage);
 
 	const extractAnimeInfoFromUrl = (
 		input: string,
@@ -112,14 +112,6 @@ export default function RatingsFetcher({
 	useEffect(() => {
 		setEntryType(entryTypeFromUrl);
 	}, [entryTypeFromUrl]);
-
-	// useEffect(() => {
-	// 	if (!isSearching && debouncedQuery.length >= 3 && searchresults.length === 0 && animeInput.length > 2) {
-	// 		setShowNoResultsMsg(true);
-	// 	} else {
-	// 		setShowNoResultsMsg(false);
-	// 	}
-	// }, [searchresults, debouncedQuery, animeInput, isSearching]);
 
 	// Set entryType to "anime" when fetchingMethod is "jikanOnly" (jikanOnly only supports anime)
 	useEffect(() => {
@@ -673,19 +665,26 @@ export default function RatingsFetcher({
 		fetchDataRef.current(overrideUrl);
 	}, []);
 
-	// If an animeId param is found, set it and fetch data
+	const lastHandledAnimeIdFromQuery = useRef<string | null>(null);
+
+	// If an animeId param is found in the URL, set it and fetch data.
+	// - Handles initial land-on-page with ?animeId=...
+	// - Skips when: source=imdb (handled elsewhere) or we've already handled this exact id
 	useEffect(() => {
-		if (animeIdFromQuery && sourceFromQuery !== "imdb") {
-			setDataSource("mal");
-			setAnimeInputForApi(
-				`https://myanimelist.net/anime/${animeIdFromQuery}/animeName`,
-			);
-			setAnimeInput("");
-			setTimeout(() => {
-				animeId === animeIdFromQuery && fetchDataStable();
-			}, 500);
-		}
-	}, [animeIdFromQuery, animeId, sourceFromQuery, fetchDataStable]);
+		if (!animeIdFromQuery || sourceFromQuery === "imdb") return;
+		if (lastHandledAnimeIdFromQuery.current === animeIdFromQuery) return;
+
+		lastHandledAnimeIdFromQuery.current = animeIdFromQuery;
+
+		setDataSource("mal");
+		setAnimeInputForApi(
+			`https://myanimelist.net/anime/${animeIdFromQuery}/animeName`,
+		);
+		setAnimeInput("");
+		setTimeout(() => {
+			fetchDataStable();
+		}, 500);
+	}, [animeIdFromQuery, sourceFromQuery, fetchDataStable]);
 
 	// If imdbId and source=imdb are in URL, fetch from IMDb
 	useEffect(() => {
@@ -776,7 +775,7 @@ export default function RatingsFetcher({
 							),
 					);
 				} else {
-					const animeTypes = ["TV", "OVA", "Special", "ONA"];
+					const animeTypes = ["TV", "OVA", "Special", "ONA", "Movie"];
 					const animeStatuses = ["Currently Airing", "Finished Airing"];
 					const mangaStatuses = ["Publishing", "Finished"];
 					const response = await fetch(
@@ -840,7 +839,7 @@ export default function RatingsFetcher({
 								url: anime.url,
 								image: anime.images.webp.image_url,
 								type: anime.type,
-								year: anime.year,
+								year: anime.year || anime.aired?.prop?.from?.year,
 							})),
 					);
 				}
@@ -881,7 +880,16 @@ export default function RatingsFetcher({
 			router.push("/onepiece?redirected=true");
 			return;
 		}
-		setAnimeInput(getDisplayTitle(searchresult, titleLanguage));
+		const resolvedTitle = getDisplayTitle(searchresult, titleLanguage);
+		const resolvedAnimeId = extractAnimeInfoFromUrl(searchresult.url).animeId;
+
+		// Mark this id as already handled so when RatingsDisplay syncs the URL with ?animeId=resolvedAnimeId,
+		// the animeIdFromQuery effect won't trigger a duplicate fetch.
+		if (resolvedAnimeId) {
+			lastHandledAnimeIdFromQuery.current = resolvedAnimeId;
+		}
+
+		setAnimeInput(resolvedTitle);
 		setAnimeInputForApi(searchresult.url);
 		setSearchResults([]);
 		setAnimeInput("");
@@ -889,14 +897,14 @@ export default function RatingsFetcher({
 		clearAnimeIdFromUrl();
 		fetchDataStable(searchresult.url);
 		posthog.capture("fetch_data", {
-			animeId: extractAnimeInfoFromUrl(searchresult.url).animeId,
-			animeTitle: getDisplayTitle(searchresult, titleLanguage),
+			animeId: resolvedAnimeId,
+			animeTitle: resolvedTitle,
 			entryType: entryType,
 			episodeCount: episodeCount,
 			fetchingMethod: dataSource === "imdb" ? "imdb" : fetchingMethod,
 			cheerioParsingMethod: cheerioParsingMethod,
 		});
-	}, [setAnimeInput, setAnimeInputForApi, setSearchResults, setShouldFetchSearchResults, clearAnimeIdFromUrl, fetchDataStable, entryType, episodeCount, fetchingMethod, cheerioParsingMethod, router]);
+	}, [setAnimeInput, setAnimeInputForApi, setSearchResults, setShouldFetchSearchResults, clearAnimeIdFromUrl, fetchDataStable, entryType, episodeCount, fetchingMethod, cheerioParsingMethod, router, titleLanguage]);
 
 	return (
 		<div className="w-full">
@@ -904,6 +912,11 @@ export default function RatingsFetcher({
 				<form
 					onSubmit={(e) => {
 						e.preventDefault();
+						// If we already know the animeId we're about to fetch, mark it as handled
+						// so the animeIdFromQuery effect won't refetch once RatingsDisplay syncs the URL.
+						if (animeId) {
+							lastHandledAnimeIdFromQuery.current = animeId;
+						}
 						fetchData();
 						posthog.capture("fetch_data", {
 							animeId: animeId,
@@ -1187,19 +1200,24 @@ export default function RatingsFetcher({
 							)} */}
 						</div>
 					)}
-					{error && <p className="mt-4 text-red-500">{error}</p>}
-					{error === "No episodes found for this anime" && (
-						// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-						<p
-							className="mt-4 text-blue-500 cursor-pointer hover:underline"
+					{error && (
+						<Alert variant="destructive" className="max-w-md mt-4">
+							<AlertCircleIcon />
+							<AlertTitle>Error</AlertTitle>
+							<AlertDescription>{error}</AlertDescription>
+						</Alert>
+					)}
+					{error === "No episodes found for this anime" && animeInfo?.episodes && animeInfo.episodes > 1 && (
+						<Button
 							onClick={() => {
 								setFetchingMethod("cheerioParser");
 								fetchData();
 								setError("");
 							}}
+							className="mt-4 w-fit"
 						>
-							Want to try another method? Click here
-						</p>
+							Try another method
+						</Button>
 					)}
 					{loadingDetailed &&
 						fetchingMethod === "cheerioParser" &&

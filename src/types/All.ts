@@ -108,6 +108,11 @@ export interface AnimeInfo {
 	status: string;
 	aired?: {
 		string: string;
+		prop: {
+			from: {
+				year: number;
+			};
+		};
 	};
 	published?: {
 		string: string;

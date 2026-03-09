@@ -6,6 +6,7 @@ import {
 	Share2,
 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import {
 	CartesianGrid,
@@ -551,6 +552,30 @@ export default function RatingsDisplay({
 		"ratingFiveStars",
 		"ratingAllStars",
 	].map((key) => calculateAverage(key as "ratingFiveStars" | "ratingAllStars"));
+
+	const router = useRouter();
+
+	// Keep URL in sync with the currently displayed anime (for MAL anime only)
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+		if (!animeInfo?.mal_id) return;
+		if (dataSource !== "mal" || entryType !== "anime") return;
+
+		const urlSearchParams = new URLSearchParams(window.location.search);
+		const currentAnimeIdInQuery = urlSearchParams.get("animeId");
+		const nextAnimeId = String(animeInfo.mal_id);
+
+		// Avoid unnecessary URL updates (and feedback loops with initial load)
+		if (currentAnimeIdInQuery === nextAnimeId) return;
+
+		urlSearchParams.set("animeId", nextAnimeId);
+
+		const nextUrl = `${window.location.pathname}${
+			urlSearchParams.toString() ? `?${urlSearchParams.toString()}` : ""
+		}`;
+
+		router.replace(nextUrl, { scroll: false });
+	}, [animeInfo?.mal_id, dataSource, entryType, router]);
 
 	const handleShare = async () => {
 		if (!animeInfo?.mal_id) return;
