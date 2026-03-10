@@ -135,6 +135,7 @@ export default function RatingsFetcher({
 			currentUrl.searchParams.delete("animeId");
 			currentUrl.searchParams.delete("imdbId");
 			currentUrl.searchParams.delete("source");
+			currentUrl.searchParams.delete("name");
 			router.replace(currentUrl.pathname + currentUrl.search, {
 				scroll: false,
 			});

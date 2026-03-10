@@ -567,12 +567,12 @@ export default function RatingsDisplay({
 		const currentNameInQuery = urlSearchParams.get("name");
 		const nextAnimeId = String(animeInfo.mal_id);
 		// Format title for URL name param, e.g.
-		// "Ginga Eiyuu Densetsu: Die Neue These - Sakubou"
-		// -> "Ginga_Eiyuu_Densetsu__Die_Neue_These_-_Sakubou"
+		// Replace spaces by underscores, keep only letters/numbers, otherwise cut all other characters
 		const formattedName =
 			animeInfo.title
-				?.replace(/:/g, "_")
-				.replace(/ /g, "_") ?? "";
+				?.replace(/[^a-zA-Z0-9 ]/g, "") // remove all non letter/number except spaces
+				.replace(/ /g, "_")             // replace spaces with underscores
+			?? "";
 
 		// Avoid unnecessary URL updates (and feedback loops)
 		if (
@@ -588,8 +588,7 @@ export default function RatingsDisplay({
 			urlSearchParams.delete("name");
 		}
 
-		const nextUrl = `${window.location.pathname}${urlSearchParams.toString() ? `?${urlSearchParams.toString()}` : ""
-			}`;
+		const nextUrl = `${window.location.pathname}${urlSearchParams.toString() ? `?${urlSearchParams.toString()}` : ""}`;
 
 		router.replace(nextUrl, { scroll: false });
 	}, [animeInfo?.mal_id, dataSource, entryType, router, title]);
