@@ -556,11 +556,21 @@ export default function RatingsDisplay({
 
 	const router = useRouter();
 
-	// Keep URL in sync with the currently displayed anime (for MAL anime only)
+	// Keep URL in sync with the currently displayed anime
 	useEffect(() => {
 		if (typeof window === "undefined") return;
+
+		// If source is IMDb, always normalize back to /episodes (no query params)
+		if (dataSource === "imdb") {
+			if (window.location.pathname !== "/episodes" || window.location.search) {
+				router.replace("/episodes", { scroll: false });
+			}
+			return;
+		}
+
+		// From here on we only sync for MAL anime
 		if (!animeInfo?.mal_id) return;
-		if (dataSource !== "mal" || entryType !== "anime") return;
+		if (entryType !== "anime" || animeInfo.mal_id === 21) return;
 
 		const urlSearchParams = new URLSearchParams(window.location.search);
 		const currentAnimeIdInQuery = urlSearchParams.get("animeId");
@@ -863,75 +873,200 @@ export default function RatingsDisplay({
 			{/* )} */}
 			{options.viewMode === "wrapped" ? (
 				<TooltipProvider delayDuration={100}>
-					<div className="grid gap-2 grid-cols-[repeat(auto-fill,minmax(80px,1fr))] min-w-0 w-full">
-						{sortedResults.map((result) => {
-							const rating = result.ratingAllStars;
-							const tier = getRatingTier(rating, options.ratingDisplayFormat);
-							const displayRating = formatRating(
-								rating,
-								options.ratingDisplayFormat,
-							);
-							const isFillerOrRecap = result.filler || result.recap;
+					{dataSource === "imdb" ? (
+						// For IMDb, group episodes by season when title ends with "(S1)", "(S2)", ...
+						<div className="space-y-3 min-w-0 w-full">
+							{Array.from(
+								sortedResults.reduce((map, result) => {
+									// IMDb episode titles end with "(S1E7)", "(S2E20)", etc.
+									// We want the number after "S" and before "E" (season).
+									const match = result.title?.match(/\(S(\d+)E\d+\)\s*$/);
+									const season = match ? Number(match[1]) : 1;
+									if (!map.has(season)) map.set(season, []);
+									map.get(season)!.push(result);
+									return map;
+								}, new Map<number, typeof sortedResults>()),
+							)
+								.sort(([a], [b]) => a - b)
+								.map(([season, seasonResults]) => (
+									<div key={season} className="space-y-1">
+										<p className="text-xs font-semibold text-muted-foreground">
+											Season {season}
+										</p>
+										<div className="grid gap-2 grid-cols-[repeat(auto-fill,minmax(80px,1fr))] min-w-0 w-full">
+											{seasonResults.map((result) => {
+												const rating = result.ratingAllStars;
+												const tier = getRatingTier(
+													rating,
+													options.ratingDisplayFormat,
+												);
+												const displayRating = formatRating(
+													rating,
+													options.ratingDisplayFormat,
+												);
+												const isFillerOrRecap =
+													result.filler || result.recap;
 
-							return (
-								<Tooltip key={result.episodeNb} useTouch={true}>
-									<TooltipTrigger asChild>
-										<div
-											className={cn(
-												"relative p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:lg:scale-105 hover:shadow-lg min-h-[50px] max-h-[53px] w-full min-w-0",
-												((isFillerOrRecap && options.filterFillerAndRecap === "highlight") || options.filterBelowScore?.type === "highlight" && options.filterBelowScore?.score && result.ratingAllStars !== undefined && result.ratingAllStars < Number(options.filterBelowScore.score)) &&
-												"ring-2 ring-[#ff0096]",
-											)}
-											style={{ backgroundColor: tier.color }}
-										>
-											<span
-												className="text-[14px] font-medium opacity-80 w-full text-left"
-												style={{ color: tier.textColor }}
-											>
-												{entryType === "anime" ? "E" : "Ch"}
-												{result.episodeNb}
-											</span>
-											<span
-												className="text-2xl font-bold w-full text-right"
-												style={{ color: tier.textColor }}
-											>
-												{displayRating}
-											</span>
+												return (
+													<Tooltip key={result.episodeNb} useTouch={true}>
+														<TooltipTrigger asChild>
+															<div
+																className={cn(
+																	"relative p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:lg:scale-105 hover:shadow-lg min-h-[50px] max-h-[53px] w-full min-w-0",
+																	((isFillerOrRecap &&
+																		options.filterFillerAndRecap ===
+																		"highlight") ||
+																		(options.filterBelowScore?.type ===
+																			"highlight" &&
+																			options.filterBelowScore?.score &&
+																			result.ratingAllStars !== undefined &&
+																			result.ratingAllStars <
+																			Number(
+																				options.filterBelowScore.score,
+																			))) &&
+																	"ring-2 ring-[#ff0096]",
+																)}
+																style={{ backgroundColor: tier.color }}
+															>
+																<span
+																	className="text-[14px] font-medium opacity-80 w-full text-left"
+																	style={{ color: tier.textColor }}
+																>
+																	{entryType === "anime" ? "E" : "Ch"}
+																	{result.episodeNb}
+																</span>
+																<span
+																	className="text-2xl font-bold w-full text-right"
+																	style={{ color: tier.textColor }}
+																>
+																	{displayRating}
+																</span>
+															</div>
+														</TooltipTrigger>
+														<TooltipContent className="max-w-[280px] border-accent border-2">
+															<div className="block text-sm">
+																<span>
+																	{entryType === "anime"
+																		? "Episode"
+																		: "Chapter"}{" "}
+																	{result.episodeNb}
+																</span>
+																{result.title && (
+																	<span>
+																		{" - "} {result.title}
+																	</span>
+																)}
+																{isFillerOrRecap && (
+																	<span className="text-xs text-muted-foreground">
+																		{" "}
+																		(Filler/Recap)
+																	</span>
+																)}
+															</div>
+															{result.aired && (
+																<span className="text-xs text-muted-foreground">
+																	Aired:{" "}
+																	{new Date(
+																		result.aired,
+																	).toLocaleDateString("en-US", {
+																		month: "long",
+																		day: "numeric",
+																		year: "numeric",
+																	})}
+																</span>
+															)}
+														</TooltipContent>
+													</Tooltip>
+												);
+											})}
 										</div>
-									</TooltipTrigger>
-									<TooltipContent className="max-w-[280px] border-accent border-2">
-										<div className="block text-sm">
-											<span>
-												{entryType === "anime" ? "Episode" : "Chapter"}{" "}
-												{result.episodeNb}
-											</span>
-											{result.title && (
+									</div>
+								))}
+						</div>
+					) : (
+						// Default (MAL, etc.) flat wrapped layout
+						<div className="grid gap-2 grid-cols-[repeat(auto-fill,minmax(80px,1fr))] min-w-0 w-full">
+							{sortedResults.map((result) => {
+								const rating = result.ratingAllStars;
+								const tier = getRatingTier(
+									rating,
+									options.ratingDisplayFormat,
+								);
+								const displayRating = formatRating(
+									rating,
+									options.ratingDisplayFormat,
+								);
+								const isFillerOrRecap = result.filler || result.recap;
+
+								return (
+									<Tooltip key={result.episodeNb} useTouch={true}>
+										<TooltipTrigger asChild>
+											<div
+												className={cn(
+													"relative p-2 rounded-lg flex flex-col items-center justify-center transition-all hover:lg:scale-105 hover:shadow-lg min-h-[50px] max-h-[53px] w-full min-w-0",
+													((isFillerOrRecap &&
+														options.filterFillerAndRecap === "highlight") ||
+														(options.filterBelowScore?.type === "highlight" &&
+															options.filterBelowScore?.score &&
+															result.ratingAllStars !== undefined &&
+															result.ratingAllStars <
+															Number(options.filterBelowScore.score))) &&
+													"ring-2 ring-[#ff0096]",
+												)}
+												style={{ backgroundColor: tier.color }}
+											>
+												<span
+													className="text-[14px] font-medium opacity-80 w-full text-left"
+													style={{ color: tier.textColor }}
+												>
+													{entryType === "anime" ? "E" : "Ch"}
+													{result.episodeNb}
+												</span>
+												<span
+													className="text-2xl font-bold w-full text-right"
+													style={{ color: tier.textColor }}
+												>
+													{displayRating}
+												</span>
+											</div>
+										</TooltipTrigger>
+										<TooltipContent className="max-w-[280px] border-accent border-2">
+											<div className="block text-sm">
 												<span>
-													{" - "} {result.title}
+													{entryType === "anime" ? "Episode" : "Chapter"}{" "}
+													{result.episodeNb}
 												</span>
-											)}
-											{isFillerOrRecap && (
+												{result.title && (
+													<span>
+														{" - "} {result.title}
+													</span>
+												)}
+												{isFillerOrRecap && (
+													<span className="text-xs text-muted-foreground">
+														{" "}
+														(Filler/Recap)
+													</span>
+												)}
+											</div>
+											{result.aired && (
 												<span className="text-xs text-muted-foreground">
-													{" "}
-													(Filler/Recap)
+													Aired:{" "}
+													{new Date(result.aired).toLocaleDateString(
+														"en-US",
+														{
+															month: "long",
+															day: "numeric",
+															year: "numeric",
+														},
+													)}
 												</span>
 											)}
-										</div>
-										{result.aired && (
-											<span className="text-xs text-muted-foreground">
-												Aired:{" "}
-												{new Date(result.aired).toLocaleDateString("en-US", {
-													month: "long",
-													day: "numeric",
-													year: "numeric",
-												})}
-											</span>
-										)}
-									</TooltipContent>
-								</Tooltip>
-							);
-						})}
-					</div>
+										</TooltipContent>
+									</Tooltip>
+								);
+							})}
+						</div>
+					)}
 				</TooltipProvider>
 			) : options.viewMode === "graph" ? (
 				<ScrollArea
