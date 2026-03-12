@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import {
 	Dialog,
 	DialogContent,
@@ -32,9 +33,7 @@ import {
 	TooltipContent,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-import WeeklyScoreChart, {
-	getSeasonStartDate,
-} from "@/components/WeeklyRatings/WeeklyScoreChart";
+import WeeklyScoreChart from "@/components/WeeklyRatings/WeeklyScoreChart";
 import { getDisplayTitle } from "@/lib/displayTitle";
 import { useTitleLanguage } from "@/contexts/TitleLanguageContext";
 export interface AnimeItem {
@@ -157,6 +156,8 @@ export default function WeeklyRatings() {
 	const [animeList, setAnimeList] = useState<AnimeItem[]>([]);
 	const [loading, setLoading] = useState(false);
 	const [fetchingAnime, setFetchingAnime] = useState(false);
+	const [seasonProgress, setSeasonProgress] = useState<number | null>(null);
+	const [episodesProgress, setEpisodesProgress] = useState<number | null>(null);
 	const [error, setError] = useState("");
 	const [currentSeason, setCurrentSeason] = useState<CurrentSeason>(
 		getCurrentAnimeSeason(),
@@ -455,6 +456,10 @@ export default function WeeklyRatings() {
 	const fetchAllAnime = async () => {
 		setLoading(true);
 		setFetchingAnime(true);
+		setSeasonProgress(null);
+		setEpisodesProgress(null);
+		setSeasonProgress(null);
+		setEpisodesProgress(null);
 		const { year, season } = currentSeason;
 		try {
 			let allAnime: AnimeItem[] = [];
@@ -496,6 +501,15 @@ export default function WeeklyRatings() {
 							array.findIndex((item) => item.mal_id === anime.mal_id) === index,
 					);
 					const { pagination } = responses[0].data;
+					// Estimate total pages and update season progress as we go
+					if (pagination?.last_visible_page) {
+						const totalPages = pagination.last_visible_page;
+						// We only use pages to compute progress; no explicit time estimate needed here.
+						const currentPage = pagination.current_page ?? page;
+						setSeasonProgress(
+							Math.min(100, (currentPage / totalPages) * 100),
+						);
+					}
 					const filteredData = uniqueData
 						.map(
 							({
@@ -557,6 +571,12 @@ export default function WeeklyRatings() {
 			const fetchLimit = 2;
 			const fetchInterval = 2000; // 2 seconds
 
+			// Track episodes progress as batches completed / total batches
+			let totalEpisodeBatches = 0;
+			if (allAnime.length > 0) {
+				totalEpisodeBatches = Math.ceil(allAnime.length / fetchLimit);
+			}
+
 			for (let i = 0; i < allAnime.length; i += fetchLimit) {
 				const batch = allAnime.slice(i, i + fetchLimit);
 				const batchResults = await Promise.all(
@@ -606,6 +626,17 @@ export default function WeeklyRatings() {
 				if (i + fetchLimit < allAnime.length) {
 					await new Promise((resolve) => setTimeout(resolve, fetchInterval));
 				}
+
+				// Update episodes progress based on completed batches
+				if (totalEpisodeBatches > 0) {
+					const completedBatches = Math.min(
+						totalEpisodeBatches,
+						Math.floor(i / fetchLimit) + 1,
+					);
+					setEpisodesProgress(
+						Math.min(100, (completedBatches / totalEpisodeBatches) * 100),
+					);
+				}
 			}
 
 			// Filter out anime with no episodes or where all episodes have no aired date
@@ -637,99 +668,89 @@ export default function WeeklyRatings() {
 		}
 	};
 
-	// useEffect(() => {
-	// 	if (animeList.length > 0) {
-	// 		const seasonStartDate = new Date(currentSeason.year, getSeasonStartMonth(currentSeason.season), 1);
-	// 		const seasonEndDate = new Date(currentSeason.year, getSeasonStartMonth(currentSeason.season) + 3, 0);
+	if (loading) {
+		// Combine both steps into a single smooth progress value.
+		// Step 1 (seasons) maps to 0–50, Step 2 (episodes) to 50–100.
+		let combinedProgress: number | undefined = undefined;
+		if (episodesProgress !== null) {
+			// Once episodes have started, base the second half of the bar on them
+			const ep = Math.max(0, Math.min(episodesProgress, 100));
+			combinedProgress = 50 + ep * 0.5;
+		} else if (seasonProgress !== null) {
+			// Before episodes start, season progress fills the first half
+			const sp = Math.max(0, Math.min(seasonProgress, 100));
+			combinedProgress = sp * 0.5;
+		}
 
-	// 		const filteredAnimeList = animeList.filter(anime => {
-	// 			return anime.episodeData?.data.some(episode => {
-	// 				const episodeDate = new Date(episode.aired);
-	// 				return episodeDate >= seasonStartDate && episodeDate <= seasonEndDate;
-	// 			});
-	// 		});
-
-	// 		setAnimeList(filteredAnimeList);
-	// 	}
-	// }, [currentSeason]);
-
-	// const fetchSeasons = () => {
-	// 	const currentDate = new Date()
-	// 	const currentYear = currentDate.getFullYear()
-	// 	const currentMonth = currentDate.getMonth()
-	// 	const allSeasons = []
-
-	// 	for (let year = currentYear; year > currentYear - 4; year--) {
-	// 		for (let i = fourSeasonsOrder.length - 1; i >= 0; i--) {
-	// 			if (year < currentYear || (year === currentYear && i * 3 <= currentMonth)) {
-	// 				allSeasons.push(`${fourSeasonsOrder[i]} ${year}`)
-	// 			}
-	// 		}
-	// 	}
-
-	// 	setSeasons(allSeasons)
-	// 	setCurrentSeason({ year: currentYear, season: fourSeasonsOrder[Math.floor(currentMonth / 3)] })
-	// }
-
-	// const handleSeasonChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-	// 	const [season, year] = event.target.value.split(" ")
-	// 	setCurrentSeason({ year: Number.parseInt(year), season: season.toLowerCase() })
-	// }
-
-	// if (loading) {
-	// 	return (
-	// 		<div className="animate-in fade-in duration-200">
-	// 			{/* Skeleton: filter row */}
-	// 			<div className="flex items-center gap-2 lg:gap-4 mb-4 flex-wrap">
-	// 				<div className="flex flex-col gap-1">
-	// 					<div className="h-4 w-16 bg-muted rounded animate-pulse" />
-	// 					<div className="h-9 w-[180px] bg-muted rounded-md animate-pulse" />
-	// 				</div>
-	// 				<div className="flex items-center gap-1">
-	// 					<div className="flex flex-col gap-1">
-	// 						<div className="h-4 w-12 bg-muted rounded animate-pulse" />
-	// 						<div className="h-9 w-[130px] bg-muted rounded-md animate-pulse" />
-	// 					</div>
-	// 					<div className="flex flex-col gap-1">
-	// 						<div className="h-4 w-8 bg-muted rounded animate-pulse" />
-	// 						<div className="h-9 w-20 bg-muted rounded-md animate-pulse" />
-	// 					</div>
-	// 				</div>
-	// 				<div className="flex items-center gap-3">
-	// 					<div className="flex flex-col gap-1">
-	// 						<div className="h-4 w-14 bg-muted rounded animate-pulse" />
-	// 						<div className="h-9 w-20 bg-muted rounded-md animate-pulse" />
-	// 					</div>
-	// 					<div className="flex flex-col gap-1">
-	// 						<div className="h-4 w-24 bg-muted rounded animate-pulse" />
-	// 						<div className="h-9 w-28 bg-muted rounded-md animate-pulse" />
-	// 					</div>
-	// 				</div>
-	// 			</div>
-	// 			{/* Skeleton: button */}
-	// 			<div className="h-10 w-24 bg-muted rounded-md animate-pulse mb-4" />
-	// 			{/* Skeleton: content grid */}
-	// 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-	// 				{[1, 2, 3, 4, 5, 6].map((i) => (
-	// 					<div
-	// 						key={i}
-	// 						className="bg-background border border-border rounded-lg flex flex-col overflow-hidden"
-	// 					>
-	// 						<div className="flex gap-2 p-2">
-	// 							<div className="w-20 h-[130px] bg-muted rounded-lg shrink-0 animate-pulse" />
-	// 							<div className="flex-1 space-y-2">
-	// 								<div className="h-5 w-3/4 bg-muted rounded animate-pulse" />
-	// 								<div className="h-5 w-1/2 bg-muted rounded animate-pulse" />
-	// 								<div className="h-6 w-16 bg-muted rounded animate-pulse" />
-	// 								<div className="h-6 w-12 bg-muted rounded animate-pulse" />
-	// 							</div>
-	// 						</div>
-	// 					</div>
-	// 				))}
-	// 			</div>
-	// 		</div>
-	// 	);
-	// }
+		return (
+			<div className="animate-in fade-in duration-200">
+				{combinedProgress !== undefined && (
+					<div className="mb-3 flex items-center gap-3">
+						<div className="w-full sm:w-90">
+							<Progress
+								value={combinedProgress}
+								className="h-2 rounded-full"
+							/>
+						</div>
+						<p className="text-[11px] text-muted-foreground">
+							{episodesProgress === null
+								? "Step 1/2 · Fetching season list"
+								: "Step 2/2 · Fetching episodes"}{" "}
+							({Math.round(combinedProgress)}%)
+						</p>
+					</div>
+				)}
+				{/* Skeleton: filter row */}
+				<div className="flex items-center gap-2 lg:gap-4 mb-4 flex-wrap">
+					<div className="flex flex-col gap-1">
+						<div className="h-4 w-16 bg-muted rounded animate-pulse" />
+						<div className="h-9 w-[180px] bg-muted rounded-md animate-pulse" />
+					</div>
+					<div className="flex items-center gap-1">
+						<div className="flex flex-col gap-1">
+							<div className="h-4 w-12 bg-muted rounded animate-pulse" />
+							<div className="h-9 w-[130px] bg-muted rounded-md animate-pulse" />
+						</div>
+						<div className="flex flex-col gap-1">
+							<div className="h-4 w-8 bg-muted rounded animate-pulse" />
+							<div className="h-9 w-20 bg-muted rounded-md animate-pulse" />
+						</div>
+					</div>
+					<div className="flex items-center gap-3">
+						<div className="flex flex-col gap-1">
+							<div className="h-4 w-14 bg-muted rounded animate-pulse" />
+							<div className="h-9 w-20 bg-muted rounded-md animate-pulse" />
+						</div>
+						<div className="flex flex-col gap-1">
+							<div className="h-4 w-24 bg-muted rounded animate-pulse" />
+							<div className="h-9 w-28 bg-muted rounded-md animate-pulse" />
+						</div>
+					</div>
+				</div>
+				{/* Skeleton: button */}
+				<div className="h-10 w-24 bg-muted rounded-md animate-pulse mb-4" />
+				{/* Skeleton: content grid */}
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					{[1, 2, 3, 4, 5, 6].map((i) => (
+						<div
+							key={i}
+							className="bg-background border border-border rounded-lg flex flex-col overflow-hidden"
+						>
+							<div className="flex gap-2 p-2">
+								<div className="w-20 h-[130px] bg-muted rounded-lg shrink-0 animate-pulse" />
+								<div className="flex-1 space-y-2">
+									<div className="h-5 w-3/4 bg-muted rounded animate-pulse" />
+									<div className="h-5 w-1/2 bg-muted rounded animate-pulse" />
+									<div className="h-6 w-16 bg-muted rounded animate-pulse" />
+									<div className="h-6 w-12 bg-muted rounded animate-pulse" />
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		);
+	}
 
 	if (error) {
 		return <div className="text-red-500 text-center">{error}</div>;

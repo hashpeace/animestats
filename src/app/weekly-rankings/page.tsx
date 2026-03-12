@@ -14,6 +14,7 @@ export default function WeeklyRatingsPage() {
 					href="/about?tab=weekly"
 					className="p-1 text-gray-500 hover:text-gray-700 transition-colors"
 					title="Learn more about weekly rankings"
+					target="_blank"
 				>
 					<HelpCircle size={20} />
 				</Link>

@@ -73,6 +73,7 @@ export default function RatingsFetcher({
 	const [dataSource, setDataSource] = useState<"mal" | "imdb">("mal");
 	const [isSearching, setIsSearching] = useState(false);
 	const [seasonPickerOpen, setSeasonPickerOpen] = useState(false);
+	const [hasForumDataButNoEpisodes, setHasForumDataButNoEpisodes] = useState(false);
 	const [pendingImdbData, setPendingImdbData] = useState<{
 		imdbId: string;
 		titleData: Record<string, unknown>;
@@ -436,7 +437,11 @@ export default function RatingsFetcher({
 	);
 
 	// Fetch data from Jikan (and Cheerio parser if enabled)
-	const fetchData = async (overrideUrl?: string) => {
+	// overrideMethod lets callers force a specific method for this run
+	const fetchData = async (
+		overrideUrl?: string,
+		overrideMethod?: "cheerioParser" | "jikanOnly",
+	) => {
 		const imdbMatch = (overrideUrl || animeInputForApi || "").match(
 			/imdb\.com\/title\/(tt\d+)/i,
 		);
@@ -452,6 +457,7 @@ export default function RatingsFetcher({
 				? extractAnimeInfoFromUrl(overrideUrl)
 				: { animeId, entryTypeFromUrl: entryType };
 		const currentEntryType = overrideUrl ? fetchEntryType : entryType;
+		const effectiveMethod = overrideMethod ?? fetchingMethod;
 
 		setLoading(true);
 		setLoadingDetailed(true)
@@ -639,10 +645,11 @@ export default function RatingsFetcher({
 					? fetchCheerioDataRouteApi
 					: fetchCheerioDataAxios;
 
-			// Fetch Jikan data only if no episode count is specified (we could improve it by fetching only the #episodeCount number of episodes with Jikan api)
+			// Fetch Jikan data only if no episode count is specified
+			// (@TODO: we could improve it by fetching only the #episodeCount number of episodes with Jikan api)
 			if (currentEntryType === "anime" && !episodeCount) await fetchJikanData();
 
-			if (fetchingMethod === "cheerioParser") {
+			if (effectiveMethod === "cheerioParser") {
 				fetchCheerioData().catch((error) => {
 					console.error("Error fetching Cheerio data:", error);
 					setError("An error occurred while fetching detailed ratings.");
@@ -696,6 +703,23 @@ export default function RatingsFetcher({
 			fetchImdbData(imdbIdFromQuery);
 		}
 	}, [imdbIdFromQuery, sourceFromQuery, fetchImdbData]);
+
+	useEffect(() => {
+		const fetchForumData = async () => {
+			const response = await fetch(`https://api.jikan.moe/v4/${entryType}/${animeId}/forum?filter=episode`);
+			if (!response.ok) {
+				throw new Error("Failed to fetch forum data");
+			}
+			const data = await response.json();
+			if (data.data.length > 1) {
+				setHasForumDataButNoEpisodes(true);
+			}
+		}
+		if (error === "No episodes found for this anime" && animeId && !hasForumDataButNoEpisodes) {
+			// setTimeout to avoid rate limiting
+			setTimeout(() => fetchForumData(), 2000);
+		}
+	}, [error, animeId, entryType, hasForumDataButNoEpisodes]);
 
 	// Update time left every second if loading
 	useEffect(() => {
@@ -1011,6 +1035,9 @@ export default function RatingsFetcher({
 														activeItem.parentElement?.children || [],
 													).indexOf(activeItem),
 											);
+											console.log(searchresultsList);
+											console.log(searchresults);
+											console.log(searchresult);
 											if (searchresult) {
 												onSearchResultClick(searchresult);
 											}
@@ -1208,11 +1235,12 @@ export default function RatingsFetcher({
 							<AlertDescription>{error}</AlertDescription>
 						</Alert>
 					)}
-					{error === "No episodes found for this anime" && animeInfo?.episodes && animeInfo.episodes > 1 && (
+					{error === "No episodes found for this anime" && hasForumDataButNoEpisodes && (
 						<Button
 							onClick={() => {
+								// Force cheerioParser for this fetch so it works on first click
 								setFetchingMethod("cheerioParser");
-								fetchData();
+								fetchData(undefined, "cheerioParser");
 								setError("");
 							}}
 							className="mt-4 w-fit"
