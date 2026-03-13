@@ -35,6 +35,7 @@ export default function RootLayout({
             __html: `(function(){var t=localStorage.getItem("theme");var isDark=t==="dark"||(t===null&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(isDark){document.documentElement.classList.add("dark");document.querySelector('meta[name="theme-color"]')?.setAttribute("content","#111111");}else{document.documentElement.classList.remove("dark");document.querySelector('meta[name="theme-color"]')?.setAttribute("content","#ffffff");}})();`,
           }}
         />
+        <meta name="google-site-verification" content="V8R5YTsVFj08EVzLSeQFx_rywRhghpG6D3rOqPbUYkE" />
       </head>
       <CSPostHogProvider>
         <body className={inter.className}>

@@ -1035,9 +1035,6 @@ export default function RatingsFetcher({
 														activeItem.parentElement?.children || [],
 													).indexOf(activeItem),
 											);
-											console.log(searchresultsList);
-											console.log(searchresults);
-											console.log(searchresult);
 											if (searchresult) {
 												onSearchResultClick(searchresult);
 											}
